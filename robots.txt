@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://job3.pages.dev/sitemap.xml
