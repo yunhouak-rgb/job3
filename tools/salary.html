@@ -257,7 +257,7 @@ img { max-width: 100%; height: auto; }
 <main>
   <div class="container">
     <nav class="breadcrumb" style="padding-top:calc(var(--header-h) + 16px);">
-      <a href="/">홈</a><span>›</span><a href="/tools">도구</a><span>›</span>연봉 실수령액 계산기 (2026년)
+      <a href="/">홈</a><span>›</span><a href="/tools">취업도구</a><span>›</span>연봉 실수령액 계산기 (2026년)
     </nav>
 
     <div class="tool-hero">
@@ -273,7 +273,7 @@ img { max-width: 100%; height: auto; }
       <div id="salaryResult"></div>
     </div>
     <div style="font-size:.8rem;color:var(--text-muted);line-height:1.7;">
-      ※ 4대보험료율(2026년 추정): 국민연금 4.5%, 건강보험 3.545%, 장기요양 건강보험료의 12.95%, 고용보험 0.9%. 소득세는 간이세액표 근사치입니다. 실제 금액과 차이가 있을 수 있으니 참고용으로 활용하세요.
+      ※ 4대보험료율(2026년 추정): 국민연금 4.5%, 건강보험 3.545%, 장기요양 건강보험료의 12.95%, 고용보험 0.9%. 소득세는 간이세액표 근사치입니다. 식대 등 비과세 항목은 반영하지 않아 실제 실수령액은 이보다 2~7만원 많을 수 있습니다. 참고용으로 활용하세요.
     </div>
     <div style="margin:40px 0 72px;"><div class="inline-book-cta">
   <div class="inline-book-cta__label">전자책</div>
@@ -303,28 +303,32 @@ img { max-width: 100%; height: auto; }
 function toggleMenu(){const m=document.getElementById('mobileMenu');const b=document.getElementById('menuBtn');m.classList.toggle('open');b.textContent=m.classList.contains('open')?'✕ 닫기':'☰ 메뉴';}
 document.addEventListener('click',function(e){const m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!document.getElementById('menuBtn').contains(e.target)){m.classList.remove('open');document.getElementById('menuBtn').textContent='☰ 메뉴';}});
 
+const TAX_TABLE = [[200,19520],[250,41630],[300,74350],[350,127220],[400,195960],[450,273400],[500,350470],[550,430350],[600,521430],[700,745540],[800,1037000],[1000,1721000]];
+function incomeTaxMonthly(monthlyWon, family){
+  const m = monthlyWon/10000;
+  let base;
+  if(m <= TAX_TABLE[0][0]) base = m>0 ? TAX_TABLE[0][1]*(m/TAX_TABLE[0][0]) : 0;
+  else if(m >= TAX_TABLE[TAX_TABLE.length-1][0]) base = TAX_TABLE[TAX_TABLE.length-1][1]*(m/TAX_TABLE[TAX_TABLE.length-1][0]);
+  else {
+    base = TAX_TABLE[TAX_TABLE.length-1][1];
+    for(let i=0;i<TAX_TABLE.length-1;i++){
+      const [x0,y0]=TAX_TABLE[i], [x1,y1]=TAX_TABLE[i+1];
+      if(m>=x0 && m<=x1){ base = y0+(y1-y0)*(m-x0)/(x1-x0); break; }
+    }
+  }
+  if(family>1) base *= Math.max(0.3, 1-(family-1)*0.18);
+  return base;
+}
 function calcSalary(){
   const annual = parseFloat(document.getElementById('salaryInput').value) * 10000;
   const family = parseInt(document.getElementById('familyInput').value) || 1;
   if(!annual || annual <= 0){ document.getElementById('salaryResult').innerHTML=''; return; }
   const monthly = annual / 12;
-  // 4대보험
   const pension = Math.min(monthly, 6170000) * 0.045;
   const health = monthly * 0.03545;
   const care = health * 0.1295;
   const employment = monthly * 0.009;
-  // 소득세 (간이 근사: 과세표준 기반 단순화)
-  const taxableMonthly = monthly - (pension+health+care+employment);
-  let incomeTax = 0;
-  const annualTaxable = taxableMonthly * 12 - (family * 1500000);
-  if(annualTaxable > 0){
-    let tax = 0;
-    if(annualTaxable <= 14000000) tax = annualTaxable * 0.06;
-    else if(annualTaxable <= 50000000) tax = 840000 + (annualTaxable-14000000)*0.15;
-    else if(annualTaxable <= 88000000) tax = 6240000 + (annualTaxable-50000000)*0.24;
-    else tax = 15360000 + (annualTaxable-88000000)*0.35;
-    incomeTax = (tax / 12) * 0.55; // 근로소득세액공제 근사
-  }
+  const incomeTax = incomeTaxMonthly(monthly, family);
   const localTax = incomeTax * 0.1;
   const totalDeduction = pension+health+care+employment+incomeTax+localTax;
   const netMonthly = monthly - totalDeduction;
