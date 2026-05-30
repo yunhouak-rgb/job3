@@ -2,9 +2,12 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>취업 준비 무료 진단 | 좋은 취업</title>
-  <meta name="description" content="지금 내 취업 준비 상태를 5분 만에 진단하세요. 면접, 자소서, 기업이해, 마음관리 4가지 영역 중 어디가 약한지 확인하고 맞춤 콘텐츠를 추천받으세요." />
-  <link rel="canonical" href="https://jobok.co.kr/diagnosis" />
+  <title>인적성 검사 연습문제 (GSAT·HMAT·NCS 유형) | 좋은 취업</title>
+  <meta name="description" content="대기업 인적성 검사 유형별 연습문제. 언어논리·수리논리·추리·자료해석 무료로 풀고 바로 채점하세요. GSAT·HMAT·NCS 대비." />
+  <meta name="keywords" content="인적성 연습문제, GSAT 연습, 인적성 문제, 적성검사 연습, NCS 문제, 인적성 검사 준비" />
+  <link rel="canonical" href="https://jobok.co.kr/aptitude" />
+  <meta property="og:title" content="인적성 검사 연습문제 (GSAT·HMAT·NCS 유형) | 좋은 취업" />
+  <meta property="og:url" content="https://jobok.co.kr/aptitude" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHL4KZGH5"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSHL4KZGH5');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -204,31 +207,40 @@ img { max-width: 100%; height: auto; }
   .nav-menu-btn { display: flex; }
 }
 
-.quiz-wrap { max-width: 680px; margin: 0 auto; padding: calc(var(--header-h) + 48px) 0 80px; }
-.quiz-progress { height: 3px; background: var(--gray-200); border-radius: 99px; margin-bottom: 36px; }
-.quiz-progress__bar { height: 100%; background: var(--gold); border-radius: 99px; transition: width 0.3s; }
-.quiz-step { display: none; }
-.quiz-step.active { display: block; }
-.quiz-category { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-.quiz-q { font-size: 1.2rem; font-weight: 700; line-height: 1.5; margin-bottom: 28px; letter-spacing: -0.02em; }
-.quiz-options { display: flex; flex-direction: column; gap: 10px; }
-.quiz-option { padding: 14px 18px; border: 1.5px solid var(--gray-200); border-radius: var(--radius); cursor: pointer; font-size: 0.92rem; transition: all 0.15s; background: var(--white); text-align: left; font-family: inherit; }
-.quiz-option:hover { border-color: var(--gold); background: var(--gold-light); }
-.quiz-option.selected { border-color: var(--gold); background: var(--gold-light); font-weight: 600; }
-.quiz-nav { display: flex; justify-content: space-between; margin-top: 28px; }
-.result-wrap { display: none; }
-.result-wrap.show { display: block; }
-.result-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
-.result-desc { color: var(--text-sub); margin-bottom: 28px; font-weight: 300; }
-.result-bars { margin: 24px 0; }
-.result-bar-item { margin-bottom: 16px; }
-.result-bar-label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px; }
-.result-bar-label strong { font-weight: 700; }
-.result-bar-track { height: 8px; background: var(--gray-100); border-radius: 99px; overflow: hidden; }
-.result-bar-fill { height: 100%; background: var(--gold); border-radius: 99px; transition: width 0.8s ease; }
-.result-weak { background: var(--gold-light); border-left: 3px solid var(--gold); padding: 18px 20px; margin: 24px 0; border-radius: 0 var(--radius) var(--radius) 0; }
-.result-weak__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 6px; }
-.result-weak__text { font-size: 0.95rem; font-weight: 600; }
+.apt-hero { padding: calc(var(--header-h) + 60px) 0 40px; border-bottom:1px solid var(--gray-100); }
+.apt-hero__label { font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px; }
+.apt-hero__title { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:-.035em;margin-bottom:12px;line-height:1.15; }
+.apt-hero__desc { font-size:.95rem;color:var(--text-sub);max-width:520px;line-height:1.85;font-weight:300; }
+.cat-bar { display:flex;gap:8px;flex-wrap:wrap;padding:28px 0 0; }
+.cat-btn { padding:8px 18px;border-radius:99px;border:1.5px solid var(--gray-200);background:var(--white);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .15s;font-family:inherit;color:var(--text-sub); }
+.cat-btn:hover,.cat-btn.active { border-color:var(--gold);background:var(--gold);color:var(--white); }
+.quiz-area { padding:36px 0 40px; }
+.progress { display:flex;align-items:center;justify-content:space-between;margin-bottom:20px; }
+.progress__text { font-size:.82rem;color:var(--text-muted);font-weight:600; }
+.progress__bar { flex:1;height:6px;background:var(--gray-100);border-radius:99px;margin:0 16px;overflow:hidden; }
+.progress__fill { height:100%;background:var(--gold);border-radius:99px;transition:width .3s; }
+.question { background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:32px;margin-bottom:20px; }
+.question__num { display:inline-block;width:32px;height:32px;background:var(--gold);color:var(--white);border-radius:50%;font-size:.85rem;font-weight:700;text-align:center;line-height:32px;margin-bottom:16px; }
+.question__text { font-size:1.05rem;font-weight:600;line-height:1.7;color:var(--black);margin-bottom:24px;white-space:pre-line; }
+.option { display:flex;align-items:center;gap:12px;padding:16px 18px;border:1.5px solid var(--gray-200);border-radius:var(--radius);margin-bottom:10px;cursor:pointer;transition:all .15s;font-size:.92rem; }
+.option:hover { border-color:var(--gold);background:var(--gray-50); }
+.option.selected { border-color:var(--gold);background:var(--gold-light); }
+.option.correct { border-color:#22c55e;background:#e8f5e9; }
+.option.wrong { border-color:#ef4444;background:#fee; }
+.option__marker { flex-shrink:0;width:26px;height:26px;border:1.5px solid var(--gray-300);border-radius:50%;font-size:.78rem;font-weight:700;text-align:center;line-height:24px;color:var(--text-muted); }
+.option.selected .option__marker { border-color:var(--gold);background:var(--gold);color:var(--white); }
+.option.correct .option__marker { border-color:#22c55e;background:#22c55e;color:#fff; }
+.option.wrong .option__marker { border-color:#ef4444;background:#ef4444;color:#fff; }
+.explain { display:none;margin-top:16px;padding:18px;background:var(--gray-50);border-left:3px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0; }
+.explain.show { display:block; }
+.explain__label { font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--gold);margin-bottom:8px; }
+.explain__text { font-size:.88rem;color:var(--text-sub);line-height:1.7;white-space:pre-line; }
+.quiz-nav { display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap; }
+.result-box { display:none;text-align:center;padding:48px 32px;background:var(--black);color:var(--white);border-radius:var(--radius-lg);margin-bottom:24px; }
+.result-box.show { display:block; }
+.result-box__score { font-size:3rem;font-weight:900;color:var(--gold);margin-bottom:8px; }
+.result-box__text { font-size:1rem;color:rgba(255,255,255,.7);margin-bottom:24px; }
+@media(max-width:600px){ .question{padding:24px 20px;} }
   </style>
 </head>
 <body>
@@ -237,9 +249,6 @@ img { max-width: 100%; height: auto; }
     <a href="/" class="site-logo">좋은 취업</a>
     <nav class="site-nav">
       <a href="/diagnosis">무료진단</a>
-      <a href="/consultation">고민상담</a>
-      <a href="/jobs">채용공고</a>
-      <a href="/aptitude">인적성</a>
       <a href="/interview">면접</a>
       <a href="/cover-letter">자소서</a>
       <a href="/company-analysis">기업이해</a>
@@ -251,9 +260,6 @@ img { max-width: 100%; height: auto; }
 </header>
 <div class="mobile-menu" id="mobileMenu">
   <a href="/diagnosis">무료진단</a>
-      <a href="/consultation">고민상담</a>
-      <a href="/jobs">채용공고</a>
-      <a href="/aptitude">인적성</a>
   <a href="/interview">면접</a>
   <a href="/cover-letter">자소서</a>
   <a href="/company-analysis">기업이해</a>
@@ -261,33 +267,42 @@ img { max-width: 100%; height: auto; }
   <a href="https://www.latpeed.com/products/Ge7M-" target="_blank">전자책 구매 · 26,000원</a>
 </div>
 <main>
-<div class="container">
-<div class="quiz-wrap">
-  <div id="quizSection">
-    <div style="margin-bottom:24px;">
-      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">무료 진단</div>
-      <h1 style="font-size:1.8rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:8px;">지금 내 취업 준비 상태는?</h1>
-      <p style="color:var(--text-sub);font-weight:300;">8가지 질문으로 4개 영역을 진단합니다.</p>
+  <div class="container">
+    <div class="apt-hero">
+      <div class="apt-hero__label">인적성 연습문제</div>
+      <h1 class="apt-hero__title">인적성 검사<br/>유형별 연습문제</h1>
+      <p class="apt-hero__desc">대기업 인적성(GSAT·HMAT) 및 공기업 NCS 유형의 연습문제입니다. 풀고 바로 채점하고 해설까지 확인하세요. 전부 무료입니다.</p>
+      <div class="cat-bar" id="catBar"></div>
     </div>
-    <div class="quiz-progress"><div class="quiz-progress__bar" id="progressBar" style="width:12.5%"></div></div>
-    <div id="quizBody"></div>
-    <div class="quiz-nav">
-      <button class="btn btn--outline" id="prevBtn" onclick="prevQ()" style="display:none">← 이전</button>
-      <button class="btn btn--primary" id="nextBtn" onclick="nextQ()">다음 →</button>
+
+    <div class="quiz-area">
+      <div class="progress">
+        <span class="progress__text" id="progressText">1 / 5</span>
+        <div class="progress__bar"><div class="progress__fill" id="progressFill" style="width:20%;"></div></div>
+        <span class="progress__text" id="scoreText">점수: 0</span>
+      </div>
+
+      <div class="result-box" id="resultBox">
+        <div class="result-box__score" id="finalScore">0/5</div>
+        <div class="result-box__text" id="resultMsg">수고하셨습니다!</div>
+        <button class="btn btn--gold" onclick="restartQuiz()">다시 풀기</button>
+      </div>
+
+      <div id="questionContainer"></div>
+
+      <div class="quiz-nav" id="quizNav">
+        <button class="btn btn--outline" id="prevBtn" onclick="prevQuestion()" style="visibility:hidden;">← 이전</button>
+        <button class="btn btn--primary" id="nextBtn" onclick="nextQuestion()">다음 →</button>
+      </div>
     </div>
-  </div>
-  <div class="result-wrap" id="resultWrap">
-    <div class="result-title" id="resultTitle"></div>
-    <div class="result-desc" id="resultDesc"></div>
-    <div class="result-bars" id="resultBars"></div>
-    <div class="result-weak" id="resultWeak"></div>
-    <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap;">
-      <a id="resultLink" href="/" class="btn btn--primary btn--lg">관련 글 보러가기</a>
+
+    <div class="inline-book-cta" style="margin:48px 0 72px;">
+      <div class="inline-book-cta__label">인적성 다음은 자소서</div>
+      <div class="inline-book-cta__title">채용절벽을 뚫는 취업 근육 키우기</div>
+      <div class="inline-book-cta__desc">인적성을 통과해도 자소서와 면접이 남아 있습니다. 합격하는 사람들의 전략을 한 권에 담았습니다.</div>
       <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" class="btn btn--gold btn--lg">전자책 구매 · 26,000원</a>
     </div>
   </div>
-</div>
-</div>
 </main>
 <footer class="footer">
   <div class="container">
@@ -297,16 +312,9 @@ img { max-width: 100%; height: auto; }
         <div class="footer__tagline">취업 준비의 흐름을 잡아주는 콘텐츠 사이트</div>
       </div>
       <nav class="footer__nav">
-        <a href="/">홈</a>
-        <a href="/diagnosis">무료진단</a>
-      <a href="/consultation">고민상담</a>
-      <a href="/jobs">채용공고</a>
-      <a href="/aptitude">인적성</a>
-        <a href="/interview">면접</a>
-        <a href="/cover-letter">자소서</a>
-        <a href="/company-analysis">기업이해</a>
-        <a href="/mind-care">마음관리</a>
-        <a href="https://www.latpeed.com/products/Ge7M-" target="_blank">전자책</a>
+        <a href="/">홈</a><a href="/diagnosis">무료진단</a><a href="/interview">면접</a>
+        <a href="/cover-letter">자소서</a><a href="/company-analysis">기업이해</a>
+        <a href="/mind-care">마음관리</a><a href="https://www.latpeed.com/products/Ge7M-" target="_blank">전자책</a>
       </nav>
     </div>
     <div class="footer__copy">© 2026 좋은 취업 · yuncontest@naver.com</div>
@@ -316,77 +324,113 @@ img { max-width: 100%; height: auto; }
 function toggleMenu(){const m=document.getElementById('mobileMenu');const b=document.getElementById('menuBtn');m.classList.toggle('open');b.textContent=m.classList.contains('open')?'✕ 닫기':'☰ 메뉴';}
 document.addEventListener('click',function(e){const m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!document.getElementById('menuBtn').contains(e.target)){m.classList.remove('open');document.getElementById('menuBtn').textContent='☰ 메뉴';}});
 
-const questions=[
-  {cat:'면접',q:'면접장에서 갑자기 머릿속이 하얘진 경험이 있나요?',opts:['자주 있다','가끔 있다','별로 없다','면접 경험이 없다']},
-  {cat:'면접',q:'면접관의 질문에 STAR 구조(상황-행동-결과)로 답할 수 있나요?',opts:['잘 모른다','알지만 적용이 어렵다','어느 정도 된다','자연스럽게 된다']},
-  {cat:'자소서',q:'지원동기를 쓸 때 회사마다 다르게 쓰고 있나요?',opts:['거의 같은 내용이다','조금씩 바꾼다','꽤 다르게 쓴다','완전히 맞춤으로 쓴다']},
-  {cat:'자소서',q:'자소서에 숫자나 구체적인 성과가 포함되어 있나요?',opts:['거의 없다','1~2개 있다','절반 이상 있다','대부분 있다']},
-  {cat:'기업이해',q:'지원 회사의 최근 1년 뉴스나 사업 방향을 파악하고 있나요?',opts:['잘 모른다','홈페이지 정도만 본다','뉴스까지 찾아본다','DART까지 분석한다']},
-  {cat:'기업이해',q:'채용 공고(JD)에서 핵심 키워드를 뽑아 자소서에 반영하나요?',opts:['그런 방법이 있었나?','알지만 안 한다','가끔 한다','항상 한다']},
-  {cat:'마음관리',q:'불합격 통보를 받으면 보통 어떻게 되나요?',opts:['며칠 동안 아무것도 못 한다','하루 이틀 힘들다','금방 털고 다시 시작한다','크게 영향 없다']},
-  {cat:'마음관리',q:'하루 취업 준비 루틴이 정해져 있나요?',opts:['전혀 없다','대략 있다','어느 정도 있다','철저하게 지킨다']},
-];
+const ALL_PROBLEMS = {"언어논리": [{"q": "다음 중 단어의 관계가 나머지와 다른 것은?", "options": ["의사 : 병원", "교사 : 학교", "요리사 : 주방", "환자 : 치료"], "answer": 3, "explain": "①②③은 모두 '직업 : 일하는 장소'의 관계이지만, ④는 '대상 : 행위'의 관계입니다."}, {"q": "다음 문장의 빈칸에 들어갈 가장 적절한 접속어는?\n\n그는 충분히 준비했다. ___ 결과는 좋지 않았다.", "options": ["그래서", "그러나", "따라서", "게다가"], "answer": 1, "explain": "앞 문장(준비함)과 뒤 문장(결과 나쁨)이 상반되므로 역접 접속어 '그러나'가 적절합니다."}, {"q": "다음 글의 주제로 가장 적절한 것은?\n\n'기술의 발전은 편리함을 가져왔지만, 동시에 인간의 사고 능력을 약화시킬 수 있다. 계산기에 의존하면서 암산 능력이 떨어지는 것이 그 예다.'", "options": ["기술 발전은 무조건 좋다", "기술 발전에는 양면성이 있다", "암산은 중요하지 않다", "계산기를 사용하면 안 된다"], "answer": 1, "explain": "편리함(긍정)과 사고력 약화(부정)를 함께 제시하므로 '양면성'이 주제입니다."}, {"q": "다음 중 맞춤법이 올바른 문장은?", "options": ["그는 일을 잘 할 수 있을 거에요", "내일 뵈요", "어떻게 해야 할지 모르겠어요", "안되요"], "answer": 2, "explain": "①거에요→거예요, ②뵈요→봬요, ④안되요→안 돼요. ③이 올바릅니다."}, {"q": "'설상가상(雪上加霜)'과 의미가 가장 가까운 것은?", "options": ["엎친 데 덮친 격", "고진감래", "전화위복", "유비무환"], "answer": 0, "explain": "설상가상은 눈 위에 서리가 더해진다는 뜻으로 '엎친 데 덮친 격'과 같습니다."}], "수리논리": [{"q": "원가가 8,000원인 상품에 25% 이익을 붙여 정가를 정했다. 정가는 얼마인가?", "options": ["9,000원", "10,000원", "10,500원", "11,000원"], "answer": 1, "explain": "8,000 × 1.25 = 10,000원"}, {"q": "어떤 일을 A 혼자 하면 6일, B 혼자 하면 12일이 걸린다. 둘이 함께 하면 며칠 걸리는가?", "options": ["3일", "4일", "5일", "9일"], "answer": 1, "explain": "하루 작업량: A=1/6, B=1/12, 합=1/4. 따라서 4일 걸립니다."}, {"q": "연속한 세 자연수의 합이 72일 때, 가장 큰 수는?", "options": ["23", "24", "25", "26"], "answer": 2, "explain": "세 수를 x-1, x, x+1로 두면 3x=72, x=24. 가장 큰 수는 25입니다."}, {"q": "정가 20,000원인 상품을 30% 할인하여 판매했다. 판매 가격은?", "options": ["12,000원", "14,000원", "16,000원", "18,000원"], "answer": 1, "explain": "20,000 × 0.7 = 14,000원"}, {"q": "시속 60km로 달리는 자동차가 150km를 가는 데 걸리는 시간은?", "options": ["2시간", "2시간 30분", "3시간", "3시간 30분"], "answer": 1, "explain": "시간 = 거리÷속력 = 150÷60 = 2.5시간 = 2시간 30분"}, {"q": "주머니에 빨간 공 3개, 파란 공 5개가 있다. 공 하나를 꺼낼 때 빨간 공일 확률은?", "options": ["3/8", "5/8", "3/5", "1/2"], "answer": 0, "explain": "전체 8개 중 빨간 공 3개이므로 확률은 3/8입니다."}], "추리": [{"q": "다음 명제가 모두 참일 때 반드시 참인 것은?\n\n• 모든 개발자는 노트북을 쓴다.\n• 어떤 디자이너는 개발자다.", "options": ["모든 디자이너는 노트북을 쓴다", "어떤 디자이너는 노트북을 쓴다", "노트북을 쓰는 사람은 모두 개발자다", "디자이너는 개발자가 아니다"], "answer": 1, "explain": "어떤 디자이너=개발자이고, 모든 개발자는 노트북을 쓰므로, '어떤 디자이너는 노트북을 쓴다'가 참입니다."}, {"q": "다음 수열의 빈칸에 들어갈 숫자는?\n\n2, 6, 12, 20, 30, ( )", "options": ["40", "42", "44", "46"], "answer": 1, "explain": "차이가 4,6,8,10,12로 증가합니다. 30+12=42"}, {"q": "A, B, C, D 네 명이 달리기를 했다. 다음 조건에서 1등은?\n\n• A는 B보다 빠르다\n• C는 A보다 빠르다\n• D는 C보다 느리고 A보다 빠르다", "options": ["A", "B", "C", "D"], "answer": 2, "explain": "C>D>A>B 순서입니다. 1등은 C입니다."}, {"q": "다음 문자열의 규칙에 따라 빈칸에 들어갈 것은?\n\nA, C, F, J, ( )", "options": ["N", "O", "P", "Q"], "answer": 1, "explain": "간격이 2,3,4,5로 증가합니다. J(10번째)+5=O(15번째)"}, {"q": "다음 수열의 빈칸은?\n\n1, 1, 2, 3, 5, 8, ( )", "options": ["11", "12", "13", "14"], "answer": 2, "explain": "피보나치 수열입니다. 앞 두 수의 합: 5+8=13"}], "자료해석": [{"q": "A사의 1분기 매출이 200억, 2분기 매출이 250억이다. 2분기 매출 증가율은?", "options": ["20%", "25%", "30%", "50%"], "answer": 1, "explain": "증가율 = (250-200)/200 × 100 = 25%"}, {"q": "전체 직원 500명 중 60%가 남성이다. 여성 직원은 몇 명인가?", "options": ["150명", "200명", "250명", "300명"], "answer": 1, "explain": "여성 비율 40% × 500 = 200명"}, {"q": "어떤 제품의 작년 판매량이 8,000개, 올해가 10,000개다. 증가율은?", "options": ["20%", "25%", "30%", "125%"], "answer": 1, "explain": "(10,000-8,000)/8,000 × 100 = 25%"}, {"q": "월급 300만원에서 세금 10%, 보험료 5%를 공제하면 실수령액은?", "options": ["240만원", "255만원", "270만원", "285만원"], "answer": 1, "explain": "공제율 15%, 300만 × 0.85 = 255만원"}, {"q": "A상품 점유율 35%, B상품 25%, C상품 20%일 때, 나머지 상품의 점유율 합은?", "options": ["15%", "20%", "25%", "30%"], "answer": 1, "explain": "100 - (35+25+20) = 20%"}]};
+let currentCat = Object.keys(ALL_PROBLEMS)[0];
+let problems = [];
+let currentIdx = 0;
+let answers = [];
+let score = 0;
 
-const catMap={'면접':0,'자소서':1,'기업이해':2,'마음관리':3};
-const catNames=['면접','자소서','기업이해','마음관리'];
-const catLinks=['/interview','/cover-letter','/company-analysis','/mind-care'];
-let cur=0, scores=[0,0,0,0], answers=[];
+// 카테고리 버튼 생성
+const catBar = document.getElementById('catBar');
+Object.keys(ALL_PROBLEMS).forEach((cat, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'cat-btn' + (i===0?' active':'');
+  btn.textContent = cat;
+  btn.onclick = () => selectCategory(cat, btn);
+  catBar.appendChild(btn);
+});
 
-function renderQ(){
-  const q=questions[cur];
-  const pct=((cur+1)/questions.length*100).toFixed(0);
-  document.getElementById('progressBar').style.width=pct+'%';
-  document.getElementById('prevBtn').style.display=cur>0?'':'none';
-  document.getElementById('nextBtn').textContent=cur===questions.length-1?'결과 보기':'다음 →';
-  document.getElementById('quizBody').innerHTML=`
-    <div class="quiz-category">${q.cat} ${catMap[q.cat]+1}/2</div>
-    <div class="quiz-q">${q.q}</div>
-    <div class="quiz-options">${q.opts.map((o,i)=>`<button class="quiz-option${answers[cur]===i?' selected':''}" onclick="select(${i})">${o}</button>`).join('')}</div>
-  `;
+function selectCategory(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentCat = cat;
+  restartQuiz();
 }
 
-function select(i){
-  answers[cur]=i;
-  document.querySelectorAll('.quiz-option').forEach((b,idx)=>b.classList.toggle('selected',idx===i));
+function restartQuiz() {
+  problems = ALL_PROBLEMS[currentCat];
+  currentIdx = 0;
+  answers = new Array(problems.length).fill(null);
+  score = 0;
+  document.getElementById('resultBox').classList.remove('show');
+  document.getElementById('questionContainer').style.display = 'block';
+  document.getElementById('quizNav').style.display = 'flex';
+  document.getElementById('scoreText').textContent = '점수: 0';
+  renderQuestion();
 }
 
-function nextQ(){
-  if(answers[cur]===undefined){alert('항목을 선택해주세요.');return;}
-  if(cur<questions.length-1){cur++;renderQ();}
-  else{showResult();}
+function renderQuestion() {
+  const p = problems[currentIdx];
+  const total = problems.length;
+  document.getElementById('progressText').textContent = `${currentIdx+1} / ${total}`;
+  document.getElementById('progressFill').style.width = `${((currentIdx+1)/total)*100}%`;
+
+  const answered = answers[currentIdx] !== null;
+  const optsHtml = p.options.map((opt, i) => {
+    let cls = 'option';
+    if (answered) {
+      if (i === p.answer) cls += ' correct';
+      else if (i === answers[currentIdx]) cls += ' wrong';
+    } else if (answers[currentIdx] === i) {
+      cls += ' selected';
+    }
+    const marker = ['①','②','③','④','⑤'][i];
+    return `<div class="${cls}" onclick="selectOption(${i})"><span class="option__marker">${marker}</span><span>${opt}</span></div>`;
+  }).join('');
+
+  document.getElementById('questionContainer').innerHTML = `
+    <div class="question">
+      <div class="question__num">${currentIdx+1}</div>
+      <div class="question__text">${p.q}</div>
+      ${optsHtml}
+      <div class="explain ${answered?'show':''}" id="explain">
+        <div class="explain__label">해설</div>
+        <div class="explain__text">${p.explain}</div>
+      </div>
+    </div>`;
+
+  document.getElementById('prevBtn').style.visibility = currentIdx===0 ? 'hidden' : 'visible';
+  document.getElementById('nextBtn').textContent = currentIdx===total-1 ? '결과 보기' : '다음 →';
 }
 
-function prevQ(){if(cur>0){cur--;renderQ();}}
-
-function showResult(){
-  scores=[0,0,0,0];
-  questions.forEach((q,i)=>{scores[catMap[q.cat]]+=answers[i];});
-  const pcts=scores.map(s=>Math.round((s/6)*100));
-  const weakIdx=pcts.indexOf(Math.min(...pcts));
-  const strong=pcts.indexOf(Math.max(...pcts));
-  
-  document.getElementById('quizSection').style.display='none';
-  const rw=document.getElementById('resultWrap');
-  rw.classList.add('show');
-  
-  document.getElementById('resultTitle').textContent='진단 완료!';
-  document.getElementById('resultDesc').textContent=`가장 강한 영역은 ${catNames[strong]}, 가장 약한 영역은 ${catNames[weakIdx]}입니다. 아래에서 자세히 확인하세요.`;
-  
-  document.getElementById('resultBars').innerHTML=catNames.map((name,i)=>`
-    <div class="result-bar-item">
-      <div class="result-bar-label"><strong>${name}</strong><span>${pcts[i]}%</span></div>
-      <div class="result-bar-track"><div class="result-bar-fill" style="width:0%" data-w="${pcts[i]}%"></div></div>
-    </div>
-  `).join('');
-  
-  document.getElementById('resultWeak').innerHTML=`<div class="result-weak__label">가장 약한 영역</div><div class="result-weak__text">${catNames[weakIdx]} — 지금 바로 이 영역부터 보완하세요</div>`;
-  document.getElementById('resultLink').href=catLinks[weakIdx];
-  document.getElementById('resultLink').textContent=catNames[weakIdx]+' 글 보러가기 →';
-  
-  setTimeout(()=>{document.querySelectorAll('.result-bar-fill').forEach(el=>el.style.width=el.dataset.w);},100);
+function selectOption(i) {
+  if (answers[currentIdx] !== null) return; // 이미 답함
+  answers[currentIdx] = i;
+  if (i === problems[currentIdx].answer) score++;
+  document.getElementById('scoreText').textContent = `점수: ${score}`;
+  renderQuestion();
 }
 
-renderQ();
+function nextQuestion() {
+  if (currentIdx < problems.length-1) {
+    currentIdx++;
+    renderQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function prevQuestion() {
+  if (currentIdx > 0) { currentIdx--; renderQuestion(); }
+}
+
+function showResult() {
+  document.getElementById('questionContainer').style.display = 'none';
+  document.getElementById('quizNav').style.display = 'none';
+  const total = problems.length;
+  document.getElementById('finalScore').textContent = `${score}/${total}`;
+  let msg;
+  const pct = score/total;
+  if (pct === 1) msg = '완벽합니다! 인적성 준비가 잘 되어 있어요.';
+  else if (pct >= 0.6) msg = '좋아요! 조금만 더 연습하면 됩니다.';
+  else msg = '연습이 더 필요해요. 해설을 다시 확인해보세요.';
+  document.getElementById('resultMsg').textContent = msg;
+  document.getElementById('resultBox').classList.add('show');
+  document.getElementById('progressFill').style.width = '100%';
+}
+
+restartQuiz();
 </script>
 </body>
 </html>
