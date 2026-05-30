@@ -2,15 +2,17 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>기업 채용 분석 허브 | 좋은 취업</title>
-  <meta name="description" content="삼성전자, 카카오, 현대차, 네이버, 토스 등 주요 기업 채용 분석. 인재상·자소서팁·면접전략·원티드 실시간 공고까지." />
-  <link rel="canonical" href="https://jobok.co.kr/jobs" />
+  <title>삼성전자 채용 준비 완벽 가이드 | 좋은 취업</title>
+  <meta name="description" content="삼성전자 취업 준비 가이드. 인재상, 조직 문화, 자소서 팁, 면접 전략, 현재 채용 공고까지 한 페이지에." />
+  <meta name="keywords" content="삼성전자 취업, 삼성전자 채용, 삼성전자 자소서, 삼성전자 면접 준비" />
+  <link rel="canonical" href="https://jobok.co.kr/company/samsung" />
+  <meta property="og:title" content="삼성전자 채용 준비 완벽 가이드 | 좋은 취업" />
+  <meta property="og:url" content="https://jobok.co.kr/company/samsung" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHL4KZGH5"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSHL4KZGH5');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+  <style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
   --black: #0a0a0a;
@@ -204,54 +206,36 @@ img { max-width: 100%; height: auto; }
   .nav-menu-btn { display: flex; }
 }
 
-.jobs-hero { padding: calc(var(--header-h) + 64px) 0 48px; border-bottom: 1px solid var(--gray-100); }
-.jobs-hero__eyebrow { font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px; }
-.jobs-hero__title { font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;letter-spacing:-.035em;margin-bottom:14px;line-height:1.12; }
-.jobs-hero__desc { font-size:.95rem;color:var(--text-sub);max-width:520px;line-height:1.9;font-weight:300; }
-.jobs-hero__badge { display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:7px 14px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:99px;font-size:.78rem;color:var(--text-muted); }
-.jobs-hero__badge span { width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 1.5s infinite; }
-@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.4;} }
-
-.section-label { font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px; }
-
-/* 기업 카드 그리드 */
-.company-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-200);border:1px solid var(--gray-200);margin:36px 0 64px; }
-.company-card { background:var(--white);padding:28px;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .15s;position:relative; }
-.company-card:hover { background:var(--black);color:var(--white); }
-.company-card:hover .company-card__industry,
-.company-card:hover .company-card__desc,
-.company-card:hover .company-card__prep { color:rgba(255,255,255,.55); }
-.company-card:hover .kw-tag { background:rgba(196,135,26,.15);color:var(--gold);border-color:rgba(196,135,26,.3); }
-.company-card:hover .company-card__arrow { color:var(--gold); }
-.company-card__type { font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px; }
-.company-card__name { font-size:1.25rem;font-weight:900;letter-spacing:-.025em;margin-bottom:2px; }
-.company-card__industry { font-size:.78rem;color:var(--text-muted);margin-bottom:12px;transition:color .15s; }
-.company-card__desc { font-size:.83rem;color:var(--text-sub);line-height:1.7;font-weight:300;margin-bottom:14px;flex:1;transition:color .15s; }
-.company-card__keywords { display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px; }
-.kw-tag { padding:3px 9px;background:var(--gray-50);color:var(--text-muted);font-size:.7rem;font-weight:600;border-radius:4px;border:1px solid var(--gray-200);transition:all .15s; }
-.company-card__footer { display:flex;align-items:center;justify-content:space-between; }
-.company-card__prep { font-size:.75rem;color:var(--text-muted);transition:color .15s; }
-.company-card__arrow { font-size:.9rem;color:var(--text-muted);transition:color .15s; }
-
-/* 원티드 실시간 공고 */
-.live-section { padding:0 0 72px; }
-.live-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px; }
-.live-title { font-size:1.3rem;font-weight:800;letter-spacing:-.025em; }
-.live-count { font-size:.82rem;color:var(--text-muted); }
-.live-grid { display:grid;grid-template-columns:1fr;gap:1px;background:var(--gray-200);border:1px solid var(--gray-200); }
-.live-item { background:var(--white);padding:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:background .12s; }
-.live-item:hover { background:var(--gray-50); }
-.live-item__info { flex:1;min-width:0; }
-.live-item__company { font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px; }
-.live-item__title { font-size:.92rem;font-weight:600;color:var(--black);white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
-.live-item__due { font-size:.75rem;color:var(--text-muted);margin-top:3px; }
-.live-item__badge { flex-shrink:0;padding:4px 10px;background:#e8f5e9;color:#2e7d32;font-size:.7rem;font-weight:700;border-radius:4px; }
-.filter-bar { display:flex;gap:8px;flex-wrap:wrap;padding:28px 0 0; }
-.filter-btn { padding:7px 16px;border-radius:99px;border:1.5px solid var(--gray-200);background:var(--white);font-size:.82rem;font-weight:600;cursor:pointer;transition:all .15s;font-family:inherit;color:var(--text-sub); }
-.filter-btn:hover,.filter-btn.active { border-color:var(--gold);background:var(--gold);color:var(--white); }
-@media(max-width:760px){ .company-grid{grid-template-columns:1fr;} }
-@media(max-width:500px){ .company-grid{grid-template-columns:1fr;} }
-  </style>
+.company-hero { padding: calc(var(--header-h) + 60px) 0 48px; border-bottom: 1px solid var(--gray-100); }
+.company-hero__type { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+.company-hero__name { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 900; letter-spacing: -0.04em; margin-bottom: 6px; }
+.company-hero__eng { font-family: "Instrument Sans", sans-serif; font-size: 1rem; color: var(--text-muted); margin-bottom: 16px; font-weight: 400; }
+.company-hero__desc { font-size: 0.95rem; color: var(--text-sub); max-width: 560px; line-height: 1.85; font-weight: 300; margin-bottom: 20px; }
+.company-stats { display: flex; gap: 28px; flex-wrap: wrap; padding: 20px 0; border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); margin-bottom: 32px; }
+.company-stat__label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+.company-stat__value { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+.analysis-section { padding: 48px 0; border-bottom: 1px solid var(--gray-100); }
+.analysis-section__label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.analysis-section__title { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 20px; }
+.info-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.info-card { background: var(--gray-50); padding: 20px; border-radius: var(--radius); }
+.info-card__label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; }
+.info-card__text { font-size: 0.88rem; color: var(--text-sub); line-height: 1.8; font-weight: 300; }
+.keyword-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.keyword-pill { padding: 5px 12px; background: var(--gold-light); color: var(--gold); font-size: 0.78rem; font-weight: 600; border-radius: 99px; border: 1px solid #f0d5a0; }
+.tip-box { background: var(--black); color: var(--white); padding: 28px; border-radius: var(--radius-lg); margin-top: 12px; }
+.tip-box__label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 10px; }
+.tip-box__text { font-size: 0.92rem; line-height: 1.9; color: rgba(255,255,255,0.8); font-weight: 300; }
+.jobs-live { padding: 48px 0 80px; }
+.jobs-live__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+.jobs-live__count { font-size: 0.82rem; color: var(--text-muted); }
+.live-job { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--gray-100); }
+.live-job:first-child { border-top: 1px solid var(--gray-100); }
+.live-job__title { font-size: 0.95rem; font-weight: 600; color: var(--black); margin-bottom: 3px; }
+.live-job__meta { font-size: 0.78rem; color: var(--text-muted); }
+.live-job__badge { flex-shrink: 0; padding: 4px 10px; background: #e8f5e9; color: #2e7d32; font-size: 0.72rem; font-weight: 700; border-radius: 4px; }
+@media (max-width: 600px) { .info-cards { grid-template-columns: 1fr; } .company-stats { gap: 18px; } }
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -278,117 +262,84 @@ img { max-width: 100%; height: auto; }
 </div>
 <main>
   <div class="container">
+    <nav class="breadcrumb" style="padding-top:calc(var(--header-h) + 16px);">
+      <a href="/">홈</a><span>›</span><a href="/jobs">채용공고</a><span>›</span>삼성전자
+    </nav>
 
-    <div class="jobs-hero">
-      <div class="jobs-hero__eyebrow">채용 & 기업 분석</div>
-      <h1 class="jobs-hero__title">공고만 보지 말고<br/>분석하고 지원하세요</h1>
-      <p class="jobs-hero__desc">주요 기업의 인재상·조직 문화·자소서 팁·면접 전략을 정리했습니다. 원티드 실시간 공고와 함께 확인하세요.</p>
-      <div class="jobs-hero__badge"><span></span>원티드 공고 매일 자동 업데이트</div>
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">전체</button>
-        <button class="filter-btn" data-filter="대기업">대기업</button>
-        <button class="filter-btn" data-filter="스타트업">스타트업</button>
+    <div class="company-hero">
+      <div class="company-hero__type">대기업 · 전자·반도체</div>
+      <h1 class="company-hero__name">삼성전자</h1>
+      <div class="company-hero__eng">Samsung Electronics</div>
+      <p class="company-hero__desc">세계 최대 메모리 반도체·스마트폰 제조사. DS(반도체), DX(스마트폰·가전), Harman 3개 부문.</p>
+      <a href="https://www.samsung.com/sec/careers/" target="_blank" class="btn btn--primary">공식 채용 페이지 바로가기 →</a>
+    </div>
+
+    <div class="company-stats">
+      <div><div class="company-stat__label">규모</div><div class="company-stat__value">직원 수 약 27만 명 (국내 10만+)</div></div>
+      <div><div class="company-stat__label">매출</div><div class="company-stat__value">매출 약 300조 원 (2024)</div></div>
+      <div><div class="company-stat__label">미래 방향</div><div class="company-stat__value">2030 반도체 비전, 전장·AI·로봇 미래 투자 집중</div></div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="analysis-section__label">기업 분석</div>
+      <h2 class="analysis-section__title">삼성전자이 원하는 사람</h2>
+      <div class="info-cards">
+        <div class="info-card"><div class="info-card__label">인재상</div><div class="info-card__text">GSAT 통과가 기본. 직무 이해도 + 글로벌 역량. 전공 지식 깊이.</div></div>
+        <div class="info-card"><div class="info-card__label">조직 문화</div><div class="info-card__text">성과 중심, 글로벌 협업, 수직적이나 개선 중. '삼성인'이라는 강한 소속감.</div></div>
+      </div>
+      <div style="margin-top:16px;">
+        <div class="info-card__label">JD 핵심 키워드</div>
+        <div class="keyword-list"><span class="keyword-pill">반도체</span><span class="keyword-pill">글로벌 마케팅</span><span class="keyword-pill">데이터 분석</span><span class="keyword-pill">전동화</span><span class="keyword-pill">AI</span><span class="keyword-pill">B2B</span></div>
       </div>
     </div>
 
-    <!-- 기업별 분석 카드 -->
-    <div style="padding-top:48px;">
-      <div class="section-label">기업 분석</div>
-      <div style="font-size:1.3rem;font-weight:800;letter-spacing:-.025em;margin-bottom:4px;">기업을 클릭해 상세 분석 보기</div>
-      <div style="font-size:.85rem;color:var(--text-muted);margin-bottom:0;">인재상 · 조직문화 · 자소서팁 · 면접전략 · 현재 공고</div>
+    <div class="analysis-section">
+      <div class="analysis-section__label">합격 전략</div>
+      <h2 class="analysis-section__title">자소서 · 면접 핵심 전략</h2>
+      <div class="tip-box">
+        <div class="tip-box__label">자소서 전략</div>
+        <div class="tip-box__text">삼성의 최근 사업 발표(HBM, 파운드리, AI 반도체)를 파악하고 직무와 연결하세요. JD 키워드를 자소서에 자연스럽게 녹이세요. AI 필터를 의식한 키워드 배치가 중요합니다.</div>
+      </div>
+      <div class="tip-box" style="margin-top:10px;">
+        <div class="tip-box__label">면접 전략</div>
+        <div class="tip-box__text">직무 기술 면접 비중이 높습니다. 자소서 경험에 대한 구체적 후속 질문 준비. 압박 질문 대비.</div>
+      </div>
+      <div style="background:var(--gold-light);border-left:3px solid var(--gold);padding:16px 20px;margin-top:10px;border-radius:0 var(--radius) var(--radius) 0;">
+        <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;color:var(--gold);margin-bottom:6px;">전형 준비</div>
+        <div style="font-size:0.88rem;color:var(--text-sub);line-height:1.8;font-weight:300;">GSAT 인적성 필수 (언어·수리·추리·시각적사고). 직무 기술서 기반 전공 공부.</div>
+      </div>
     </div>
 
-    <div class="company-grid" id="companyGrid">
-
-      <a href="/company/samsung" class="company-card" data-type="대기업">
-        <div class="company-card__type">대기업 · 전자·반도체</div>
-        <div class="company-card__name">삼성전자</div>
-        <div class="company-card__industry">Samsung</div>
-        <p class="company-card__desc">세계 최대 메모리 반도체·스마트폰 제조사</p>
-        <div class="company-card__keywords"><span class="kw-tag">반도체</span><span class="kw-tag">AI</span><span class="kw-tag">글로벌</span><span class="kw-tag">B2B</span></div>
-        <div class="company-card__footer">
-          <span class="company-card__prep">📋 GSAT 필수</span>
-          <span class="company-card__arrow">→</span>
-        </div>
-      </a>
-      <a href="/company/kakao" class="company-card" data-type="대기업">
-        <div class="company-card__type">대기업 · IT·플랫폼</div>
-        <div class="company-card__name">카카오</div>
-        <div class="company-card__industry">Kakao</div>
-        <p class="company-card__desc">국내 최대 메신저·플랫폼 기업</p>
-        <div class="company-card__keywords"><span class="kw-tag">데이터분석</span><span class="kw-tag">UX</span><span class="kw-tag">SQL</span><span class="kw-tag">A/B테스트</span></div>
-        <div class="company-card__footer">
-          <span class="company-card__prep">📋 포트폴리오 필수</span>
-          <span class="company-card__arrow">→</span>
-        </div>
-      </a>
-      <a href="/company/hyundai" class="company-card" data-type="대기업">
-        <div class="company-card__type">대기업 · 자동차·모빌리티</div>
-        <div class="company-card__name">현대자동차</div>
-        <div class="company-card__industry">Hyundai Motor</div>
-        <p class="company-card__desc">국내 1위·글로벌 3위 자동차 그룹. SDV 전환 중</p>
-        <div class="company-card__keywords"><span class="kw-tag">전동화</span><span class="kw-tag">SDV</span><span class="kw-tag">모빌리티</span><span class="kw-tag">글로벌</span></div>
-        <div class="company-card__footer">
-          <span class="company-card__prep">📋 HMAT 필수</span>
-          <span class="company-card__arrow">→</span>
-        </div>
-      </a>
-      <a href="/company/lg" class="company-card" data-type="대기업">
-        <div class="company-card__type">대기업 · 전자·가전</div>
-        <div class="company-card__name">LG전자</div>
-        <div class="company-card__industry">LG Electronics</div>
-        <p class="company-card__desc">글로벌 가전·B2B 솔루션 기업</p>
-        <div class="company-card__keywords"><span class="kw-tag">고객경험</span><span class="kw-tag">스마트홈</span><span class="kw-tag">전장</span><span class="kw-tag">B2B</span></div>
-        <div class="company-card__footer">
-          <span class="company-card__prep">📋 LG Way 숙지</span>
-          <span class="company-card__arrow">→</span>
-        </div>
-      </a>
-      <a href="/company/naver" class="company-card" data-type="대기업">
-        <div class="company-card__type">대기업 · IT·플랫폼</div>
-        <div class="company-card__name">네이버</div>
-        <div class="company-card__industry">NAVER</div>
-        <p class="company-card__desc">국내 최대 검색·광고·클라우드 플랫폼</p>
-        <div class="company-card__keywords"><span class="kw-tag">AI</span><span class="kw-tag">검색</span><span class="kw-tag">클라우드</span><span class="kw-tag">광고</span></div>
-        <div class="company-card__footer">
-          <span class="company-card__prep">📋 코딩테스트/포트폴리오</span>
-          <span class="company-card__arrow">→</span>
-        </div>
-      </a>
-      <a href="/company/toss" class="company-card" data-type="스타트업">
-        <div class="company-card__type">스타트업 · 핀테크</div>
-        <div class="company-card__name">토스</div>
-        <div class="company-card__industry">Toss</div>
-        <p class="company-card__desc">국내 1위 핀테크 슈퍼앱</p>
-        <div class="company-card__keywords"><span class="kw-tag">UX</span><span class="kw-tag">핀테크</span><span class="kw-tag">데이터</span><span class="kw-tag">성장지표</span></div>
-        <div class="company-card__footer">
-          <span class="company-card__prep">📋 포트폴리오 필수</span>
-          <span class="company-card__arrow">→</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- 원티드 실시간 공고 -->
-    <div class="live-section">
-      <div class="live-header">
+    <div class="jobs-live">
+      <div class="jobs-live__header">
         <div>
-          <div class="section-label">실시간 채용</div>
-          <div class="live-title">원티드 최신 공고</div>
+          <div class="analysis-section__label">채용 공고</div>
+          <h2 class="analysis-section__title" style="margin-bottom:0;">삼성전자 현재 채용 중인 포지션</h2>
         </div>
-        <div class="live-count" id="liveCount"></div>
+        <div class="jobs-live__count" id="jobCount">로딩 중...</div>
       </div>
-      <div class="live-grid" id="liveGrid">
-        <div style="padding:40px;text-align:center;background:var(--white);color:var(--text-muted);font-size:.9rem;">공고를 불러오는 중...</div>
+      <div id="liveJobs">
+        <div style="padding:40px 0;text-align:center;color:var(--text-muted);font-size:0.9rem;">공고를 불러오는 중입니다...</div>
       </div>
-      <div style="margin-top:12px;font-size:.78rem;color:var(--text-muted);">📌 공고 마감일은 변경될 수 있습니다. 지원 전 공식 채용 페이지에서 확인하세요.</div>
+      <div style="margin-top:20px;text-align:center;">
+        <a href="https://www.samsung.com/sec/careers/" target="_blank" class="btn btn--outline">공식 채용 페이지에서 전체 공고 보기</a>
+      </div>
     </div>
 
-    <div style="margin-bottom:72px;"><div class="inline-book-cta">
+    <div class="analysis-section" style="border-top:1px solid var(--gray-100);">
+      <div class="analysis-section__label">관련 글</div>
+      <h2 class="analysis-section__title">삼성전자 지원 전에 읽어야 할 글</h2>
+      <div class="post-list"><a href="/blog/conglomerate-cover-letter" class="post-item fade-up" style="display:grid;grid-template-columns:1fr;padding:16px 0;border-bottom:1px solid var(--gray-100);"><div><div class="post-item__cat">관련 글</div><div class="post-item__title">대기업 자소서 쓰는 법</div></div></a><a href="/blog/cover-letter-hr-position" class="post-item fade-up" style="display:grid;grid-template-columns:1fr;padding:16px 0;border-bottom:1px solid var(--gray-100);"><div><div class="post-item__cat">관련 글</div><div class="post-item__title">인사담당자가 말하는 자소서 합격 기준</div></div></a><a href="/blog/interview-common-questions" class="post-item fade-up" style="display:grid;grid-template-columns:1fr;padding:16px 0;border-bottom:1px solid var(--gray-100);"><div><div class="post-item__cat">관련 글</div><div class="post-item__title">면접 자주 나오는 질문 50개</div></div></a></div>
+    </div>
+
+    <div style="margin:48px 0 80px;">
+      <div class="inline-book-cta">
   <div class="inline-book-cta__label">전자책</div>
   <div class="inline-book-cta__title">더 체계적으로 준비하고 싶다면</div>
   <div class="inline-book-cta__desc">채용절벽을 뚫는 취업 근육 키우기 — 전략 수립부터 자소서 재구성, 면접 답변 구조까지. 워크시트·체크리스트·채용 세미나 무료 초대 포함.</div>
   <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" class="btn btn--gold btn--lg">전자책 구매 · 26,000원</a>
-</div></div>
+</div>
+    </div>
   </div>
 </main>
 <footer class="footer">
@@ -411,33 +362,14 @@ img { max-width: 100%; height: auto; }
 function toggleMenu(){const m=document.getElementById('mobileMenu');const b=document.getElementById('menuBtn');m.classList.toggle('open');b.textContent=m.classList.contains('open')?'✕ 닫기':'☰ 메뉴';}
 document.addEventListener('click',function(e){const m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!document.getElementById('menuBtn').contains(e.target)){m.classList.remove('open');document.getElementById('menuBtn').textContent='☰ 메뉴';}});
 
-// 기업 필터
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.filter;
-    document.querySelectorAll('.company-card').forEach(c=>{
-      c.style.display=(f==='all'||c.dataset.type===f)?'flex':'none';
-    });
-  });
-});
-
-// 원티드 공고는 서버에서 pre-rendered (GitHub Actions 자동 업데이트)
-// 아래는 정적으로 넣어둔 공고 데이터
-const STATIC_JOBS = [{"company": "랩씨드", "title": "AI Data Engineer", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365171"}, {"company": "번개장터", "title": "Growth Marketer", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365167"}, {"company": "오렌지스퀘어", "title": "프로덕트 디자이너", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365166"}, {"company": "플리토", "title": "공시/IR 담당 (7년 이상)", "due": "06.07 마감", "url": "https://www.wanted.co.kr/wd/365165"}, {"company": "더스윙", "title": "글로벌 소싱 (Junior)", "due": "06.30 마감", "url": "https://www.wanted.co.kr/wd/365162"}, {"company": "벳칭", "title": "[영업] 현장 가동 매니저", "due": "06.26 마감", "url": "https://www.wanted.co.kr/wd/365158"}, {"company": "더스윙", "title": "[SWING BIKE] 출고·운영 매니저", "due": "06.30 마감", "url": "https://www.wanted.co.kr/wd/365156"}, {"company": "더스윙", "title": "채권 추심 담당자 (5-10년)", "due": "06.30 마감", "url": "https://www.wanted.co.kr/wd/365154"}, {"company": "더스윙", "title": "재무회계 담당자 (Finance Owner)", "due": "06.30 마감", "url": "https://www.wanted.co.kr/wd/365152"}, {"company": "더스윙", "title": "Growth Marketer (D2C)", "due": "06.30 마감", "url": "https://www.wanted.co.kr/wd/365150"}, {"company": "고위드", "title": "[핀테크] Product Manager (PM)", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365147"}, {"company": "코넥티브", "title": "로봇제어 알고리즘 개발자(대구 지사 근무)", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365140"}, {"company": "솔리다리테(SolidariteInc.)", "title": "[Product팀] 프로덕트 디자이너(UI/UX) (신입-3년)", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365139"}, {"company": "온누리스토어", "title": "기초 화장품 브랜드 상품 개발 팀장", "due": "06.28 마감", "url": "https://www.wanted.co.kr/wd/365136"}, {"company": "코넥티브", "title": "정부과제/연구과제 관리 행정 (대구 지사 근무)", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365134"}, {"company": "스위치원", "title": "[인턴] DA | 데이터 애널리스트 인턴", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365131"}, {"company": "하이브(HYBE)", "title": "[HYBE] 비자 운영/지원", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365129"}, {"company": "하이브(HYBE)", "title": "[HYBE] 총무(복리후생 운영/관리)", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365127"}, {"company": "웰트(WELT)", "title": "재무/회계 담당", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365125"}, {"company": "하이브(HYBE)", "title": "[HYBE] 브랜드공간경험 기획/운영", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365124"}, {"company": "페이히어", "title": "서버 엔지니어 (Kotlin/Spring)", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365123"}, {"company": "아마고", "title": "풀스택 개발자 (AI 활용)", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365122"}, {"company": "하이브(HYBE)", "title": "[HYBE] Chairman Creative Staff", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365121"}, {"company": "라이너(Liner)", "title": "Business Development Manager (Sales)", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365120"}, {"company": "메디쿼터스", "title": "[웰니스:락티브(LACTIV)] 콘텐츠마케터", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365119"}, {"company": "임프리메드코리아", "title": "[인공지능 정밀의료 스타트업] 품질/인허가 책임매니저", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365118"}, {"company": "크럭스데이타", "title": "금융IT 솔루션 풀스택 개발자", "due": "06.26 마감", "url": "https://www.wanted.co.kr/wd/365117"}, {"company": "듀오톤", "title": "경영지원 (3년 이상)", "due": "07.31 마감", "url": "https://www.wanted.co.kr/wd/365116"}, {"company": "코너", "title": "모바일 앱 기획자", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365115"}, {"company": "부스터스", "title": "[Branden] 브랜드 디자이너", "due": "상시채용", "url": "https://www.wanted.co.kr/wd/365114"}];
-if(STATIC_JOBS && STATIC_JOBS.length>0){
-  document.getElementById('liveCount').textContent=`총 ${STATIC_JOBS.length}개 공고`;
-  document.getElementById('liveGrid').innerHTML=STATIC_JOBS.map(j=>`
-    <a href="${j.url}" target="_blank" class="live-item" style="text-decoration:none;">
-      <div class="live-item__info">
-        <div class="live-item__company">${j.company}</div>
-        <div class="live-item__title">${j.title}</div>
-        <div class="live-item__due">⏰ ${j.due}</div>
-      </div>
-      <span class="live-item__badge">채용중</span>
-    </a>`).join('');
-}
+// 원티드 API로 실시간 공고 로드 (JSONP 방식 아니면 서버에서)
+// 공고는 정적으로 jobs.html에서 관리
+document.getElementById('liveJobs').innerHTML = `
+  <div style="padding:24px;background:var(--gray-50);border-radius:var(--radius);text-align:center;">
+    <p style="font-size:0.9rem;color:var(--text-sub);margin-bottom:12px;">최신 공고는 공식 채용 페이지에서 확인하세요</p>
+    <a href="https://www.samsung.com/sec/careers/" target="_blank" class="btn btn--gold">공식 채용 페이지 →</a>
+  </div>`;
+document.getElementById('jobCount').textContent = '';
 </script>
 </body>
 </html>
