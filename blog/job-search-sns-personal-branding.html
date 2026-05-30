@@ -208,6 +208,10 @@ img { max-width: 100%; height: auto; }
   .site-nav a:not(.nav-book):not(.nav-menu-btn) { display: none; }
   .nav-menu-btn { display: flex; }
 }
+
+.hub-banner { background: var(--gold-light); border: 1px solid #f0d5a0; border-radius: var(--radius-lg); padding: 22px 24px; margin: 32px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.hub-banner__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 6px; text-transform: uppercase; }
+.hub-banner__title { font-size: 1rem; font-weight: 700; color: var(--black); line-height: 1.4; }
 </style>
 </head>
 <body>
@@ -277,6 +281,13 @@ img { max-width: 100%; height: auto; }
 
 <h2>시작하기 가장 쉬운 것</h2>
 <p>오늘 링크드인 프로필 헤드라인 하나만 바꿔도 됩니다. 5분이면 됩니다. 브랜딩은 거창한 것이 아니라 작은 것을 꾸준히 하는 것입니다.</p>
+<div class="hub-banner">
+  <div>
+    <div class="hub-banner__label">기업 분석</div>
+    <div class="hub-banner__title">삼성·카카오·현대 등 주요 기업 채용 분석 보기</div>
+  </div>
+  <a href="/jobs" class="btn btn--gold">바로가기 →</a>
+</div>
 <div class="related-posts">관련 글 → <a href="/blog/job-search-sns-strategy" style="color:var(--gold);font-weight:600;">취업 준비 SNS 활용법</a> · <a href="/blog/portfolio-guide" style="color:var(--gold);font-weight:600;">취업 포트폴리오 만드는 법</a> · <a href="/blog/job-search-network" style="color:var(--gold);font-weight:600;">취업 네트워킹 방법</a></div>
 <div class="inline-book-cta">
   <div class="inline-book-cta__label">전자책</div>
