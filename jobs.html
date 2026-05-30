@@ -2,9 +2,9 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>취업 준비 무료 진단 | 좋은 취업</title>
-  <meta name="description" content="지금 내 취업 준비 상태를 5분 만에 진단하세요. 면접, 자소서, 기업이해, 마음관리 4가지 영역 중 어디가 약한지 확인하고 맞춤 콘텐츠를 추천받으세요." />
-  <link rel="canonical" href="https://jobok.co.kr/diagnosis" />
+  <title>기업 채용 공고 & 분석 | 좋은 취업</title>
+  <meta name="description" content="주요 기업 채용 공고와 기업 분석을 함께 제공합니다. 어떤 역량을 원하는지, 어떻게 준비해야 하는지 한눈에 확인하세요." />
+  <link rel="canonical" href="https://jobok.co.kr/jobs" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHL4KZGH5"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSHL4KZGH5');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -204,31 +204,47 @@ img { max-width: 100%; height: auto; }
   .nav-menu-btn { display: flex; }
 }
 
-.quiz-wrap { max-width: 680px; margin: 0 auto; padding: calc(var(--header-h) + 48px) 0 80px; }
-.quiz-progress { height: 3px; background: var(--gray-200); border-radius: 99px; margin-bottom: 36px; }
-.quiz-progress__bar { height: 100%; background: var(--gold); border-radius: 99px; transition: width 0.3s; }
-.quiz-step { display: none; }
-.quiz-step.active { display: block; }
-.quiz-category { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-.quiz-q { font-size: 1.2rem; font-weight: 700; line-height: 1.5; margin-bottom: 28px; letter-spacing: -0.02em; }
-.quiz-options { display: flex; flex-direction: column; gap: 10px; }
-.quiz-option { padding: 14px 18px; border: 1.5px solid var(--gray-200); border-radius: var(--radius); cursor: pointer; font-size: 0.92rem; transition: all 0.15s; background: var(--white); text-align: left; font-family: inherit; }
-.quiz-option:hover { border-color: var(--gold); background: var(--gold-light); }
-.quiz-option.selected { border-color: var(--gold); background: var(--gold-light); font-weight: 600; }
-.quiz-nav { display: flex; justify-content: space-between; margin-top: 28px; }
-.result-wrap { display: none; }
-.result-wrap.show { display: block; }
-.result-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
-.result-desc { color: var(--text-sub); margin-bottom: 28px; font-weight: 300; }
-.result-bars { margin: 24px 0; }
-.result-bar-item { margin-bottom: 16px; }
-.result-bar-label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px; }
-.result-bar-label strong { font-weight: 700; }
-.result-bar-track { height: 8px; background: var(--gray-100); border-radius: 99px; overflow: hidden; }
-.result-bar-fill { height: 100%; background: var(--gold); border-radius: 99px; transition: width 0.8s ease; }
-.result-weak { background: var(--gold-light); border-left: 3px solid var(--gold); padding: 18px 20px; margin: 24px 0; border-radius: 0 var(--radius) var(--radius) 0; }
-.result-weak__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 6px; }
-.result-weak__text { font-size: 0.95rem; font-weight: 600; }
+
+.jobs-hero { padding: calc(var(--header-h) + 60px) 0 44px; border-bottom: 1px solid var(--gray-100); }
+.jobs-hero__label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+.jobs-hero__title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.035em; margin-bottom: 12px; line-height: 1.15; }
+.jobs-hero__desc { font-size: 0.95rem; color: var(--text-sub); max-width: 520px; line-height: 1.85; font-weight: 300; }
+.jobs-hero__notice { margin-top: 16px; font-size: 0.8rem; color: var(--text-muted); background: var(--gray-50); border-left: 3px solid var(--gray-200); padding: 10px 14px; }
+
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; padding: 28px 0 0; }
+.filter-btn { padding: 7px 16px; border-radius: 99px; border: 1.5px solid var(--gray-200); background: var(--white); font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.15s; font-family: inherit; color: var(--text-sub); }
+.filter-btn:hover, .filter-btn.active { border-color: var(--gold); background: var(--gold); color: var(--white); }
+
+.jobs-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--gray-200); margin: 36px 0 60px; border: 1px solid var(--gray-200); }
+.job-card { background: var(--white); padding: 28px; transition: all 0.15s; cursor: pointer; }
+.job-card:hover { background: var(--gray-50); }
+.job-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.job-card__info { flex: 1; }
+.job-card__company { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+.job-card__title { font-size: 1.05rem; font-weight: 700; color: var(--black); margin-bottom: 4px; line-height: 1.4; }
+.job-card__meta { display: flex; gap: 10px; flex-wrap: wrap; font-size: 0.78rem; color: var(--text-muted); }
+.job-card__badge { flex-shrink: 0; padding: 4px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; }
+.badge--open { background: #e8f5e9; color: #2e7d32; }
+.badge--soon { background: #fff3e0; color: #e65100; }
+.badge--closed { background: var(--gray-100); color: var(--text-muted); }
+
+.job-card__analysis { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--gray-100); display: none; }
+.job-card.expanded .job-card__analysis { display: block; }
+.job-card__analysis-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.analysis-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px; }
+.analysis-item { background: var(--gray-50); padding: 14px; border-radius: var(--radius); }
+.analysis-item__label { font-size: 0.68rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; letter-spacing: 0.05em; }
+.analysis-item__text { font-size: 0.85rem; color: var(--text-sub); line-height: 1.6; font-weight: 300; }
+.analysis-item__text strong { color: var(--text); font-weight: 700; }
+.job-card__keywords { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.keyword-tag { padding: 4px 10px; background: var(--gold-light); color: var(--gold); font-size: 0.75rem; font-weight: 600; border-radius: 4px; border: 1px solid #f0d5a0; }
+.job-card__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.job-card__expand-btn { font-size: 0.82rem; color: var(--gold); font-weight: 600; cursor: pointer; background: none; border: none; font-family: inherit; padding: 0; }
+
+@media (max-width: 600px) {
+  .analysis-grid { grid-template-columns: 1fr; }
+  .job-card__top { flex-direction: column; }
+}
   </style>
 </head>
 <body>
@@ -237,8 +253,6 @@ img { max-width: 100%; height: auto; }
     <a href="/" class="site-logo">좋은 취업</a>
     <nav class="site-nav">
       <a href="/diagnosis">무료진단</a>
-      <a href="/consultation">고민상담</a>
-      <a href="/jobs">채용공고</a>
       <a href="/interview">면접</a>
       <a href="/cover-letter">자소서</a>
       <a href="/company-analysis">기업이해</a>
@@ -250,8 +264,6 @@ img { max-width: 100%; height: auto; }
 </header>
 <div class="mobile-menu" id="mobileMenu">
   <a href="/diagnosis">무료진단</a>
-      <a href="/consultation">고민상담</a>
-      <a href="/jobs">채용공고</a>
   <a href="/interview">면접</a>
   <a href="/cover-letter">자소서</a>
   <a href="/company-analysis">기업이해</a>
@@ -259,33 +271,30 @@ img { max-width: 100%; height: auto; }
   <a href="https://www.latpeed.com/products/Ge7M-" target="_blank">전자책 구매 · 26,000원</a>
 </div>
 <main>
-<div class="container">
-<div class="quiz-wrap">
-  <div id="quizSection">
-    <div style="margin-bottom:24px;">
-      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">무료 진단</div>
-      <h1 style="font-size:1.8rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:8px;">지금 내 취업 준비 상태는?</h1>
-      <p style="color:var(--text-sub);font-weight:300;">8가지 질문으로 4개 영역을 진단합니다.</p>
+  <div class="container">
+    <div class="jobs-hero">
+      <div class="jobs-hero__label">채용 공고 & 기업 분석</div>
+      <h1 class="jobs-hero__title">공고만 보지 말고<br/>분석하고 지원하세요</h1>
+      <p class="jobs-hero__desc">주요 기업 채용 공고와 함께 — 어떤 역량을 원하는지, JD 키워드가 무엇인지, 어떻게 준비해야 하는지를 함께 정리했습니다.</p>
+      <div class="jobs-hero__notice">📌 공고 마감일은 변경될 수 있습니다. 지원 전 반드시 공식 채용 페이지에서 확인하세요.</div>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="대기업">대기업</button>
+        <button class="filter-btn" data-filter="공기업">공기업</button>
+        <button class="filter-btn" data-filter="중견기업">중견기업</button>
+        <button class="filter-btn" data-filter="스타트업">스타트업</button>
+      </div>
     </div>
-    <div class="quiz-progress"><div class="quiz-progress__bar" id="progressBar" style="width:12.5%"></div></div>
-    <div id="quizBody"></div>
-    <div class="quiz-nav">
-      <button class="btn btn--outline" id="prevBtn" onclick="prevQ()" style="display:none">← 이전</button>
-      <button class="btn btn--primary" id="nextBtn" onclick="nextQ()">다음 →</button>
-    </div>
-  </div>
-  <div class="result-wrap" id="resultWrap">
-    <div class="result-title" id="resultTitle"></div>
-    <div class="result-desc" id="resultDesc"></div>
-    <div class="result-bars" id="resultBars"></div>
-    <div class="result-weak" id="resultWeak"></div>
-    <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap;">
-      <a id="resultLink" href="/" class="btn btn--primary btn--lg">관련 글 보러가기</a>
+
+    <div class="jobs-grid" id="jobsGrid"></div>
+
+    <div class="inline-book-cta" style="margin-bottom:60px;">
+      <div class="inline-book-cta__label">합격 전략</div>
+      <div class="inline-book-cta__title">채용절벽을 뚫는 취업 근육 키우기</div>
+      <div class="inline-book-cta__desc">기업 분석을 마쳤다면 이제 자소서와 면접을 준비할 차례입니다. 합격하는 사람들이 쓰는 전략을 한 권에 담았습니다.</div>
       <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" class="btn btn--gold btn--lg">전자책 구매 · 26,000원</a>
     </div>
   </div>
-</div>
-</div>
 </main>
 <footer class="footer">
   <div class="container">
@@ -295,95 +304,194 @@ img { max-width: 100%; height: auto; }
         <div class="footer__tagline">취업 준비의 흐름을 잡아주는 콘텐츠 사이트</div>
       </div>
       <nav class="footer__nav">
-        <a href="/">홈</a>
-        <a href="/diagnosis">무료진단</a>
-      <a href="/consultation">고민상담</a>
-      <a href="/jobs">채용공고</a>
-        <a href="/interview">면접</a>
-        <a href="/cover-letter">자소서</a>
-        <a href="/company-analysis">기업이해</a>
-        <a href="/mind-care">마음관리</a>
-        <a href="https://www.latpeed.com/products/Ge7M-" target="_blank">전자책</a>
+        <a href="/">홈</a><a href="/diagnosis">무료진단</a><a href="/interview">면접</a>
+        <a href="/cover-letter">자소서</a><a href="/company-analysis">기업이해</a>
+        <a href="/mind-care">마음관리</a><a href="https://www.latpeed.com/products/Ge7M-" target="_blank">전자책</a>
       </nav>
     </div>
     <div class="footer__copy">© 2026 좋은 취업 · yuncontest@naver.com</div>
   </div>
 </footer>
+
 <script>
 function toggleMenu(){const m=document.getElementById('mobileMenu');const b=document.getElementById('menuBtn');m.classList.toggle('open');b.textContent=m.classList.contains('open')?'✕ 닫기':'☰ 메뉴';}
 document.addEventListener('click',function(e){const m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!document.getElementById('menuBtn').contains(e.target)){m.classList.remove('open');document.getElementById('menuBtn').textContent='☰ 메뉴';}});
 
-const questions=[
-  {cat:'면접',q:'면접장에서 갑자기 머릿속이 하얘진 경험이 있나요?',opts:['자주 있다','가끔 있다','별로 없다','면접 경험이 없다']},
-  {cat:'면접',q:'면접관의 질문에 STAR 구조(상황-행동-결과)로 답할 수 있나요?',opts:['잘 모른다','알지만 적용이 어렵다','어느 정도 된다','자연스럽게 된다']},
-  {cat:'자소서',q:'지원동기를 쓸 때 회사마다 다르게 쓰고 있나요?',opts:['거의 같은 내용이다','조금씩 바꾼다','꽤 다르게 쓴다','완전히 맞춤으로 쓴다']},
-  {cat:'자소서',q:'자소서에 숫자나 구체적인 성과가 포함되어 있나요?',opts:['거의 없다','1~2개 있다','절반 이상 있다','대부분 있다']},
-  {cat:'기업이해',q:'지원 회사의 최근 1년 뉴스나 사업 방향을 파악하고 있나요?',opts:['잘 모른다','홈페이지 정도만 본다','뉴스까지 찾아본다','DART까지 분석한다']},
-  {cat:'기업이해',q:'채용 공고(JD)에서 핵심 키워드를 뽑아 자소서에 반영하나요?',opts:['그런 방법이 있었나?','알지만 안 한다','가끔 한다','항상 한다']},
-  {cat:'마음관리',q:'불합격 통보를 받으면 보통 어떻게 되나요?',opts:['며칠 동안 아무것도 못 한다','하루 이틀 힘들다','금방 털고 다시 시작한다','크게 영향 없다']},
-  {cat:'마음관리',q:'하루 취업 준비 루틴이 정해져 있나요?',opts:['전혀 없다','대략 있다','어느 정도 있다','철저하게 지킨다']},
+const jobs = [
+  {
+    company: "삼성전자", type: "대기업", status: "open",
+    title: "DS부문 메모리사업부 경력 채용 (마케팅·기획)",
+    dept: "마케팅/기획", deadline: "상시채용", location: "수원",
+    url: "https://www.samsung.com/sec/careers/",
+    keywords: ["반도체 시장분석", "글로벌 마케팅", "B2B 영업기획", "데이터 분석"],
+    analysis: {
+      want: "반도체·메모리 시장에 대한 이해를 바탕으로 <strong>글로벌 고객사 대응 전략</strong>을 수립할 수 있는 인재. 영어 활용 가능자 우대.",
+      culture: "성과 중심 문화. 빠른 의사결정 구조. 글로벌 협업 빈번.",
+      tip: "자소서에 반도체 산업 이해도를 드러내세요. 최근 메모리 시장 이슈(HBM, AI반도체 수요)를 언급하면 차별화됩니다.",
+      prep: "GSAT 인적성 준비 필수. 직무에 따라 전공 필기 추가."
+    }
+  },
+  {
+    company: "현대자동차", type: "대기업", status: "open",
+    title: "2026 상반기 신입 공채 (전 직무)",
+    dept: "전 직무", deadline: "채용 공고 확인 필요", location: "서울·화성",
+    url: "https://recruit.hyundai.com/",
+    keywords: ["모빌리티", "전동화", "데이터 기반 기획", "글로벌 영업"],
+    analysis: {
+      want: "도전 정신과 실행력을 갖춘 인재. <strong>전동화·소프트웨어 중심 전환</strong>을 이끌 수 있는 미래형 인재 선호.",
+      culture: "역동적이고 도전적인 조직 문화. 수평적 소통 지향.",
+      tip: "현대차의 전동화 전략(아이오닉 시리즈, SDV 전환)을 반드시 파악하세요. 지원동기에 이 방향과 내 역량의 연결점을 만드세요.",
+      prep: "HMAT 인적성 준비 필수. 직무 기술서 꼼꼼히 분석."
+    }
+  },
+  {
+    company: "카카오", type: "대기업", status: "open",
+    title: "프로덕트 매니저 (PM) 경력·신입",
+    dept: "서비스기획", deadline: "상시채용", location: "판교",
+    url: "https://careers.kakao.com/",
+    keywords: ["사용자 리서치", "데이터 기반 의사결정", "A/B 테스트", "서비스 지표 분석"],
+    analysis: {
+      want: "데이터를 기반으로 서비스를 개선한 경험이 있는 인재. <strong>사용자 문제를 정의하고 해결책을 만드는 능력</strong>.",
+      culture: "자율과 책임 문화. 수평적. 빠른 실험과 개선 선호.",
+      tip: "카카오 서비스를 직접 사용하며 개선점을 발견한 경험을 자소서에 쓰세요. UX 개선 제안과 데이터 근거를 함께 제시하면 강력합니다.",
+      prep: "포트폴리오 필수. 사용자 리서치·데이터 분석 경험 강조."
+    }
+  },
+  {
+    company: "LG에너지솔루션", type: "대기업", status: "open",
+    title: "배터리 연구개발 신입 (R&D)",
+    dept: "연구개발", deadline: "채용 공고 확인 필요", location: "오창·청주",
+    url: "https://lgensol.recruiter.co.kr/",
+    keywords: ["전기화학", "배터리 셀 개발", "소재 분석", "실험 데이터 분석"],
+    analysis: {
+      want: "전기화학·소재공학 전공 지식을 갖추고 <strong>배터리 성능 향상</strong>에 기여할 수 있는 인재. 끈기 있는 연구 자세.",
+      culture: "기술 중심 문화. 협업과 전문성을 동시에 중시.",
+      tip: "전고체 배터리, HBM용 전해질 등 최신 기술 동향을 파악해 자소서에 반영하세요. 졸업논문이나 연구 경험을 구체적 수치로 표현하세요.",
+      prep: "전공 필기 준비 필수. 논문·연구 경험 정리."
+    }
+  },
+  {
+    company: "한국전력공사 (KEPCO)", type: "공기업", status: "open",
+    title: "2026 상반기 신입 직원 채용",
+    dept: "전기·ICT·사무", deadline: "채용 공고 확인 필요", location: "전국",
+    url: "https://kepco.recruiter.co.kr/",
+    keywords: ["에너지 전환", "전력 계통", "재생에너지", "스마트그리드"],
+    analysis: {
+      want: "에너지 전환 시대에 맞는 전문성과 <strong>공공 서비스 마인드</strong>를 갖춘 인재. NCS 기반 직무능력 중심 선발.",
+      culture: "공공기관 특성상 안정적 조직 문화. 청렴·봉사 가치 중시.",
+      tip: "KEPCO의 탄소중립 로드맵과 재생에너지 확대 정책을 파악하세요. 지원동기에 공공 가치와 에너지 전환 기여를 연결하세요.",
+      prep: "NCS 직업기초능력 + 전공 필기. 한국사 1급 필수."
+    }
+  },
+  {
+    company: "국민건강보험공단", type: "공기업", status: "open",
+    title: "2026 직원 채용 (행정직·전산직)",
+    dept: "행정·전산", deadline: "채용 공고 확인 필요", location: "전국",
+    url: "https://nhis.recruiter.co.kr/",
+    keywords: ["건강보험 정책", "데이터 관리", "민원 응대", "공공 서비스"],
+    analysis: {
+      want: "국민 건강권 보호에 대한 사명감과 <strong>정확한 데이터 관리 능력</strong>을 갖춘 인재.",
+      culture: "국민 서비스 중심. 팀 협업과 정확성 강조.",
+      tip: "건강보험 정책의 최근 이슈(보장성 강화, 고령화 대응)를 파악하고 지원동기에 반영하세요. 봉사 경험이 있으면 강점이 됩니다.",
+      prep: "NCS 필기 + 한국사. 의료·복지 관련 전공자 우대."
+    }
+  },
+  {
+    company: "쿠팡", type: "대기업", status: "open",
+    title: "물류·운영 기획 신입·경력",
+    dept: "물류/운영기획", deadline: "상시채용", location: "서울·전국",
+    url: "https://www.coupang.jobs/kr/",
+    keywords: ["공급망 관리", "데이터 분석", "프로세스 개선", "운영 최적화"],
+    analysis: {
+      want: "데이터로 운영 효율을 높인 경험이 있는 인재. <strong>빠른 실행력</strong>과 문제 해결 능력.",
+      culture: "빠르고 치열한 문화. 성과 중심. 데이터 기반 의사결정.",
+      tip: "쿠팡의 로켓배송 운영 방식을 분석하고, 운영 개선 경험을 수치로 표현하세요. '오늘 더 빠르게'라는 가치와 연결하세요.",
+      prep: "SQL·엑셀 기본 필수. 물류·SCM 이해도 확인."
+    }
+  },
+  {
+    company: "토스(비바리퍼블리카)", type: "스타트업", status: "open",
+    title: "UX 라이터·콘텐츠 기획자",
+    dept: "콘텐츠/기획", deadline: "상시채용", location: "서울",
+    url: "https://toss.im/career/jobs",
+    keywords: ["UX 라이팅", "카피라이팅", "사용자 경험", "금융 콘텐츠"],
+    analysis: {
+      want: "복잡한 금융 개념을 쉽고 친근하게 전달하는 <strong>언어 감각</strong>을 가진 인재. 사용자 관점에서 글 쓰는 능력.",
+      culture: "자율성 높은 문화. 빠른 실험. 의견을 직접 말할 수 있는 환경.",
+      tip: "토스 앱의 UX 문구를 직접 분석하고, 개선 제안을 포트폴리오로 만들어보세요. '이 문구가 왜 좋은가'를 설명할 수 있어야 합니다.",
+      prep: "포트폴리오 필수. 실제 개선 사례 1~2개 준비."
+    }
+  },
 ];
 
-const catMap={'면접':0,'자소서':1,'기업이해':2,'마음관리':3};
-const catNames=['면접','자소서','기업이해','마음관리'];
-const catLinks=['/interview','/cover-letter','/company-analysis','/mind-care'];
-let cur=0, scores=[0,0,0,0], answers=[];
+let currentFilter = 'all';
 
-function renderQ(){
-  const q=questions[cur];
-  const pct=((cur+1)/questions.length*100).toFixed(0);
-  document.getElementById('progressBar').style.width=pct+'%';
-  document.getElementById('prevBtn').style.display=cur>0?'':'none';
-  document.getElementById('nextBtn').textContent=cur===questions.length-1?'결과 보기':'다음 →';
-  document.getElementById('quizBody').innerHTML=`
-    <div class="quiz-category">${q.cat} ${catMap[q.cat]+1}/2</div>
-    <div class="quiz-q">${q.q}</div>
-    <div class="quiz-options">${q.opts.map((o,i)=>`<button class="quiz-option${answers[cur]===i?' selected':''}" onclick="select(${i})">${o}</button>`).join('')}</div>
-  `;
-}
-
-function select(i){
-  answers[cur]=i;
-  document.querySelectorAll('.quiz-option').forEach((b,idx)=>b.classList.toggle('selected',idx===i));
-}
-
-function nextQ(){
-  if(answers[cur]===undefined){alert('항목을 선택해주세요.');return;}
-  if(cur<questions.length-1){cur++;renderQ();}
-  else{showResult();}
-}
-
-function prevQ(){if(cur>0){cur--;renderQ();}}
-
-function showResult(){
-  scores=[0,0,0,0];
-  questions.forEach((q,i)=>{scores[catMap[q.cat]]+=answers[i];});
-  const pcts=scores.map(s=>Math.round((s/6)*100));
-  const weakIdx=pcts.indexOf(Math.min(...pcts));
-  const strong=pcts.indexOf(Math.max(...pcts));
-  
-  document.getElementById('quizSection').style.display='none';
-  const rw=document.getElementById('resultWrap');
-  rw.classList.add('show');
-  
-  document.getElementById('resultTitle').textContent='진단 완료!';
-  document.getElementById('resultDesc').textContent=`가장 강한 영역은 ${catNames[strong]}, 가장 약한 영역은 ${catNames[weakIdx]}입니다. 아래에서 자세히 확인하세요.`;
-  
-  document.getElementById('resultBars').innerHTML=catNames.map((name,i)=>`
-    <div class="result-bar-item">
-      <div class="result-bar-label"><strong>${name}</strong><span>${pcts[i]}%</span></div>
-      <div class="result-bar-track"><div class="result-bar-fill" style="width:0%" data-w="${pcts[i]}%"></div></div>
+function renderJobs(filter) {
+  const grid = document.getElementById('jobsGrid');
+  const filtered = filter === 'all' ? jobs : jobs.filter(j => j.type === filter);
+  grid.innerHTML = filtered.map((job, i) => `
+    <div class="job-card" data-type="${job.type}" id="job-${i}">
+      <div class="job-card__top">
+        <div class="job-card__info">
+          <div class="job-card__company">${job.company} · ${job.type}</div>
+          <div class="job-card__title">${job.title}</div>
+          <div class="job-card__meta">
+            <span>📍 ${job.location}</span>
+            <span>🗂 ${job.dept}</span>
+            <span>⏰ ${job.deadline}</span>
+          </div>
+        </div>
+        <span class="job-card__badge badge--${job.status}">${job.status === 'open' ? '채용중' : job.status === 'soon' ? '예정' : '마감'}</span>
+      </div>
+      <div class="job-card__keywords">
+        ${job.keywords.map(k => `<span class="keyword-tag">${k}</span>`).join('')}
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <button class="job-card__expand-btn" onclick="toggleAnalysis(${i})">▾ 기업 분석 보기</button>
+        <a href="${job.url}" target="_blank" class="btn btn--outline" style="padding:6px 14px;font-size:0.8rem;">공식 채용 페이지 →</a>
+      </div>
+      <div class="job-card__analysis">
+        <div class="job-card__analysis-title">기업 분석</div>
+        <div class="analysis-grid">
+          <div class="analysis-item">
+            <div class="analysis-item__label">원하는 인재상</div>
+            <div class="analysis-item__text">${job.analysis.want}</div>
+          </div>
+          <div class="analysis-item">
+            <div class="analysis-item__label">조직 문화</div>
+            <div class="analysis-item__text">${job.analysis.culture}</div>
+          </div>
+          <div class="analysis-item">
+            <div class="analysis-item__label">자소서·면접 핵심 팁</div>
+            <div class="analysis-item__text">${job.analysis.tip}</div>
+          </div>
+          <div class="analysis-item">
+            <div class="analysis-item__label">필기·전형 준비</div>
+            <div class="analysis-item__text">${job.analysis.prep}</div>
+          </div>
+        </div>
+      </div>
     </div>
   `).join('');
-  
-  document.getElementById('resultWeak').innerHTML=`<div class="result-weak__label">가장 약한 영역</div><div class="result-weak__text">${catNames[weakIdx]} — 지금 바로 이 영역부터 보완하세요</div>`;
-  document.getElementById('resultLink').href=catLinks[weakIdx];
-  document.getElementById('resultLink').textContent=catNames[weakIdx]+' 글 보러가기 →';
-  
-  setTimeout(()=>{document.querySelectorAll('.result-bar-fill').forEach(el=>el.style.width=el.dataset.w);},100);
 }
 
-renderQ();
+function toggleAnalysis(i) {
+  const card = document.getElementById(`job-${i}`);
+  const btn = card.querySelector('.job-card__expand-btn');
+  card.classList.toggle('expanded');
+  btn.textContent = card.classList.contains('expanded') ? '▴ 기업 분석 닫기' : '▾ 기업 분석 보기';
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    renderJobs(currentFilter);
+  });
+});
+
+renderJobs('all');
 </script>
 </body>
 </html>
