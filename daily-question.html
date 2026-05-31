@@ -2,13 +2,14 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="naver-site-verification" content="9e0215ae1a26338579b67c5418e1dff9900bee22" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>취업 준비 도구 모음 (무료) | 좋은 취업</title>
-  <meta name="description" content="취업 준비에 필요한 무료 도구 모음. 연봉 실수령액 계산기, 자소서 글자수 세기, 표현 분석기, D-day 계산기, 1분 자기소개 타이머." />
-  <meta name="keywords" content="취업 도구, 연봉 계산기, 자소서 글자수, 취업 D-day, 자기소개 타이머" />
-  <link rel="canonical" href="https://jobok.co.kr/tools" />
-  <meta property="og:title" content="취업 준비 도구 모음 (무료) | 좋은 취업" />
-  <meta property="og:url" content="https://jobok.co.kr/tools" />
+  <meta name="naver-site-verification" content="9e0215ae1a26338579b67c5418e1dff9900bee22" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 면접 질문 (매일 새로운 면접 질문 + 답변 팁) | 좋은 취업</title>
+  <meta name="description" content="매일 새로운 면접 질문 하나와 답변 팁을 제공합니다. 면접 준비, 하루에 하나씩 연습하세요. 무료." />
+  <meta name="keywords" content="오늘의 면접 질문, 면접 질문, 면접 연습, 면접 질문 답변, 면접 준비, 데일리 면접" />
+  <link rel="canonical" href="https://jobok.co.kr/daily-question" />
+  <meta property="og:title" content="오늘의 면접 질문 | 좋은 취업" />
+  <meta property="og:url" content="https://jobok.co.kr/daily-question" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHL4KZGH5"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSHL4KZGH5');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -208,22 +209,19 @@ img { max-width: 100%; height: auto; }
   .nav-menu-btn { display: flex; }
 }
 
-.tools-hero { padding: calc(var(--header-h) + 60px) 0 40px; border-bottom:1px solid var(--gray-100); }
-.tools-hero__label { font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px; }
-.tools-hero__title { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:-.035em;margin-bottom:12px;line-height:1.15; }
-.tools-hero__desc { font-size:.95rem;color:var(--text-sub);max-width:500px;line-height:1.85;font-weight:300; }
-.tools-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--gray-200);border:1px solid var(--gray-200);margin:40px 0 72px; }
-.tool-card { background:var(--white);padding:32px;text-decoration:none;color:inherit;transition:all .15s;position:relative;display:flex;flex-direction:column; }
-.tool-card:hover { background:var(--black);color:var(--white); }
-.tool-card:hover .tool-card__desc { color:rgba(255,255,255,.6); }
-.tool-card:hover .tool-card__cat { color:var(--gold); }
-.tool-card:hover .tool-card__arrow { color:var(--gold); }
-.tool-card__icon { font-size:2rem;margin-bottom:16px; }
-.tool-card__cat { font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;transition:color .15s; }
-.tool-card__title { font-size:1.15rem;font-weight:800;letter-spacing:-.02em;margin-bottom:8px; }
-.tool-card__desc { font-size:.85rem;color:var(--text-sub);line-height:1.7;font-weight:300;flex:1;transition:color .15s; }
-.tool-card__arrow { font-size:1.1rem;color:var(--text-muted);margin-top:16px;transition:color .15s; }
-@media(max-width:600px){ .tools-grid{grid-template-columns:1fr;} }
+.dq-hero { padding: calc(var(--header-h) + 56px) 0 24px; text-align:center; }
+.dq-hero__label { font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px; }
+.dq-hero__date { font-size:.85rem;color:var(--text-muted);font-family:'Instrument Sans',sans-serif; }
+.dq-card { background:var(--black);color:var(--white);border-radius:var(--radius-lg);padding:44px 36px;margin:28px 0;text-align:center; }
+.dq-card__qlabel { font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:18px; }
+.dq-card__q { font-size:clamp(1.4rem,3.5vw,2rem);font-weight:800;line-height:1.45;letter-spacing:-.02em; }
+.dq-tip { background:var(--gold-light);border:1px solid #f0d5a0;border-radius:var(--radius-lg);padding:24px 26px;margin-bottom:24px; }
+.dq-tip__label { font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--gold);margin-bottom:10px;text-transform:uppercase; }
+.dq-tip__text { font-size:.95rem;color:var(--text);line-height:1.8; }
+.dq-actions { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:48px; }
+.dq-timer-box { text-align:center;padding:20px;background:var(--gray-50);border-radius:var(--radius);margin-bottom:24px; }
+.dq-timer { font-size:2.4rem;font-weight:900;color:var(--gold);font-family:'Instrument Sans',sans-serif; }
+.dq-timer__label { font-size:.82rem;color:var(--text-muted);margin-top:4px; }
   </style>
 </head>
 <body>
@@ -250,89 +248,35 @@ img { max-width: 100%; height: auto; }
   <a href="https://www.latpeed.com/products/Ge7M-" target="_blank">전자책 구매 · 26,000원</a>
 </div>
 <main>
-  <div class="container">
-    <div class="tools-hero">
-      <div class="tools-hero__label">무료 도구</div>
-      <h1 class="tools-hero__title">취업 준비 도구 모음</h1>
-      <p class="tools-hero__desc">취업 준비에 필요한 계산기와 분석 도구를 무료로 제공합니다. 회원가입 없이 바로 사용하세요.</p>
+  <div class="container" style="max-width:680px;">
+    <div class="dq-hero">
+      <div class="dq-hero__label">오늘의 면접 질문</div>
+      <div class="dq-hero__date" id="dqDate"></div>
     </div>
-    <div class="tools-grid">
-      <a href="/daily-question" class="tool-card">
-        <div class="tool-card__icon">📅</div>
-        <div class="tool-card__cat">면접</div>
-        <div class="tool-card__title">오늘의 면접 질문</div>
-        <div class="tool-card__desc">매일 새로운 면접 질문 + 답변 팁 + 연습 타이머</div>
-        <div class="tool-card__arrow">→</div>
-      </a>
-      <a href="/tools/checklist" class="tool-card">
-        <div class="tool-card__icon">✅</div>
-        <div class="tool-card__cat">자소서</div>
-        <div class="tool-card__title">자소서 자가진단</div>
-        <div class="tool-card__desc">제출 전 20개 항목 체크리스트로 점검</div>
-        <div class="tool-card__arrow">→</div>
-      </a>
-      <a href="/job-test" class="tool-card">
-        <div class="tool-card__icon">🎯</div>
-        <div class="tool-card__cat">진로</div>
-        <div class="tool-card__title">직무 추천 테스트</div>
-        <div class="tool-card__desc">10개 질문으로 나에게 맞는 직무를 찾아드립니다</div>
-        <div class="tool-card__arrow">→</div>
-      </a>
-      <a href="/job-guide" class="tool-card">
-        <div class="tool-card__icon">🧭</div>
-        <div class="tool-card__cat">진로</div>
-        <div class="tool-card__title">직무 탐색 가이드</div>
-        <div class="tool-card__desc">직무별 하는 일·필요 역량·연봉·전망 비교</div>
-        <div class="tool-card__arrow">→</div>
-      </a>
-      <a href="/aptitude" class="tool-card">
-        <div class="tool-card__icon">🧠</div>
-        <div class="tool-card__cat">인적성</div>
-        <div class="tool-card__title">인적성 연습문제</div>
-        <div class="tool-card__desc">GSAT·HMAT·NCS 유형 60문제. 언어·수리·추리·자료해석 풀고 바로 채점</div>
-        <div class="tool-card__arrow">→</div>
-      </a>
-      <a href="/tools/salary" class="tool-card">
-        <div class="tool-card__icon">💰</div>
-        <div class="tool-card__cat">연봉 계산</div>
-        <div class="tool-card__title">연봉 실수령액 계산기</div>
-        <div class="tool-card__desc">연봉 입력하면 4대보험·세금 제외한 월 실수령액 계산</div>
-        <div class="tool-card__arrow">→</div>
-      </a>
-      <a href="/tools/word-count" class="tool-card">
-        <div class="tool-card__icon">📝</div>
-        <div class="tool-card__cat">자소서</div>
-        <div class="tool-card__title">자소서 글자수 세기</div>
-        <div class="tool-card__desc">공백 포함/제외 글자수와 바이트를 실시간 계산</div>
-        <div class="tool-card__arrow">→</div>
-      </a>
-      <a href="/tools/keyword" class="tool-card">
-        <div class="tool-card__icon">🔍</div>
-        <div class="tool-card__cat">자소서</div>
-        <div class="tool-card__title">자소서 표현 분석기</div>
-        <div class="tool-card__desc">추상적 상투어와 숫자 사용을 분석해 개선점 제시</div>
-        <div class="tool-card__arrow">→</div>
-      </a>
-      <a href="/tools/dday" class="tool-card">
-        <div class="tool-card__icon">📅</div>
-        <div class="tool-card__cat">취업</div>
-        <div class="tool-card__title">취업 D-day 계산기</div>
-        <div class="tool-card__desc">공채 마감·시험·면접까지 남은 날짜 카운트다운</div>
-        <div class="tool-card__arrow">→</div>
-      </a>
-      <a href="/tools/timer" class="tool-card">
-        <div class="tool-card__icon">⏱</div>
-        <div class="tool-card__cat">면접</div>
-        <div class="tool-card__title">1분 자기소개 타이머</div>
-        <div class="tool-card__desc">면접 자기소개 시간 재기. 30초~2분 설정 가능</div>
-        <div class="tool-card__arrow">→</div>
-      </a></div>
-    <div style="margin-bottom:72px;"><div class="inline-book-cta">
-  <div class="inline-book-cta__label">전자책</div>
-  <div class="inline-book-cta__title">더 체계적으로 준비하고 싶다면</div>
-  <div class="inline-book-cta__desc">채용절벽을 뚫는 취업 근육 키우기 — 전략 수립부터 자소서 재구성, 면접 답변 구조까지. 워크시트·체크리스트·채용 세미나 무료 초대 포함.</div>
-  <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" class="btn btn--gold btn--lg">전자책 구매 · 26,000원</a>
-</div></div>
+
+    <div class="dq-card">
+      <div class="dq-card__qlabel">Q. 오늘의 질문</div>
+      <div class="dq-card__q" id="dqQuestion">질문 로딩 중...</div>
+    </div>
+
+    <div class="dq-timer-box">
+      <div class="dq-timer" id="dqTimer">1:00</div>
+      <div class="dq-timer__label">답변 연습 타이머</div>
+      <div style="margin-top:14px;display:flex;gap:8px;justify-content:center;">
+        <button class="btn btn--primary" id="dqStart" onclick="dqStartTimer()">연습 시작</button>
+        <button class="btn btn--outline" onclick="dqResetTimer()">리셋</button>
+      </div>
+    </div>
+
+    <div class="dq-tip">
+      <div class="dq-tip__label">💡 답변 팁</div>
+      <div class="dq-tip__text" id="dqTip"></div>
+    </div>
+
+    <div class="dq-actions">
+      <button class="btn btn--outline" onclick="randomQuestion()">🎲 다른 질문 보기</button>
+      <a href="/interview-questions" class="btn btn--gold">면접 질문 모음 전체보기 →</a>
+    </div>
   </div>
 </main>
 <footer class="footer">
@@ -354,6 +298,49 @@ img { max-width: 100%; height: auto; }
 <script>
 function toggleMenu(){const m=document.getElementById('mobileMenu');const b=document.getElementById('menuBtn');m.classList.toggle('open');b.textContent=m.classList.contains('open')?'✕ 닫기':'☰ 메뉴';}
 document.addEventListener('click',function(e){const m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!document.getElementById('menuBtn').contains(e.target)){m.classList.remove('open');document.getElementById('menuBtn').textContent='☰ 메뉴';}});
+
+const QUESTIONS = [{"q": "1분 자기소개를 해주세요.", "tip": "통째로 외우지 말고 키워드 3개만 기억하세요. 숫자나 결정적 순간으로 시작하면 강합니다. 60~70초가 적당합니다."}, {"q": "왜 우리 회사에 지원했나요?", "tip": "회사 홈페이지 문구를 베끼지 마세요. 이 회사를 알게 된 구체적 계기 + 내 역량과의 교집합을 말하세요."}, {"q": "본인의 강점은 무엇인가요?", "tip": "강점을 말한 뒤 반드시 그것을 증명하는 경험과 수치를 덧붙이세요. '책임감이 강하다'보다 '~한 상황에서 ~했다'."}, {"q": "본인의 단점은 무엇인가요?", "tip": "진짜 단점 + 구체적 사례 + 현재 개선 방법 + 결과 구조로. 지원 직무에 치명적인 단점만 피하세요."}, {"q": "10년 후 본인의 모습은?", "tip": "막연한 'CEO'보다 이 회사·직무에서의 구체적 성장 경로를 그리세요. 회사와 함께 성장하는 그림이 좋습니다."}, {"q": "지원한 직무에 대해 설명해보세요.", "tip": "직무가 실제로 무슨 일을 하는지 파악했음을 보여주세요. JD를 읽고 핵심 업무를 정리해두면 좋습니다."}, {"q": "가장 힘들었던 경험과 극복 방법은?", "tip": "STAR 기법(상황-과제-행동-결과)으로. 극복 과정에서 무엇을 배웠는지가 핵심입니다."}, {"q": "팀에서 갈등이 생기면 어떻게 하나요?", "tip": "회피하지 않고 소통으로 해결한 실제 경험을 드세요. '무조건 양보'보다 균형 잡힌 접근이 좋습니다."}, {"q": "실패한 경험이 있나요?", "tip": "실패 자체보다 거기서 배운 것과 이후의 변화에 초점을. 실패를 인정하는 솔직함도 평가 요소입니다."}, {"q": "우리 회사에 대해 아는 대로 말해보세요.", "tip": "최근 1년 뉴스 3개는 반드시 파악하세요. 사업 방향, 최근 이슈를 언급하면 관심도가 드러납니다."}, {"q": "왜 이 직무를 선택했나요?", "tip": "직무를 선택한 구체적 계기 + 관련 경험을 연결하세요. '적성에 맞아서'는 약합니다."}, {"q": "입사하면 어떤 기여를 할 수 있나요?", "tip": "회사가 필요로 하는 것과 내 역량을 매칭하세요. 입사 후 첫 6개월 목표를 구체적으로 말하면 좋습니다."}, {"q": "상사와 의견이 다르면 어떻게 하나요?", "tip": "내 의견을 근거와 함께 제시하되, 최종 결정은 존중하는 태도를 보이세요. '무조건 따른다'도 '끝까지 우긴다'도 감점."}, {"q": "스트레스를 어떻게 관리하나요?", "tip": "건강한 방법(운동, 취미)을 구체적으로. 스트레스 상황에서도 업무를 해낸 경험이 있으면 더 좋습니다."}, {"q": "마지막으로 하고 싶은 말이 있나요?", "tip": "단순 감사 인사보다 입사 의지를 구체적으로 재확인하세요. 미처 못 한 핵심 강점을 짧게 어필해도 좋습니다."}, {"q": "면접관에게 궁금한 점이 있나요? (역질문)", "tip": "'없습니다'는 최악입니다. 직무·성장·팀 문화에 대한 질문을 1~2개 준비하세요. 연봉·복지만 묻는 건 피하세요."}, {"q": "본인을 한 단어로 표현한다면?", "tip": "단어 + 그 단어를 증명하는 짧은 에피소드. 직무와 연결되는 단어면 더 좋습니다."}, {"q": "협업과 개인 작업 중 무엇을 선호하나요?", "tip": "지원 직무 특성에 맞게. 어느 쪽이든 양쪽 다 가능하되 선호가 있다는 식으로 균형 있게 답하세요."}, {"q": "리더 역할을 해본 경험이 있나요?", "tip": "직책이 없어도 주도적으로 이끈 경험이면 됩니다. 어떻게 팀을 움직였고 결과가 어땠는지 구체적으로."}, {"q": "왜 신입인데 경력 같은 역량을 요구한다고 생각하나요?", "tip": "기업이 즉시 전력을 원함을 이해하고, 인턴·프로젝트로 쌓은 실무 경험을 강조하세요."}, {"q": "야근이나 주말 근무에 대해 어떻게 생각하나요?", "tip": "무조건 가능하다고 답할 필요는 없습니다. 책임감 있게 일하되 효율을 추구한다는 균형이 좋습니다."}, {"q": "지원자가 많은데 왜 본인을 뽑아야 하나요?", "tip": "남과 다른 본인만의 차별점 1~2개를 명확히. 직무 적합성 + 구체적 근거로 답하세요."}, {"q": "전공과 다른 직무에 지원한 이유는?", "tip": "전공에서 얻은 것이 이 직무에 어떻게 도움 되는지 연결하세요. 직무 관심의 계기도 함께."}, {"q": "최근 관심 있게 본 우리 업계 뉴스는?", "tip": "지원 회사·업계의 최근 이슈를 하나 골라 본인 생각을 덧붙이세요. 단순 사실 나열보다 견해가 중요."}, {"q": "본인의 직업관은 무엇인가요?", "tip": "일을 통해 무엇을 이루고 싶은지 진솔하게. 회사 가치관과 연결되면 더 좋습니다."}, {"q": "동아리/대외활동에서 맡은 역할은?", "tip": "역할과 함께 그 활동에서 만든 구체적 성과와 배운 점을 수치로 표현하세요."}, {"q": "어려운 고객(또는 상황)을 응대한 경험은?", "tip": "침착하게 문제를 해결한 과정을 보여주세요. 감정보다 해결 중심으로 답하는 게 핵심."}, {"q": "본인이 생각하는 좋은 조직 문화는?", "tip": "지원 회사의 문화를 파악하고 그와 연결하세요. 너무 이상적이기보다 현실적인 답이 좋습니다."}, {"q": "목표를 달성하기 위해 노력한 경험은?", "tip": "목표-과정-결과를 수치와 함께. 끈기나 실행력을 보여주는 사례면 좋습니다."}, {"q": "새로운 것을 빠르게 배운 경험이 있나요?", "tip": "학습 능력은 신입에게 중요한 역량입니다. 무엇을 어떻게 배워 적용했는지 구체적으로."}, {"q": "압박이 심한 상황에서 일해본 경험은?", "tip": "마감, 위기 상황에서 침착하게 대응한 경험을. 결과뿐 아니라 대처 방식을 보여주세요."}, {"q": "본인의 가치관과 회사 가치가 충돌하면?", "tip": "극단적 답변은 피하고, 소통하며 조율하려는 태도를 보이세요."}, {"q": "왜 그동안 취업이 늦어졌나요? (공백기)", "tip": "공백기를 변명하지 말고 그 기간에 한 것(준비, 학습, 경험)을 긍정적으로 설명하세요."}, {"q": "본인의 워라밸 기준은?", "tip": "솔직하되 책임감을 함께 보여주세요. 일을 회피하는 인상은 피하세요."}, {"q": "지원 직무에 필요한 역량은 무엇이라 생각하나요?", "tip": "직무 분석이 됐음을 보여주는 질문입니다. 핵심 역량 2~3개 + 본인이 가진 것을 연결하세요."}, {"q": "본인이 부족하다고 느끼는 부분은?", "tip": "단점 질문과 비슷합니다. 부족함을 인정하되 보완하려는 노력을 함께 보여주세요."}, {"q": "다른 회사에도 지원했나요?", "tip": "솔직하게 답하되, 이 회사가 1순위인 이유를 명확히 하세요."}, {"q": "입사 후 적응을 위해 무엇을 할 건가요?", "tip": "조직과 업무를 빠르게 파악하려는 구체적 계획을 보여주세요. 적극적인 태도가 핵심."}, {"q": "본인을 채용하면 회사가 얻는 것은?", "tip": "내 역량이 회사에 주는 가치를 구체적으로. 비용이 아닌 투자라는 인상을 주세요."}, {"q": "가장 자신 있는 프로젝트/경험을 말해보세요.", "tip": "역할-과정-성과를 STAR로. 본인의 기여를 명확히 하고 수치로 증명하세요."}, {"q": "변화에 어떻게 대응하는 편인가요?", "tip": "변화를 받아들이고 적응한 경험을. 요즘 기업은 유연성을 중요하게 봅니다."}, {"q": "본인의 커뮤니케이션 스타일은?", "tip": "경청과 명확한 전달을 모두 보여주세요. 소통으로 문제를 푼 경험이 있으면 더 좋습니다."}, {"q": "이 직무에서 AI 도구를 어떻게 활용할 수 있을까요?", "tip": "AI 활용 역량은 2026년 핵심입니다. 실제 활용 경험이나 구체적 아이디어를 제시하세요."}, {"q": "본인이 주도적으로 개선한 경험이 있나요?", "tip": "시키지 않은 일을 먼저 발견하고 개선한 경험을. 능동성을 보여주는 좋은 소재입니다."}, {"q": "장기적으로 이 분야 전문가가 되려는 계획은?", "tip": "직무 전문성에 대한 진지함을 보여주세요. 구체적 학습·성장 계획이 있으면 좋습니다."}, {"q": "팀원이 일을 못 따라오면 어떻게 하나요?", "tip": "비난보다 돕고 함께 가려는 태도를. 협업 마인드를 보여주는 질문입니다."}, {"q": "본인의 직무 관련 강점을 숫자로 말한다면?", "tip": "성과를 수치화하는 연습을 해두세요. '~을 30% 개선', '~명을 응대' 등 구체적 숫자가 설득력입니다."}, {"q": "회사가 어려운 상황이어도 다닐 건가요?", "tip": "충성도를 보는 질문입니다. 함께 극복하려는 의지를 보이되 현실적으로 답하세요."}, {"q": "본인에게 일이란 무엇인가요?", "tip": "직업관 질문입니다. 생계 이상의 의미를 진솔하게. 회사 가치와 연결되면 더 좋습니다."}, {"q": "마지막으로 본인의 합격 가능성을 점수로 표현한다면?", "tip": "높은 점수 + 그 이유를 자신감 있게. 겸손과 자신감의 균형을 보여주세요."}];
+
+// 날짜 기반으로 오늘의 질문 결정 (매일 자동으로 바뀜)
+function getDayIndex(){
+  const now = new Date();
+  const start = new Date(now.getFullYear(),0,0);
+  const diff = now - start;
+  const dayOfYear = Math.floor(diff / 86400000);
+  return dayOfYear % QUESTIONS.length;
+}
+
+function showQuestion(idx){
+  const q = QUESTIONS[idx];
+  document.getElementById('dqQuestion').textContent = q.q;
+  document.getElementById('dqTip').textContent = q.tip;
+}
+
+function randomQuestion(){
+  const idx = Math.floor(Math.random() * QUESTIONS.length);
+  showQuestion(idx);
+  dqResetTimer();
+}
+
+// 오늘 날짜 표시
+const today = new Date();
+document.getElementById('dqDate').textContent = `${today.getFullYear()}년 ${today.getMonth()+1}월 ${today.getDate()}일`;
+showQuestion(getDayIndex());
+
+// 타이머
+let dqInterval=null, dqRemaining=60;
+function dqFmt(s){ const m=Math.floor(s/60); return `${m}:${(s%60).toString().padStart(2,'0')}`; }
+function dqStartTimer(){
+  if(dqInterval){ clearInterval(dqInterval); dqInterval=null; document.getElementById('dqStart').textContent='계속'; return; }
+  document.getElementById('dqStart').textContent='일시정지';
+  dqInterval=setInterval(()=>{
+    dqRemaining--;
+    document.getElementById('dqTimer').textContent=dqFmt(dqRemaining);
+    if(dqRemaining<=10) document.getElementById('dqTimer').style.color='#ef4444';
+    if(dqRemaining<=0){ clearInterval(dqInterval); dqInterval=null; document.getElementById('dqTimer').textContent='0:00'; document.getElementById('dqStart').textContent='연습 시작'; dqRemaining=60; }
+  },1000);
+}
+function dqResetTimer(){ clearInterval(dqInterval); dqInterval=null; dqRemaining=60; document.getElementById('dqTimer').textContent='1:00'; document.getElementById('dqTimer').style.color='var(--gold)'; document.getElementById('dqStart').textContent='연습 시작'; }
 </script>
 </body>
 </html>
