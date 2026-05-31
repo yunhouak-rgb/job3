@@ -247,6 +247,19 @@ img { max-width: 100%; height: auto; }
 .count-bar__label { font-size:.78rem;font-weight:600;color:var(--text-muted);margin-right:4px; }
 .count-btn { padding:6px 14px;border-radius:99px;border:1.5px solid var(--gray-200);background:var(--white);font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;color:var(--text-sub);transition:all .15s; }
 .count-btn:hover,.count-btn.active { border-color:var(--gold);background:var(--gold);color:var(--white); }
+
+.review-list { margin-top:24px; }
+.review-item { border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;margin-bottom:12px; }
+.review-item__head { display:flex;align-items:center;gap:10px;margin-bottom:10px; }
+.review-item__num { width:26px;height:26px;background:var(--gray-100);border-radius:50%;font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;color:var(--text-sub); }
+.review-item__badge { font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:4px; }
+.rv-correct { background:#e8f5e9;color:#2e7d32; }
+.rv-wrong { background:#fee;color:#ef4444; }
+.review-item__q { font-size:.92rem;font-weight:600;line-height:1.6;margin-bottom:12px;white-space:pre-line; }
+.review-item__answer { font-size:.88rem;color:var(--text);background:var(--gray-50);padding:12px 14px;border-radius:var(--radius);margin-bottom:8px;line-height:1.7; }
+.review-item__explain { font-size:.86rem;color:var(--text-sub);line-height:1.7;padding:0 2px;white-space:pre-line; }
+.rv-label { font-size:.7rem;font-weight:700;color:var(--gold);margin-right:4px; }
+.rv-label--wrong { color:#ef4444; }
   </style>
 </head>
 <body>
@@ -291,7 +304,7 @@ img { max-width: 100%; height: auto; }
       <div class="progress">
         <span class="progress__text" id="progressText">1 / 5</span>
         <div class="progress__bar"><div class="progress__fill" id="progressFill" style="width:20%;"></div></div>
-        <span class="progress__text" id="scoreText">점수: 0</span>
+        <span class="progress__text" id="scoreText"></span>
       </div>
 
       <div class="result-box" id="resultBox">
@@ -379,9 +392,10 @@ function restartQuiz() {
   answers = new Array(problems.length).fill(null);
   score = 0;
   document.getElementById('resultBox').classList.remove('show');
+  const rb = document.getElementById('reviewBox'); if(rb) rb.remove();
   document.getElementById('questionContainer').style.display = 'block';
   document.getElementById('quizNav').style.display = 'flex';
-  document.getElementById('scoreText').textContent = '점수: 0';
+  document.getElementById('scoreText').textContent = '';
   renderQuestion();
 }
 
@@ -391,15 +405,9 @@ function renderQuestion() {
   document.getElementById('progressText').textContent = `${currentIdx+1} / ${total}`;
   document.getElementById('progressFill').style.width = `${((currentIdx+1)/total)*100}%`;
 
-  const answered = answers[currentIdx] !== null;
   const optsHtml = p.options.map((opt, i) => {
     let cls = 'option';
-    if (answered) {
-      if (i === p.answer) cls += ' correct';
-      else if (i === answers[currentIdx]) cls += ' wrong';
-    } else if (answers[currentIdx] === i) {
-      cls += ' selected';
-    }
+    if (answers[currentIdx] === i) cls += ' selected';
     const marker = ['①','②','③','④','⑤'][i];
     return `<div class="${cls}" onclick="selectOption(${i})"><span class="option__marker">${marker}</span><span>${opt}</span></div>`;
   }).join('');
@@ -409,10 +417,6 @@ function renderQuestion() {
       <div class="question__num">${currentIdx+1}</div>
       <div class="question__text">${p.q}</div>
       ${optsHtml}
-      <div class="explain ${answered?'show':''}" id="explain">
-        <div class="explain__label">해설</div>
-        <div class="explain__text">${p.explain}</div>
-      </div>
     </div>`;
 
   document.getElementById('prevBtn').style.visibility = currentIdx===0 ? 'hidden' : 'visible';
@@ -420,10 +424,7 @@ function renderQuestion() {
 }
 
 function selectOption(i) {
-  if (answers[currentIdx] !== null) return; // 이미 답함
-  answers[currentIdx] = i;
-  if (i === problems[currentIdx].answer) score++;
-  document.getElementById('scoreText').textContent = `점수: ${score}`;
+  answers[currentIdx] = i;  // 재선택 가능
   renderQuestion();
 }
 
@@ -444,15 +445,48 @@ function showResult() {
   document.getElementById('questionContainer').style.display = 'none';
   document.getElementById('quizNav').style.display = 'none';
   const total = problems.length;
+  // 점수 계산
+  score = 0;
+  problems.forEach((p,i)=>{ if(answers[i]===p.answer) score++; });
   document.getElementById('finalScore').textContent = `${score}/${total}`;
   let msg;
   const pct = score/total;
-  if (pct === 1) msg = '완벽합니다! 인적성 준비가 잘 되어 있어요.';
-  else if (pct >= 0.6) msg = '좋아요! 조금만 더 연습하면 됩니다.';
-  else msg = '연습이 더 필요해요. 해설을 다시 확인해보세요.';
+  if (pct === 1) msg = '완벽합니다! 아래 해설로 복습해보세요.';
+  else if (pct >= 0.6) msg = '좋아요! 틀린 문제 해설을 확인해보세요.';
+  else msg = '연습이 더 필요해요. 아래 해설을 꼼꼼히 보세요.';
   document.getElementById('resultMsg').textContent = msg;
   document.getElementById('resultBox').classList.add('show');
   document.getElementById('progressFill').style.width = '100%';
+
+  // 전체 문제 해설 출력
+  const markers = ['①','②','③','④','⑤'];
+  let reviewHtml = '<div class="review-list">';
+  problems.forEach((p,i)=>{
+    const userAns = answers[i];
+    const correct = userAns === p.answer;
+    reviewHtml += `
+      <div class="review-item">
+        <div class="review-item__head">
+          <span class="review-item__num">${i+1}</span>
+          <span class="review-item__badge ${correct?'rv-correct':'rv-wrong'}">${userAns===null?'미응답':(correct?'정답':'오답')}</span>
+        </div>
+        <div class="review-item__q">${p.q}</div>
+        <div class="review-item__answer">
+          <span class="rv-label">정답</span> ${markers[p.answer]} ${p.options[p.answer]}
+          ${userAns!==null && !correct ? `<br/><span class="rv-label rv-label--wrong">내 답</span> ${markers[userAns]} ${p.options[userAns]}` : ''}
+        </div>
+        <div class="review-item__explain"><span class="rv-label">해설</span> ${p.explain}</div>
+      </div>`;
+  });
+  reviewHtml += '</div>';
+  let reviewBox = document.getElementById('reviewBox');
+  if(!reviewBox){
+    reviewBox = document.createElement('div');
+    reviewBox.id = 'reviewBox';
+    document.getElementById('resultBox').insertAdjacentElement('afterend', reviewBox);
+  }
+  reviewBox.innerHTML = reviewHtml;
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
 restartQuiz();
