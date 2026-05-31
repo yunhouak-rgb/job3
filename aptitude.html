@@ -242,6 +242,11 @@ img { max-width: 100%; height: auto; }
 .result-box__score { font-size:3rem;font-weight:900;color:var(--gold);margin-bottom:8px; }
 .result-box__text { font-size:1rem;color:rgba(255,255,255,.7);margin-bottom:24px; }
 @media(max-width:600px){ .question{padding:24px 20px;} }
+
+.count-bar { display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px 0 0; }
+.count-bar__label { font-size:.78rem;font-weight:600;color:var(--text-muted);margin-right:4px; }
+.count-btn { padding:6px 14px;border-radius:99px;border:1.5px solid var(--gray-200);background:var(--white);font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;color:var(--text-sub);transition:all .15s; }
+.count-btn:hover,.count-btn.active { border-color:var(--gold);background:var(--gold);color:var(--white); }
   </style>
 </head>
 <body>
@@ -273,7 +278,14 @@ img { max-width: 100%; height: auto; }
       <div class="apt-hero__label">인적성 연습문제</div>
       <h1 class="apt-hero__title">인적성 검사<br/>유형별 연습문제</h1>
       <p class="apt-hero__desc">대기업 인적성(GSAT·HMAT) 및 공기업 NCS 유형의 연습문제 100개입니다. 풀고 바로 채점하고 해설까지 확인하세요. 전부 무료입니다.</p>
+      <p style="font-size:.78rem;color:var(--text-muted);margin-top:10px;line-height:1.6;">※ 실제 기출문제가 아닌 유형 연습용 자체 제작 문제입니다. 출제 경향 파악과 감각 유지에 활용하세요.</p>
       <div class="cat-bar" id="catBar"></div>
+      <div class="count-bar" id="countBar">
+        <span class="count-bar__label">문항 수</span>
+        <button class="count-btn active" data-count="10" onclick="setCount(10,this)">10문제</button>
+        <button class="count-btn" data-count="20" onclick="setCount(20,this)">20문제</button>
+        <button class="count-btn" data-count="999" onclick="setCount(999,this)">전체</button>
+      </div>
     </div>
 
     <div class="quiz-area">
@@ -349,8 +361,21 @@ function selectCategory(cat, btn) {
   restartQuiz();
 }
 
+let selectedCount = 10;
+function setCount(n, btn){
+  document.querySelectorAll('.count-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedCount = n;
+  restartQuiz();
+}
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
 function restartQuiz() {
-  problems = ALL_PROBLEMS[currentCat];
+  const pool = shuffle(ALL_PROBLEMS[currentCat]);
+  problems = pool.slice(0, Math.min(selectedCount, pool.length));
   currentIdx = 0;
   answers = new Array(problems.length).fill(null);
   score = 0;
