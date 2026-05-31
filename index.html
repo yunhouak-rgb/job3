@@ -213,6 +213,16 @@ img { max-width: 100%; height: auto; }
   .site-nav a:not(.nav-book):not(.nav-menu-btn) { display: none; }
   .nav-menu-btn { display: flex; }
 }
+
+.home-tools-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-200);border:1px solid var(--gray-200);margin-top:24px; }
+.home-tool { background:var(--white);padding:24px 20px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;transition:all .15s; }
+.home-tool:hover { background:var(--black);color:var(--white); }
+.home-tool:hover .home-tool__desc { color:rgba(255,255,255,.55); }
+.home-tool__icon { font-size:1.6rem; }
+.home-tool__name { font-size:.95rem;font-weight:700;letter-spacing:-.01em; }
+.home-tool__desc { font-size:.76rem;color:var(--text-muted);line-height:1.5;transition:color .15s; }
+@media(max-width:900px){ .home-tools-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:480px){ .home-tools-grid{grid-template-columns:repeat(2,1fr);} }
 </style>
 </head>
 <body>
@@ -372,6 +382,22 @@ img { max-width: 100%; height: auto; }
   </section>
 
   <!-- 최신글 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">바로 쓰는 도구 & 콘텐츠</div>
+      <div class="home-tools-grid">
+        <a href="/tools" class="home-tool fade-up"><span class="home-tool__icon">🧰</span><span class="home-tool__name">취업도구</span><span class="home-tool__desc">연봉계산기·자소서글자수·D-day</span></a>
+        <a href="/cover-letter-examples" class="home-tool fade-up"><span class="home-tool__icon">📝</span><span class="home-tool__name">자소서 예시 모음</span><span class="home-tool__desc">항목별·직무별 55개</span></a>
+        <a href="/interview-questions" class="home-tool fade-up"><span class="home-tool__icon">💬</span><span class="home-tool__name">면접 질문 모음</span><span class="home-tool__desc">유형별·상황별 31개</span></a>
+        <a href="/aptitude" class="home-tool fade-up"><span class="home-tool__icon">🧠</span><span class="home-tool__name">인적성 연습문제</span><span class="home-tool__desc">GSAT·NCS 유형 100문제</span></a>
+        <a href="/jobs" class="home-tool fade-up"><span class="home-tool__icon">🏢</span><span class="home-tool__name">채용공고 & 기업분석</span><span class="home-tool__desc">매일 자동 업데이트</span></a>
+        <a href="/job-test" class="home-tool fade-up"><span class="home-tool__icon">🎯</span><span class="home-tool__name">직무 추천 테스트</span><span class="home-tool__desc">나에게 맞는 직무 찾기</span></a>
+        <a href="/glossary" class="home-tool fade-up"><span class="home-tool__icon">📖</span><span class="home-tool__name">취업 용어 사전</span><span class="home-tool__desc">취준생 필수 용어 60개</span></a>
+        <a href="/consultation" class="home-tool fade-up"><span class="home-tool__icon">❓</span><span class="home-tool__name">취업 고민 Q&A</span><span class="home-tool__desc">자주 묻는 고민 16개</span></a>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="section-label">추천 글</div>
