@@ -308,5 +308,16 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
 </script>
+<!-- 카카오 문의 플로팅 버튼 -->
+<a href="https://open.kakao.com/o/sTpjuoQh" target="_blank" rel="noopener" id="kakaoFloat" onclick="gtag&&gtag('event','contact_kakao_click',{'location':'float'});" aria-label="카카오톡 문의">
+  <span class="kf-icon">💬</span>
+  <span class="kf-text">자소서·취업 상담</span>
+</a>
+<style>
+#kakaoFloat{position:fixed;right:20px;bottom:20px;z-index:9999;display:flex;align-items:center;gap:8px;padding:14px 20px;background:#FEE500;color:#191600;border-radius:50px;font-size:.92rem;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.18);transition:transform .15s,box-shadow .15s;font-family:'Noto Sans KR',sans-serif;}
+#kakaoFloat:hover{transform:translateY(-3px);box-shadow:0 6px 22px rgba(0,0,0,.24);}
+#kakaoFloat .kf-icon{font-size:1.2rem;line-height:1;}
+@media(max-width:600px){#kakaoFloat{right:14px;bottom:14px;padding:13px 16px;}#kakaoFloat .kf-text{display:none;}#kakaoFloat .kf-icon{font-size:1.4rem;}}
+</style>
 </body>
 </html>
