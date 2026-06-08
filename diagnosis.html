@@ -236,7 +236,11 @@ img { max-width: 100%; height: auto; }
 .tool-seo h2:first-child { margin-top: 0; }
 .tool-seo p { font-size: 0.92rem; color: var(--text-sub); line-height: 1.85; margin-bottom: 14px; font-weight: 300; }
 .tool-seo strong { color: var(--text); font-weight: 600; }
-  </style>
+  
+.summary-card{background:var(--gray-50);border-radius:12px;padding:18px 20px;margin:10px 0;}
+.summary-card__cat{font-size:.78rem;font-weight:700;color:var(--gold);margin-bottom:6px;}
+.summary-card__diag{font-size:.92rem;line-height:1.6;color:var(--text-sub);}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -365,21 +369,31 @@ document.addEventListener('click',function(e){const m=document.getElementById('m
 
 const questions=[
   {cat:'면접',q:'면접장에서 갑자기 머릿속이 하얘진 경험이 있나요?',opts:['자주 있다','가끔 있다','별로 없다','면접 경험이 없다']},
-  {cat:'면접',q:'면접관의 질문에 STAR 구조(상황-행동-결과)로 답할 수 있나요?',opts:['잘 모른다','알지만 적용이 어렵다','어느 정도 된다','자연스럽게 된다']},
-  {cat:'면접',q:'1분 자기소개를 준비해두고 연습한 적이 있나요?',opts:['전혀 없다','대충 생각만','한두 번 해봤다','충분히 연습했다']},
-  {cat:'면접',q:'압박 질문이나 예상 못한 질문에 대응할 자신이 있나요?',opts:['전혀 없다','조금 불안하다','어느 정도 있다','자신 있다']},
-  {cat:'자소서',q:'지원동기를 쓸 때 회사마다 다르게 쓰고 있나요?',opts:['거의 같은 내용이다','조금씩 바꾼다','꽤 다르게 쓴다','완전히 맞춤으로 쓴다']},
-  {cat:'자소서',q:'자소서에 숫자나 구체적인 성과가 포함되어 있나요?',opts:['거의 없다','1~2개 있다','절반 이상 있다','대부분 있다']},
-  {cat:'자소서',q:'자소서 첫 문장을 차별화해서 쓰고 있나요?',opts:['평범하게 시작','조금 신경 쓴다','나름 차별화','확실히 눈길을 끈다']},
-  {cat:'자소서',q:'자소서를 제출 전에 점검하는 기준이 있나요?',opts:['그냥 낸다','맞춤법만 본다','몇 가지 점검','체계적으로 점검']},
-  {cat:'기업이해',q:'지원 회사의 사업·최근 이슈를 조사하고 지원하나요?',opts:['거의 안 한다','이름 정도만','어느 정도 조사','깊이 조사한다']},
-  {cat:'기업이해',q:'지원 직무가 실제로 하는 일을 정확히 알고 있나요?',opts:['잘 모른다','대략 안다','어느 정도 안다','정확히 안다']},
-  {cat:'기업이해',q:'동종업계·경쟁사와 비교해 그 회사의 강점을 아나요?',opts:['전혀 모른다','조금 안다','어느 정도','잘 안다']},
-  {cat:'기업이해',q:'채용 트렌드(수시채용·직무중심 등)를 이해하고 있나요?',opts:['전혀 모른다','들어는 봤다','어느 정도','잘 이해한다']},
+  {cat:'면접',q:'면접관 질문에 STAR 구조(상황-행동-결과)로 답할 수 있나요?',opts:['잘 모른다','알지만 적용 어렵다','어느 정도 된다','자연스럽게 된다']},
+  {cat:'면접',q:'1분 자기소개를 준비하고 연습한 적이 있나요?',opts:['전혀 없다','대충 생각만','한두 번','충분히 연습']},
+  {cat:'면접',q:'압박 질문·예상 못한 질문에 대응할 자신이 있나요?',opts:['전혀 없다','조금 불안','어느 정도','자신 있다']},
+  {cat:'면접',q:'지원 직무에 맞는 예상 질문을 정리해 두었나요?',opts:['전혀 안 함','조금','어느 정도','체계적으로']},
+  {cat:'면접',q:'면접 복장·태도 등 기본 매너를 점검했나요?',opts:['신경 안 씀','대충 안다','어느 정도','확실히 준비']},
+  {cat:'면접',q:'면접 마지막 "하고 싶은 말"을 준비했나요?',opts:['생각 안 함','즉흥적으로','대략 준비','확실히 준비']},
+  {cat:'자소서',q:'지원동기를 회사마다 다르게 쓰고 있나요?',opts:['거의 같다','조금 바꿈','꽤 다르게','완전 맞춤']},
+  {cat:'자소서',q:'자소서에 숫자·구체적 성과가 포함돼 있나요?',opts:['거의 없다','1~2개','절반 이상','대부분']},
+  {cat:'자소서',q:'첫 문장을 차별화해서 쓰고 있나요?',opts:['평범하게','조금 신경','나름 차별화','확실히 눈길']},
+  {cat:'자소서',q:'제출 전 점검하는 나만의 기준이 있나요?',opts:['그냥 낸다','맞춤법만','몇 가지','체계적으로']},
+  {cat:'자소서',q:'경험을 STAR로 정리해 소재 은행이 있나요?',opts:['없다','머릿속에만','일부 정리','충분히 정리']},
+  {cat:'자소서',q:'직무 역량과 내 경험을 연결해 쓰나요?',opts:['연결 못함','조금','어느 정도','명확히 연결']},
+  {cat:'자소서',q:'입사 후 포부를 구체적 목표로 쓰나요?',opts:['추상적','조금 구체','어느 정도','매우 구체']},
+  {cat:'기업이해',q:'지원 회사의 사업·최근 이슈를 조사하나요?',opts:['거의 안 함','이름 정도','어느 정도','깊이 조사']},
+  {cat:'기업이해',q:'지원 직무가 실제 하는 일을 정확히 아나요?',opts:['잘 모름','대략','어느 정도','정확히']},
+  {cat:'기업이해',q:'경쟁사 대비 그 회사 강점을 아나요?',opts:['전혀','조금','어느 정도','잘 안다']},
+  {cat:'기업이해',q:'채용 트렌드(수시·직무중심 등)를 이해하나요?',opts:['전혀','들어봤다','어느 정도','잘 이해']},
+  {cat:'기업이해',q:'산업·업계 동향을 평소 챙겨보나요?',opts:['전혀','가끔','어느 정도','꾸준히']},
+  {cat:'기업이해',q:'지원 회사의 인재상을 파악하고 맞추나요?',opts:['모름','이름만','어느 정도','맞춰 작성']},
   {cat:'마음관리',q:'취업 준비 중 불안·우울을 자주 느끼나요?',opts:['매우 자주','자주','가끔','거의 없다']},
-  {cat:'마음관리',q:'불합격해도 빠르게 회복하고 다시 지원하나요?',opts:['많이 힘들다','꽤 힘들다','어느 정도 회복','빠르게 회복']},
-  {cat:'마음관리',q:'규칙적인 취업 준비 루틴을 유지하고 있나요?',opts:['전혀 없다','들쭉날쭉','어느 정도','꾸준히 유지']},
-  {cat:'마음관리',q:'남과 비교하지 않고 내 페이스를 지키나요?',opts:['많이 비교한다','자주 비교','가끔 비교','내 페이스 유지']},
+  {cat:'마음관리',q:'불합격해도 빠르게 회복해 다시 지원하나요?',opts:['많이 힘듦','꽤 힘듦','어느 정도','빠르게']},
+  {cat:'마음관리',q:'규칙적인 준비 루틴을 유지하나요?',opts:['전혀','들쭉날쭉','어느 정도','꾸준히']},
+  {cat:'마음관리',q:'남과 비교하지 않고 내 페이스를 지키나요?',opts:['많이 비교','자주','가끔','내 페이스']},
+  {cat:'마음관리',q:'번아웃 없이 쉬는 시간을 확보하나요?',opts:['전혀','거의 못함','어느 정도','잘 확보']},
+  {cat:'마음관리',q:'취업 준비를 함께 나눌 사람·모임이 있나요?',opts:['전혀 없다','거의 없다','조금','충분히']},
 ];
 
 const catMap={'면접':0,'자소서':1,'기업이해':2,'마음관리':3};
@@ -415,29 +429,53 @@ function prevQ(){if(cur>0){cur--;renderQ();}}
 
 function showResult(){
   scores=[0,0,0,0];
-  questions.forEach((q,i)=>{scores[catMap[q.cat]]+=answers[i];});
-  const pcts=scores.map(s=>Math.round((s/12)*100));
+  const counts=[0,0,0,0];
+  questions.forEach((q,i)=>{const ci=catMap[q.cat];scores[ci]+=answers[i];counts[ci]++;});
+  // 카테고리별 만점 = 문항수*3
+  const pcts=scores.map((s,i)=>Math.round((s/(counts[i]*3))*100));
+  const total=Math.round(pcts.reduce((a,b)=>a+b,0)/4);
   const weakIdx=pcts.indexOf(Math.min(...pcts));
   const strong=pcts.indexOf(Math.max(...pcts));
-  
+
+  // 영역별 한 줄 진단 코멘트 (점수 구간별)
+  const diagText={
+    0:[ '면접 기본기가 아직 약해요. 1분 자기소개와 STAR 답변 구조부터 잡아야 해요.',
+        '면접 기본은 있지만 압박 질문·답변 구조화에서 안정감을 더 키우면 좋아요.',
+        '면접 준비가 탄탄한 편이에요. 실전 감각만 유지하면 됩니다.'],
+    1:[ '지원동기를 회사마다 비슷하게 쓰고 구체적 수치가 부족해요. 첫 문장 차별화와 경험 정량화가 시급해요.',
+        '자소서 기본은 갖췄지만 차별화와 직무 연결을 더 다듬으면 좋아요.',
+        '자소서 작성력이 좋은 편이에요. 회사별 맞춤화만 유지하세요.'],
+    2:[ '기업·직무 조사가 부족해요. 지원 회사의 사업과 인재상부터 파악해야 해요.',
+        '기본 조사는 하지만 경쟁사 비교·인재상 분석이 약해요. 더 깊이 파고드세요.',
+        '기업 이해도가 높은 편이에요. 산업 동향까지 챙기면 완벽해요.'],
+    3:[ '취업 스트레스 관리가 필요해요. 루틴을 잡고 비교를 줄이는 것부터 시작하세요.',
+        '멘탈 관리는 어느 정도 되지만, 회복력과 루틴을 더 단단히 하면 좋아요.',
+        '멘탈 관리가 잘 되고 있어요. 지금 페이스를 유지하세요.']
+  };
+  function lv(p){return p<50?0:(p<75?1:2);}
+
   document.getElementById('quizSection').style.display='none';
   const rw=document.getElementById('resultWrap');
   rw.classList.add('show');
-  
-  document.getElementById('resultTitle').textContent='진단 완료!';
-  document.getElementById('resultDesc').textContent=`가장 강한 영역은 ${catNames[strong]}, 가장 약한 영역은 ${catNames[weakIdx]}입니다. 아래에서 자세히 확인하세요.`;
-  
+
+  document.getElementById('resultTitle').textContent='취업 준비도 진단 완료';
+  document.getElementById('resultDesc').innerHTML=`종합 점수 <strong style="color:var(--gold);font-size:1.15rem;">${total}점</strong> / 100 · 가장 강한 영역은 <strong>${catNames[strong]}</strong>, 가장 약한 영역은 <strong>${catNames[weakIdx]}</strong>입니다.`;
+
   document.getElementById('resultBars').innerHTML=catNames.map((name,i)=>`
     <div class="result-bar-item">
       <div class="result-bar-label"><strong>${name}</strong><span>${pcts[i]}%</span></div>
-      <div class="result-bar-track"><div class="result-bar-fill" style="width:0%" data-w="${pcts[i]}%"></div></div>
+      <div class="result-bar-track"><div class="result-bar-fill" style="width:0%${i===weakIdx?';background:#e0574a':''}" data-w="${pcts[i]}%"></div></div>
     </div>
   `).join('');
-  
-  document.getElementById('resultWeak').innerHTML=`<div class="result-weak__label">가장 약한 영역</div><div class="result-weak__text">${catNames[weakIdx]} — 지금 바로 이 영역부터 보완하세요</div>`;
+
+  // 한 줄 진단 요약본: 약한 순서대로 3개
+  const order=[...pcts.keys()].sort((a,b)=>pcts[a]-pcts[b]).slice(0,3);
+  document.getElementById('resultWeak').innerHTML='<div style="font-weight:800;margin:28px 0 14px;">한 줄 진단 (요약본)</div>'+
+    order.map(i=>`<div class="summary-card"><div class="summary-card__cat">${catNames[i]} · ${pcts[i]}%${i===weakIdx?' (약점)':''}</div><div class="summary-card__diag">${diagText[i][lv(pcts[i])]}</div></div>`).join('');
+
   document.getElementById('resultLink').href=catLinks[weakIdx];
-  document.getElementById('resultLink').textContent=catNames[weakIdx]+' 글 보러가기 →';
-  
+  document.getElementById('resultLink').textContent=catNames[weakIdx]+' 보완 글 보러가기 →';
+
   setTimeout(()=>{document.querySelectorAll('.result-bar-fill').forEach(el=>el.style.width=el.dataset.w);},100);
 }
 
