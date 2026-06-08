@@ -287,7 +287,7 @@ img { max-width: 100%; height: auto; }
     <div style="margin-bottom:24px;">
       <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">무료 진단</div>
       <h1 style="font-size:1.8rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:8px;">지금 내 취업 준비 상태는?</h1>
-      <p style="color:var(--text-sub);font-weight:300;">8가지 질문으로 4개 영역을 진단합니다.</p>
+      <p style="color:var(--text-sub);font-weight:300;">28가지 질문으로 4개 영역을 진단합니다.</p>
     </div>
     <div class="quiz-progress"><div class="quiz-progress__bar" id="progressBar" style="width:12.5%"></div></div>
     <div id="quizBody"></div>
@@ -388,12 +388,14 @@ const questions=[
   {cat:'기업이해',q:'채용 트렌드(수시·직무중심 등)를 이해하나요?',opts:['전혀','들어봤다','어느 정도','잘 이해']},
   {cat:'기업이해',q:'산업·업계 동향을 평소 챙겨보나요?',opts:['전혀','가끔','어느 정도','꾸준히']},
   {cat:'기업이해',q:'지원 회사의 인재상을 파악하고 맞추나요?',opts:['모름','이름만','어느 정도','맞춰 작성']},
+  {cat:'기업이해',q:'직무에 필요한 역량·자격을 구체적으로 아나요?',opts:['전혀 모름','대략','어느 정도','정확히 안다']},
   {cat:'마음관리',q:'취업 준비 중 불안·우울을 자주 느끼나요?',opts:['매우 자주','자주','가끔','거의 없다']},
   {cat:'마음관리',q:'불합격해도 빠르게 회복해 다시 지원하나요?',opts:['많이 힘듦','꽤 힘듦','어느 정도','빠르게']},
   {cat:'마음관리',q:'규칙적인 준비 루틴을 유지하나요?',opts:['전혀','들쭉날쭉','어느 정도','꾸준히']},
   {cat:'마음관리',q:'남과 비교하지 않고 내 페이스를 지키나요?',opts:['많이 비교','자주','가끔','내 페이스']},
   {cat:'마음관리',q:'번아웃 없이 쉬는 시간을 확보하나요?',opts:['전혀','거의 못함','어느 정도','잘 확보']},
   {cat:'마음관리',q:'취업 준비를 함께 나눌 사람·모임이 있나요?',opts:['전혀 없다','거의 없다','조금','충분히']},
+  {cat:'마음관리',q:'스스로 동기부여하며 꾸준히 준비하나요?',opts:['매우 힘들다','힘든 편','어느 정도','잘 유지']},
 ];
 
 const catMap={'면접':0,'자소서':1,'기업이해':2,'마음관리':3};
@@ -408,7 +410,7 @@ function renderQ(){
   document.getElementById('prevBtn').style.display=cur>0?'':'none';
   document.getElementById('nextBtn').textContent=cur===questions.length-1?'결과 보기':'다음 →';
   document.getElementById('quizBody').innerHTML=`
-    <div class="quiz-category">${q.cat} ${catMap[q.cat]+1}/2</div>
+    <div class="quiz-category">${q.cat} · ${cur+1}/${questions.length}</div>
     <div class="quiz-q">${q.q}</div>
     <div class="quiz-options">${q.opts.map((o,i)=>`<button class="quiz-option${answers[cur]===i?' selected':''}" onclick="select(${i})">${o}</button>`).join('')}</div>
   `;
@@ -417,6 +419,11 @@ function renderQ(){
 function select(i){
   answers[cur]=i;
   document.querySelectorAll('.quiz-option').forEach((b,idx)=>b.classList.toggle('selected',idx===i));
+  // 선택 표시를 잠깐 보여준 뒤 자동으로 다음 문항(또는 결과)으로
+  setTimeout(()=>{
+    if(cur<questions.length-1){cur++;renderQ();}
+    else{showResult();}
+  },250);
 }
 
 function nextQ(){
