@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="naver-site-verification" content="9e0215ae1a26338579b67c5418e1dff9900bee22" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>취업 준비 무료 진단 | 좋은 취업</title>
-  <meta name="description" content="지금 내 취업 준비 상태를 5분 만에 진단하세요. 면접, 자소서, 기업이해, 마음관리 4가지 영역 중 어디가 약한지 확인하고 맞춤 콘텐츠를 추천받으세요." />
+  <meta name="description" content="취업 준비도를 5분 만에 무료 진단하세요. 자소서·면접·기업이해·마음관리 4개 영역 점수와 약점 분석, 상세 리포트와 무료 PDF까지. 16문항 무료 진단." />
   <link rel="canonical" href="https://jobok.co.kr/diagnosis" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHL4KZGH5"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YSHL4KZGH5');</script>
@@ -301,6 +301,36 @@ img { max-width: 100%; height: auto; }
       <a id="resultLink" href="/" class="btn btn--primary btn--lg">관련 글 보러가기</a>
       <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" class="btn btn--gold btn--lg">전자책 구매 · 26,000원</a>
     </div>
+
+    <div class="report-lock" id="reportLock" style="margin-top:36px;padding-top:32px;border-top:1px solid var(--gray-100);">
+      <div style="text-align:center;margin-bottom:24px;">
+        <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">PREMIUM REPORT</div>
+        <div style="font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;">📊 상세 진단 리포트</div>
+        <div style="font-size:.92rem;color:var(--text-sub);line-height:1.7;max-width:440px;margin:0 auto;font-weight:300;">무료 진단은 영역별 점수까지예요. 상세 리포트에서는 약점의 <strong>구체적 원인</strong>과 <strong>4주 액션플랜</strong>, 영역별 맞춤 처방을 받아볼 수 있어요.</div>
+      </div>
+      <div style="position:relative;background:var(--gray-50);border-radius:var(--radius-lg);padding:28px;overflow:hidden;">
+        <div style="filter:blur(5px);pointer-events:none;user-select:none;">
+          <div style="font-weight:700;margin-bottom:12px;">영역별 정밀 분석</div>
+          <p style="font-size:.9rem;color:var(--text-sub);line-height:1.7;">자소서 영역 점수가 낮은 핵심 원인은 첫 문장의 차별성 부족과 정량적 성과 표현의 부재입니다. 특히...</p>
+          <div style="font-weight:700;margin:18px 0 12px;">맞춤 4주 액션플랜</div>
+          <p style="font-size:.9rem;color:var(--text-sub);line-height:1.7;">1주차: 경험 5개를 STAR로 정리하고 각 경험에 수치를 부여합니다. 2주차: 지원동기 첫 문장을...</p>
+          <div style="font-weight:700;margin:18px 0 12px;">우선 학습 콘텐츠 추천</div>
+          <p style="font-size:.9rem;color:var(--text-sub);line-height:1.7;">당신의 약점 영역에 맞춘 글 7편과 도구 3개를 순서대로...</p>
+        </div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(250,248,244,.4),rgba(250,248,244,.95));">
+          <div style="font-size:2rem;margin-bottom:8px;">🔒</div>
+          <div style="font-weight:800;font-size:1.1rem;margin-bottom:4px;">상세 리포트 잠금</div>
+          <div style="font-size:.85rem;color:var(--text-muted);">결제 후 바로 전체 내용이 열려요</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <div style="font-size:1.4rem;font-weight:900;margin-bottom:4px;">3,000원</div>
+        <div style="font-size:.82rem;color:var(--text-muted);margin-bottom:16px;">1회 결제 · 즉시 확인</div>
+        <a href="/contact" class="btn btn--gold btn--lg" onclick="gtag&&gtag('event','report_unlock_click',{'location':'diagnosis'});">상세 리포트 받기 →</a>
+        <div style="font-size:.78rem;color:var(--text-muted);margin-top:12px;">+ 신청 시 「취업 준비 체크리스트 PDF」 무료 증정</div>
+      </div>
+    </div>
+
   </div>
 </div>
 </div>
@@ -336,12 +366,20 @@ document.addEventListener('click',function(e){const m=document.getElementById('m
 const questions=[
   {cat:'면접',q:'면접장에서 갑자기 머릿속이 하얘진 경험이 있나요?',opts:['자주 있다','가끔 있다','별로 없다','면접 경험이 없다']},
   {cat:'면접',q:'면접관의 질문에 STAR 구조(상황-행동-결과)로 답할 수 있나요?',opts:['잘 모른다','알지만 적용이 어렵다','어느 정도 된다','자연스럽게 된다']},
+  {cat:'면접',q:'1분 자기소개를 준비해두고 연습한 적이 있나요?',opts:['전혀 없다','대충 생각만','한두 번 해봤다','충분히 연습했다']},
+  {cat:'면접',q:'압박 질문이나 예상 못한 질문에 대응할 자신이 있나요?',opts:['전혀 없다','조금 불안하다','어느 정도 있다','자신 있다']},
   {cat:'자소서',q:'지원동기를 쓸 때 회사마다 다르게 쓰고 있나요?',opts:['거의 같은 내용이다','조금씩 바꾼다','꽤 다르게 쓴다','완전히 맞춤으로 쓴다']},
   {cat:'자소서',q:'자소서에 숫자나 구체적인 성과가 포함되어 있나요?',opts:['거의 없다','1~2개 있다','절반 이상 있다','대부분 있다']},
-  {cat:'기업이해',q:'지원 회사의 최근 1년 뉴스나 사업 방향을 파악하고 있나요?',opts:['잘 모른다','홈페이지 정도만 본다','뉴스까지 찾아본다','DART까지 분석한다']},
-  {cat:'기업이해',q:'채용 공고(JD)에서 핵심 키워드를 뽑아 자소서에 반영하나요?',opts:['그런 방법이 있었나?','알지만 안 한다','가끔 한다','항상 한다']},
-  {cat:'마음관리',q:'불합격 통보를 받으면 보통 어떻게 되나요?',opts:['며칠 동안 아무것도 못 한다','하루 이틀 힘들다','금방 털고 다시 시작한다','크게 영향 없다']},
-  {cat:'마음관리',q:'하루 취업 준비 루틴이 정해져 있나요?',opts:['전혀 없다','대략 있다','어느 정도 있다','철저하게 지킨다']},
+  {cat:'자소서',q:'자소서 첫 문장을 차별화해서 쓰고 있나요?',opts:['평범하게 시작','조금 신경 쓴다','나름 차별화','확실히 눈길을 끈다']},
+  {cat:'자소서',q:'자소서를 제출 전에 점검하는 기준이 있나요?',opts:['그냥 낸다','맞춤법만 본다','몇 가지 점검','체계적으로 점검']},
+  {cat:'기업이해',q:'지원 회사의 사업·최근 이슈를 조사하고 지원하나요?',opts:['거의 안 한다','이름 정도만','어느 정도 조사','깊이 조사한다']},
+  {cat:'기업이해',q:'지원 직무가 실제로 하는 일을 정확히 알고 있나요?',opts:['잘 모른다','대략 안다','어느 정도 안다','정확히 안다']},
+  {cat:'기업이해',q:'동종업계·경쟁사와 비교해 그 회사의 강점을 아나요?',opts:['전혀 모른다','조금 안다','어느 정도','잘 안다']},
+  {cat:'기업이해',q:'채용 트렌드(수시채용·직무중심 등)를 이해하고 있나요?',opts:['전혀 모른다','들어는 봤다','어느 정도','잘 이해한다']},
+  {cat:'마음관리',q:'취업 준비 중 불안·우울을 자주 느끼나요?',opts:['매우 자주','자주','가끔','거의 없다']},
+  {cat:'마음관리',q:'불합격해도 빠르게 회복하고 다시 지원하나요?',opts:['많이 힘들다','꽤 힘들다','어느 정도 회복','빠르게 회복']},
+  {cat:'마음관리',q:'규칙적인 취업 준비 루틴을 유지하고 있나요?',opts:['전혀 없다','들쭉날쭉','어느 정도','꾸준히 유지']},
+  {cat:'마음관리',q:'남과 비교하지 않고 내 페이스를 지키나요?',opts:['많이 비교한다','자주 비교','가끔 비교','내 페이스 유지']},
 ];
 
 const catMap={'면접':0,'자소서':1,'기업이해':2,'마음관리':3};
@@ -378,7 +416,7 @@ function prevQ(){if(cur>0){cur--;renderQ();}}
 function showResult(){
   scores=[0,0,0,0];
   questions.forEach((q,i)=>{scores[catMap[q.cat]]+=answers[i];});
-  const pcts=scores.map(s=>Math.round((s/6)*100));
+  const pcts=scores.map(s=>Math.round((s/12)*100));
   const weakIdx=pcts.indexOf(Math.min(...pcts));
   const strong=pcts.indexOf(Math.max(...pcts));
   
