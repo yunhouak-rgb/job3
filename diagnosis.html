@@ -66,630 +66,216 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        h1 {
-            text-align: center;
-            color: #4a5568;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #718096;
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border-left: 5px solid #667eea;
-        }
-
-        .info-box h3 {
-            color: #4a5568;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .info-box ul {
-            color: #718096;
-            margin-left: 20px;
-        }
-
-        .info-box li {
-            margin-bottom: 8px;
-        }
-
-        .personal-info {
-            background: linear-gradient(135deg, #fff5f5, #fed7d7);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border-left: 5px solid #e53e3e;
-        }
-
-        .personal-info h3 {
-            color: #c53030;
-            margin-bottom: 20px;
-            font-size: 1.3em;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #4a5568;
-            font-weight: 600;
-        }
-
-        .required::after {
-            content: " *";
-            color: #e53e3e;
-            font-weight: bold;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .form-group input[type="email"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1em;
-        }
-
-        .progress-container {
-            margin-bottom: 30px;
-            background: #f7fafc;
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 12px;
-            background: #e2e8f0;
-            border-radius: 6px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-
-        .progress-text {
-            text-align: center;
-            color: #4a5568;
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-
-        .section {
-            display: none;
-            margin-bottom: 30px;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        .section-title-quiz {
-            background: linear-gradient(135deg, #4299e1, #3182ce);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .section-title-quiz h2 {
-            font-size: 1.8em;
-            margin-bottom: 8px;
-        }
-
-        .question-quiz {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #667eea;
-        }
-
-        .question-text-quiz {
-            font-size: 1.1em;
-            color: #2d3748;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .question-number {
-            color: #667eea;
-            font-weight: 700;
-            margin-right: 8px;
-        }
-
-        .options-quiz {
-            display: grid;
-            gap: 10px;
-        }
-
-        .option-quiz {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .option-quiz:hover {
-            background: #e6f3ff;
-        }
-
-        .option-quiz.selected {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .open-question {
-            background: #fff9e6;
-            border-left: 4px solid #f6ad55;
-        }
-
-        .textarea-field {
-            width: 100%;
-            min-height: 100px;
-            padding: 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1em;
-            font-family: inherit;
-            resize: vertical;
-        }
-
-        .optional-note {
-            font-size: 0.9em;
-            color: #718096;
-            margin-top: 5px;
-            font-style: italic;
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 30px;
-            gap: 20px;
-        }
-
-        .btn-quiz {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 20px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 120px;
-        }
-
-        .btn-quiz:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-quiz:disabled {
-            background: #cbd5e0;
-            cursor: not-allowed;
-        }
-
-        .btn-secondary-quiz {
-            background: #f7fafc;
-            color: #4a5568;
-            border: 2px solid #e2e8f0;
-        }
-
-        .results-quiz {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-
-        .results-quiz.show {
-            display: block;
-        }
-
-        .results-quiz h2 {
-            font-size: 2.5em;
-            color: #4a5568;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .score-grade-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .total-score {
-            font-size: 3.5em;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .grade-badge {
-            display: inline-block;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-size: 1.8em;
-            font-weight: 700;
-            color: white;
-        }
-
-        .grade-A { background: linear-gradient(135deg, #48bb78, #38a169); }
-        .grade-B { background: linear-gradient(135deg, #667eea, #764ba2); }
-        .grade-C { background: linear-gradient(135deg, #f6ad55, #ed8936); }
-        .grade-D { background: linear-gradient(135deg, #e53e3e, #c53030); }
-        .grade-E { background: linear-gradient(135deg, #e67e22, #d35400); }
-        
-        .result-analysis {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            text-align: left;
-            border-left: 5px solid #667eea;
-        }
-        
-        .result-analysis h3 {
-            text-align: center;
-            font-size: 1.5em;
-            color: #4a5568;
-            margin-bottom: 15px;
-        }
-        
-        .result-analysis p {
-            font-size: 1.1em;
-            color: #718096;
-            line-height: 1.6;
-        }
-        
-        .radar-chart-container {
-            width: 100%;
-            height: 400px;
-            margin: 30px 0;
-        }
-        
-        @media (max-width: 600px) {
-            .radar-chart-container {
-                height: 300px;
-            }
-        }
-
-        .area-breakdown {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: left;
-        }
-
-        .area-breakdown h3 {
-            text-align: center;
-            color: #4a5568;
-            margin-bottom: 25px;
-            font-size: 1.5em;
-        }
-
-        .area-score {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border-left: 5px solid #667eea;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .area-info {
-            flex: 1;
-        }
-
-        .area-name {
-            font-weight: 700;
-            color: #2d3748;
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-
-        .area-description {
-            font-size: 0.9em;
-            color: #718096;
-        }
-
-        .recommendation {
-            background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
-            padding: 35px;
-            border-radius: 18px;
-            margin-top: 35px;
-            text-align: left;
-        }
-
-        .recommendation h3 {
-            color: #4a5568;
-            margin-bottom: 25px;
-            font-size: 1.5em;
-            font-weight: 700;
-            text-align: center;
-        }
-        
-        .recommendation .analysis-text {
-            color: #4a5568;
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        .action-steps {
-            display: grid;
-            gap: 20px;
-        }
-
-        .action-step {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 4px solid #667eea;
-        }
-
-        .step-title {
-            font-weight: 700;
-            color: #2d3748;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-
-        .step-description {
-            color: #718096;
-            line-height: 1.6;
-        }
-
-        .target-box {
-            background: linear-gradient(135deg, #e6f6ff, #d2eaf7);
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 4px solid #3182ce;
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .target-box .step-title {
-            color: #3182ce;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .action-btn {
-            padding: 15px 25px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .ebook-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .consulting-btn {
-            background: linear-gradient(135deg, #48bb78, #38a169);
-            color: white;
-        }
-
-        .action-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .back-to-home {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1em;
-        }
-        
-        .back-to-home a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* SNS 공유 스타일 */
-        .share-section {
-            background: linear-gradient(135deg, #fef7ff, #f3e8ff);
-            padding: 30px;
-            border-radius: 20px;
-            margin: 30px 0;
-            border: 2px solid #e9d5ff;
-        }
-
-        .share-section h3 {
-            color: #7c3aed;
-            margin-bottom: 15px;
-            font-size: 1.4em;
-            text-align: center;
-        }
-
-        .share-section p {
-            color: #6b7280;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .share-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .share-btn {
-            min-width: 110px;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-size: 0.9em;
-        }
-
-        .share-btn:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .share-btn:active {
-            transform: translateY(0) scale(0.98);
-        }
-
-        .kakao-btn {
-            background: #fee500;
-            color: #000;
-        }
-
-        .facebook-btn {
-            background: #1877f2;
-            color: white;
-        }
-
-        .twitter-btn {
-            background: #1da1f2;
-            color: white;
-        }
-
-        .copy-btn {
-            background: #6b7280;
-            color: white;
-        }
-
-        .share-preview {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            border: 2px dashed #d1d5db;
-            margin-top: 20px;
-        }
-
-        .share-preview .preview-label {
-            font-size: 0.85em;
-            color: #6b7280;
-            margin-bottom: 10px;
-        }
-
-        .share-preview .preview-text {
-            color: #374151;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-
-        .score-highlight {
-            color: #7c3aed;
-            font-weight: 700;
-        }
-
-        /* 스크린 리더를 위한 숨겨진 텍스트 */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-    </style>
+:root{
+  --black:#0a0a0a; --white:#ffffff;
+  --gray-50:#f7f7f5; --gray-100:#efefec; --gray-200:#e0e0da; --gray-400:#b0b0a8; --gray-600:#6b6b63;
+  --text:#0a0a0a; --text-sub:#5a5a52; --text-muted:#9a9a92;
+  --gold:#c4871a; --gold-dark:#a06f12; --gold-light:#fdf8f0;
+  --radius:6px; --radius-lg:12px; --max-w:720px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Noto Sans KR',-apple-system,sans-serif;
+  color:var(--text); background:var(--white);
+  line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 20px;}
+
+/* 상단 사이트 네비 */
+.site-nav{border-bottom:1px solid var(--gray-100);background:var(--white);position:sticky;top:0;z-index:50;}
+.site-nav__inner{max-width:var(--max-w);margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+.site-nav__logo{font-weight:900;font-size:1.05rem;color:var(--black);text-decoration:none;letter-spacing:-.02em;}
+.site-nav__logo span{color:var(--gold);}
+.site-nav__home{font-size:.85rem;color:var(--text-muted);text-decoration:none;font-weight:500;}
+.site-nav__home:hover{color:var(--gold);}
+
+/* 헤더 */
+header{text-align:center;padding:56px 20px 40px;}
+header h1{
+  font-size:2rem;font-weight:900;letter-spacing:-.03em;line-height:1.25;
+  color:var(--black);margin-bottom:14px;
+}
+header h1::after{content:"";display:block;width:44px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:2px;}
+.subtitle{font-size:1.02rem;color:var(--text-sub);font-weight:400;}
+
+/* 정보 박스 */
+.info-box{
+  background:var(--gold-light);border:1px solid #f0dcbb;border-radius:var(--radius-lg);
+  padding:26px 28px;margin:8px 0 28px;
+}
+.info-box h3{font-size:.95rem;font-weight:800;color:var(--gold-dark);margin-bottom:14px;letter-spacing:-.01em;}
+.info-box ul{list-style:none;display:grid;gap:9px;}
+.info-box li{font-size:.92rem;color:var(--text-sub);padding-left:22px;position:relative;}
+.info-box li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800;}
+.info-box strong{color:var(--text);font-weight:700;}
+
+/* 기본 정보 입력 */
+.personal-info{border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:26px 28px;margin-bottom:28px;}
+.personal-info h3{font-size:1.05rem;font-weight:800;margin-bottom:20px;letter-spacing:-.01em;}
+.form-group{margin-bottom:22px;}
+.form-group:last-child{margin-bottom:0;}
+.form-group>label{display:block;font-size:.95rem;font-weight:600;margin-bottom:12px;color:var(--text);}
+.form-group .required::after{content:" *";color:var(--gold);}
+.radio-group{display:flex;flex-wrap:wrap;gap:10px;}
+.radio-option{position:relative;}
+.radio-option input[type=radio]{position:absolute;opacity:0;}
+.radio-option label{
+  display:block;padding:11px 20px;border:1.5px solid var(--gray-200);border-radius:99px;
+  font-size:.9rem;color:var(--text-sub);cursor:pointer;transition:all .15s;font-weight:500;
+}
+.radio-option input:checked+label{border-color:var(--gold);background:var(--gold);color:#fff;font-weight:600;}
+.radio-option label:hover{border-color:var(--gold);}
+input[type=email]{
+  width:100%;padding:13px 16px;border:1.5px solid var(--gray-200);border-radius:var(--radius);
+  font-size:.95rem;font-family:inherit;transition:border-color .15s;
+}
+input[type=email]:focus{outline:none;border-color:var(--gold);}
+
+/* 진행바 */
+.progress-container{margin:0 0 32px;}
+.progress-bar{height:6px;background:var(--gray-100);border-radius:99px;overflow:hidden;}
+.progress-fill{height:100%;width:0;background:var(--gold);border-radius:99px;transition:width .4s ease;}
+.progress-text{text-align:center;font-size:.82rem;color:var(--text-muted);margin-top:10px;font-weight:600;letter-spacing:.02em;}
+
+/* 문항 섹션 */
+.section{display:none;}
+.section.active{display:block;animation:fadeIn .35s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.section-title-quiz{margin-bottom:20px;padding-bottom:18px;border-bottom:2px solid var(--gold);}
+.section-title-quiz h2{font-size:1.4rem;font-weight:900;letter-spacing:-.02em;color:var(--black);line-height:1.3;}
+.section-title-quiz p{font-size:.92rem;color:var(--text-muted);margin-top:7px;font-weight:400;}
+.question-quiz{padding:22px 0;border-bottom:1px solid var(--gray-100);}
+.question-quiz:last-child{border-bottom:none;}
+.question-number{color:var(--gold);font-weight:800;margin-right:6px;font-family:'Instrument Sans',sans-serif;}
+.question-text-quiz{font-size:1.02rem;font-weight:600;color:var(--text);margin-bottom:16px;line-height:1.5;}
+.options-quiz{display:grid;gap:9px;}
+.option-quiz{
+  padding:13px 18px;border:1.5px solid var(--gray-200);border-radius:var(--radius);
+  font-size:.92rem;color:var(--text-sub);cursor:pointer;transition:all .15s;background:var(--white);
+  text-align:left;font-family:inherit;
+}
+.option-quiz:hover{border-color:var(--gold);background:var(--gold-light);}
+.option-quiz.selected{border-color:var(--gold);background:var(--gold);color:#fff;font-weight:600;}
+.option-quiz input[type=radio]{display:none;}
+.option-quiz label{cursor:pointer;display:block;width:100%;color:inherit;font:inherit;}
+.option-quiz.selected label{color:#fff;}
+
+/* 주관식 */
+.open-question{margin-top:12px;}
+.textarea-field{
+  width:100%;min-height:100px;padding:14px 16px;border:1.5px solid var(--gray-200);
+  border-radius:var(--radius);font-size:.95rem;font-family:inherit;resize:vertical;line-height:1.6;
+}
+.textarea-field:focus{outline:none;border-color:var(--gold);}
+.optional-note{font-size:.8rem;color:var(--text-muted);margin-top:6px;}
+
+/* 네비게이션 버튼 */
+.navigation{display:flex;gap:12px;margin:36px 0 20px;}
+.btn-quiz{
+  flex:1;padding:15px 24px;border:none;border-radius:var(--radius);
+  font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer;transition:all .18s;
+  background:var(--gold);color:#fff;letter-spacing:-.01em;
+}
+.btn-quiz:hover{background:var(--gold-dark);transform:translateY(-1px);}
+.btn-secondary-quiz{background:var(--white);color:var(--text-sub);border:1.5px solid var(--gray-200);flex:0 0 auto;padding-left:32px;padding-right:32px;}
+.btn-secondary-quiz:hover{background:var(--gray-50);border-color:var(--gray-400);transform:none;}
+
+/* 결과 페이지 */
+.results-quiz{display:none;padding:20px 0 40px;}
+.results-quiz.show{display:block;animation:fadeIn .4s ease;}
+.results-quiz>h2{text-align:center;font-size:1.6rem;font-weight:900;letter-spacing:-.02em;margin-bottom:28px;}
+.score-grade-container{text-align:center;margin-bottom:36px;}
+.total-score{font-size:4.2rem;font-weight:900;color:var(--gold);line-height:1;letter-spacing:-.03em;font-family:'Instrument Sans',sans-serif;}
+.grade-badge{
+  display:inline-block;margin-top:14px;padding:8px 24px;border-radius:99px;
+  font-size:1.05rem;font-weight:800;letter-spacing:-.01em;
+}
+.grade-A{background:#1a7a3f;color:#fff;}
+.grade-B{background:var(--gold);color:#fff;}
+.grade-C{background:#d99a2b;color:#fff;}
+.grade-D{background:#c26b3e;color:#fff;}
+.grade-E{background:#8a8a82;color:#fff;}
+
+/* 공유 (담백하게) */
+.share-section{
+  text-align:center;padding:24px;background:var(--gray-50);border-radius:var(--radius-lg);margin-bottom:28px;
+}
+.share-section h3{font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--text);}
+.share-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.share-btn{
+  display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border:1.5px solid var(--gray-200);
+  border-radius:99px;background:var(--white);font-size:.88rem;font-weight:600;color:var(--text-sub);
+  cursor:pointer;transition:all .15s;font-family:inherit;
+}
+.share-btn:hover{border-color:var(--gold);color:var(--gold);}
+.kakao-btn:hover{border-color:#fee500;background:#fee500;color:#3c1e1e;}
+
+/* 분석/추천 */
+.recommendation{margin-bottom:32px;}
+.recommendation>h3{
+  font-size:1.15rem;font-weight:800;letter-spacing:-.01em;margin:28px 0 14px;
+  padding-bottom:10px;border-bottom:2px solid var(--gold);display:inline-block;
+}
+.analysis-text{font-size:.98rem;color:var(--text-sub);line-height:1.75;background:var(--gold-light);padding:20px 22px;border-radius:var(--radius);border:1px solid #f0dcbb;}
+.radar-chart-container{max-width:420px;margin:24px auto;}
+.action-steps{display:grid;gap:12px;}
+.action-step{
+  padding:16px 20px;border:1px solid var(--gray-100);border-left:3px solid var(--gold);
+  border-radius:var(--radius);background:var(--white);
+}
+.action-step .step-title{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:5px;}
+.action-step .step-description{font-size:.9rem;color:var(--text-sub);line-height:1.6;}
+.target-box{
+  margin-top:16px;padding:20px 22px;background:var(--black);color:#fff;border-radius:var(--radius-lg);
+}
+.target-box .step-title{font-size:.8rem;font-weight:700;color:var(--gold);letter-spacing:.04em;margin-bottom:8px;text-transform:uppercase;}
+.target-box .step-description{font-size:.98rem;line-height:1.6;color:#f0f0ec;}
+
+/* 영역별 breakdown */
+.area-breakdown{display:grid;gap:14px;margin:20px 0;}
+.area-info{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1px solid var(--gray-100);border-radius:var(--radius);}
+.area-name{font-size:.92rem;font-weight:600;color:var(--text);}
+.area-score{font-size:1.05rem;font-weight:800;color:var(--gold);font-family:'Instrument Sans',sans-serif;}
+.area-description{font-size:.85rem;color:var(--text-muted);margin-top:4px;}
+
+/* CTA 버튼 - 전자책 + 상담 */
+.action-buttons{display:grid;gap:12px;margin:32px 0 24px;}
+.action-btn{
+  display:block;text-align:center;padding:18px 24px;border-radius:var(--radius-lg);
+  font-size:1.02rem;font-weight:700;text-decoration:none;transition:all .18s;letter-spacing:-.01em;
+}
+.ebook-btn{background:var(--gold);color:#fff;box-shadow:0 4px 16px rgba(196,135,26,.25);}
+.ebook-btn:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,135,26,.32);}
+.ebook-btn small{display:block;font-size:.8rem;font-weight:500;opacity:.9;margin-top:4px;}
+.consulting-btn{background:var(--white);color:var(--text);border:1.5px solid var(--gray-200);}
+.consulting-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+/* 하단 홈 */
+.back-to-home{text-align:center;padding:24px 0 48px;}
+.back-to-home a{font-size:.9rem;color:var(--text-muted);text-decoration:none;font-weight:500;}
+.back-to-home a:hover{color:var(--gold);}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+
+@media (max-width:600px){
+  header{padding:40px 20px 32px;}
+  header h1{font-size:1.6rem;}
+  .total-score{font-size:3.4rem;}
+  .navigation{flex-direction:column-reverse;}
+  .btn-secondary-quiz{width:100%;}
+  .info-box,.personal-info{padding:22px 20px;}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+
+</style>
 </head>
 <body>
+    <nav class="site-nav">
+        <div class="site-nav__inner">
+            <a href="/" class="site-nav__logo">좋은<span>취업</span></a>
+            <a href="/" class="site-nav__home">← 홈으로</a>
+        </div>
+    </nav>
     <div class="container">
         <header>
             <h1 id="quizTitle">내 취업 점수 테스트</h1>
@@ -763,36 +349,122 @@
             
             <!-- SNS 공유 섹션 -->
             <div class="share-section">
-                <h3>🎉 내 취업 점수 자랑하기</h3>
-                <p>친구들과 점수 비교해보세요!</p>
-                
+                <h3>결과 공유하기</h3>
                 <div class="share-buttons">
                     <button onclick="shareKakao()" class="share-btn kakao-btn">
-                        <span>💬</span>
-                        카카오톡
+                        <span>💬</span> 카카오톡
                     </button>
-                    
-                    <button onclick="shareFacebook()" class="share-btn facebook-btn">
-                        <span>📘</span>
-                        페이스북
-                    </button>
-                    
-                    <button onclick="shareTwitter()" class="share-btn twitter-btn">
-                        <span>🐦</span>
-                        트위터
-                    </button>
-                    
                     <button onclick="copyLink()" class="share-btn copy-btn">
-                        <span>🔗</span>
-                        링크복사
+                        <span>🔗</span> 링크 복사
                     </button>
                 </div>
-                
-                <div class="share-preview">
-                    <div class="preview-label">공유될 내용 미리보기:</div>
-                    <div id="sharePreview" class="preview-text">
-                        "내 취업 점수는 <span id="shareScore" class="score-highlight">85</span>점! 너는 몇점 나올까? 🤔"
+            </div>
+            
+            <div class="recommendation" id="recommendation">
+                <h3>현재 상태 분석</h3>
+                <p class="analysis-text"></p>
+                <div class="radar-chart-container">
+                    <canvas id="radarChart" aria-label="영역별 점수 차트"></canvas>
+                </div>
+                <h3>맞춤형 액션 플랜</h3>
+                <div class="action-steps" id="actionSteps"></div>
+                <div class="target-box" id="targetBox">
+                    <div class="step-title">변화 목표</div>
+                    <div class="step-description"></div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" class="action-btn ebook-btn" rel="noopener" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{source:'diagnosis'});">
+                    전자책으로 취업 근육 키우기
+                    <small>《채용절벽을 뚫는 취업 근육 키우기》 · 26,000원</small>
+                </a>
+                <a href="https://open.kakao.com/o/sTpjuoQh" target="_blank" class="action-btn consulting-btn" rel="noopener" onclick="if(typeof gtag!=='undefined')gtag('event','contact_kakao_click',{source:'diagnosis'});">
+                    1:1 맞춤 상담 신청하기
+                </a>
+            </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1 id="quizTitle">내 취업 점수 테스트</h1>
+            <p class="subtitle" id="quizSubtitle">나의 취업 실력을 정확히 확인해보세요</p>
+            
+            <!-- 스크린 리더를 위한 추가 정보 -->
+            <div class="sr-only">
+                <p>이 테스트는 5개 핵심 영역, 40문항으로 구성되어 있으며 약 5-10분 소요됩니다.</p>
+                <p>회원가입 없이 무료로 이용 가능하며, 개인정보는 수집하지 않습니다.</p>
+            </div>
+        </header>
+        
+        <div id="quizPageContainer">
+            <div class="info-box" id="infoBox">
+                <h3>진단 정보</h3>
+                <ul>
+                    <li><strong>5개 핵심 영역</strong>: 자기이해, 기업분석, 자소서, 면접, 멘탈관리</li>
+                    <li><strong>총 40문항</strong>: 객관적이고 정확한 진단</li>
+                    <li><strong>소요시간</strong>: 5-10분</li>
+                    <li><strong>개인맞춤 결과</strong>: 등급별 상세 분석 및 개선 방향 제시</li>
+                </ul>
+            </div>
+
+            <div class="personal-info" id="personalInfo">
+                <h3>기본 정보 입력</h3>
+                <div class="form-group">
+                    <label class="required">1. 취업 준비 기간은 얼마나 되셨나요?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="period1" name="jobPeriod" value="1년 미만">
+                            <label for="period1">1년 미만</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="period2" name="jobPeriod" value="1-2년">
+                            <label for="period2">1-2년</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="period3" name="jobPeriod" value="2년 이상">
+                            <label for="period3">2년 이상</label>
+                        </div>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label>2. 다른 진단이 런칭되었을 때 안내받고 싶으시면 메일 주소를 남겨주세요. (선택사항)</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com">
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">진단 시작하기</div>
+            </div>
+
+            <div id="questionsContainer" role="main"></div>
+
+            <nav class="navigation" aria-label="진단 네비게이션">
+                <button class="btn-quiz btn-secondary-quiz" id="prevBtn" style="display: none;">이전</button>
+                <button class="btn-quiz" id="nextBtn">시작하기</button>
+                <button class="btn-quiz" id="submitBtn" style="display: none;">결과 보기</button>
+            </nav>
+        </div>
+
+        <div class="results-quiz" id="results" role="region" aria-labelledby="result-title">
+            <h2 id="resultGradeTitle">진단 결과</h2>
+            <div class="score-grade-container">
+                <div class="total-score" id="finalScore" aria-label="총점">0점</div>
+                <div class="grade-badge" id="gradeBadge" aria-label="등급">등급</div>
+            </div>
+            
+            <!-- SNS 공유 섹션 -->
+            <div class="share-section">
+                <h3>결과 공유하기</h3>
+                <div class="share-buttons">
+                    <button onclick="shareKakao()" class="share-btn kakao-btn">
+                        <span>💬</span> 카카오톡
+                    </button>
+                    <button onclick="copyLink()" class="share-btn copy-btn">
+                        <span>🔗</span> 링크 복사
+                    </button>
                 </div>
             </div>
             
@@ -821,7 +493,7 @@
         </div>
         
         <div class="back-to-home">
-            <a href="index.html">메인 페이지로 돌아가기</a>
+            <a href="/">← 좋은 취업 홈으로</a>
         </div>
     </div>
     
@@ -846,7 +518,7 @@
                 score: score,
                 grade: grade,
                 url: window.location.href.replace('quiz.html', ''),
-                title: `내 취업 점수는 ${score}점! (${grade}등급)`,
+                title: `취업 준비도 진단 - ${score}점! (${grade}등급)`,
                 description: `친구들과 취업 점수 비교해보세요! 무료 취업 실력 테스트로 나의 경쟁력을 확인해보세요.`,
                 imageUrl: 'https://jobok.co.kr/images/job-test-og-image.jpg'
             };
@@ -1028,7 +700,7 @@
             }
             
             if (sharePreview) {
-                sharePreview.innerHTML = `"내 취업 점수는 <span class="score-highlight">${score}</span>점! (${grade}등급) 너는 몇점 나올까? 🤔"`;
+                sharePreview.innerHTML = `"취업 준비도 진단 - <span class="score-highlight">${score}</span>점! (${grade}등급) 나도 진단해보기"`;
             }
         }
 
