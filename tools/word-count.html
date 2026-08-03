@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="naver-site-verification" content="9e0215ae1a26338579b67c5418e1dff9900bee22" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>자소서 글자수 세기 (공백 포함/제외) | 좋은 취업</title>
-  <meta name="description" content="자소서 글자수 세기 도구. 붙여넣으면 공백 포함·제외 글자수와 바이트를 실시간 계산. 항목별 권장 글자수 안내." />
+  <meta name="description" content="자소서 글자수를 공백 포함·제외, byte 기준으로 실시간 계산하는 무료 도구. 1,000byte는 몇 자인지, 분량을 얼마나 채워야 하는지도 함께 정리했습니다." />
   <meta name="keywords" content="자소서 글자수, 글자수 세기, 자기소개서 글자수, 글자수 카운터, 자소서 글자수 계산" />
   <link rel="canonical" href="https://jobok.co.kr/tools/word-count" />
   <meta property="og:title" content="자소서 글자수 세기 (공백 포함/제외) | 좋은 취업" />
@@ -240,7 +240,9 @@ img { max-width: 100%; height: auto; }
 .tool-seo p { font-size: 0.92rem; color: var(--text-sub); line-height: 1.85; margin-bottom: 14px; font-weight: 300; }
 .tool-seo strong { color: var(--text); font-weight: 600; }
   </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "자소서 글자수는 공백 포함과 제외 중 어떤 기준인가요?", "acceptedAnswer": {"@type": "Answer", "text": "기업마다 다릅니다. 공고나 입력란에 명시돼 있으며, 대부분 공백 포함 기준입니다. 명시가 없으면 공백 포함으로 보는 것이 안전합니다."}}, {"@type": "Question", "name": "자소서 글자수에서 바이트는 어떻게 계산되나요?", "acceptedAnswer": {"@type": "Answer", "text": "한글은 보통 2바이트, 영문·숫자·공백은 1바이트로 계산됩니다."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "자소서 글자수 세기", "description": "자소서 글자수를 공백 포함/제외, byte 기준으로 실시간 계산하는 무료 도구", "url": "https://jobok.co.kr/tools/word-count", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "publisher": {"@type": "Organization", "name": "좋은 취업", "url": "https://jobok.co.kr/"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "취업 도구", "item": "https://jobok.co.kr/tools"}, {"@type": "ListItem", "position": 3, "name": "자소서 글자수 세기", "item": "https://jobok.co.kr/tools/word-count"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "자소서 글자수는 공백 포함인가요 제외인가요?", "acceptedAnswer": {"@type": "Answer", "text": "기업마다 다릅니다. \"OO자 이내\"로만 적혀 있으면 대체로 공백 포함이고, \"공백 제외\"가 명시된 경우만 공백을 뺍니다. 지원 사이트 입력창에 카운터가 있다면 그것이 유일한 기준입니다."}}, {"@type": "Question", "name": "1,000byte는 몇 자인가요?", "acceptedAnswer": {"@type": "Answer", "text": "한글을 2byte로 계산하는 방식이면 약 500자, 3byte로 계산하는 방식이면 약 330자입니다. 영문·숫자·공백은 1byte입니다. 방식이 명시되지 않았다면 더 빡빡한 3byte 기준으로 쓰는 편이 안전합니다."}}, {"@type": "Question", "name": "자소서 글자수는 다 채워야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "제한의 80~95%가 가장 안전합니다. 1,000자 제한이면 800~950자입니다. 절반 이하면 성의가 없어 보이고, 100%를 딱 맞추면 분량을 채우려 억지 문장을 넣은 인상을 줄 수 있습니다."}}, {"@type": "Question", "name": "사이트마다 글자수가 다르게 나오는 이유는?", "acceptedAnswer": {"@type": "Answer", "text": "줄바꿈을 글자로 셀지, 연속 공백을 압축할지가 시스템마다 다르기 때문입니다. 워드에서 복사하면 특수문자가 변환되어 byte 수가 달라지기도 합니다. 최종 확인은 실제 지원 사이트에서 하세요."}}]}</script>
 </head>
 <body>
 <header class="site-header">
@@ -309,7 +311,48 @@ img { max-width: 100%; height: auto; }
 <p><strong>Q. 공백 포함과 제외, 어떤 기준인가요?</strong><br/>채용 사이트마다 다릅니다. 공고에 명시된 기준을 확인하세요. 대부분 공백 포함입니다.</p>
 <p><strong>Q. 바이트 수는 왜 필요한가요?</strong><br/>일부 공공기관·기업은 바이트(byte)로 제한합니다. 한글 1자는 2~3바이트입니다.</p>
 </div>
-    <div class="inline-book-cta">
+    <div class="tool-seo">
+<h2>공백 포함과 공백 제외, 어느 쪽 기준인가</h2>
+<p>가장 많이 헷갈리는 부분입니다. 결론부터 말하면 <strong>기업마다 다르고, 공고나 입력창에 표시된 기준이 절대 기준</strong>입니다. 다만 일반적인 경향은 있습니다.</p>
+<ul>
+<li><strong>"OO자 이내"로만 적혀 있으면</strong> 대체로 공백 포함으로 계산합니다.</li>
+<li><strong>"공백 제외"가 명시된 경우</strong>만 공백을 빼고 셉니다.</li>
+<li><strong>지원 사이트 입력창에 카운터가 있으면</strong> 그것이 유일한 정답입니다. 외부 계산기와 몇 자 차이가 나도 사이트 카운터를 따르세요.</li>
+</ul>
+<p>실무적으로 가장 안전한 방법은 <strong>공백 포함 기준으로 맞춰 쓰고, 제출 직전에 지원 사이트에 붙여넣어 최종 확인</strong>하는 것입니다. 공백 포함이 더 빡빡한 기준이라 여기에 맞추면 어느 쪽이든 초과하지 않습니다.</p>
+
+<h2>byte 기준일 때 몇 자를 쓰면 되나</h2>
+<p>일부 기업, 특히 <strong>병원·공공기관 지원서</strong>는 글자 수가 아니라 byte로 제한을 겁니다. 이때 환산 기준이 두 가지입니다.</p>
+<table>
+<tr><th>계산 방식</th><th>한글 1자</th><th>1,000byte는 약</th></tr>
+<tr><td>2byte 방식 (대부분)</td><td>2byte</td><td>약 500자</td></tr>
+<tr><td>3byte 방식 (일부 기관)</td><td>3byte</td><td>약 330자</td></tr>
+</table>
+<p>영문·숫자·공백은 어느 방식이든 1byte입니다. 어느 방식인지 공고에 안 적혀 있다면 <strong>더 빡빡한 3byte 기준으로 쓰고 실제 입력창에서 확인</strong>하는 편이 안전합니다. 다 써놓고 절반을 잘라내는 것보다 낫습니다.</p>
+
+<h2>글자수는 얼마나 채워야 하나</h2>
+<p>제한의 <strong>80~95%</strong>가 가장 안전합니다. 1,000자 제한이면 800~950자입니다. 50% 이하로 쓰면 성의가 없어 보이고, 100%를 딱 맞추면 분량을 채우려 억지 문장을 넣은 인상을 줄 수 있습니다.</p>
+<p>분량이 모자랄 때는 <strong>행동의 이유("왜 그 방법을 선택했는가")와 구체적 수치</strong>를 보강하고, 넘칠 때는 <strong>배경 설명부터 절반으로</strong> 줄이세요. 자세한 기준은 <a href="/blog/cover-letter-length-guide">자소서 글자수 가이드</a>에서 다룹니다.</p>
+
+<h2>플랫폼별로 글자수가 다르게 나오는 이유</h2>
+<p>같은 글인데 사람인·잡코리아·기업 자체 지원 시스템에서 글자수가 다르게 표시되는 일이 흔합니다. 이유는 세 가지입니다.</p>
+<ul>
+<li><strong>줄바꿈 처리</strong> — 줄바꿈을 1자로 세는 곳과 세지 않는 곳이 있습니다.</li>
+<li><strong>연속 공백</strong> — 두 칸 이상 띄어쓰기를 하나로 압축하는 시스템이 있습니다.</li>
+<li><strong>붙여넣기 시 자동 변환</strong> — 워드나 한글에서 복사하면 특수문자(따옴표, 대시)가 다른 문자로 바뀌어 byte 수가 달라질 수 있습니다.</li>
+</ul>
+<p>그래서 <strong>최종 확인은 반드시 실제 지원 사이트에서</strong> 하고, 워드가 아니라 메모장을 한 번 거쳐 붙여넣으면 특수문자 문제를 줄일 수 있습니다.</p>
+<h2>자주 묻는 질문</h2>
+<h3>Q. 자소서 글자수는 공백 포함인가요 제외인가요?</h3>
+<p>기업마다 다릅니다. "OO자 이내"로만 적혀 있으면 대체로 공백 포함이고, "공백 제외"가 명시된 경우만 공백을 뺍니다. 지원 사이트 입력창에 카운터가 있다면 그것이 유일한 기준입니다.</p>
+<h3>Q. 1,000byte는 몇 자인가요?</h3>
+<p>한글을 2byte로 계산하는 방식이면 약 500자, 3byte로 계산하는 방식이면 약 330자입니다. 영문·숫자·공백은 1byte입니다. 방식이 명시되지 않았다면 더 빡빡한 3byte 기준으로 쓰는 편이 안전합니다.</p>
+<h3>Q. 자소서 글자수는 다 채워야 하나요?</h3>
+<p>제한의 80~95%가 가장 안전합니다. 1,000자 제한이면 800~950자입니다. 절반 이하면 성의가 없어 보이고, 100%를 딱 맞추면 분량을 채우려 억지 문장을 넣은 인상을 줄 수 있습니다.</p>
+<h3>Q. 사이트마다 글자수가 다르게 나오는 이유는?</h3>
+<p>줄바꿈을 글자로 셀지, 연속 공백을 압축할지가 시스템마다 다르기 때문입니다. 워드에서 복사하면 특수문자가 변환되어 byte 수가 달라지기도 합니다. 최종 확인은 실제 지원 사이트에서 하세요.</p>
+</div>
+<div class="inline-book-cta">
   <div class="inline-book-cta__label">전자책</div>
   <div class="inline-book-cta__title">더 체계적으로 준비하고 싶다면</div>
   <div class="inline-book-cta__desc">채용절벽을 뚫는 취업 근육 키우기 — 전략 수립부터 자소서 재구성, 면접 답변 구조까지. 워크시트·체크리스트·채용 세미나 무료 초대 포함.</div>
