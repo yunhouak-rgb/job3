@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://jobok.co.kr/sitemap.xml
+Disallow: /OPERATIONS.md
