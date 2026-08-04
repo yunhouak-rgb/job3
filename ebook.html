@@ -240,6 +240,7 @@ img { max-width: 100%; height: auto; }
 .faq-a{font-size:.92rem;color:var(--text-sub);line-height:1.7;font-weight:300;}
 .eb-final{text-align:center;padding:64px 0;}
   </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "전자책", "item": "https://jobok.co.kr/ebook"}]}</script>
 </head>
 <body>
 <header class="site-header">
@@ -251,7 +252,7 @@ img { max-width: 100%; height: auto; }
       <a href="/cover-letter">자소서</a>
       <a href="/company-analysis">기업이해</a>
       <a href="/mind-care">마음관리</a>
-      <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" class="nav-book">전자책</a>
+      <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" class="nav-book" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{source:'ebook_page'});">전자책</a>
       <button class="nav-menu-btn" onclick="toggleMenu()" id="menuBtn">☰ 메뉴</button>
     </nav>
   </div>
@@ -262,7 +263,7 @@ img { max-width: 100%; height: auto; }
   <a href="/cover-letter">자소서</a>
   <a href="/company-analysis">기업이해</a>
   <a href="/mind-care">마음관리</a>
-  <a href="https://www.latpeed.com/products/Ge7M-" target="_blank">전자책 구매 · 26,000원</a>
+  <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{source:'ebook_page'});">전자책 구매 · 26,000원</a>
 </div>
 <main>
   <section class="eb-hero">
@@ -320,7 +321,71 @@ img { max-width: 100%; height: auto; }
     </div>
   </section>
 
-  <section class="eb-final">
+  
+<div class="eb-sec">
+  <h2>누가 썼나</h2>
+  <div class="eb-sec__sub">이 책의 관점이 어디서 나왔는지가 내용보다 중요합니다.</div>
+  <div class="eb-author">
+    <div class="eb-author__q">"지원자가 열심히 준비하는 방향과, 실제로 뽑는 사람이 보는 지점이 다릅니다."</div>
+    <div class="eb-author__body">
+      <b>15년차 현직 인사담당자</b>가 썼습니다. 매년 수천 장의 자소서를 읽고 수백 번의 면접에 들어가면서
+      가장 안타까웠던 것은, 지원자들이 <b>합격 후기</b>를 기준으로 준비한다는 점이었습니다.
+      합격 후기 100개를 읽어도 <b>뽑는 사람이 무엇을 보는지</b>는 알 수 없습니다.<br/><br/>
+      이 책은 반대편에서 출발합니다. 서류를 거르는 기준, 면접에서 확인하려는 것, 뽑고 싶은 사람의 공통점 —
+      <b>채용 테이블 안쪽의 관점</b>을 그대로 옮겼습니다.
+    </div>
+  </div>
+  <div class="eb-note">운영자와 사이트 원칙은 <a href="/about">소개 페이지</a>에서 확인하실 수 있습니다.</div>
+</div>
+
+<div class="eb-sec">
+  <h2>무료 글과 무엇이 다른가</h2>
+  <div class="eb-sec__sub">이 사이트의 가이드 230여 편은 전부 무료입니다. 그럼에도 책을 따로 둔 이유가 있습니다.</div>
+  <table class="eb-cmp">
+    <tr><th></th><th style="color:var(--text-muted);">무료 가이드</th><th>전자책</th></tr>
+    <tr><td>구성</td><td>주제별 개별 글</td><td>전략 → 자소서 → 면접이 하나의 순서로 연결</td></tr>
+    <tr><td>사용법</td><td>필요할 때 검색해서 찾아 읽기</td><td>처음부터 따라가며 내 것을 완성</td></tr>
+    <tr><td>결과물</td><td>읽고 나서 각자 적용</td><td>워크시트를 채우면 자소서 초안이 남음</td></tr>
+    <tr><td>적합한 경우</td><td>특정 항목 하나가 막혔을 때</td><td>어디부터 손대야 할지 모를 때</td></tr>
+  </table>
+  <p style="margin-top:18px;">정리하면 이렇습니다. <strong>막힌 곳이 하나라면 무료 글로 충분합니다.</strong>
+  전체가 막막하고 순서를 잡고 싶다면 책이 맞습니다.</p>
+</div>
+
+<div class="eb-sec">
+  <h2>진단 결과별로 어디를 먼저 보면 되나</h2>
+  <div class="eb-sec__sub">무료 진단을 먼저 받아보면 어느 장부터 읽어야 하는지가 명확해집니다.</div>
+  <ul class="eb-map">
+    <li><b>자기이해 영역이 낮게 나왔다면</b> 1장 취업 전략 수립부터. 소재가 없는 게 아니라 내 경험이 어떤 역량으로 읽히는지 정리가 안 된 상태입니다.</li>
+    <li><b>기업분석 영역이 낮다면</b> 1~2장. 지원동기가 "성장 가능성이 높아서"에서 못 벗어나는 원인이 여기 있습니다.</li>
+    <li><b>자소서 영역이 낮다면</b> 2장 자소서 재구성. 첫 문장과 항목별 작성 공식이 핵심입니다.</li>
+    <li><b>면접 영역이 낮다면</b> 3장 면접 답변 구조. 두괄식 전환과 압박 상황 대응을 다룹니다.</li>
+    <li><b>멘탈 영역이 낮다면</b> 1장과 워크시트. 의지가 아니라 순서가 있어야 지속됩니다.</li>
+  </ul>
+  <a href="/diagnosis" class="eb-inline-cta">먼저 무료 진단 받아보기 →</a>
+</div>
+
+<div class="eb-sec">
+  <h2>이런 분께는 권하지 않습니다</h2>
+  <div class="eb-sec__sub">맞지 않는 분이 사는 것은 서로에게 손해입니다.</div>
+  <ul class="eb-not">
+    <li>합격 자소서를 <strong>그대로 베껴 쓸 예문집</strong>을 찾는 경우 — 이 책은 예문 모음이 아니라 구조를 다룹니다.</li>
+    <li><strong>특정 기업 한 곳의 기출·전형 정보</strong>가 필요한 경우 — 기업별 최신 정보는 각 사 채용 페이지가 정확합니다.</li>
+    <li><strong>인적성·NCS 문제 풀이</strong>가 목적인 경우 — <a href="/aptitude">무료 연습문제 100제</a>를 이용하세요.</li>
+    <li>이미 자소서·면접 흐름이 잡혀 있고 <strong>한 항목만 다듬으면 되는</strong> 경우 — 무료 가이드로 충분합니다.</li>
+  </ul>
+</div>
+
+<div class="eb-sec">
+  <h2>구매 전 확인하세요</h2>
+  <p><strong>형태</strong> — 결제 후 바로 열람하는 디지털 전자책입니다. 실물 배송은 없습니다.</p>
+  <p><strong>함께 제공</strong> — 자소서·면접 준비 워크시트, 제출 전 자가진단 체크리스트, 채용 세미나 무료 초대가 포함됩니다.</p>
+  <p><strong>결제·환불</strong> — 결제와 열람은 구매처(latpeed)에서 진행되며, 디지털 콘텐츠 특성상 환불은 구매처 정책을 따릅니다. 결제 전 구매처의 환불 안내를 확인해 주세요.</p>
+  <p><strong>문의</strong> — 구매 전 궁금한 점은 <a href="https://open.kakao.com/o/sTpjuoQh" target="_blank" rel="noopener" onclick="if(typeof gtag!=='undefined')gtag('event','contact_kakao_click',{source:'ebook_page_presale'});">카카오 오픈채팅</a>으로 물어보셔도 됩니다.</p>
+  <div class="eb-note">먼저 사이트의 무료 가이드와 <a href="/diagnosis">취업 준비도 진단</a>을 충분히 써보시고, 그래도 순서가 안 잡힐 때 구매를 고려하시길 권합니다.</div>
+</div>
+
+<section class="eb-final">
     <div class="container">
       <h2 class="eb-section__title" style="margin-bottom:14px;">지금 시작하세요</h2>
       <p class="eb-hero__sub">준비의 방향을 바꾸면 결과가 바뀝니다.</p>
@@ -339,7 +404,7 @@ img { max-width: 100%; height: auto; }
       <nav class="footer__nav">
         <a href="/">홈</a><a href="/diagnosis">무료진단</a><a href="/interview">면접</a>
         <a href="/cover-letter">자소서</a><a href="/company-analysis">기업이해</a>
-        <a href="/mind-care">마음관리</a><a href="https://www.latpeed.com/products/Ge7M-" target="_blank">전자책</a>
+        <a href="/mind-care">마음관리</a><a href="https://www.latpeed.com/products/Ge7M-" target="_blank" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{source:'ebook_page'});">전자책</a>
       </nav>
     </div>
     <div class="footer__copy">© 2026 좋은 취업 · yuncontest@naver.com</div>
