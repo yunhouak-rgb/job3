@@ -1376,7 +1376,7 @@
   </url>
   <url>
     <loc>https://jobok.co.kr/schedule-2026-h2</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1664,6 +1664,12 @@
   </url>
   <url>
     <loc>https://jobok.co.kr/blog/civil-servant-interview-intro</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jobok.co.kr/blog/civil-servant-motivation-examples</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
