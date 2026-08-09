@@ -284,6 +284,14 @@ img { max-width: 100%; height: auto; }
 .bo-note b{color:var(--text);font-weight:700;}
 .bo-warn{font-size:.9rem;color:#7a2318;background:#fff4f0;border:1px solid #f5c6b8;border-radius:12px;padding:16px 18px;margin-bottom:16px;line-height:1.8;font-weight:400;}
 .bo-warn b{color:#8c2a1c;font-weight:800;}
+
+.bo-next{margin:22px 0;padding:22px 20px;background:#f7f9f8;border:1px solid #dfe8e3;border-radius:14px;}
+.bo-next__label{font-size:.74rem;font-weight:800;letter-spacing:.05em;color:#2f9e5e;margin-bottom:7px;}
+.bo-next__title{font-size:1.02rem;font-weight:800;color:#111;margin-bottom:9px;letter-spacing:-.02em;line-height:1.5;}
+.bo-next__desc{font-size:.91rem;color:#555;line-height:1.85;font-weight:300;margin-bottom:13px;}
+.bo-next__desc b{color:#111;font-weight:600;}
+.bo-next__links{display:flex;gap:8px;flex-wrap:wrap;}
+.bo-next__links a{display:inline-block;padding:8px 15px;background:#fff;border:1.5px solid #d6e2db;border-radius:99px;color:#333;font-size:.85rem;font-weight:600;text-decoration:none;}
 </style>
 </head>
 <body>
@@ -527,6 +535,47 @@ function band(s){ // 0~20
   if(s<=15) return {t:'주의',c:'#d9741d'};
   return {t:'높음',c:'#c0392b'};
 }
+
+function boNext(tot, s){
+  var g;
+  if(tot<=15){
+    g={t:'지금의 리듬을 유지하세요',
+       d:'번아웃 신호는 뚜렷하지 않습니다. 다만 <b>1단계 과열은 본인이 가장 못 알아채는 구간</b>입니다. 의욕이 넘쳐 무리하는 시기에도 신호는 쌓입니다. 2~4주 뒤 다시 점검해 방향을 확인해 보세요.',
+       l:[['/blog/job-search-routine-2026','지속 가능한 루틴 만들기'],['/tools/annual-leave','내 연차 확인하기']]};
+  } else if(tot<=30){
+    // 최고 영역별 분기
+    var top = (s.E>=s.C && s.E>=s.A) ? 'E' : (s.C>=s.A ? 'C' : 'A');
+    if(top==='E'){
+      g={t:'회복 시간부터 확보하세요',
+         d:'<b>에너지 고갈</b>이 가장 두드러집니다. 의지가 아니라 <b>실제 쉬는 시간의 총량</b>이 부족한 상태일 가능성이 큽니다. 남은 연차를 확인하고 실제로 쓰는 것부터 시작하세요.',
+         l:[['/tools/annual-leave','남은 연차 계산'],['/tools/annual-leave-pay','미사용 연차수당'],['/tools/overtime-pay','초과근무 수당 확인']]};
+    } else if(top==='C'){
+      g={t:'일과의 거리를 점검할 때입니다',
+         d:'<b>심리적 거리감(냉소)</b>이 높게 나왔습니다. 이건 게으름이 아니라 <b>과부하 이후에 나타나는 방어 반응</b>인 경우가 많습니다. 업무 자체보다 환경(통제감·역할 모호성)을 먼저 살펴보세요.',
+         l:[['/worker-type','내 업무 성향 확인'],['/blog/job-search-routine-2026','리듬 다시 잡기']]};
+    } else {
+      g={t:'성취 경험을 다시 만드세요',
+         d:'<b>효능감 저하</b>가 두드러집니다. 큰 성과가 아니라 <b>작고 확실하게 끝나는 일</b>부터 쌓는 것이 회복에 효과적입니다. 그동안의 성과를 글로 정리해 보는 것도 방법입니다.',
+         l:[['/tools/career-description','내 성과 정리하기'],['/tools/star','경험 구조화']]};
+    }
+  } else if(tot<=45){
+    g={t:'환경을 바꿀 수 있는지 먼저 보세요',
+       d:'여러 영역에서 신호가 나타납니다. 번아웃의 주된 원인은 개인 의지가 아니라 <b>통제감 부족·보상 불균형·역할 모호성</b>입니다. "더 열심히"로는 해결되지 않습니다. 업무 조정 요청, 휴가 사용, 근무 조건 확인 중 하나부터 실행하세요.',
+       l:[['/tools/annual-leave','연차 확인'],['/tools/overtime-pay','실제 근무시간 점검'],['/blog/working-while-job-searching','이직을 고려한다면']]};
+  } else {
+    g={t:'지금은 판단을 미루는 편이 낫습니다',
+       d:'소진이 심한 상태에서는 <b>퇴사·이직 같은 큰 결정의 판단력이 흐려집니다.</b> 먼저 회복에 집중하고, 결정은 상태가 나아진 뒤에 하세요. 회사에 근로자 지원 프로그램(EAP)이 있다면 무료로 상담받을 수 있고, 상담 내용은 회사에 공유되지 않는 것이 원칙입니다.',
+       l:[['/mind-care','마음관리 가이드'],['/blog/job-search-burnout','번아웃 회복 방법']]};
+  }
+  var links=g.l.map(function(x){
+    return '<a href="'+x[0]+'" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\'bo_next_click\',{score:'+tot+',to:\''+x[0]+'\'});">'+x[1]+'</a>';
+  }).join('');
+  return '<div class="bo-next"><div class="bo-next__label">다음 단계</div>'
+    +'<div class="bo-next__title">'+g.t+'</div>'
+    +'<div class="bo-next__desc">'+g.d+'</div>'
+    +'<div class="bo-next__links">'+links+'</div></div>';
+}
+
 function calcBO(){
   if(Object.keys(ans).length<QD.length) return;
   var s={E:0,C:0,A:0};
@@ -548,7 +597,8 @@ function calcBO(){
   if(tot>=46){
     warn='<div class="bo-warn"><b>혼자 견디지 마세요.</b><br/>점수가 높게 나왔습니다. 이 결과는 의학적 진단이 아니지만, 지금 상태를 가볍게 넘기지 않는 편이 좋습니다. '
       +'가까운 사람에게 이야기하거나, 정신건강의학과·심리상담 전문가와 상담해 보시길 권합니다.<br/><br/>'
-      +'무료 상담: <b>정신건강 위기상담전화 1577-0199</b> · <b>보건복지상담센터 129</b> (24시간)</div>';
+      +'무료 상담(24시간): <b>자살예방 상담전화 109</b> · <b>정신건강 상담전화 1577-0199</b><br/>'
+      +'<span style="font-size:.86em;opacity:.85;">위기 상황이 아니어도 마음이 힘들 때 이용할 수 있습니다.</span></div>';
   }
   d('resBO').innerHTML=
    '<div class="bo-main"><div class="bo-main__label">번아웃 자가체크 결과</div>'
@@ -556,6 +606,7 @@ function calcBO(){
    +warn
    +'<div class="bo-bars">'+rows+'</div>'
    +'<p class="bo-msg">'+msg+'</p>'
+   +boNext(tot,s)
    +'<div class="bo-note"><b>이 결과는 의학적 진단이 아닙니다.</b> WHO가 ICD-11에서 제시한 번아웃의 세 가지 특성(에너지 고갈, 심리적 거리감, 효능감 저하)을 참고해 만든 <b>자가 점검 도구</b>이며, 임상 척도를 대체하지 않습니다. '
    +'증상이 2주 이상 지속되거나 직장 밖 일상(수면·식사·인간관계)까지 영향을 받는다면 번아웃이 아닌 다른 문제일 수 있으니 전문가 상담을 권합니다.</div>';
   if(typeof gtag!=='undefined') gtag('event','burnout_check_complete',{score:tot,level:lvl});

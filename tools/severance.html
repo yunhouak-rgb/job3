@@ -260,6 +260,14 @@ img { max-width: 100%; height: auto; }
 .sev-note { font-size: .82rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; background: var(--gray-50); border-radius: 10px; padding: 12px 14px; }
 .sev-warn { font-size: .86rem; color: #b45309; background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 11px 14px; margin-bottom: 14px; font-weight: 500; line-height: 1.7; }
 .sev-hint { font-size: .8rem; color: var(--text-muted); font-weight: 300; margin: -6px 0 14px; line-height: 1.6; }
+
+.sev-next{margin:22px 0 0;padding:22px 20px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
+.sev-next__label{font-size:.74rem;font-weight:800;letter-spacing:.05em;color:var(--gold);margin-bottom:7px;}
+.sev-next__title{font-size:1.02rem;font-weight:800;color:var(--black);margin-bottom:9px;letter-spacing:-.02em;line-height:1.5;}
+.sev-next__desc{font-size:.91rem;color:var(--text-sub);line-height:1.85;font-weight:300;margin-bottom:13px;}
+.sev-next__desc b{color:var(--text);font-weight:600;}
+.sev-next__links{display:flex;gap:8px;flex-wrap:wrap;}
+.sev-next__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:600;text-decoration:none;}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590540653325105"
      crossorigin="anonymous"></script>
@@ -445,6 +453,35 @@ function minus3Months(dt){
   return t;
 }
 
+
+function sevNext(workDays, usedOrdinary, bonus, annual){
+  var g;
+  if(workDays<365){
+    g={t:'1년을 채우면 달라집니다',
+       d:'계속근로기간이 <b>1년 미만</b>이라 법정 퇴직금 대상이 아닙니다. 퇴사 시점을 조정할 수 있다면 1년을 채우는 것이 유리합니다. 다만 <b>주 15시간 미만</b>이면 기간과 무관하게 대상이 아닙니다.',
+       l:[['/tools/career-length','재직일수 정확히 계산'],['/tools/annual-leave','연차 발생 여부 확인']]};
+  } else if(bonus===0 && annual===0){
+    g={t:'상여금·연차수당을 빼먹지 마세요',
+       d:'상여금과 연차수당을 <b>0으로 두고 계산</b>했습니다. 퇴직 전 12개월 안에 상여를 받았다면 그 <b>3/12</b>이, 전년도 연차수당을 받았다면 그 <b>3/12</b>이 평균임금에 산입됩니다. 빠뜨리면 실제보다 적게 나옵니다.',
+       l:[['/tools/annual-leave-pay','연차수당 계산'],['/tools/salary','실수령액 비교']]};
+  } else if(usedOrdinary){
+    g={t:'통상임금이 적용됐습니다',
+       d:'평균임금이 통상임금보다 낮아 <b>통상임금 기준</b>으로 계산됐습니다. 퇴직 전 3개월에 무급 휴직이나 결근이 있었다면 정상입니다. 회사가 평균임금으로만 계산해 지급했다면 <b>차액을 청구할 수 있습니다.</b>',
+       l:[['/tools/annual-leave-pay','연차수당 확인'],['/blog/job-change-salary-raise','이직 조건 비교']]};
+  } else {
+    g={t:'받을 것이 더 남아 있을 수 있습니다',
+       d:'퇴직금 외에 <b>미사용 연차수당</b>은 별도로 정산받습니다. 초과근무를 했다면 <b>연장·야간·휴일 가산수당</b>도 확인하세요. 퇴직금은 퇴직일로부터 <b>14일 이내</b> 지급이 원칙이고, 임금채권 소멸시효는 <b>3년</b>입니다.',
+       l:[['/tools/annual-leave-pay','미사용 연차수당'],['/tools/overtime-pay','연장근로수당'],['/blog/job-change-salary-raise','이직 연봉 협상']]};
+  }
+  var links=g.l.map(function(x){
+    return '<a href="'+x[0]+'" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\'sev_next_click\',{to:\''+x[0]+'\'});">'+x[1]+'</a>';
+  }).join('');
+  return '<div class="sev-next"><div class="sev-next__label">다음 단계</div>'
+    +'<div class="sev-next__title">'+g.t+'</div>'
+    +'<div class="sev-next__desc">'+g.d+'</div>'
+    +'<div class="sev-next__links">'+links+'</div></div>';
+}
+
 function calcSeverance(){
   var joinV=d('joinDate').value, leaveV=d('leaveDate').value;
   var out=d('resSev');
@@ -503,7 +540,8 @@ function calcSeverance(){
    '<tr><td>적용 기준</td><td><b>'+(usedOrdinary?'통상임금 (평균임금보다 높음)':'평균임금')+'</b></td></tr>'+
    '</table>'+
    '<div class="sev-note">계산식: '+won(applied)+'원 × 30일 × ('+workDays+'일 ÷ 365) = '+won(sev)+'원<br/>'+
-   '세전 기준입니다. 실제 수령액은 퇴직소득세·지방소득세 공제 후 금액입니다.</div>';
+   '세전 기준입니다. 실제 수령액은 퇴직소득세·지방소득세 공제 후 금액입니다.</div>'+
+   sevNext(workDays, usedOrdinary, bonus, annual);
 }
 
 function setMode(m){
