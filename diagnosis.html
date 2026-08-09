@@ -282,6 +282,16 @@ input[type=email]:focus{outline:none;border-color:var(--gold);}
 .diag-seo table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: .87rem; }
 .diag-seo th { text-align: left; padding: 9px 0; font-weight: 700; border-bottom: 2px solid #111; }
 .diag-seo td { padding: 9px 0; color: #555; border-bottom: 1px solid #eee; font-weight: 300; }
+
+.weak-area{margin:28px 0;padding:24px 22px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
+.weak-area__label{font-size:.76rem;font-weight:800;letter-spacing:.05em;color:#b8892b;margin-bottom:8px;}
+.weak-area__title{font-size:1.08rem;font-weight:800;color:#111;line-height:1.55;margin-bottom:10px;letter-spacing:-.02em;}
+.weak-area__desc{font-size:.92rem;color:#555;line-height:1.85;font-weight:300;margin-bottom:14px;}
+.weak-area__desc b{color:#111;font-weight:600;}
+.weak-area__links{display:flex;gap:8px;flex-wrap:wrap;}
+.weak-area__links a{display:inline-block;padding:9px 16px;background:#fff;border:1.5px solid #e2d9c6;border-radius:99px;color:#333;font-size:.86rem;font-weight:600;text-decoration:none;}
+.weak-area__links a:hover{border-color:#b8892b;color:#b8892b;}
+.weak-area__gap{font-size:.84rem;color:#8a7a5c;font-weight:400;margin-top:12px;line-height:1.7;}
 </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "취업 준비도 자가진단은 무료인가요?", "acceptedAnswer": {"@type": "Answer", "text": "완전 무료이며 회원가입이나 로그인이 필요 없습니다. 개인정보도 수집하지 않습니다."}}, {"@type": "Question", "name": "진단은 몇 문항이고 얼마나 걸리나요?", "acceptedAnswer": {"@type": "Answer", "text": "자기이해, 기업분석, 자소서, 면접, 멘탈관리 5개 영역 40문항으로 구성되며 5~10분 걸립니다."}}, {"@type": "Question", "name": "진단 점수가 합격 가능성을 뜻하나요?", "acceptedAnswer": {"@type": "Answer", "text": "아닙니다. 합격 예측이 아니라 준비 상태 점검입니다. 총점보다 영역 간 격차를 보는 것이 유용하며, 격차가 큰 영역이 병목입니다."}}, {"@type": "Question", "name": "취업 준비 초반에 해도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "초반에 하는 편이 더 유용합니다. 무엇부터 해야 할지 순서를 잡는 데 도움이 됩니다."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "취업 준비도 자가진단", "item": "https://jobok.co.kr/diagnosis"}]}</script>
@@ -394,7 +404,8 @@ input[type=email]:focus{outline:none;border-color:var(--gold);}
                 </div>
             </div>
 
-            <div class="action-buttons">
+            <div class="weak-area" id="weakArea"></div>
+        <div class="action-buttons">
                 <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" class="action-btn ebook-btn" rel="noopener" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{source:'diagnosis'});">
                     전자책으로 취업 근육 키우기
                     <small>《채용절벽을 뚫는 취업 근육 키우기》</small>
@@ -1074,6 +1085,68 @@ input[type=email]:focus{outline:none;border-color:var(--gold);}
             document.getElementById('personalInfo').style.display = 'none';
         }
 
+var WEAK_GUIDE = [
+  { key:'자기 이해',
+    title:'경험 정리부터 시작하세요',
+    desc:'소재가 없는 게 아니라 <b>내 경험이 어떤 역량으로 읽히는지</b> 정리가 안 된 상태입니다. 경험 8~10개를 표로 만들어두면 어떤 문항이 나와도 조합해 쓸 수 있습니다.',
+    links:[['/tools/star','STAR 경험 정리 도구'],['/blog/cover-letter-experience','평범한 경험을 스토리로'],['/job-test','직무 추천 테스트']] },
+  { key:'기업 및 직무',
+    title:'JD부터 읽으세요',
+    desc:'지원동기가 "성장 가능성이 높아서"에서 못 벗어나는 원인이 여기 있습니다. 회사 홈페이지 인재상이 아니라 <b>채용 공고의 직무기술서(JD)</b>와 최근 6개월 뉴스를 봐야 합니다.',
+    links:[['/blog/job-analysis','직무 분석 4단계'],['/blog/cover-letter-motivation-examples','지원동기 예시 10개'],['/company-analysis','기업이해 가이드']] },
+  { key:'자소서',
+    title:'구조부터 바로잡으세요',
+    desc:'대부분 <b>배경 설명이 길고 "내가 무엇을 했는가"가 짧습니다.</b> 행동에 전체의 절반 이상을 쓰는 것만으로 글이 달라집니다.',
+    links:[['/blog/cover-letter-structure','자소서 3단계 구조'],['/tools/checklist','제출 전 자가진단'],['/tools/word-count','글자수 세기']] },
+  { key:'면접',
+    title:'소리 내어 연습하세요',
+    desc:'면접은 아는 것이 아니라 <b>말해본 적이 있는가</b>의 문제입니다. 눈으로 읽은 답변과 입으로 말한 답변은 완전히 다릅니다.',
+    links:[['/tools/interview-question-picker','예상질문 뽑기'],['/daily-question','면접 질문 100개'],['/tools/timer','1분 자기소개 타이머']] },
+  { key:'멘탈',
+    title:'의지 말고 루틴으로',
+    desc:'취업 준비는 길게는 1년 이상 갑니다. 이 영역이 무너지면 <b>다른 네 영역의 점수가 높아도 실행이 멈춥니다.</b> 버티는 구조를 먼저 만드세요.',
+    links:[['/blog/job-search-routine-2026','취업 준비 루틴'],['/tools/burnout','번아웃 자가진단'],['/mind-care','마음관리 가이드']] }
+];
+
+function renderWeakArea(sectionScores){
+  var box = document.getElementById('weakArea');
+  if(!box || !sectionScores || !sectionScores.length) return;
+
+  // 영역별 만점이 같다고 가정하고 최저 영역 탐색 (동점이면 앞 순서)
+  var minIdx = 0;
+  for (var i = 1; i < sectionScores.length; i++) {
+    if (sectionScores[i] < sectionScores[minIdx]) minIdx = i;
+  }
+  var maxIdx = 0;
+  for (var j = 1; j < sectionScores.length; j++) {
+    if (sectionScores[j] > sectionScores[maxIdx]) maxIdx = j;
+  }
+
+  var g = WEAK_GUIDE[minIdx] || WEAK_GUIDE[0];
+  var secName = (typeof sections !== 'undefined' && sections[minIdx]) ? sections[minIdx].title : g.key;
+
+  var linksHtml = g.links.map(function(l){
+    return '<a href="'+l[0]+'" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\'weak_area_click\',{area:\''+g.key+'\',to:\''+l[0]+'\'});">'+l[1]+'</a>';
+  }).join('');
+
+  var gap = sectionScores[maxIdx] - sectionScores[minIdx];
+  var gapHtml = '';
+  if (gap >= 8) {
+    gapHtml = '<div class="weak-area__gap">가장 높은 영역과 <b>'+gap+'점</b> 차이가 납니다. '+
+      '총점을 올리는 가장 빠른 길은 잘하는 영역을 더 올리는 것이 아니라 <b>이 격차를 줄이는 것</b>입니다.</div>';
+  }
+
+  box.innerHTML =
+    '<div class="weak-area__label">가장 약한 영역 · '+secName+'</div>'+
+    '<div class="weak-area__title">'+g.title+'</div>'+
+    '<div class="weak-area__desc">'+g.desc+'</div>'+
+    '<div class="weak-area__links">'+linksHtml+'</div>'+
+    gapHtml;
+
+  if (typeof gtag !== 'undefined') gtag('event','diagnosis_complete',{weak_area:g.key});
+}
+
+
         function showResults() {
             var answeredCount = Object.keys(answers).length;
             if (answeredCount < 40) {
@@ -1104,6 +1177,8 @@ input[type=email]:focus{outline:none;border-color:var(--gold);}
                 }
                 sectionScores.push(sectionScore);
             }
+
+            renderWeakArea(sectionScores);
 
             // 주관식 답변 수집
             var openAnswers = {};
