@@ -259,6 +259,16 @@ img { max-width: 100%; height: auto; }
 .sev-note { font-size: .82rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; background: var(--gray-50); border-radius: 10px; padding: 12px 14px; }
 .sev-warn { font-size: .86rem; color: #b45309; background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 11px 14px; margin-bottom: 14px; font-weight: 500; line-height: 1.7; }
 .sev-hint { font-size: .8rem; color: var(--text-muted); font-weight: 300; margin: -6px 0 14px; line-height: 1.6; }
+
+.nx{margin:22px 0 0;padding:22px 20px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
+.nx__label{font-size:.74rem;font-weight:800;letter-spacing:.05em;color:var(--gold);margin-bottom:7px;}
+.nx__title{font-size:1.02rem;font-weight:800;color:var(--black);margin-bottom:9px;letter-spacing:-.02em;line-height:1.5;}
+.nx__desc{font-size:.91rem;color:var(--text-sub);line-height:1.85;font-weight:300;margin-bottom:13px;}
+.nx__desc b{color:var(--text);font-weight:600;}
+.nx__links{display:flex;gap:8px;flex-wrap:wrap;}
+.nx__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:600;text-decoration:none;}
+.nx--warn{background:#fffbeb;border-color:#fde68a;}
+.nx--warn .nx__label{color:#b45309;}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590540653325105"
      crossorigin="anonymous"></script>
@@ -387,6 +397,36 @@ document.addEventListener('click',function(e){const m=document.getElementById('m
 function d(i){return document.getElementById(i);}
 function won(n){return Math.round(n).toLocaleString('ko-KR');}
 function nm(i){var v=parseFloat((d(i).value||'').replace(/,/g,''));return isNaN(v)?0:v;}
+
+function nxBox(ev,g,warn){
+  var links=g.l.map(function(x){
+    return '<a href="'+x[0]+'" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\''+ev+'\',{to:\''+x[0]+'\'});">'+x[1]+'</a>';
+  }).join('');
+  return '<div class="nx'+(warn?' nx--warn':'')+'"><div class="nx__label">다음 단계</div>'
+    +'<div class="nx__title">'+g.t+'</div><div class="nx__desc">'+g.d+'</div>'
+    +'<div class="nx__links">'+links+'</div></div>';
+}
+
+function alpNext(days, pay, wh){
+  var g, warn=false;
+  if(days>=15){
+    warn=true;
+    g={t:'미사용 연차가 많이 남았습니다',
+       d:'<b>'+days+'일</b>이 남아 있습니다. 연차는 <b>발생일로부터 1년</b> 안에 쓰지 않으면 소멸합니다. 회사가 <b>연차사용촉진제도</b>를 적법하게 시행했다면 수당 지급 의무가 면제될 수 있으니, 촉진 통보를 받았는지 확인하고 가능한 한 사용하는 편이 유리합니다.',
+       l:[['/tools/annual-leave','내 연차 발생일 확인'],['/tools/burnout','번아웃 자가진단'],['/tools/severance','퇴직금 계산']]};
+  } else if(wh>0 && wh<15){
+    warn=true;
+    g={t:'주 15시간 미만은 연차가 발생하지 않습니다',
+       d:'4주 평균 1주 소정근로시간이 <b>15시간 미만</b>이면 법정 연차 대상이 아닙니다. <b>5인 미만 사업장</b>도 마찬가지입니다. 다만 실제 근무가 15시간을 넘겼다면 대상이 될 수 있으니 근무 기록을 남겨두세요.',
+       l:[['/tools/annual-leave','연차 발생 기준'],['/tools/weekly-holiday-pay','주휴수당은 되나']]};
+  } else {
+    g={t:'퇴직금과는 별개로 받습니다',
+       d:'퇴직하며 <b>비로소 발생한</b> 미사용 연차수당은 퇴직금 평균임금에 <b>포함되지 않고</b> 따로 정산받습니다. 반면 <b>퇴직 전년도에 이미 지급된</b> 연차수당은 그 <b>3/12</b>이 퇴직금 산정에 들어갑니다. 헷갈리기 쉬운 부분입니다.',
+       l:[['/tools/severance','퇴직금 계산'],['/tools/annual-leave','연차 발생일 확인'],['/tools/overtime-pay','초과근무 수당']]};
+  }
+  return nxBox('alp_next_click',g,warn);
+}
+
 function calcALP(){
   var pay=nm('mPay')*10000, days=nm('unusedDays'), wh=nm('weekHrs')||40;
   var out=d('resALP'); if(!pay||!days){out.innerHTML='';return;}
@@ -405,7 +445,7 @@ function calcALP(){
    '<tr><td>1일 통상임금</td><td><b>'+won(daily)+'원</b></td></tr>'+
    '<tr><td>미사용 연차</td><td>'+days+'일</td></tr></table>'+
    '<div class="sev-note">계산식: '+won(daily)+'원 × '+days+'일 = '+won(total)+'원<br/>'+
-   '주 40시간 기준 월 소정근로시간은 209시간(주휴 포함)입니다. 통상임금에 어떤 수당이 포함되는지는 회사마다 달라 실제와 차이가 날 수 있습니다.</div>';
+   '주 40시간 기준 월 소정근로시간은 209시간(주휴 포함)입니다. 통상임금에 어떤 수당이 포함되는지는 회사마다 달라 실제와 차이가 날 수 있습니다.</div>'+alpNext(days,pay,wh);
 }
 </script>
 <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" rel="noopener" id="ebookFloat" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{'location':'float'});" aria-label="전자책 보기">

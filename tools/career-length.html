@@ -259,6 +259,16 @@ img { max-width: 100%; height: auto; }
 .sev-note { font-size: .82rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; background: var(--gray-50); border-radius: 10px; padding: 12px 14px; }
 .sev-warn { font-size: .86rem; color: #b45309; background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 11px 14px; margin-bottom: 14px; font-weight: 500; line-height: 1.7; }
 .sev-hint { font-size: .8rem; color: var(--text-muted); font-weight: 300; margin: -6px 0 14px; line-height: 1.6; }
+
+.nx{margin:22px 0 0;padding:22px 20px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
+.nx__label{font-size:.74rem;font-weight:800;letter-spacing:.05em;color:var(--gold);margin-bottom:7px;}
+.nx__title{font-size:1.02rem;font-weight:800;color:var(--black);margin-bottom:9px;letter-spacing:-.02em;line-height:1.5;}
+.nx__desc{font-size:.91rem;color:var(--text-sub);line-height:1.85;font-weight:300;margin-bottom:13px;}
+.nx__desc b{color:var(--text);font-weight:600;}
+.nx__links{display:flex;gap:8px;flex-wrap:wrap;}
+.nx__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:600;text-decoration:none;}
+.nx--warn{background:#fffbeb;border-color:#fde68a;}
+.nx--warn .nx__label{color:#b45309;}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590540653325105"
      crossorigin="anonymous"></script>
@@ -393,6 +403,39 @@ function addRow(){
   d('carRows').appendChild(w);
 }
 function delRow(n){var e=d('row'+n); if(e)e.remove(); calcCar();}
+
+function nxBox(ev,g,warn){
+  var links=g.l.map(function(x){
+    return '<a href="'+x[0]+'" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\''+ev+'\',{to:\''+x[0]+'\'});">'+x[1]+'</a>';
+  }).join('');
+  return '<div class="nx'+(warn?' nx--warn':'')+'"><div class="nx__label">다음 단계</div>'
+    +'<div class="nx__title">'+g.t+'</div><div class="nx__desc">'+g.d+'</div>'
+    +'<div class="nx__links">'+links+'</div></div>';
+}
+
+function carNext(totalDays, cnt){
+  var g, warn=false;
+  var years = totalDays/365;
+  if(totalDays<365){
+    g={t:'1년 미만이면 달라지는 것들',
+       d:'재직 1년 미만이면 <b>법정 퇴직금 대상이 아닙니다.</b> 연차도 1개월 개근마다 1일씩만 발생합니다. 경력직 지원 자격도 대개 1년 이상을 요구하므로, 퇴사 시점을 조정할 수 있다면 1년을 채우는 편이 유리합니다.',
+       l:[['/tools/severance','퇴직금 기준 확인'],['/tools/annual-leave','연차 발생 확인']]};
+  } else if(cnt>=3){
+    g={t:'여러 회사 경력은 정리 방식이 중요합니다',
+       d:'<b>'+cnt+'개 기간</b>을 합산했습니다. 이력서에는 <b>총 경력을 맨 위에 요약</b>하고 각 회사를 최근 순으로 적으세요. 짧은 경력도 숨기지 마세요. <b>4대보험 이력으로 확인</b>되므로 공백으로 두면 오히려 질문을 받습니다.',
+       l:[['/tools/resume-builder','이력서 만들기'],['/tools/career-description','경력기술서 작성'],['/blog/job-change-salary-raise','이직 연봉 협상']]};
+  } else if(years>=3){
+    g={t:'경력기술서를 따로 준비하세요',
+       d:'3년 이상이면 이력서만으로 성과를 다 담기 어렵습니다. 경력직 전형에서는 <b>이력서와 경력기술서가 자소서보다 우선순위가 높습니다.</b> STAR 구조로 프로젝트 3~5개를 정리해 두세요.',
+       l:[['/tools/career-description','경력기술서 작성'],['/tools/resume-builder','이력서 만들기'],['/tools/raise','연봉 인상률 계산']]};
+  } else {
+    g={t:'경력을 반올림하지 마세요',
+       d:'2년 9개월을 "3년"으로 쓰면 <b>경력증명서와 대조될 때 신뢰가 깎입니다.</b> 정확히 적는 편이 낫습니다. 지원 자격이 "3년 이상"이라면 몇 개월 차이로 서류에서 걸릴 수 있으니 기간을 먼저 확인하세요.',
+       l:[['/tools/resume-builder','이력서 만들기'],['/tools/career-description','경력기술서 작성'],['/tools/severance','퇴직금 계산']]};
+  }
+  return nxBox('car_next_click',g,warn);
+}
+
 function calcCar(){
   var out=d('resCar'); var totalDays=0, rows='', cnt=0;
   for(var i=1;i<=rowN;i++){
@@ -416,7 +459,7 @@ function calcCar(){
    '<table class="sev-tbl"><tr><td>총 재직일수</td><td>'+totalDays.toLocaleString('ko-KR')+'일</td></tr>'+
    '<tr><td>개월 환산</td><td><b>'+totalMonths+'개월</b></td></tr>'+
    '<tr><td>정확한 기간</td><td>'+Y+'년 '+M+'개월 '+D+'일</td></tr>'+rows+'</table>'+
-   '<div class="sev-note">시작일과 종료일을 모두 포함해 계산합니다(재직일수 기준). 회사마다 경력 인정 방식이 다를 수 있으니 지원처 기준을 확인하세요.</div>';
+   '<div class="sev-note">시작일과 종료일을 모두 포함해 계산합니다(재직일수 기준). 회사마다 경력 인정 방식이 다를 수 있으니 지원처 기준을 확인하세요.</div>'+carNext(totalDays,cnt);
 }
 addRow();addRow();
 </script>
