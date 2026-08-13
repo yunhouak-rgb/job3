@@ -260,6 +260,16 @@ img { max-width: 100%; height: auto; }
 .sev-note { font-size: .82rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; background: var(--gray-50); border-radius: 10px; padding: 12px 14px; }
 .sev-warn { font-size: .86rem; color: #b45309; background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 11px 14px; margin-bottom: 14px; font-weight: 500; line-height: 1.7; }
 .sev-hint { font-size: .8rem; color: var(--text-muted); font-weight: 300; margin: -6px 0 14px; line-height: 1.6; }
+
+.nx{margin:22px 0 0;padding:22px 20px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
+.nx__label{font-size:.74rem;font-weight:800;letter-spacing:.05em;color:var(--gold);margin-bottom:7px;}
+.nx__title{font-size:1.02rem;font-weight:800;color:var(--black);margin-bottom:9px;letter-spacing:-.02em;line-height:1.5;}
+.nx__desc{font-size:.91rem;color:var(--text-sub);line-height:1.85;font-weight:300;margin-bottom:13px;}
+.nx__desc b{color:var(--text);font-weight:600;}
+.nx__links{display:flex;gap:8px;flex-wrap:wrap;}
+.nx__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:600;text-decoration:none;}
+.nx--warn{background:#fffbeb;border-color:#fde68a;}
+.nx--warn .nx__label{color:#b45309;}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590540653325105"
      crossorigin="anonymous"></script>
@@ -412,6 +422,39 @@ function annualForYear(n){ // n = 만 근속연수 (1 이상)
   return Math.min(v,25);
 }
 
+
+function nxBox(ev,g,warn){
+  var links=g.l.map(function(x){
+    return '<a href="'+x[0]+'" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\''+ev+'\',{to:\''+x[0]+'\'});">'+x[1]+'</a>';
+  }).join('');
+  return '<div class="nx'+(warn?' nx--warn':'')+'"><div class="nx__label">다음 단계</div>'
+    +'<div class="nx__title">'+g.t+'</div><div class="nx__desc">'+g.d+'</div>'
+    +'<div class="nx__links">'+links+'</div></div>';
+}
+
+function leaveNext(years, monthly, total, nextV){
+  var g, warn=false;
+  if(years===0){
+    g={t:'1년이 되는 날 15일이 한꺼번에 생깁니다',
+       d:'지금은 <b>1개월 개근마다 1일</b>씩 쌓이는 구간입니다(최대 11일). 입사 1년이 되고 출근율 80%를 넘으면 <b>15일이 일괄 발생</b>합니다. 다만 1년 미만 기간에 생긴 연차는 <b>입사일로부터 1년</b>이 사용 기한이니, 그전에 쓰지 않으면 소멸합니다.',
+       l:[['/tools/annual-leave-pay','미사용 연차수당 계산'],['/tools/career-length','재직일수 확인']]};
+  } else if(years>=3 && years<21){
+    var gasan=Math.min(15+Math.floor((years-1)/2),25)-15;
+    g={t:'가산휴가 '+gasan+'일이 붙어 있습니다',
+       d:'3년 이상 계속근로자는 <b>매 2년마다 1일</b>이 가산됩니다. 다음 입사기념일에는 <b>'+nextV+'일</b>이 발생합니다. 회사가 기본 15일만 주고 있다면 가산분을 확인해 보세요.',
+       l:[['/tools/annual-leave-pay','연차수당 계산'],['/tools/severance','퇴직금 계산'],['/tools/overtime-pay','초과근무 수당']]};
+  } else if(years>=21){
+    g={t:'연차 한도 25일에 도달했습니다',
+       d:'가산휴가를 포함한 <b>법정 상한이 25일</b>입니다. 이보다 더 주는 회사도 있지만 법이 요구하는 최소는 여기까지입니다. 쓰지 못한 연차는 <b>1일 통상임금 × 미사용 일수</b>로 정산받습니다.',
+       l:[['/tools/annual-leave-pay','연차수당 계산'],['/tools/severance','퇴직금 계산']]};
+  } else {
+    g={t:'못 쓴 연차는 수당으로 받습니다',
+       d:'연차는 <b>발생일로부터 1년</b> 안에 써야 합니다. 소멸하면 원칙적으로 <b>미사용 연차수당</b>을 청구할 수 있습니다. 다만 회사가 적법하게 <b>연차사용촉진제도</b>를 시행했다면 지급 의무가 면제될 수 있습니다.',
+       l:[['/tools/annual-leave-pay','연차수당 계산'],['/tools/severance','퇴직금에 반영되나'],['/worker-type','내 업무 성향 보기']]};
+  }
+  return nxBox('leave_next_click',g,warn);
+}
+
 function calcLeave(){
   var jv=d('joinD').value, bv=d('baseD').value;
   var out=d('resLeave');
@@ -461,7 +504,8 @@ function calcLeave(){
    '<div style="font-size:.85rem;font-weight:700;margin:18px 0 8px;">연차 발생 내역</div>'+
    '<table class="sev-tbl"><tr><td style="color:var(--text-muted);">구분</td><td style="color:var(--text-muted);">일수</td><td style="color:var(--text-muted);">비고</td></tr>'+rows+'</table>'+
    '<div class="sev-note">누적 발생 연차는 <b>사용·소멸분을 빼기 전</b> 총 발생량입니다. 실제 잔여 연차는 사용한 일수와 소멸된 일수를 차감해야 합니다.<br/>'+
-   '입사일 기준 계산입니다. 회계연도 기준을 쓰는 회사라면 결과가 다를 수 있습니다.</div>';
+   '입사일 기준 계산입니다. 회계연도 기준을 쓰는 회사라면 결과가 다를 수 있습니다.</div>'+
+   leaveNext(years, monthly, total, nextV);
 }
 </script>
 <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" rel="noopener" id="ebookFloat" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{'location':'float'});" aria-label="전자책 보기">
