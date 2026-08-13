@@ -242,6 +242,16 @@ img { max-width: 100%; height: auto; }
 .tool-seo th { text-align: left; padding: 9px 0; font-weight: 700; border-bottom: 2px solid var(--black); }
 .tool-seo td { padding: 9px 0; color: var(--text-sub); border-bottom: 1px solid var(--gray-100); font-weight: 300; }
 .tool-seo a { color: var(--gold); font-weight: 600; }
+
+.nx{margin:22px 0 0;padding:22px 20px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
+.nx__label{font-size:.74rem;font-weight:800;letter-spacing:.05em;color:var(--gold);margin-bottom:7px;}
+.nx__title{font-size:1.02rem;font-weight:800;color:var(--black);margin-bottom:9px;letter-spacing:-.02em;line-height:1.5;}
+.nx__desc{font-size:.91rem;color:var(--text-sub);line-height:1.85;font-weight:300;margin-bottom:13px;}
+.nx__desc b{color:var(--text);font-weight:600;}
+.nx__links{display:flex;gap:8px;flex-wrap:wrap;}
+.nx__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:600;text-decoration:none;}
+.nx--warn{background:#fffbeb;border-color:#fde68a;}
+.nx--warn .nx__label{color:#b45309;}
 </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "연봉 인상률 계산기", "description": "현재 연봉과 제시 연봉으로 인상률을 계산하고 이직·연봉협상 판단을 돕는 무료 도구", "url": "https://jobok.co.kr/tools/raise", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "publisher": {"@type": "Organization", "name": "좋은 취업", "url": "https://jobok.co.kr/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "취업 도구", "item": "https://jobok.co.kr/tools"}, {"@type": "ListItem", "position": 3, "name": "연봉 인상률 계산기", "item": "https://jobok.co.kr/tools/raise"}]}</script>
@@ -385,6 +395,38 @@ function switchTab(n){
   document.getElementById('box2').style.display = n===2?'block':'none';
 }
 
+
+function nxBox(ev,g,warn){
+  var links=g.l.map(function(x){
+    return '<a href="'+x[0]+'" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\''+ev+'\',{to:\''+x[0]+'\'});">'+x[1]+'</a>';
+  }).join('');
+  return '<div class="nx'+(warn?' nx--warn':'')+'"><div class="nx__label">다음 단계</div>'
+    +'<div class="nx__title">'+g.t+'</div><div class="nx__desc">'+g.d+'</div>'
+    +'<div class="nx__links">'+links+'</div></div>';
+}
+function raiseNext(rate){
+  var g, warn=false;
+  if(rate<0){
+    warn=true;
+    g={t:'연봉이 낮아지는 조건입니다',
+       d:'제시액이 현재보다 <b>낮습니다.</b> 직무 전환이나 근무 조건(재택·직급·성장 기회)을 얻는 대신 감수하는 선택이라면 합리적일 수 있습니다. 다만 <b>퇴직금은 퇴직 전 3개월 평균임금</b>으로 산정되므로, 낮아진 연봉으로 오래 근무하면 퇴직금도 함께 줄어듭니다.',
+       l:[['/tools/severance','퇴직금 영향 확인'],['/tools/salary','실수령액 비교'],['/blog/job-change-salary-raise','협상 전략']]};
+  } else if(rate<5){
+    g={t:'연봉 외 조건을 함께 보세요',
+       d:'인상 폭이 크지 않습니다. 이럴수록 <b>총보상</b>으로 비교해야 합니다. 성과급 유무, <b>퇴직금 별도/포함</b>, 포괄임금제 여부, 복리후생에 따라 실질 차이가 인상률보다 클 수 있습니다. 기본급 조정이 어렵다면 <b>사이닝 보너스나 조기 재조정 시점 명시</b>를 제안해 볼 수 있습니다.',
+       l:[['/tools/salary','실수령액 비교'],['/tools/severance','퇴직금 조건 확인'],['/blog/job-change-salary-raise','협상 메일 예시']]};
+  } else if(rate>=30){
+    g={t:'조건 구성을 꼭 확인하세요',
+       d:'인상 폭이 큽니다. 이런 경우 <b>퇴직금 포함</b>이거나 <b>고정 초과근무 수당이 포함된 포괄임금</b>인 경우가 있습니다. 퇴직금 포함이면 실제 월 지급액이 약 <b>1/13</b> 줄고, 포괄임금이면 야근을 해도 추가 수당이 없습니다. 계약서에서 항목을 분해해 확인하세요.',
+       l:[['/tools/severance','퇴직금 계산'],['/tools/overtime-pay','초과근무 수당'],['/tools/salary','실수령액 계산']]};
+  } else {
+    g={t:'협상 전 두 숫자를 정해두세요',
+       d:'협상 자리에서 즉흥적으로 답하지 않으려면 <b>최소 수용선</b>(이 아래면 가지 않는다)과 <b>희망선</b>을 미리 정해야 합니다. 근거 없이 숫자만 던지면 요구가 되고, 근거를 갖춘 <b>한 번의 조정 요청</b>으로 오퍼가 철회되는 일은 드뭅니다.',
+       l:[['/blog/job-change-salary-raise','협상 메일 예시'],['/tools/salary','실수령액 비교'],['/tools/career-description','경력기술서 정리']]};
+  }
+  return nxBox('raise_next_click',g,warn);
+}
+
 function calc1(){
   const cur = parseFloat(document.getElementById('cur1').value);
   const nw = parseFloat(document.getElementById('new1').value);
@@ -402,7 +444,7 @@ function calc1(){
         <div class="result-row"><span>제안 연봉</span><span>${f(nw)}만 원</span></div>
         <div class="result-row" style="border-bottom:none;"><span>차액</span><span style="color:${color};">${diff>=0?'+':''}${f(diff)}만 원</span></div>
       </div>
-    </div>`;
+    </div>` + raiseNext(rate);
 }
 
 function calc2(){
@@ -421,7 +463,7 @@ function calc2(){
         <div class="result-row"><span>인상액</span><span style="color:var(--gold);">+${f(diff)}만 원</span></div>
         <div class="result-row" style="border-bottom:none;"><span>목표 연봉</span><span style="color:var(--gold);">${f(target)}만 원</span></div>
       </div>
-    </div>`;
+    </div>` + raiseNext(rate);
 }
 </script>
 <!-- 카카오 문의 플로팅 버튼 -->

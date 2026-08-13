@@ -239,7 +239,17 @@ img { max-width: 100%; height: auto; }
 .tool-seo h2:first-child { margin-top: 0; }
 .tool-seo p { font-size: 0.92rem; color: var(--text-sub); line-height: 1.85; margin-bottom: 14px; font-weight: 300; }
 .tool-seo strong { color: var(--text); font-weight: 600; }
-  </style>
+  
+.nx{margin:22px 0 0;padding:22px 20px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
+.nx__label{font-size:.74rem;font-weight:800;letter-spacing:.05em;color:var(--gold);margin-bottom:7px;}
+.nx__title{font-size:1.02rem;font-weight:800;color:var(--black);margin-bottom:9px;letter-spacing:-.02em;line-height:1.5;}
+.nx__desc{font-size:.91rem;color:var(--text-sub);line-height:1.85;font-weight:300;margin-bottom:13px;}
+.nx__desc b{color:var(--text);font-weight:600;}
+.nx__links{display:flex;gap:8px;flex-wrap:wrap;}
+.nx__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:600;text-decoration:none;}
+.nx--warn{background:#fffbeb;border-color:#fde68a;}
+.nx--warn .nx__label{color:#b45309;}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "연봉 3000만원의 실수령액은 얼마인가요?", "acceptedAnswer": {"@type": "Answer", "text": "1인 가구 기준 월 약 224만 원 내외입니다. 부양가족이 많으면 소득세가 줄어 실수령액이 늘어납니다."}}, {"@type": "Question", "name": "세전 연봉과 실수령액 차이가 왜 나나요?", "acceptedAnswer": {"@type": "Answer", "text": "4대보험료와 소득세·지방소득세가 매달 공제되기 때문입니다. 연봉이 높을수록 공제 비율이 커져 차이가 더 벌어집니다."}}, {"@type": "Question", "name": "식대 등 비과세 항목은 어떻게 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "월 20만 원까지의 식대 등 비과세 항목은 세금이 부과되지 않아 실제 실수령액은 계산값보다 다소 높을 수 있습니다."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "연봉 실수령액 계산기 (2026)", "description": "2026년 4대보험 요율 기준으로 세전 연봉의 실수령액을 계산하는 무료 도구", "url": "https://jobok.co.kr/tools/salary", "applicationCategory": "FinanceApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "publisher": {"@type": "Organization", "name": "좋은 취업", "url": "https://jobok.co.kr/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "취업 도구", "item": "https://jobok.co.kr/tools"}, {"@type": "ListItem", "position": 3, "name": "연봉 실수령액 계산기", "item": "https://jobok.co.kr/tools/salary"}]}</script>
@@ -384,6 +394,36 @@ function incomeTaxMonthly(monthlyWon, family){
   if(family>1) base *= Math.max(0.3, 1-(family-1)*0.18);
   return base;
 }
+
+function nxBox(ev,g,warn){
+  var links=g.l.map(function(x){
+    return '<a href="'+x[0]+'" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\''+ev+'\',{to:\''+x[0]+'\'});">'+x[1]+'</a>';
+  }).join('');
+  return '<div class="nx'+(warn?' nx--warn':'')+'"><div class="nx__label">다음 단계</div>'
+    +'<div class="nx__title">'+g.t+'</div><div class="nx__desc">'+g.d+'</div>'
+    +'<div class="nx__links">'+links+'</div></div>';
+}
+
+function salNext(annual, monthly, netMonthly){
+  var g, warn=false;
+  var minYear = 10320*209*12; // 2026 최저임금 연 환산
+  if(annual < minYear){
+    warn=true;
+    g={t:'최저임금 연 환산액보다 낮습니다',
+       d:'2026년 최저임금(시급 10,320원, 월 209시간) 기준 <b>연 '+Math.round(minYear/10000).toLocaleString()+'만 원</b>입니다. 입력한 연봉이 이보다 낮습니다. 다만 <b>퇴직금 포함</b> 조건이거나 근무시간이 주 40시간 미만이면 정상일 수 있으니 계약 조건을 확인하세요.',
+       l:[['/tools/minimum-wage','최저임금 계산기'],['/tools/weekly-holiday-pay','주휴수당 확인']]};
+  } else if(annual >= 100000000){
+    g={t:'고연봉일수록 실수령 차이가 커집니다',
+       d:'소득세는 누진 구조라 연봉이 오를수록 <b>공제 비율이 함께 올라갑니다.</b> 또 국민연금은 상한이 있어 일정 소득 이상에서는 더 늘지 않습니다. 이직 시에는 세전 연봉보다 <b>실수령과 보상 구조</b>로 비교하세요.',
+       l:[['/tools/raise','인상률 계산'],['/tools/severance','퇴직금 계산'],['/blog/job-change-salary-raise','이직 연봉 협상']]};
+  } else {
+    g={t:'이 금액에 포함되지 않은 것',
+       d:'위 계산은 <b>계약연봉 기준</b>입니다. <b>퇴직금 포함</b> 조건이면 실제 월 지급액이 약 1/13 줄고, <b>포괄임금제</b>면 초과근무를 해도 추가 수당이 없습니다. 성과급·상여가 별도인지도 확인하세요. 같은 연봉이라도 이 조건들로 실질 차이가 큽니다.',
+       l:[['/tools/severance','퇴직금 계산'],['/tools/overtime-pay','초과근무 수당'],['/tools/raise','이직 인상률 계산']]};
+  }
+  return nxBox('sal_next_click',g,warn);
+}
+
 function calcSalary(){
   const annual = parseFloat(document.getElementById('salaryInput').value) * 10000;
   const family = parseInt(document.getElementById('familyInput').value) || 1;
@@ -412,7 +452,7 @@ function calcSalary(){
         <div class="result-row"><span>지방소득세</span><span>-${f(localTax)}원</span></div>
         <div class="result-row" style="border-bottom:none;font-size:1rem;"><span style="color:var(--gold);">연 실수령액</span><span style="color:var(--gold);">${f(netMonthly*12)}원</span></div>
       </div>
-    </div>`;
+    </div>` + salNext(annual, monthly, netMonthly);
 }
 
 </script>
