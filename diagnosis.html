@@ -65,51 +65,47 @@
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <style>
-:root{
-  --black:#0a0a0a; --white:#ffffff;
-  --gray-50:#f7f7f5; --gray-100:#efefec; --gray-200:#e0e0da; --gray-400:#b0b0a8; --gray-600:#6b6b63;
-  --text:#0a0a0a; --text-sub:#5a5a52; --text-muted:#9a9a92;
-  --gold:#c4871a; --gold-dark:#a06f12; --gold-light:#fdf8f0;
-  --radius:6px; --radius-lg:12px; --max-w:720px;
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "취업 준비도 자가진단은 무료인가요?", "acceptedAnswer": {"@type": "Answer", "text": "완전 무료이며 회원가입이나 로그인이 필요 없습니다. 개인정보도 수집하지 않습니다."}}, {"@type": "Question", "name": "진단은 몇 문항이고 얼마나 걸리나요?", "acceptedAnswer": {"@type": "Answer", "text": "자기이해, 기업분석, 자소서, 면접, 멘탈관리 5개 영역 40문항으로 구성되며 5~10분 걸립니다."}}, {"@type": "Question", "name": "진단 점수가 합격 가능성을 뜻하나요?", "acceptedAnswer": {"@type": "Answer", "text": "아닙니다. 합격 예측이 아니라 준비 상태 점검입니다. 총점보다 영역 간 격차를 보는 것이 유용하며, 격차가 큰 영역이 병목입니다."}}, {"@type": "Question", "name": "취업 준비 초반에 해도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "초반에 하는 편이 더 유용합니다. 무엇부터 해야 할지 순서를 잡는 데 도움이 됩니다."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "취업 준비도 자가진단", "item": "https://jobok.co.kr/diagnosis"}]}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590540653325105"
+     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/assets/site.e6dc97eb.css" />
+  <style>:root{
+--black:#0a0a0a; --white:#ffffff;
+--gray-50:#f7f7f5; --gray-100:#efefec; --gray-200:#e0e0da; --gray-400:#b0b0a8; --gray-600:#6b6b63;
+--text:#0a0a0a; --text-sub:#5a5a52; --text-muted:#9a9a92;
+--gold:#c4871a; --gold-dark:#a06f12; --gold-light:#fdf8f0;
+--radius:6px; --radius-lg:12px; --max-w:720px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
-  font-family:'Noto Sans KR',-apple-system,sans-serif;
-  color:var(--text); background:var(--white);
-  line-height:1.7; -webkit-font-smoothing:antialiased;
+font-family:'Noto Sans KR',-apple-system,sans-serif;
+color:var(--text); background:var(--white);
+line-height:1.7; -webkit-font-smoothing:antialiased;
 }
 .container{max-width:var(--max-w);margin:0 auto;padding:0 20px;}
-
-/* 상단 사이트 네비 */
 .site-nav{border-bottom:1px solid var(--gray-100);background:var(--white);position:sticky;top:0;z-index:50;}
 .site-nav__inner{max-width:var(--max-w);margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
 .site-nav__logo{font-weight:900;font-size:1.05rem;color:var(--black);text-decoration:none;letter-spacing:-.02em;}
 .site-nav__logo span{color:var(--gold);}
 .site-nav__home{font-size:.85rem;color:var(--text-muted);text-decoration:none;font-weight:500;}
 .site-nav__home:hover{color:var(--gold);}
-
-/* 헤더 */
 header{text-align:center;padding:56px 20px 40px;}
 header h1{
-  font-size:2rem;font-weight:900;letter-spacing:-.03em;line-height:1.25;
-  color:var(--black);margin-bottom:14px;
+font-size:2rem;font-weight:900;letter-spacing:-.03em;line-height:1.25;
+color:var(--black);margin-bottom:14px;
 }
 header h1::after{content:"";display:block;width:44px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:2px;}
 .subtitle{font-size:1.02rem;color:var(--text-sub);font-weight:400;}
-
-/* 정보 박스 */
 .info-box{
-  background:var(--gold-light);border:1px solid #f0dcbb;border-radius:var(--radius-lg);
-  padding:26px 28px;margin:8px 0 28px;
+background:var(--gold-light);border:1px solid #f0dcbb;border-radius:var(--radius-lg);
+padding:26px 28px;margin:8px 0 28px;
 }
 .info-box h3{font-size:.95rem;font-weight:800;color:var(--gold-dark);margin-bottom:14px;letter-spacing:-.01em;}
 .info-box ul{list-style:none;display:grid;gap:9px;}
 .info-box li{font-size:.92rem;color:var(--text-sub);padding-left:22px;position:relative;}
 .info-box li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800;}
 .info-box strong{color:var(--text);font-weight:700;}
-
-/* 기본 정보 입력 */
 .personal-info{border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:26px 28px;margin-bottom:28px;}
 .personal-info h3{font-size:1.05rem;font-weight:800;margin-bottom:20px;letter-spacing:-.01em;}
 .form-group{margin-bottom:22px;}
@@ -120,33 +116,29 @@ header h1::after{content:"";display:block;width:44px;height:3px;background:var(-
 .radio-option{position:relative;}
 .radio-option input[type=radio]{position:absolute;opacity:0;}
 .radio-option label{
-  display:block;padding:11px 20px;border:1.5px solid var(--gray-200);border-radius:99px;
-  font-size:.9rem;color:var(--text-sub);cursor:pointer;transition:all .15s;font-weight:500;
+display:block;padding:11px 20px;border:1.5px solid var(--gray-200);border-radius:99px;
+font-size:.9rem;color:var(--text-sub);cursor:pointer;transition:all .15s;font-weight:500;
 }
 .radio-option input:checked+label{border-color:var(--gold);background:var(--gold);color:#fff;font-weight:600;}
 .radio-option label:hover{border-color:var(--gold);}
 input[type=email]{
-  width:100%;padding:13px 16px;border:1.5px solid var(--gray-200);border-radius:var(--radius);
-  font-size:.95rem;font-family:inherit;transition:border-color .15s;
+width:100%;padding:13px 16px;border:1.5px solid var(--gray-200);border-radius:var(--radius);
+font-size:.95rem;font-family:inherit;transition:border-color .15s;
 }
 input[type=email]:focus{outline:none;border-color:var(--gold);}
-
-/* 진행바 */
 .progress-container{margin:0 0 32px;}
 .progress-bar{height:6px;background:var(--gray-100);border-radius:99px;overflow:hidden;}
 .progress-fill{height:100%;width:0;background:var(--gold);border-radius:99px;transition:width .4s ease;}
 .progress-text{text-align:center;font-size:.82rem;color:var(--text-muted);margin-top:10px;font-weight:600;letter-spacing:.02em;}
-
-/* 문항 섹션 */
 .section{display:none;}
 .section.active{display:block;animation:fadeIn .35s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 .section-title-quiz{
-  font-size:1.35rem;font-weight:900;letter-spacing:-.02em;margin-bottom:6px;color:var(--black);
+font-size:1.35rem;font-weight:900;letter-spacing:-.02em;margin-bottom:6px;color:var(--black);
 }
 .section-title-quiz::before{
-  content:attr(data-step);display:inline-block;font-size:.75rem;font-weight:700;color:var(--gold);
-  background:var(--gold-light);padding:4px 10px;border-radius:99px;margin-bottom:12px;letter-spacing:.03em;
+content:attr(data-step);display:inline-block;font-size:.75rem;font-weight:700;color:var(--gold);
+background:var(--gold-light);padding:4px 10px;border-radius:99px;margin-bottom:12px;letter-spacing:.03em;
 }
 .question-quiz{padding:22px 0;border-bottom:1px solid var(--gray-100);}
 .question-quiz:last-child{border-bottom:none;}
@@ -154,121 +146,101 @@ input[type=email]:focus{outline:none;border-color:var(--gold);}
 .question-text-quiz{font-size:1.02rem;font-weight:600;color:var(--text);margin-bottom:16px;line-height:1.5;}
 .options-quiz{display:grid;gap:9px;}
 .option-quiz{
-  padding:13px 18px;border:1.5px solid var(--gray-200);border-radius:var(--radius);
-  font-size:.92rem;color:var(--text-sub);cursor:pointer;transition:all .15s;background:var(--white);
-  text-align:left;font-family:inherit;
+padding:13px 18px;border:1.5px solid var(--gray-200);border-radius:var(--radius);
+font-size:.92rem;color:var(--text-sub);cursor:pointer;transition:all .15s;background:var(--white);
+text-align:left;font-family:inherit;
 }
 .option-quiz:hover{border-color:var(--gold);background:var(--gold-light);}
 .option-quiz.selected{border-color:var(--gold);background:var(--gold);color:#fff;font-weight:600;}
-
-/* 주관식 */
 .open-question{margin-top:12px;}
 .textarea-field{
-  width:100%;min-height:100px;padding:14px 16px;border:1.5px solid var(--gray-200);
-  border-radius:var(--radius);font-size:.95rem;font-family:inherit;resize:vertical;line-height:1.6;
+width:100%;min-height:100px;padding:14px 16px;border:1.5px solid var(--gray-200);
+border-radius:var(--radius);font-size:.95rem;font-family:inherit;resize:vertical;line-height:1.6;
 }
 .textarea-field:focus{outline:none;border-color:var(--gold);}
 .optional-note{font-size:.8rem;color:var(--text-muted);margin-top:6px;}
-
-/* 네비게이션 버튼 */
 .navigation{display:flex;gap:12px;margin:36px 0 20px;}
 .btn-quiz{
-  flex:1;padding:15px 24px;border:none;border-radius:var(--radius);
-  font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer;transition:all .18s;
-  background:var(--gold);color:#fff;letter-spacing:-.01em;
+flex:1;padding:15px 24px;border:none;border-radius:var(--radius);
+font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer;transition:all .18s;
+background:var(--gold);color:#fff;letter-spacing:-.01em;
 }
 .btn-quiz:hover{background:var(--gold-dark);transform:translateY(-1px);}
 .btn-secondary-quiz{background:var(--white);color:var(--text-sub);border:1.5px solid var(--gray-200);flex:0 0 auto;padding-left:32px;padding-right:32px;}
 .btn-secondary-quiz:hover{background:var(--gray-50);border-color:var(--gray-400);transform:none;}
-
-/* 결과 페이지 */
 .results-quiz{display:none;padding:20px 0 40px;}
 .results-quiz.show{display:block;animation:fadeIn .4s ease;}
 .results-quiz>h2{text-align:center;font-size:1.6rem;font-weight:900;letter-spacing:-.02em;margin-bottom:28px;}
 .score-grade-container{text-align:center;margin-bottom:36px;}
 .total-score{font-size:4.2rem;font-weight:900;color:var(--gold);line-height:1;letter-spacing:-.03em;font-family:'Instrument Sans',sans-serif;}
 .grade-badge{
-  display:inline-block;margin-top:14px;padding:8px 24px;border-radius:99px;
-  font-size:1.05rem;font-weight:800;letter-spacing:-.01em;
+display:inline-block;margin-top:14px;padding:8px 24px;border-radius:99px;
+font-size:1.05rem;font-weight:800;letter-spacing:-.01em;
 }
 .grade-A{background:#1a7a3f;color:#fff;}
 .grade-B{background:var(--gold);color:#fff;}
 .grade-C{background:#d99a2b;color:#fff;}
 .grade-D{background:#c26b3e;color:#fff;}
 .grade-E{background:#8a8a82;color:#fff;}
-
-/* 공유 (담백하게) */
 .share-section{
-  text-align:center;padding:24px;background:var(--gray-50);border-radius:var(--radius-lg);margin-bottom:28px;
+text-align:center;padding:24px;background:var(--gray-50);border-radius:var(--radius-lg);margin-bottom:28px;
 }
 .share-section h3{font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--text);}
 .share-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 .share-btn{
-  display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border:1.5px solid var(--gray-200);
-  border-radius:99px;background:var(--white);font-size:.88rem;font-weight:600;color:var(--text-sub);
-  cursor:pointer;transition:all .15s;font-family:inherit;
+display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border:1.5px solid var(--gray-200);
+border-radius:99px;background:var(--white);font-size:.88rem;font-weight:600;color:var(--text-sub);
+cursor:pointer;transition:all .15s;font-family:inherit;
 }
 .share-btn:hover{border-color:var(--gold);color:var(--gold);}
 .kakao-btn:hover{border-color:#fee500;background:#fee500;color:#3c1e1e;}
-
-/* 분석/추천 */
 .recommendation{margin-bottom:32px;}
 .recommendation>h3{
-  font-size:1.15rem;font-weight:800;letter-spacing:-.01em;margin:28px 0 14px;
-  padding-bottom:10px;border-bottom:2px solid var(--gold);display:inline-block;
+font-size:1.15rem;font-weight:800;letter-spacing:-.01em;margin:28px 0 14px;
+padding-bottom:10px;border-bottom:2px solid var(--gold);display:inline-block;
 }
 .analysis-text{font-size:.98rem;color:var(--text-sub);line-height:1.75;background:var(--gold-light);padding:20px 22px;border-radius:var(--radius);border:1px solid #f0dcbb;}
 .radar-chart-container{max-width:420px;margin:24px auto;}
 .action-steps{display:grid;gap:12px;}
 .action-step{
-  padding:16px 20px;border:1px solid var(--gray-100);border-left:3px solid var(--gold);
-  border-radius:var(--radius);background:var(--white);
+padding:16px 20px;border:1px solid var(--gray-100);border-left:3px solid var(--gold);
+border-radius:var(--radius);background:var(--white);
 }
 .action-step .step-title{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:5px;}
 .action-step .step-description{font-size:.9rem;color:var(--text-sub);line-height:1.6;}
 .target-box{
-  margin-top:16px;padding:20px 22px;background:var(--black);color:#fff;border-radius:var(--radius-lg);
+margin-top:16px;padding:20px 22px;background:var(--black);color:#fff;border-radius:var(--radius-lg);
 }
 .target-box .step-title{font-size:.8rem;font-weight:700;color:var(--gold);letter-spacing:.04em;margin-bottom:8px;text-transform:uppercase;}
 .target-box .step-description{font-size:.98rem;line-height:1.6;color:#f0f0ec;}
-
-/* 영역별 breakdown */
 .area-breakdown{display:grid;gap:14px;margin:20px 0;}
 .area-info{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1px solid var(--gray-100);border-radius:var(--radius);}
 .area-name{font-size:.92rem;font-weight:600;color:var(--text);}
 .area-score{font-size:1.05rem;font-weight:800;color:var(--gold);font-family:'Instrument Sans',sans-serif;}
 .area-description{font-size:.85rem;color:var(--text-muted);margin-top:4px;}
-
-/* CTA 버튼 - 전자책 + 상담 */
 .action-buttons{display:grid;gap:12px;margin:32px 0 24px;}
 .action-btn{
-  display:block;text-align:center;padding:18px 24px;border-radius:var(--radius-lg);
-  font-size:1.02rem;font-weight:700;text-decoration:none;transition:all .18s;letter-spacing:-.01em;
+display:block;text-align:center;padding:18px 24px;border-radius:var(--radius-lg);
+font-size:1.02rem;font-weight:700;text-decoration:none;transition:all .18s;letter-spacing:-.01em;
 }
 .ebook-btn{background:var(--gold);color:#fff;box-shadow:0 4px 16px rgba(196,135,26,.25);}
 .ebook-btn:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,135,26,.32);}
 .ebook-btn small{display:block;font-size:.8rem;font-weight:500;opacity:.9;margin-top:4px;}
 .consulting-btn{background:var(--white);color:var(--text);border:1.5px solid var(--gray-200);}
 .consulting-btn:hover{border-color:var(--gold);color:var(--gold);}
-
-/* 하단 홈 */
 .back-to-home{text-align:center;padding:24px 0 48px;}
 .back-to-home a{font-size:.9rem;color:var(--text-muted);text-decoration:none;font-weight:500;}
 .back-to-home a:hover{color:var(--gold);}
-
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
-
 @media (max-width:600px){
-  header{padding:40px 20px 32px;}
-  header h1{font-size:1.6rem;}
-  .total-score{font-size:3.4rem;}
-  .navigation{flex-direction:column-reverse;}
-  .btn-secondary-quiz{width:100%;}
-  .info-box,.personal-info{padding:22px 20px;}
+header{padding:40px 20px 32px;}
+header h1{font-size:1.6rem;}
+.total-score{font-size:3.4rem;}
+.navigation{flex-direction:column-reverse;}
+.btn-secondary-quiz{width:100%;}
+.info-box,.personal-info{padding:22px 20px;}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
-
-
 .diag-seo { max-width: 760px; margin: 56px auto 0; padding: 32px 20px 0; border-top: 1px solid #e5e5e5; }
 .diag-seo h2 { font-size: 1.15rem; font-weight: 800; letter-spacing: -.02em; margin: 30px 0 10px; color: #111; }
 .diag-seo h2:first-child { margin-top: 0; }
@@ -282,7 +254,6 @@ input[type=email]:focus{outline:none;border-color:var(--gold);}
 .diag-seo table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: .87rem; }
 .diag-seo th { text-align: left; padding: 9px 0; font-weight: 700; border-bottom: 2px solid #111; }
 .diag-seo td { padding: 9px 0; color: #555; border-bottom: 1px solid #eee; font-weight: 300; }
-
 .weak-area{margin:28px 0;padding:24px 22px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
 .weak-area__label{font-size:.76rem;font-weight:800;letter-spacing:.05em;color:#b8892b;margin-bottom:8px;}
 .weak-area__title{font-size:1.08rem;font-weight:800;color:#111;line-height:1.55;margin-bottom:10px;letter-spacing:-.02em;}
@@ -291,12 +262,7 @@ input[type=email]:focus{outline:none;border-color:var(--gold);}
 .weak-area__links{display:flex;gap:8px;flex-wrap:wrap;}
 .weak-area__links a{display:inline-block;padding:9px 16px;background:#fff;border:1.5px solid #e2d9c6;border-radius:99px;color:#333;font-size:.86rem;font-weight:600;text-decoration:none;}
 .weak-area__links a:hover{border-color:#b8892b;color:#b8892b;}
-.weak-area__gap{font-size:.84rem;color:#8a7a5c;font-weight:400;margin-top:12px;line-height:1.7;}
-</style>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "취업 준비도 자가진단은 무료인가요?", "acceptedAnswer": {"@type": "Answer", "text": "완전 무료이며 회원가입이나 로그인이 필요 없습니다. 개인정보도 수집하지 않습니다."}}, {"@type": "Question", "name": "진단은 몇 문항이고 얼마나 걸리나요?", "acceptedAnswer": {"@type": "Answer", "text": "자기이해, 기업분석, 자소서, 면접, 멘탈관리 5개 영역 40문항으로 구성되며 5~10분 걸립니다."}}, {"@type": "Question", "name": "진단 점수가 합격 가능성을 뜻하나요?", "acceptedAnswer": {"@type": "Answer", "text": "아닙니다. 합격 예측이 아니라 준비 상태 점검입니다. 총점보다 영역 간 격차를 보는 것이 유용하며, 격차가 큰 영역이 병목입니다."}}, {"@type": "Question", "name": "취업 준비 초반에 해도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "초반에 하는 편이 더 유용합니다. 무엇부터 해야 할지 순서를 잡는 데 도움이 됩니다."}}]}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "취업 준비도 자가진단", "item": "https://jobok.co.kr/diagnosis"}]}</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590540653325105"
-     crossorigin="anonymous"></script>
+.weak-area__gap{font-size:.84rem;color:#8a7a5c;font-weight:400;margin-top:12px;line-height:1.7;}</style>
 </head>
 <body>
     <nav class="site-nav">
@@ -1506,11 +1472,5 @@ function renderWeakArea(sectionScores){
   <span class="ef-icon">📘</span>
   <span class="ef-text">전자책 자세히 보기</span>
 </a>
-<style>
-#ebookFloat{position:fixed;right:20px;bottom:82px;z-index:9998;display:flex;align-items:center;gap:8px;padding:14px 20px;background:var(--black,#111);color:#fff;border-radius:50px;font-size:.92rem;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.18);transition:transform .15s,box-shadow .15s;font-family:'Noto Sans KR',sans-serif;}
-#ebookFloat:hover{transform:translateY(-3px);box-shadow:0 6px 22px rgba(0,0,0,.28);}
-#ebookFloat .ef-icon{font-size:1.15rem;line-height:1;}
-@media(max-width:600px){#ebookFloat{right:14px;bottom:70px;padding:13px 16px;}#ebookFloat .ef-text{display:none;}#ebookFloat .ef-icon{font-size:1.35rem;}}
-</style>
 </body>
 </html>
