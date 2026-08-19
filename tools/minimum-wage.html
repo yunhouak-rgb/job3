@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="naver-site-verification" content="9e0215ae1a26338579b67c5418e1dff9900bee22" /><meta name="DaumWebMasterTool" content="8427b4610df99965053903bc9a181f21c91b4f4d0fc4f8114dc1c1bf98fad22a:lz95XezL/vZ7uH8/mt6pWg==" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>최저임금·시급 계산기 2026 (주휴수당 포함 월급 계산) | 좋은 취업</title>
-  <meta name="description" content="2026년 최저임금 10,320원 기준 시급·일급·월급 계산기. 주휴수당 포함 실제 월급, 209시간의 의미, 수습 감액 조건, 최저임금 산입범위까지 확인하세요. 무료·회원가입 없음." />
-  <meta name="keywords" content="최저임금 계산기, 시급 계산기, 2026 최저임금, 알바 월급 계산, 주휴수당 포함 월급, 최저시급, 수습 최저임금" />
+  <title>최저임금 계산기 2026·2027 (시급 10,700원 월급 환산) | 좋은 취업</title>
+  <meta name="description" content="2026년(10,320원)과 2027년(10,700원) 최저임금 기준으로 시급·일급·월급을 계산합니다. 주휴수당 포함 실제 월급, 209시간의 의미, 수습 감액 조건까지 확인하세요. 무료·회원가입 없음." />
+  <meta name="keywords" content="2027 최저임금, 최저임금 계산기, 2027 최저시급, 시급 계산기, 2027년 최저임금 월급, 최저임금 월급 환산, 수습 최저임금" /> />
   <link rel="canonical" href="https://jobok.co.kr/tools/minimum-wage" />
   <meta property="og:title" content="최저임금·시급 계산기 2026 | 좋은 취업" />
-  <meta property="og:description" content="2026년 최저임금 10,320원 기준 시급·일급·월급 계산기. 주휴수당 포함 실제 월급, 209시간의 의미, 수습 감액 조건, 최저임금 산입범위까지 확인하세요. 무료·회원가입 없음." />
+  <meta property="og:description" content="2026년(10,320원)과 2027년(10,700원) 최저임금 기준으로 시급·일급·월급을 계산합니다. 주휴수당 포함 실제 월급, 209시간의 의미, 수습 감액 조건까지 확인하세요. 무료·회원가입 없음." />
   <meta property="og:url" content="https://jobok.co.kr/tools/minimum-wage" />
   <meta property="og:image" content="https://jobok.co.kr/og-default.png" />
   <meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
@@ -75,7 +75,11 @@
 .nx__links{display:flex;gap:8px;flex-wrap:wrap;}
 .nx__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:700;text-decoration:none;}
 .nx--warn{background:#fffbeb;border-color:#fde68a;}
-.nx--warn .nx__label{color:#b45309;}</style>
+.nx--warn .nx__label{color:#b45309;}
+.yr-tabs{display:flex;gap:8px;margin-bottom:8px;}
+.yr-tab{flex:1;padding:11px 10px;border:1.5px solid var(--gray-200);background:var(--white);border-radius:10px;font-size:.88rem;font-weight:700;color:var(--text-muted);cursor:pointer;font-family:inherit;transition:.15s;}
+.yr-tab.is-on{border-color:var(--gold);background:#faf8f3;color:var(--gold);}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -107,11 +111,18 @@
     <nav class="breadcrumb" style="padding-top:calc(var(--header-h) + 16px);"><a href="/">홈</a><span>›</span><a href="/tools">취업도구</a><span>›</span>최저임금·시급 계산기</nav>
     <div class="tool-hero">
       <div class="tool-hero__label">근로조건 계산기</div>
-      <h1 class="tool-hero__title">최저임금·시급 계산기</h1>
-      <p class="tool-hero__desc">시급과 근무시간을 넣으면 주휴수당까지 포함한 실제 월급을 계산합니다. 2026년 최저임금 10,320원 기준.</p>
+      <h1 class="tool-hero__title">최저임금 계산기 2026 · 2027</h1>
+      <p class="tool-hero__desc">시급과 근무시간을 넣으면 주휴수당까지 포함한 실제 월급을 계산합니다. 2026년(10,320원)과 2027년(10,700원) 기준을 선택할 수 있습니다.</p>
     </div>
 
     <div class="tool-box">
+      <label class="tool-label">적용 연도</label>
+      <div class="yr-tabs">
+        <button class="yr-tab is-on" id="yr2026" onclick="setYear(2026)">2026년 (현재)</button>
+        <button class="yr-tab" id="yr2027" onclick="setYear(2027)">2027년 (1/1~)</button>
+      </div>
+      <div class="sev-hint" id="yrHint">2026년 최저임금 <b>10,320원</b> · 월 환산 2,156,880원 (209시간)</div>
+
       <label class="tool-label">시급 (원)</label>
       <input type="number" class="tool-input" id="wage" placeholder="예: 10320" oninput="calcWage()" />
       <div class="sev-hint">2026년 최저임금은 시간당 10,320원입니다. <a href="javascript:useMin()" style="color:var(--gold);font-weight:700;">최저임금으로 입력</a></div>
@@ -141,12 +152,14 @@
     <div style="margin:40px 0 72px;"><div class="tool-seo">
 
 <h2>2026년 최저임금</h2>
-<p>고용노동부는 2026년도 적용 최저임금을 <strong>시간급 10,320원</strong>으로 확정 고시했습니다. 2025년 10,030원보다 290원(2.9%) 오른 금액이며, <strong>업종 구분 없이 모든 사업장에 동일하게</strong> 적용됩니다.</p>
+<p><strong>2026년 현재 적용 최저임금은 시간급 10,320원</strong>입니다. 그리고 고용노동부는 2026년 8월 5일 고시(제2026-60호)로 <strong>2027년 적용 최저임금을 시간급 10,700원</strong>으로 확정했습니다. 2026년보다 380원(3.7%) 오른 금액으로, <strong>2027년 1월 1일부터</strong> 적용됩니다.</p>
+<p>두 해 모두 <strong>업종 구분 없이 모든 사업장에 동일하게</strong> 적용되며, 도급제 근로자에 대해 별도의 최저임금을 정하지는 않았습니다. 위 계산기에서 <strong>연도를 선택</strong>하면 각 기준으로 계산할 수 있습니다.</p>
 <table>
-<tr><th>구분</th><th>2025년</th><th>2026년</th></tr>
-<tr><td>시급</td><td>10,030원</td><td><strong>10,320원</strong></td></tr>
-<tr><td>일급 (8시간)</td><td>80,240원</td><td><strong>82,560원</strong></td></tr>
-<tr><td>월급 (209시간)</td><td>2,096,270원</td><td><strong>2,156,880원</strong></td></tr>
+<tr><th>구분</th><th>2026년</th><th>2027년</th></tr>
+<tr><td>시급</td><td>10,320원</td><td><strong>10,700원</strong></td></tr>
+<tr><td>일급 (8시간)</td><td>82,560원</td><td><strong>85,600원</strong></td></tr>
+<tr><td>월급 (209시간)</td><td>2,156,880원</td><td><strong>2,236,300원</strong></td></tr>
+<tr><td>수습 감액 하한</td><td>9,288원</td><td><strong>9,630원</strong></td></tr>
 </table>
 
 <h2>월 209시간이 나오는 이유</h2>
@@ -232,7 +245,8 @@
         <div class="footer__brand">좋은 취업</div>
         <div class="footer__tagline">취업 준비의 흐름을 잡아주는 콘텐츠 사이트</div>
       <a href="/blog/employment-insurance-2026-reform" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:#fffbeb;border:1.5px solid #fde68a;border-radius:99px;color:#b45309;font-size:.85rem;font-weight:600;text-decoration:none;">📢 2026 고용보험 개편</a>
-</div></div>
+</div><a href="/blog/minimum-wage-2027" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:#fffbeb;border:1.5px solid #fde68a;border-radius:99px;color:#b45309;font-size:.85rem;font-weight:600;text-decoration:none;">📢 2027 최저임금 10,700원</a>
+</div>
   </div>
 </main>
 <footer class="footer">
@@ -262,7 +276,19 @@ document.addEventListener('click',function(e){const m=document.getElementById('m
 function d(i){return document.getElementById(i);}
 function won(n){return Math.round(n).toLocaleString('ko-KR');}
 function nm(i){var v=parseFloat((d(i).value||'').toString().replace(/,/g,''));return isNaN(v)?0:v;}
-var MIN2026=10320, MONTH_HOURS=209;
+var WAGE={2026:10320, 2027:10700};
+var YEAR=2026;
+var MIN2026=WAGE[YEAR], MONTH_HOURS=209;
+function won0(n){return Math.round(n).toLocaleString('ko-KR');}
+function setYear(y){
+  YEAR=y; MIN2026=WAGE[y];
+  d('yr2026').className='yr-tab'+(y===2026?' is-on':'');
+  d('yr2027').className='yr-tab'+(y===2027?' is-on':'');
+  d('yrHint').innerHTML=y+'년 최저임금 <b>'+won0(WAGE[y])+'원</b> · 월 환산 '+won0(WAGE[y]*209)+'원 (209시간)'
+    +(y===2027?' <span style="color:var(--gold);font-weight:600;">— 2027년 1월 1일부터 적용</span>':'');
+  if(typeof gtag!=='undefined')gtag('event','wage_year_switch',{year:y});
+  calcWage();
+}
 
 function useMin(){d('wage').value=MIN2026;calcWage();}
 
@@ -278,10 +304,10 @@ function nxBox(ev,g,warn){
 
 function wageNext(wage, weekH, overH, probation){
   var g, warn=false;
-  if(wage>0 && wage<10320 && !probation){
+  if(wage>0 && wage<MIN2026 && !probation){
     warn=true;
     g={t:'최저임금 미달분을 청구할 수 있습니다',
-       d:'입력한 시급이 <b>2026년 최저임금 10,320원</b>에 미달합니다. 최저임금법상 미달 부분은 무효이고 <b>최저임금액을 지급하기로 한 것으로 봅니다.</b> 즉 차액을 소급 청구할 수 있고, 임금채권 소멸시효는 <b>3년</b>입니다. 근로계약서·급여명세서·출퇴근 기록을 모아두세요.',
+       d:'입력한 시급이 <b>'+YEAR+'년 최저임금 '+won(MIN2026)+'원</b>에 미달합니다. 최저임금법상 미달 부분은 무효이고 <b>최저임금액을 지급하기로 한 것으로 봅니다.</b> 즉 차액을 소급 청구할 수 있고, 임금채권 소멸시효는 <b>3년</b>입니다. 근로계약서·급여명세서·출퇴근 기록을 모아두세요.',
        l:[['/tools/weekly-holiday-pay','주휴수당도 확인'],['/tools/overtime-pay','초과근무 수당']]};
   } else if(probation){
     g={t:'수습 감액 조건을 확인하세요',
@@ -374,7 +400,7 @@ function calcWage(){
       ? '주 40시간 소정근로는 고용노동부 고시 기준인 <b>월 209시간</b>으로 환산했습니다. '
       : '월 환산은 1개월을 평균 4.345주로 계산했습니다. ')+
     '<b>세전 기준</b>이며 실제 수령액은 4대보험과 소득세 공제 후 금액입니다.<br/>'+
-    '2026년 최저임금 기준 주 40시간 월급은 '+won(MIN2026*209)+'원입니다.</div>';
+    YEAR+'년 최저임금 기준 주 40시간 월급은 '+won(MIN2026*209)+'원입니다.</div>';
   notes+=wageNext(wage, weekH, overH, probation);
 
   out.innerHTML=warn+probNote+
