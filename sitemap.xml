@@ -788,7 +788,7 @@
   </url>
   <url>
     <loc>https://jobok.co.kr/aptitude</loc>
-    <lastmod>2026-08-04</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1376,7 +1376,7 @@
   </url>
   <url>
     <loc>https://jobok.co.kr/schedule-2026-h2</loc>
-    <lastmod>2026-08-04</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1772,6 +1772,12 @@
   </url>
   <url>
     <loc>https://jobok.co.kr/blog/inclusive-wage-system-2026</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jobok.co.kr/blog/gsat-2026-h2-roadmap</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
