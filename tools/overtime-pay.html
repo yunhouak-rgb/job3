@@ -266,7 +266,8 @@ function calcOT(){
   add('휴일근로 8시간 초과',holOver,2.0);
   if(!rows){out.innerHTML='';return;}
   out.innerHTML='<div class="sev-main"><div class="sev-main__label">추가 수당 합계 (세전)</div>'+
-   '<div class="sev-main__val">'+won(total)+'<span>원</span></div></div>'+
+   '<div class="sev-main__val">'+won(total)+'<span>원</span></div><a href="/blog/salary-net-table-2026" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-weight:600;font-size:.85rem;text-decoration:none;">📊 연봉 실수령액표</a>
+</div>'+
    '<table class="sev-tbl"><tr><td>통상시급</td><td>'+won(hourly)+'원 (월 통상임금 ÷ 209)</td></tr>'+rows+'</table>'+
    '<div class="sev-note">야간근로(22시~익일 6시)가 연장근로와 겹치면 연장 50% + 야간 50%가 함께 붙어 2.0배가 됩니다. 야간이지만 연장이 아닌 경우는 1.5배입니다.<br/>포괄임금제라면 이미 일정 시간분이 급여에 포함되어 있을 수 있으니 근로계약서를 확인하세요.</div>'+otNext(small,ot,night,hol,holOver);
 }

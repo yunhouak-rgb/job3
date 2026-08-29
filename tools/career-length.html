@@ -262,7 +262,8 @@ function calcCar(){
   var D=Math.round(rem-M*30.4375);
   var totalMonths=Math.floor(totalDays/30.4375);
   out.innerHTML='<div class="sev-main"><div class="sev-main__label">총 경력</div>'+
-   '<div class="sev-main__val">'+Y+'<span>년</span> '+M+'<span>개월</span></div></div>'+
+   '<div class="sev-main__val">'+Y+'<span>년</span> '+M+'<span>개월</span></div><a href="/blog/salary-net-table-2026" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-weight:600;font-size:.85rem;text-decoration:none;">📊 연봉 실수령액표</a>
+</div>'+
    '<table class="sev-tbl"><tr><td>총 재직일수</td><td>'+totalDays.toLocaleString('ko-KR')+'일</td></tr>'+
    '<tr><td>개월 환산</td><td><b>'+totalMonths+'개월</b></td></tr>'+
    '<tr><td>정확한 기간</td><td>'+Y+'년 '+M+'개월 '+D+'일</td></tr>'+rows+'</table>'+

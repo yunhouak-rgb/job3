@@ -244,7 +244,8 @@ function calcALP(){
   var total=daily*days;
   out.innerHTML=
    '<div class="sev-main"><div class="sev-main__label">미사용 연차수당 (세전)</div>'+
-   '<div class="sev-main__val">'+won(total)+'<span>원</span></div></div>'+
+   '<div class="sev-main__val">'+won(total)+'<span>원</span></div><a href="/blog/salary-net-table-2026" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-weight:600;font-size:.85rem;text-decoration:none;">📊 연봉 실수령액표</a>
+</div>'+
    '<table class="sev-tbl">'+
    '<tr><td>월 소정근로시간</td><td>'+(Math.round(monthHours*10)/10)+'시간</td></tr>'+
    '<tr><td>통상시급</td><td>'+won(hourly)+'원</td></tr>'+
