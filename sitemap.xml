@@ -259,12 +259,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jobok.co.kr/blog/cover-letter-length-guide</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://jobok.co.kr/blog/working-while-job-searching</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -896,12 +890,6 @@
   </url>
   <url>
     <loc>https://jobok.co.kr/blog/interview-reverse-question-examples</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jobok.co.kr/blog/interview-outfit-guide</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1579,12 +1567,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jobok.co.kr/blog/cover-letter-opening-sentences</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://jobok.co.kr/blog/interview-1minute-pr-example</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -1793,5 +1775,11 @@
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jobok.co.kr/editorial-policy</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
