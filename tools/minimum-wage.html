@@ -302,7 +302,8 @@ function nxBox(ev,g,warn){
   }).join('');
   return '<div class="nx'+(warn?' nx--warn':'')+'"><div class="nx__label">다음 단계</div>'
     +'<div class="nx__title">'+g.t+'</div><div class="nx__desc">'+g.d+'</div>'
-    +'<div class="nx__links">'+links+'</div></div>';
+    +'<div class="nx__links">'+links+'</div><a href="/tools/unemployment-benefit" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 실업급여 계산</a>
+</div>';
 }
 
 function wageNext(wage, weekH, overH, probation){
