@@ -49,7 +49,16 @@
 .tool-seo h2 { font-size: 1.15rem; font-weight: 900; letter-spacing: -0.02em; margin: 28px 0 12px; color: var(--black); }
 .tool-seo h2:first-child { margin-top: 0; }
 .tool-seo p { font-size: 0.92rem; color: var(--text-sub); line-height: 1.85; margin-bottom: 14px; font-weight: 300; }
-.tool-seo strong { color: var(--text); font-weight: 700; }</style>
+.tool-seo strong { color: var(--text); font-weight: 700; }
+.nx{margin:20px 0 0;padding:20px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
+.nx__label{font-size:.74rem;font-weight:900;letter-spacing:.05em;color:var(--gold);margin-bottom:7px;}
+.nx__title{font-size:1.02rem;font-weight:900;color:var(--black);margin-bottom:9px;letter-spacing:-.02em;line-height:1.5;}
+.nx__desc{font-size:.91rem;color:var(--text-sub);line-height:1.85;font-weight:300;margin-bottom:13px;}
+.nx__desc b{color:var(--text);font-weight:700;}
+.nx__links{display:flex;gap:8px;flex-wrap:wrap;}
+.nx__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:700;text-decoration:none;}
+.nx__links a.nx--buy{background:var(--black);border-color:var(--black);color:var(--white);}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -93,6 +102,7 @@
         <div class="stat-box"><div class="stat-box__num" id="charWithout">0</div><div class="stat-box__label">공백 제외</div></div>
         <div class="stat-box"><div class="stat-box__num" id="byteCount">0</div><div class="stat-box__label">바이트</div></div>
       </div>
+    <div id="wcNext"></div>
     </div>
     <div style="background:var(--gray-50);padding:20px;border-radius:var(--radius);font-size:.85rem;color:var(--text-sub);line-height:1.8;">
       <strong>항목별 권장 글자수</strong><br/>
@@ -187,6 +197,36 @@
 function toggleMenu(){const m=document.getElementById('mobileMenu');const b=document.getElementById('menuBtn');m.classList.toggle('open');b.textContent=m.classList.contains('open')?'✕ 닫기':'☰ 메뉴';}
 document.addEventListener('click',function(e){const m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!document.getElementById('menuBtn').contains(e.target)){m.classList.remove('open');document.getElementById('menuBtn').textContent='☰ 메뉴';}});
 
+
+function nxBox(ev,g){
+  var links=g.l.map(function(x){
+    var cls=x[2]?' class="nx--buy"':'';
+    return '<a href="'+x[0]+'"'+cls+' onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\''+ev+'\',{to:\''+x[0]+'\'});">'+x[1]+'</a>';
+  }).join('');
+  return '<div class="nx"><div class="nx__label">다음 단계</div>'
+    +'<div class="nx__title">'+g.t+'</div><div class="nx__desc">'+g.d+'</div>'
+    +'<div class="nx__links">'+links+'</div></div>';
+}
+
+function wcNext(n){
+  var g;
+  if(n===0){ return ''; }
+  if(n<300){
+    g={t:'아직 분량이 부족합니다',
+       d:'대부분의 자소서 문항은 <b>500~1,000자</b>를 요구합니다. 분량이 짧다면 대개 <b>행동 서술이 빠져</b> 있습니다. 무엇을 했고 왜 그렇게 판단했는지를 더하면 자연스럽게 채워집니다.',
+       l:[['/tools/star','STAR로 경험 늘리기'],['/blog/cover-letter-experience','경험 구체화']]};
+  } else if(n<=1100){
+    g={t:'분량은 적당합니다 — 이제 밀도',
+       d:'글자수는 맞았으니 <b>같은 분량에 무엇이 담겼는지</b>가 남았습니다. 숫자가 하나 이상 있는지, 마지막 문장이 직무와 닿아 있는지 확인하세요. <b>상투어가 많으면 분량만 차고 내용은 비어 보입니다.</b>',
+       l:[['/tools/keyword','상투어 분석'],['/tools/checklist','제출 전 자가진단']]};
+  } else {
+    g={t:'줄여야 합니다 — 무엇을 뺄까',
+       d:'초과분을 줄일 때는 <b>배경 설명부터</b> 덜어내세요. 상황(S)과 과제(T)는 두세 문장이면 충분하고, <b>행동(A)과 결과(R)는 남겨야</b> 합니다. 형용사와 접속사를 정리하면 10~15%는 줄어듭니다.',
+       l:[['/tools/keyword','불필요한 표현 찾기'],['/blog/cover-letter-length','적정 분량 기준']]};
+  }
+  return nxBox('wc_next_click',g);
+}
+
 function countText(){
   const t = document.getElementById('wcInput').value;
   const withSpace = t.length;
@@ -196,6 +236,8 @@ function countText(){
   document.getElementById('charWith').textContent = withSpace.toLocaleString();
   document.getElementById('charWithout').textContent = withoutSpace.toLocaleString();
   document.getElementById('byteCount').textContent = bytes.toLocaleString();
+  var nb=document.getElementById('wcNext');
+  if(nb) nb.innerHTML=wcNext(withoutSpace);
 }
 
 </script>

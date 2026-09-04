@@ -49,7 +49,16 @@
 .tool-seo h2 { font-size: 1.15rem; font-weight: 900; letter-spacing: -0.02em; margin: 28px 0 12px; color: var(--black); }
 .tool-seo h2:first-child { margin-top: 0; }
 .tool-seo p { font-size: 0.92rem; color: var(--text-sub); line-height: 1.85; margin-bottom: 14px; font-weight: 300; }
-.tool-seo strong { color: var(--text); font-weight: 700; }</style>
+.tool-seo strong { color: var(--text); font-weight: 700; }
+.nx{margin:20px 0 0;padding:20px;background:#faf8f3;border:1px solid #eadfc8;border-radius:14px;}
+.nx__label{font-size:.74rem;font-weight:900;letter-spacing:.05em;color:var(--gold);margin-bottom:7px;}
+.nx__title{font-size:1.02rem;font-weight:900;color:var(--black);margin-bottom:9px;letter-spacing:-.02em;line-height:1.5;}
+.nx__desc{font-size:.91rem;color:var(--text-sub);line-height:1.85;font-weight:300;margin-bottom:13px;}
+.nx__desc b{color:var(--text);font-weight:700;}
+.nx__links{display:flex;gap:8px;flex-wrap:wrap;}
+.nx__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:700;text-decoration:none;}
+.nx__links a.nx--buy{background:var(--black);border-color:var(--black);color:var(--white);}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -186,6 +195,39 @@ function toggleMenu(){const m=document.getElementById('mobileMenu');const b=docu
 document.addEventListener('click',function(e){const m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!document.getElementById('menuBtn').contains(e.target)){m.classList.remove('open');document.getElementById('menuBtn').textContent='☰ 메뉴';}});
 
 const WEAK_WORDS = ['열심히','성실히','최선을','노력하겠','열정적','적극적으로','책임감','성실한','열정을','꾸준히 노력'];
+
+function nxBox(ev,g){
+  var links=g.l.map(function(x){
+    var cls=x[2]?' class="nx--buy"':'';
+    return '<a href="'+x[0]+'"'+cls+' onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\''+ev+'\',{to:\''+x[0]+'\'});">'+x[1]+'</a>';
+  }).join('');
+  return '<div class="nx"><div class="nx__label">다음 단계</div>'
+    +'<div class="nx__title">'+g.t+'</div><div class="nx__desc">'+g.d+'</div>'
+    +'<div class="nx__links">'+links+'</div></div>';
+}
+
+function kwNext(weak,nums,chars){
+  var g;
+  if(weak>=5){
+    g={t:'상투어가 많습니다',
+       d:'발견된 상투어가 <b>'+weak+'종</b>입니다. 이런 표현은 <b>모두가 쓰기 때문에 아무 정보도 주지 않습니다.</b> 형용사를 지우고 그 자리에 <b>그 형용사가 나올 수밖에 없는 장면</b>을 넣으세요.',
+       l:[['/tools/star','경험을 장면으로'],['/blog/cover-letter-experience','구체화하는 법']]};
+  } else if(nums===0){
+    g={t:'숫자가 하나도 없습니다',
+       d:'결과에 숫자가 없으면 <b>주장만 남습니다.</b> 변화(무엇이 얼마에서 얼마로), 규모(몇 명·몇 건), 기간(얼마 만에), 비교(전년 대비) 중 하나는 대부분 찾을 수 있습니다.',
+       l:[['/tools/star','결과 정리하기'],['/tools/checklist','제출 전 점검']]};
+  } else if(weak>=2){
+    g={t:'거의 정리됐습니다',
+       d:'상투어 <b>'+weak+'종</b>만 더 손보면 됩니다. 남은 표현을 지우고 <b>그 자리에 사실을 넣으면</b> 같은 분량에 정보가 늘어납니다.',
+       l:[['/tools/word-count','분량 확인'],['/tools/checklist','제출 전 점검']]};
+  } else {
+    g={t:'표현은 정리됐습니다 — 다음은 구조',
+       d:'상투어와 숫자는 통과했습니다. 이제 남은 것은 <b>문항이 묻는 것에 답하고 있는가</b>입니다. 좋은 문장이어도 질문과 어긋나면 소용이 없습니다. 전자책에 문항별 답변 구조가 정리되어 있습니다.',
+       l:[['/tools/checklist','제출 전 자가진단'],['/ebook','전자책 살펴보기',1]]};
+  }
+  return nxBox('kw_next_click',g);
+}
+
 function analyzeText(){
   const t = document.getElementById('kwInput').value;
   if(t.length < 10){ document.getElementById('kwResult').innerHTML=''; return; }
@@ -219,7 +261,8 @@ function analyzeText(){
       <div class="stat-box"><div class="stat-box__num">${numbers}</div><div class="stat-box__label">숫자 사용</div></div>
       <div class="stat-box"><div class="stat-box__num">${weakFound.length}</div><div class="stat-box__label">상투어 종류</div></div>
     </div>
-    ${weakHtml}${numAdvice}`;
+    ${weakHtml}${numAdvice}
+    ${kwNext(weakFound.length, numbers, charCount)}`;
 }
 
 </script>
