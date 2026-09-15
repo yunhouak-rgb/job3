@@ -327,7 +327,8 @@ function calcUI(){
 
   out.innerHTML=
     '<div class="sev-main"><div class="sev-main__label">1일 구직급여액</div>'
-    +'<div class="sev-main__val">'+won(daily)+'원</div></div>'
+    +'<div class="sev-main__val">'+won(daily)+'원</div><a href="/blog/health-insurance-continuation" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🏥 퇴사 후 건강보험</a>
+</div>'
     +'<div class="sev-sub"><div class="sev-sub__item"><span>월 환산 (30일)</span><b>'+won(monthly)+'원</b></div>'
     +'<div class="sev-sub__item"><span>총 예상 수령액</span><b>'+won(total)+'원</b></div></div>'
     +'<table class="sev-table">'+rows+'</table>'
