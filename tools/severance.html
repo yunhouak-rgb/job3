@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" /><meta name="naver-site-verification" content="9e0215ae1a26338579b67c5418e1dff9900bee22" /><meta name="DaumWebMasterTool" content="8427b4610df99965053903bc9a181f21c91b4f4d0fc4f8114dc1c1bf98fad22a:lz95XezL/vZ7uH8/mt6pWg==" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>퇴직금 계산기 (2026 · 평균임금·상여금 반영) | 좋은 취업</title>
-  <meta name="description" content="입사일과 퇴사일, 3개월 급여로 퇴직금을 계산하는 무료 도구. 연간 상여금·연차수당 3/12 반영과 통상임금 비교까지 법정 산식 그대로 계산합니다." />
-  <meta name="keywords" content="퇴직금 계산기, 퇴직금 계산, 평균임금 계산, 퇴직금 상여금, 퇴직금 연차수당, 퇴직금 지급기준" />
+  <title>퇴직금 계산기 2026 (퇴직소득세·세후 수령액 포함) | 좋은 취업</title>
+  <meta name="description" content="퇴직금과 퇴직소득세를 함께 계산합니다. 평균임금·통상임금 자동 비교, 근속연수공제 반영한 세후 실수령액까지 바로 확인하세요." />
+  <meta name="keywords" content="퇴직금 계산기, 퇴직소득세, 퇴직금 세금, 퇴직금 세후, 근속연수공제, 환산급여, 퇴직금 실수령액" /> />
   <link rel="canonical" href="https://jobok.co.kr/tools/severance" />
   <meta property="og:title" content="퇴직금 계산기 | 좋은 취업" />
-  <meta property="og:description" content="입사일과 퇴사일, 3개월 급여로 퇴직금을 계산하는 무료 도구. 연간 상여금·연차수당 3/12 반영과 통상임금 비교까지 법정 산식 그대로 계산합니다." />
+  <meta property="og:description" content="퇴직금과 퇴직소득세를 함께 계산합니다. 평균임금·통상임금 자동 비교, 근속연수공제 반영한 세후 실수령액까지 바로 확인하세요." />
   <meta property="og:url" content="https://jobok.co.kr/tools/severance" />
   <meta property="og:image" content="https://jobok.co.kr/og-default.png" />
   <meta property="og:image:width" content="1200" />
@@ -74,7 +74,14 @@
 .sev-next__desc{font-size:.91rem;color:var(--text-sub);line-height:1.85;font-weight:300;margin-bottom:13px;}
 .sev-next__desc b{color:var(--text);font-weight:700;}
 .sev-next__links{display:flex;gap:8px;flex-wrap:wrap;}
-.sev-next__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:700;text-decoration:none;}</style>
+.sev-next__links a{display:inline-block;padding:8px 15px;background:var(--white);border:1.5px solid #e2d9c6;border-radius:99px;color:var(--text);font-size:.85rem;font-weight:700;text-decoration:none;}
+.taxbox{margin:22px 0 0;padding:20px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:14px;}
+.taxbox__label{font-size:.74rem;font-weight:900;letter-spacing:.05em;color:var(--text-sub);margin-bottom:12px;}
+.taxbox__grid{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
+.taxbox__item{flex:1;min-width:110px;background:var(--gray-50);border-radius:10px;padding:12px 14px;}
+.taxbox__item span{display:block;font-size:.76rem;color:var(--text-muted);margin-bottom:4px;}
+.taxbox__item b{font-size:1.02rem;font-weight:900;color:var(--black);letter-spacing:-.02em;}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -288,6 +295,65 @@ function sevNext(workDays, usedOrdinary, bonus, annual){
 </div>';
 }
 
+
+function svcDeduct(y){
+  if(y<=5) return 1000000*y;
+  if(y<=10) return 5000000+2000000*(y-5);
+  if(y<=20) return 15000000+2500000*(y-10);
+  return 40000000+3000000*(y-20);
+}
+function convDeduct(c){
+  if(c<=8000000) return c;
+  if(c<=70000000) return 8000000+(c-8000000)*0.6;
+  if(c<=100000000) return 45200000+(c-70000000)*0.55;
+  if(c<=300000000) return 61700000+(c-100000000)*0.45;
+  return 151700000+(c-300000000)*0.35;
+}
+function baseTaxAmt(t){
+  var B=[[14000000,0.06,0],[50000000,0.15,1260000],[88000000,0.24,5760000],
+         [150000000,0.35,15440000],[300000000,0.38,19940000],[500000000,0.40,25940000],
+         [1000000000,0.42,35940000],[Infinity,0.45,65940000]];
+  for(var i=0;i<B.length;i++){ if(t<=B[i][0]) return t*B[i][1]-B[i][2]; }
+  return 0;
+}
+function retireTax(pay, days){
+  var years = days/365;
+  if(years<1 || pay<=0) return null;
+  var yInt = Math.ceil(years);
+  var sd = svcDeduct(yInt);
+  var income = Math.max(pay - sd, 0);
+  if(income<=0) return {tax:0, local:0, total:0, net:pay, sd:sd, conv:0, base:0, years:yInt};
+  var conv = income / yInt * 12;
+  var cd = convDeduct(conv);
+  var base = Math.max(conv - cd, 0);
+  var t = baseTaxAmt(base) / 12 * yInt;
+  if(t<0) t=0;
+  var local = t*0.1;
+  return {tax:Math.round(t), local:Math.round(local), total:Math.round(t+local),
+          net:Math.round(pay-t-local), sd:sd, conv:conv, base:base, years:yInt};
+}
+function taxBlock(pay, days){
+  var r = retireTax(pay, days);
+  if(!r) return '';
+  var rate = (r.total/pay*100).toFixed(2);
+  var rows = '<tr><td>근속연수 (올림)</td><td>'+r.years+'년</td></tr>'
+    +'<tr><td>근속연수공제</td><td>'+won(r.sd)+'원</td></tr>'
+    +'<tr><td>환산급여</td><td>'+won(r.conv)+'원</td></tr>'
+    +'<tr><td>과세표준</td><td>'+won(r.base)+'원</td></tr>'
+    +'<tr><td>퇴직소득세</td><td>'+won(r.tax)+'원</td></tr>'
+    +'<tr><td>지방소득세 (10%)</td><td>'+won(r.local)+'원</td></tr>';
+  return '<div class="taxbox">'
+    +'<div class="taxbox__label">퇴직소득세 (예상)</div>'
+    +'<div class="taxbox__grid">'
+      +'<div class="taxbox__item"><span>세금 합계</span><b>'+won(r.total)+'원</b></div>'
+      +'<div class="taxbox__item"><span>세후 수령액</span><b>'+won(r.net)+'원</b></div>'
+      +'<div class="taxbox__item"><span>실효세율</span><b>'+rate+'%</b></div>'
+    +'</div>'
+    +'<table class="sev-tbl">'+rows+'</table>'
+    +'<div class="sev-note">퇴직금은 <b>분류과세</b>라 근로소득과 합산되지 않습니다. 근속연수공제 후 1년치로 환산해 세율을 적용하는 <b>연분연승법</b>을 쓰기 때문에 근속이 길수록 세부담이 낮아집니다. 비과세 퇴직급여·중간정산 이력은 반영되지 않은 <b>예상치</b>이며, 정확한 금액은 국세청 홈택스 모의계산에서 확인하세요.</div>'
+    +'</div>';
+}
+
 function calcSeverance(){
   var joinV=d('joinDate').value, leaveV=d('leaveDate').value;
   var out=d('resSev');
@@ -347,7 +413,8 @@ function calcSeverance(){
    '<tr><td>적용 기준</td><td><b>'+(usedOrdinary?'통상임금 (평균임금보다 높음)':'평균임금')+'</b></td></tr>'+
    '</table>'+
    '<div class="sev-note">계산식: '+won(applied)+'원 × 30일 × ('+workDays+'일 ÷ 365) = '+won(sev)+'원<br/>'+
-   '세전 기준입니다. 실제 수령액은 퇴직소득세·지방소득세 공제 후 금액입니다.</div>'+
+   '세전 기준입니다. 아래에서 퇴직소득세 공제 후 예상 수령액을 확인하세요.</div>'+
+   taxBlock(sev, workDays)+
    sevNext(workDays, usedOrdinary, bonus, annual);
 }
 
