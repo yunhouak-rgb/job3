@@ -1,0 +1,20 @@
+{
+ "name": "좋은 취업",
+ "short_name": "좋은 취업",
+ "start_url": "/",
+ "display": "browser",
+ "background_color": "#ffffff",
+ "theme_color": "#0a0a0a",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/logo.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}
