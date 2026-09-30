@@ -17,3 +17,7 @@
 
 /*
   X-Content-Type-Options: nosniff
+
+/latpeed-assets/*
+  Access-Control-Allow-Origin: https://www.latpeed.com
+  X-Robots-Tag: noindex
