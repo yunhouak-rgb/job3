@@ -5,7 +5,7 @@
   <meta name="naver-site-verification" content="9e0215ae1a26338579b67c5418e1dff9900bee22" /><meta name="DaumWebMasterTool" content="8427b4610df99965053903bc9a181f21c91b4f4d0fc4f8114dc1c1bf98fad22a:lz95XezL/vZ7uH8/mt6pWg==" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>취업 사주 2026 (내 일주로 보는 월별 취업운·직장운) | 좋은 취업</title>
+  <title>취업 사주 무료 2026 (내 일주로 보는 월별 취업운·직장운) | 좋은 취업</title>
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -13,7 +13,7 @@
   <meta name="description" content="생년월일로 내 일주를 계산해 2026 병오년·2027 정미년 취업운과 직장운을 풀어 줍니다. 서류·면접에 좋은 달과 달마다 할 일까지 정리합니다." />
   <meta name="keywords" content="취업 사주, 취업운 사주, 직장운 사주, 2026 취업운, 2027 취업운, 일주, 일간, 합격운, 사주 직장운 보는법" />
   <link rel="canonical" href="https://jobok.co.kr/tools/job-saju" />
-  <meta property="og:title" content="취업 사주 2026 (내 일주로 보는 월별 취업운·직장운) | 좋은 취업" />
+  <meta property="og:title" content="취업 사주 무료 2026 (내 일주로 보는 월별 취업운·직장운) | 좋은 취업" />
   <meta property="og:description" content="생년월일로 내 일주를 계산해 2026 병오년·2027 정미년 취업운과 직장운을 풀어 줍니다. 서류·면접에 좋은 달과 달마다 할 일까지 정리합니다." />
   <meta property="og:url" content="https://jobok.co.kr/tools/job-saju" />
   <meta property="og:image" content="https://jobok.co.kr/og-default.png" />
@@ -133,6 +133,7 @@
 .sj-note{margin:10px 0 0;font-size:.78rem;line-height:1.7;color:var(--text-muted);}
 .sj-share{margin:14px 0 0;display:flex;gap:8px;flex-wrap:wrap;}
 .sj-share button{padding:9px 14px;border:1.5px solid var(--gray-200);background:var(--white);border-radius:10px;font-weight:700;cursor:pointer;}
+.sj-lockrow td{color:transparent;text-shadow:0 0 7px rgba(0,0,0,.45);user-select:none;}.sj-lockrow td:first-child{color:var(--text);text-shadow:none;}#sjSticky{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);border-top:1px solid var(--gray-200);z-index:60;}#sjSticky button{width:100%;padding:12px;background:var(--gold);color:#fff;border:0;border-radius:10px;font-weight:800;font-size:.95rem;cursor:pointer;}@media(min-width:900px){#sjSticky{display:none;}}#ebookFloat{display:none!important;}
 </style>
 </head>
 <body>
@@ -211,6 +212,7 @@
 </ul>
 
 <p>일간별 자세한 풀이: <a href="/blog/job-luck-2026-2027" style="color:var(--gold);font-weight:600;">일간별 총정리</a> · <a href="/blog/job-luck-wood" style="color:var(--gold);font-weight:600;">갑목·을목</a> · <a href="/blog/job-luck-fire" style="color:var(--gold);font-weight:600;">병화·정화</a> · <a href="/blog/job-luck-earth" style="color:var(--gold);font-weight:600;">무토·기토</a> · <a href="/blog/job-luck-metal" style="color:var(--gold);font-weight:600;">경금·신금</a> · <a href="/blog/job-luck-water" style="color:var(--gold);font-weight:600;">임수·계수</a></p>
+<p>챗GPT로 사주를 본다면 <a href="/blog/job-saju-prompt" style="color:var(--gold);font-weight:600;">취업 사주 프롬프트</a>에서 틀리기 쉬운 부분을 먼저 확인하세요.</p>
 <h2>사주 결과를 어떻게 활용하면 좋을까?</h2>
 <p><strong>좋은 달을 기다리기보다, 그달에 할 일을 정하는 달력으로 쓰는 것을 권합니다.</strong> 이 도구는 달마다 실제로 할 일을 함께 보여 줍니다. 서류는 <a href="/tools/checklist" style="color:var(--gold);font-weight:600;">제출 전 자가진단</a>으로, 면접은 <a href="/daily-question" style="color:var(--gold);font-weight:600;">면접 질문 100개</a>로 준비하세요. 오늘 하루의 흐름은 <a href="/tools/job-fortune" style="color:var(--gold);font-weight:600;">오늘의 취업운</a>에서 매일 볼 수 있습니다.</p>
 
@@ -300,14 +302,29 @@ function calc(){
      +'<p style="margin:12px 0 0;"><b>잘 맞는 자리:</b> '+dm[5]+'</p></div>';
   } else {
     var btn=BUY_URL?'<a class="sj-btn" href="'+BUY_URL+'" target="_blank" rel="noopener" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\'saju_buy_click\');">상세 리포트 열기</a>':(localStorage.getItem('sj-reserved')?'<span class="sj-btn" aria-disabled="true">사전 예약 완료</span>':'<button type="button" class="sj-btn" onclick="reserveOpen()">상세 리포트 사전 예약하기</button>')+'<div id="sjReserve"></div>';
-    html+='<div class="sj-card"><h3 style="margin:0 0 6px;">월별 흐름 미리보기 🔒</h3><div class="sj-tbl"><table class="sj-lock"><tr><th>달</th><th>월 간지</th><th>흐름</th><th>풀이</th></tr>'+monthRows(de,false)+'</table></div></div>'
-     +'<div class="sj-buy"><b>상세 리포트에 들어 있는 것</b><ul><li>2026년 10월~2027년 12월 15개월 월별 흐름과 할 일</li><li>서류·면접·합격에 좋은 달과 경쟁이 치열한 달</li><li>내 일간에 맞춘 면접 강점 문장 2개, 자소서 소재 질문 2개</li><li>같은 이용 코드로 취업운세 상세 풀이도 함께 열림</li></ul>'+btn
-     +'<div class="sj-code"><input class="tool-input" id="sjCode" placeholder="이용 코드 입력" /><button class="sj-btn" type="button" onclick="applyCode()">열기</button></div><div id="sjMsg" class="sj-note"></div>'
-     +'<p class="sj-note">디지털 콘텐츠 특성상 이용 코드를 확인한 뒤에는 청약철회가 제한될 수 있습니다. 구매 페이지의 안내를 확인하세요.</p></div>';
+    var cnt={gwan:0,'in':0,sik:0,jae:0,bi:0}; MONTHS.forEach(function(r){cnt[rel(de,elOf(r[2]))]++;});
+    var gzName=S[st]+B[idx%12]+'일주';
+    var rowsL=MONTHS.map(function(r){var k=rel(de,elOf(r[2])),s=SS[k],name=r[0]+'년 '+r[1]+'월',g=S[r[2]]+B[r[3]];
+      if(best && r===best[0]) return '<tr><td>'+name+' <span style="color:var(--gold);font-weight:800;">맛보기</span></td><td>'+g+'</td><td>'+s[0]+'<br>'+stars(s[1])+'</td><td><b>'+s[2]+'</b><br>'+s[3]+'</td></tr>';
+      return '<tr class="sj-lockrow"><td>'+name+'</td><td>'+g+'</td><td>'+s[0]+' '+stars(s[1])+'</td><td>'+s[2]+'</td></tr>';}).join('');
+    html+='<div class="sj-card" id="sjPay"><h3 style="margin:0 0 4px;">'+gzName+'의 15개월 취업 달력</h3>'
+     +'<p style="margin:0 0 8px;color:var(--text-sub);font-size:.9rem;line-height:1.7;">합격·직장운 달 <b>'+cnt.gwan+'개</b> · 서류·면접운 달 <b>'+(cnt['in']+cnt.sik)+'개</b> · 경쟁 달 <b>'+cnt.bi+'개</b>가 들어 있어요. 한 달은 맛보기로 열어 두었습니다.</p>'
+     +'<div class="sj-tbl"><table><tr><th>달</th><th>월 간지</th><th>흐름</th><th>풀이</th></tr>'+rowsL+'</table></div></div>'
+     +'<div class="sj-buy"><p style="margin:0 0 6px;line-height:1.75;"><b>지금 무료로 본 것</b> — 일주, 일하는 성향, 올해 흐름</p>'
+     +'<p style="margin:0 0 6px;line-height:1.75;"><b>상세 리포트</b> — 15개월 달력과 달마다 할 일, 좋은 달·경쟁 달, 내 일간 면접 강점 문장과 자소서 소재 질문, 오늘의 취업운 상세 풀이(보너스)</p>'
+     +'<p class="sj-note" style="margin:0 0 12px;">사주를 믿지 않아도 쓸모 있게, 달마다 무엇을 할지 정하는 취업 준비 달력으로 만들었습니다. 가입 없이 결제하면 전용 링크로 바로 열립니다.</p>'
+     +btn
+     +'<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:.85rem;color:var(--text-sub);">이미 구매했어요 (이용 코드 입력)</summary><div class="sj-code"><input class="tool-input" id="sjCode" placeholder="이용 코드 입력" /><button class="sj-btn" type="button" onclick="applyCode()">열기</button></div><div id="sjMsg" class="sj-note"></div></details>'
+     +'<p class="sj-note">디지털 콘텐츠 특성상 이용 코드를 확인한 뒤에는 청약철회가 제한될 수 있습니다.</p></div>';
+    ev('saju_paywall_view');
   }
   html+='<div class="sj-share"><button type="button" onclick="share()">결과 링크 복사</button><a class="sj-btn" style="background:var(--black);" href="/tools/job-fortune">오늘의 취업운 보기</a></div>'
    +'<p class="sj-note">전통 명리의 일간과 월 천간 관계를 바탕으로 한 재미 콘텐츠이며 합격 여부를 예측하지 않습니다. 월 경계는 절기 기준이라 양력 날짜와 며칠 차이가 날 수 있습니다.</p>';
   out.innerHTML=html;
+  var sb=d('sjSticky');
+  if(!isUnlocked() && d('sjPay')){ if(!sb){sb=document.createElement('div');sb.id='sjSticky';document.body.appendChild(sb);}
+    sb.innerHTML='<button type="button" onclick="document.getElementById(\'sjPay\').scrollIntoView({behavior:\'smooth\'});ev(\'saju_sticky_click\');">'+S[st]+B[idx%12]+'일주 15개월 달력 보기 →</button>'; }
+  else if(sb){ sb.parentNode.removeChild(sb); }
   if(typeof gtag!=='undefined')gtag('event','saju_calc',{element:EL[de]});
 }
 
