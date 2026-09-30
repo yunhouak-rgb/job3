@@ -860,10 +860,11 @@ function renderResult(code){
   </div>
   <div class="share">
    <button onclick="shareLink()">🔗 링크 복사하기</button>
-   <button onclick="shareKakao()">💬 카카오톡 공유</button>
+   <button onclick="shareNative()">📤 공유하기</button>
   </div><a href="/tools/job-saju" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\'workertype_to_saju\');" style="display:block;margin:14px 0 0;padding:12px 14px;border:1.5px solid #eadfc8;background:#faf8f3;border-radius:12px;color:inherit;text-decoration:none;font-size:.9rem;line-height:1.6;">🔮 <b>재미로 하나 더</b> — 내 사주로 보는 2026~2027 취업운과 합격운이 강한 달 →</a>
  </div>`;
 }
+function shareNative(){ var t=T[myType]; var data={title:'나의 직장 본캐는?', text:'나의 직장 본캐는 \''+t.n+'\' '+t.e+' — 너의 직장 본캐는?', url:SITE_URL}; if(typeof gtag!=='undefined')gtag('event','workertype_share_native'); if(navigator.share){ navigator.share(data).catch(function(){}); } else { shareLink(); } }
 function shareLink(){
   const url=SITE_URL;
   const text=`내 직장 본캐는? → ${url}`;

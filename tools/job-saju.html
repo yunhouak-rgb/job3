@@ -16,7 +16,7 @@
   <meta property="og:title" content="취업 사주 무료 2026 (내 일주로 보는 월별 취업운·직장운) | 좋은 취업" />
   <meta property="og:description" content="생년월일로 내 일주를 계산해 2026 병오년·2027 정미년 취업운과 직장운을 풀어 줍니다. 서류·면접에 좋은 달과 달마다 할 일까지 정리합니다." />
   <meta property="og:url" content="https://jobok.co.kr/tools/job-saju" />
-  <meta property="og:image" content="https://jobok.co.kr/og-default.png" />
+  <meta property="og:image" content="https://jobok.co.kr/og-job-saju.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "취업 사주", "url": "https://jobok.co.kr/tools/job-saju", "description": "생년월일로 내 일주를 계산해 2026 병오년·2027 정미년 취업운과 직장운을 풀어 줍니다. 서류·면접에 좋은 달과 달마다 할 일까지 정리합니다.", "applicationCategory": "LifestyleApplication", "operatingSystem": "All", "inLanguage": "ko-KR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "publisher": {"@type": "Organization", "name": "좋은 취업", "url": "https://jobok.co.kr/", "logo": {"@type": "ImageObject", "url": "https://jobok.co.kr/logo.png"}}}</script>
@@ -304,12 +304,14 @@ function calc(){
     var btn=BUY_URL?'<a class="sj-btn" href="'+BUY_URL+'" target="_blank" rel="noopener" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\'saju_buy_click\');">상세 리포트 열기</a>':(localStorage.getItem('sj-reserved')?'<span class="sj-btn" aria-disabled="true">사전 예약 완료</span>':'<button type="button" class="sj-btn" onclick="reserveOpen()">상세 리포트 사전 예약하기</button>')+'<div id="sjReserve"></div>';
     var cnt={gwan:0,'in':0,sik:0,jae:0,bi:0}; MONTHS.forEach(function(r){cnt[rel(de,elOf(r[2]))]++;});
     var gzName=S[st]+B[idx%12]+'일주';
-    var rowsL=MONTHS.map(function(r){var k=rel(de,elOf(r[2])),s=SS[k],name=r[0]+'년 '+r[1]+'월',g=S[r[2]]+B[r[3]];
-      if(best && r===best[0]) return '<tr><td>'+name+' <span style="color:var(--gold);font-weight:800;">맛보기</span></td><td>'+g+'</td><td>'+s[0]+'<br>'+stars(s[1])+'</td><td><b>'+s[2]+'</b><br>'+s[3]+'</td></tr>';
+    var shared=(function(){try{return localStorage.getItem('sj-shared')==='1';}catch(e){return false;}})();
+    var rowsL=MONTHS.map(function(r,ix){var k=rel(de,elOf(r[2])),s=SS[k],name=r[0]+'년 '+r[1]+'월',g=S[r[2]]+B[r[3]];
+      if((best && r===best[0]) || (shared && ix<3)) return '<tr><td>'+name+' <span style="color:var(--gold);font-weight:800;">'+((shared&&ix<3)?'공유 선물':'맛보기')+'</span></td><td>'+g+'</td><td>'+s[0]+'<br>'+stars(s[1])+'</td><td><b>'+s[2]+'</b><br>'+s[3]+'</td></tr>';
       return '<tr class="sj-lockrow"><td>'+name+'</td><td>'+g+'</td><td>'+s[0]+' '+stars(s[1])+'</td><td>'+s[2]+'</td></tr>';}).join('');
     html+='<div class="sj-card" id="sjPay"><h3 style="margin:0 0 4px;">'+gzName+'의 15개월 취업 달력</h3>'
      +'<p style="margin:0 0 8px;color:var(--text-sub);font-size:.9rem;line-height:1.7;">합격·직장운 달 <b>'+cnt.gwan+'개</b> · 서류·면접운 달 <b>'+(cnt['in']+cnt.sik)+'개</b> · 경쟁 달 <b>'+cnt.bi+'개</b>가 들어 있어요. 한 달은 맛보기로 열어 두었습니다.</p>'
      +'<div class="sj-tbl"><table><tr><th>달</th><th>월 간지</th><th>흐름</th><th>풀이</th></tr>'+rowsL+'</table></div></div>'
+     +(shared?'':'<div class="sj-card" style="margin-top:12px;background:#fffdf7;"><b>친구에게 공유하면 앞 3개월 풀이를 바로 열어 드려요</b>'+'<p class="sj-note" style="margin:6px 0 10px;">공유는 휴대폰 공유창(카카오톡·인스타·문자 등)으로 합니다. PC에서는 링크가 복사됩니다.</p>'+'<button type="button" class="sj-btn" onclick="shareUnlock()">공유하고 3개월 열기</button></div>')
      +'<div class="sj-buy"><p style="margin:0 0 6px;line-height:1.75;"><b>지금 무료로 본 것</b> — 일주, 일하는 성향, 올해 흐름</p>'
      +'<p style="margin:0 0 6px;line-height:1.75;"><b>상세 리포트</b> — 15개월 달력과 달마다 할 일, 좋은 달·경쟁 달, 내 일간 면접 강점 문장과 자소서 소재 질문, 오늘의 취업운 상세 풀이(보너스)</p>'
      +'<p class="sj-note" style="margin:0 0 12px;">사주를 믿지 않아도 쓸모 있게, 달마다 무엇을 할지 정하는 취업 준비 달력으로 만들었습니다. 리포트는 2026년 10월부터 시작해 <b>이번 달 할 일부터</b> 바로 확인할 수 있습니다. 가입 없이 결제하면 전용 링크로 바로 열립니다.</p>'
@@ -318,7 +320,7 @@ function calc(){
      +'<p class="sj-note">디지털 콘텐츠 특성상 이용 코드를 확인한 뒤에는 청약철회가 제한될 수 있습니다.</p></div>';
     ev('saju_paywall_view');
   }
-  html+='<div class="sj-share"><button type="button" onclick="share()">결과 링크 복사</button><a class="sj-btn" style="background:var(--black);" href="/tools/job-fortune">오늘의 취업운 보기</a><a class="sj-btn" style="background:var(--white);color:var(--text);border:1.5px solid var(--gray-200);" href="/worker-type" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\'saju_to_workertype\');">직장인 유형 테스트</a></div>'
+  html+='<div class="sj-share"><button type="button" onclick="shareUnlock()">공유하기</button><a class="sj-btn" style="background:var(--black);" href="/tools/job-fortune">오늘의 취업운 보기</a><a class="sj-btn" style="background:var(--white);color:var(--text);border:1.5px solid var(--gray-200);" href="/worker-type" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\'saju_to_workertype\');">직장인 유형 테스트</a></div>'
    +'<p class="sj-note">전통 명리의 일간과 월 천간 관계를 바탕으로 한 재미 콘텐츠이며 합격 여부를 예측하지 않습니다. 월 경계는 절기 기준이라 양력 날짜와 며칠 차이가 날 수 있습니다.</p>';
   out.innerHTML=html;
   var sb=d('sjSticky');
@@ -355,6 +357,10 @@ function reserveDecline(){
    +'</div></div>';
 }
 function reserveReason(i){ev('saju_reserve_reason',{reason:['price','content','belief'][i]});d('sjReserve').innerHTML='<p class="sj-note">의견 감사합니다. 더 나은 리포트로 준비하겠습니다.</p>';}
+function shareUnlock(){ var u=location.origin+location.pathname; var data={title:'내 합격운이 강한 달은? — 취업 사주 2026~2027', text:'생년월일만 넣으면 일주로 15개월 취업운을 알려줘요', url:u};
+  function done(){ try{localStorage.setItem('sj-shared','1');}catch(e){} if(typeof gtag!=='undefined')gtag('event','saju_share_unlock'); calc(); }
+  if(navigator.share){ navigator.share(data).then(done).catch(function(){}); }
+  else { try{navigator.clipboard.writeText(u);}catch(e){} alert('링크를 복사했습니다. 친구에게 보내 주세요.'); done(); } }
 function share(){var u=location.origin+location.pathname;try{navigator.clipboard.writeText(u);}catch(e){}if(typeof gtag!=='undefined')gtag('event','saju_share');alert('링크를 복사했습니다.');}
 document.addEventListener('DOMContentLoaded',function(){var q=new URLSearchParams(location.search).get('code');if(q)applyCode(q);calc();});
 </script>
