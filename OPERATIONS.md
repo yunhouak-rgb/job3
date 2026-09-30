@@ -315,6 +315,15 @@ cd job3-site && cat OPERATIONS.md
 ## 10. 작업 로그
 
 
+### 2026-09-30 (12) — 판매 경로 점검: 직장인 유형 테스트(검증된 판매 상품) 누수 수리
+
+- **래피드 판매 현황(운영자 대시보드)**: 전자책 결제 14건, **직장인 본캐 진단 심화 리포트(SpcgC) 결제 3건**, 모의면접·자소서 진단 0건, 취업 사주 신규
+- 상품별 연결: 전자책 328페이지, 사주 2페이지(+카드), 본캐 리포트는 `worker-type.html` 결과 화면에서만(정상 구조), 테스트 자체는 53페이지에서 유입
+- 🔴 **버그 수리**: worker-type '링크 복사'가 외부 개발 주소(workers.dev)를 복사 → `https://jobok.co.kr/worker-type`로 교체. 카카오 공유 이미지 `/og-image.png` 없음 → 전용 `og-worker-type.png`(1200×630) 생성, og:image·twitter:image도 교체
+- 직장인 유입 페이지(퇴사·실업급여·육아휴직·4대보험·퇴직금 등) 11곳에 유형 테스트 카드·버튼(GA `workertype_inline_click`), 사주 → 유형 테스트 연결(`saju_to_workertype`)
+- 확인만: `interview-1minute-pr-example` canonical이 1분 자기소개 글을 가리킴(중복 통합 의도로 보고 유지). PageSpeed는 공용 한도 초과로 측정 불가
+- 스킬: 이번 작업은 jobok-ops 체크리스트만 적용(외부 스킬 본문 미열람 — 버그 수리·연결 작업이라 큰 결정 아님)
+
 ### 2026-09-30 (11) — 🟢 취업 사주 판매 시작 (래피드)
 
 - 래피드 상품: **2026~2027 취업 사주 상세 리포트** / 4,900원 / 링크형 디지털 상품 / https://www.latpeed.com/products/j7D20

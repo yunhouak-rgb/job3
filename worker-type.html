@@ -16,11 +16,11 @@
   <meta property="og:title" content="직장인 유형 테스트 (20문항 무료 · 16가지 동물 캐릭터) | 좋은 취업" />
   <meta property="og:description" content="회사에서의 나는 어떤 캐릭터일까? 20문항으로 16가지 동물 캐릭터 중 나의 직장인 유형을 무료로 진단합니다. 네 가지 축으로 일하는 방식을 보여줍니다." />
   <meta property="og:url" content="https://jobok.co.kr/worker-type" />
-  <meta property="og:image" content="https://jobok.co.kr/og-default.png" />
+  <meta property="og:image" content="https://jobok.co.kr/og-worker-type.png" />
   <meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://jobok.co.kr/og-default.png" />
+  <meta name="twitter:image" content="https://jobok.co.kr/og-worker-type.png" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "직장인 유형 테스트", "description": "회사에서의 나는 어떤 캐릭터일까? 현직 인사담당자가 만든 직장인 유형 테스트. 20문항 5분으로 16가지 동물 캐릭터 중 내 유형과 맞는 부업, 궁합 동료까지 확인하세요. 무료·회원가입 없음.", "url": "https://jobok.co.kr/worker-type", "applicationCategory": "LifestyleApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}, "publisher": {"@type": "Organization", "name": "좋은 취업", "url": "https://jobok.co.kr/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "직장인 유형 테스트", "item": "https://jobok.co.kr/worker-type"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "직장인 유형 테스트는 무료인가요?", "acceptedAnswer": {"@type": "Answer", "text": "완전 무료이며 회원가입이나 로그인이 필요 없습니다. 개인정보도 수집하지 않습니다."}}, {"@type": "Question", "name": "MBTI와 무엇이 다른가요?", "acceptedAnswer": {"@type": "Answer", "text": "MBTI는 전반적인 성격 성향을 보지만 이 진단은 회사에서의 나만 봅니다. 퇴근 시간을 대하는 태도, 커리어 야망, 동료와의 거리, 일하는 방식 네 가지가 축입니다."}}, {"@type": "Question", "name": "몇 분 걸리나요?", "acceptedAnswer": {"@type": "Answer", "text": "20문항 기준 약 5분입니다. 오래 고민하지 말고 첫 반응대로 고르는 편이 결과가 더 정확합니다."}}, {"@type": "Question", "name": "유형에 좋고 나쁨이 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "없습니다. 야근형이 성실하고 칼퇴형이 게으른 것이 아니라 시간을 다르게 쓰는 것입니다. 각 유형마다 빛나는 자리와 자주 빠지는 함정이 다를 뿐입니다."}}]}</script>
@@ -650,7 +650,7 @@ document.addEventListener('click',function(e){const m=document.getElementById('m
 /* ===== 배포 시 아래 값들을 본인 것으로 교체하세요 ===== */
 const KAKAO_JS_KEY='660886d5e593bfb484e37faed03e077a';  // 카카오 개발자센터 JavaScript 키
 const PAYMENT_URL='https://www.latpeed.com/products/SpcgC'; // 라잇피드 판매 페이지 URL
-const SITE_URL='https://hr2.valetta3825.workers.dev/test1'; // 진단 도구 공유용 주소
+const SITE_URL='https://jobok.co.kr/worker-type'; // 진단 도구 공유용 주소
 /* ===================================================== */
 
 /* 카카오 SDK 초기화 */
@@ -908,7 +908,7 @@ function shareKakao(){
       content:{
         title:`나의 직장 본캐는 '${t.n}' ${t.e}`,
         description:`${t.id}\n너의 직장 본캐는?`,
-        imageUrl: location.origin + '/og-image.png',
+        imageUrl: location.origin + '/og-worker-type.png',
         link:{ mobileWebUrl: location.href, webUrl: location.href }
       },
       buttons:[{ title:'나도 진단하기', link:{ mobileWebUrl: location.href, webUrl: location.href } }]
@@ -929,7 +929,7 @@ function shareKakaoCompat(){
       content:{
         title:`${me.e} ${me.n} ✕ ${other.e} ${other.n}`,
         description:'우리 직장 궁합 결과를 확인해보세요!',
-        imageUrl: location.origin + '/og-image.png',
+        imageUrl: location.origin + '/og-worker-type.png',
         link:{ mobileWebUrl: location.href, webUrl: location.href }
       },
       buttons:[{ title:'내 궁합도 보기', link:{ mobileWebUrl: location.href, webUrl: location.href } }]

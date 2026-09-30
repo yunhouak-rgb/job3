@@ -318,7 +318,7 @@ function calc(){
      +'<p class="sj-note">디지털 콘텐츠 특성상 이용 코드를 확인한 뒤에는 청약철회가 제한될 수 있습니다.</p></div>';
     ev('saju_paywall_view');
   }
-  html+='<div class="sj-share"><button type="button" onclick="share()">결과 링크 복사</button><a class="sj-btn" style="background:var(--black);" href="/tools/job-fortune">오늘의 취업운 보기</a></div>'
+  html+='<div class="sj-share"><button type="button" onclick="share()">결과 링크 복사</button><a class="sj-btn" style="background:var(--black);" href="/tools/job-fortune">오늘의 취업운 보기</a><a class="sj-btn" style="background:var(--white);color:var(--text);border:1.5px solid var(--gray-200);" href="/worker-type" onclick="if(typeof gtag!==\'undefined\')gtag(\'event\',\'saju_to_workertype\');">직장인 유형 테스트</a></div>'
    +'<p class="sj-note">전통 명리의 일간과 월 천간 관계를 바탕으로 한 재미 콘텐츠이며 합격 여부를 예측하지 않습니다. 월 경계는 절기 기준이라 양력 날짜와 며칠 차이가 날 수 있습니다.</p>';
   out.innerHTML=html;
   var sb=d('sjSticky');
