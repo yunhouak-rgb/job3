@@ -210,6 +210,7 @@
 <li>화(火) 일간(병·정) — 나와 같은 <strong>비겁</strong>의 해: 경쟁과 동료</li>
 </ul>
 
+<p>일간별 자세한 풀이: <a href="/blog/job-luck-2026-2027" style="color:var(--gold);font-weight:600;">일간별 총정리</a> · <a href="/blog/job-luck-wood" style="color:var(--gold);font-weight:600;">갑목·을목</a> · <a href="/blog/job-luck-fire" style="color:var(--gold);font-weight:600;">병화·정화</a> · <a href="/blog/job-luck-earth" style="color:var(--gold);font-weight:600;">무토·기토</a> · <a href="/blog/job-luck-metal" style="color:var(--gold);font-weight:600;">경금·신금</a> · <a href="/blog/job-luck-water" style="color:var(--gold);font-weight:600;">임수·계수</a></p>
 <h2>사주 결과를 어떻게 활용하면 좋을까?</h2>
 <p><strong>좋은 달을 기다리기보다, 그달에 할 일을 정하는 달력으로 쓰는 것을 권합니다.</strong> 이 도구는 달마다 실제로 할 일을 함께 보여 줍니다. 서류는 <a href="/tools/checklist" style="color:var(--gold);font-weight:600;">제출 전 자가진단</a>으로, 면접은 <a href="/daily-question" style="color:var(--gold);font-weight:600;">면접 질문 100개</a>로 준비하세요. 오늘 하루의 흐름은 <a href="/tools/job-fortune" style="color:var(--gold);font-weight:600;">오늘의 취업운</a>에서 매일 볼 수 있습니다.</p>
 
@@ -287,7 +288,7 @@ function calc(){
   var html='<div class="sj-big"><small>나의 일주</small><b>'+S[st]+B[idx%12]+'일주 · '+HS[st]+HB[idx%12]+'</b><p>일간 <b>'+dm[0]+'('+dm[1]+')</b> · 오행 '+EL[de]+'</p></div>'
    +'<div class="sj-card"><h3 style="margin:0 0 8px;">일하는 성향</h3><ul style="margin:0;padding-left:18px;line-height:1.8;">'+dm[2].map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>'
    +'<div class="sj-card"><h3 style="margin:0 0 8px;">2026 병오년·2027 정미년 흐름 — '+ylab[0]+'</h3><p style="margin:0;line-height:1.8;">'+YEAR[de]+'</p>'
-   +(bestTxt?'<p style="margin:10px 0 0;"><b>가장 먼저 오는 좋은 달:</b> '+bestTxt+'</p>':'')+'</div>';
+   +(bestTxt?'<p style="margin:10px 0 0;"><b>합격·직장운이 가장 강한 첫 달:</b> '+bestTxt+'</p>':'')+'</div>';
   if(isUnlocked()){
     var rows=MONTHS.map(function(r){return [r,rel(de,elOf(r[2]))];});
     var top=rows.filter(function(x){return SS[x[1]][1]>=4;}).sort(function(a,b){return SS[b[1]][1]-SS[a[1]][1];}).slice(0,3).map(function(x){return x[0][0]+'년 '+x[0][1]+'월('+SS[x[1]][0]+')';});

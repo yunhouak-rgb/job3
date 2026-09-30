@@ -1920,4 +1920,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://jobok.co.kr/blog/job-luck-wood</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jobok.co.kr/blog/job-luck-fire</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jobok.co.kr/blog/job-luck-earth</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jobok.co.kr/blog/job-luck-metal</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jobok.co.kr/blog/job-luck-water</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jobok.co.kr/blog/job-luck-2026-2027</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
