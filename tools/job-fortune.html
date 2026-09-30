@@ -277,7 +277,7 @@ document.addEventListener('click',function(e){const m=document.getElementById('m
 
 
 function d(i){return document.getElementById(i);}
-var BUY_URL='';                 // 랫피드 이용권 상품 URL (비어 있으면 '준비 중' 표시)
+var BUY_URL='https://www.latpeed.com/products/j7D20';                 // 랫피드 이용권 상품 URL (비어 있으면 '준비 중' 표시)
 var CODE_HASHES=['a408ce330af1badd61989bc40440ac865231517a49169633e4eee7ce947cbcab','a8c7d3ad2ec310c9ceda1b7da1b85254da4d20d86909d60821c5f9bec801f8c6'];
 function fnv(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
 function rng(seed){var x=seed||1;return function(){x^=x<<13;x^=x>>>17;x^=x<<5;return ((x>>>0)%100000)/100000;};}
