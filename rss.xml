@@ -6,7 +6,15 @@
     <atom:link href="https://jobok.co.kr/rss.xml" rel="self" type="application/rss+xml" />
     <description>채용 실무 관점으로 만든 취업 준비·퇴사 절차 가이드와 무료 계산 도구</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 08:30:00 +0900</lastBuildDate>
+    <item>
+      <title>실업급여 반복수급 감액 2026 (3회 이상 받으면? 시행 여부와 개정안 정리)</title>
+      <link>https://jobok.co.kr/blog/unemployment-benefit-repeat</link>
+      <guid isPermaLink="true">https://jobok.co.kr/blog/unemployment-benefit-repeat</guid>
+      <category>마음관리</category>
+      <description>실업급여를 3회 이상 받으면 깎일까? 반복수급 감액은 아직 시행 전입니다. 개정안 내용과 현재 상태를 정리했습니다.</description>
+      <pubDate>Thu, 08 Oct 2026 08:30:00 +0900</pubDate>
+    </item>
     <item>
       <title>실업급여 구직활동 인정 기준 2026 (인정되는 활동·증빙·횟수 확인법)</title>
       <link>https://jobok.co.kr/blog/unemployment-benefit-job-search</link>
