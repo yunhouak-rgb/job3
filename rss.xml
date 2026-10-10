@@ -6,7 +6,15 @@
     <atom:link href="https://jobok.co.kr/rss.xml" rel="self" type="application/rss+xml" />
     <description>채용 실무 관점으로 만든 취업 준비·퇴사 절차 가이드와 무료 계산 도구</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 10 Oct 2026 14:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 15:00:00 +0900</lastBuildDate>
+    <item>
+      <title>계약만료 실업급여 (재계약 거절하면? 상실코드 32·회사 불이익·신청 순서)</title>
+      <link>https://jobok.co.kr/blog/contract-expiry-unemployment-benefit</link>
+      <guid isPermaLink="true">https://jobok.co.kr/blog/contract-expiry-unemployment-benefit</guid>
+      <category>마음관리</category>
+      <description>계약만료로 퇴사하면 실업급여 받을까? 재계약 거절 시 판단, 상실코드 32번, 회사 불이익, 신청 순서를 정리했습니다.</description>
+      <pubDate>Sat, 10 Oct 2026 15:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>희망퇴직 (권고사직 차이·실업급여·위로금 세금, 서명 전 확인할 것)</title>
       <link>https://jobok.co.kr/blog/voluntary-retirement</link>

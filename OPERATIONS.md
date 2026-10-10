@@ -826,3 +826,8 @@ cd job3-site && cat OPERATIONS.md
 - 신규 `/blog/voluntary-retirement` — 상실코드 23(23-3)은 2개 출처 교차. 위로금 소득구분(퇴직/근로)은 판례·예규 엇갈려 단정 안 함. "위로금 1억 이상 구직급여 3개월 유예"는 출처 확인 불가로 제외
 - 빌더 버그 수정: inline-tool-box 치환 정규식이 첫 </div>에서 멈춰 칩 2개+닫는 태그가 남던 문제(반복수급 글도 함께 수정, div 균형 확인)
 - 다음 후보: 퇴직금 세금(1.4, retirement-income-tax 보강 검토), 계약만료 실업급여(1.3)
+
+### 2026-10-10 (2) — 유입글: 계약만료 실업급여
+- 선정: pytrends 1.3(희망퇴직 다음), 자동완성 '회사 불이익/조건/후기/서류/이직확인서', 사이트 내 0편
+- 신규 `/blog/contract-expiry-unemployment-benefit` — 32번 코드, 재계약 거절→11번 원칙, 조건 하락은 상황별, 회사 지원금 영향 적음(2개 출처 교차). 과태료 금액(300만원)은 단일 출처라 제외
+- scratchpad/register.py: sitemap·rss·허브·홈·인바운드 링크 등록 자동화 (audit은 job3-site 안에서 실행해야 경로 정상)
