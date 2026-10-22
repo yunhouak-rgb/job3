@@ -845,3 +845,5 @@ cd job3-site && cat OPERATIONS.md
 - ③ `cover-letter-job-competency`: '직무 역량 키워드'(순위 15)·'자소서 역량 키워드'(23) 부재 → 직무별 키워드 표+FAQ
 - 나머지 상위 변형어(임원면접 배수·습니다체·회사 내규·일정 조율)는 이미 본문에 있음 확인
 - (3) 제목 변형어 반영(GSC 9/30 검색어 기준): 컬처핏→'컬쳐핏' 병기, 마지막 할 말→'마지막 한마디'(변형어 노출 다수, 44위), 인턴 자소서→'인턴 지원동기 예시', 공채 일정→'하반기 채용 시기'(27.8위), interview 허브·jobs 허브·기업 5곳 범용 제목('채용 준비 완벽 가이드') 교체. 전 사이트 동일 문자열 일괄 치환(rss·허브 카드 포함)
+- (4) 역질문 카니발 정리: `interview-reverse-question`(753자) → `interview-last-question` 301 통합(내부링크 4곳·sitemap·rss·허브 중복카드 정리). `interview-reverse-question-examples`는 '예시' 의도라 유지
+- (5) 얇은 글 증량: interview-culture-fit(질문 의도표·답변 예시 2개·FAQ), job-trend-2026-hiring-schedule(2026 하반기 실제 일정 섹션, 삼성 9/7 보도 2곳 교차)
