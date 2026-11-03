@@ -858,3 +858,8 @@ cd job3-site && cat OPERATIONS.md
 - 선정: pytrends 1개월(세금군) 연말정산 37.3·미리보기 4.6(최근 1주 13.4 급등). 수능(70)은 압도적이나 사이트 무관·뉴스 독점이라 제외
 - 신규 `/blog/year-end-tax-preview` — 기간 10/28~12/18, 3단계 조회, 누락·자녀 자료 해결(한국세정신문 10/28 + The Daily Economy 10/26 교차)
 - `year-end-tax-2026` 일정표에 미리보기 기간 반영 + 상호 링크
+
+### 2026-11-03 — 10월 GSC 리포트 기반 상승 페이지 강화
+- 10월: 클릭 168(8월 85의 약 2배)·노출 2.85K·첫 노출 페이지 94. 상승 TOP3: aptitude-test-question-types(+18), desired-salary-writing(+10), after-final-offer-guide(+10)
+- 자동완성 갭 반영: 인적성 '문제 예시·무료 테스트'(원작 예시 3문제+/aptitude 연결), 희망연봉 '기재·적는법'(상황별 문구표), 최종합격 후 '입사일 조정 메일·처우협의 메일·채용 취소'(채용취소=해고 취급, 근기법 23·27조 — 뉴시스·로톡 교차)
+- 참고: desired-salary·after-final-offer 원본에 </div> 1개 초과(기존 문제, 렌더 영향 없음 확인 필요)
