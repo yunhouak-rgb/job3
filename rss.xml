@@ -6,7 +6,15 @@
     <atom:link href="https://jobok.co.kr/rss.xml" rel="self" type="application/rss+xml" />
     <description>채용 실무 관점으로 만든 취업 준비·퇴사 절차 가이드와 무료 계산 도구</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 09 Nov 2026 18:50:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 08:50:00 +0900</lastBuildDate>
+    <item>
+      <title>통상임금 뜻과 평균임금 차이 (2024 대법원 판결로 바뀐 기준·계산법)</title>
+      <link>https://jobok.co.kr/blog/ordinary-wage-vs-average-wage</link>
+      <guid isPermaLink="true">https://jobok.co.kr/blog/ordinary-wage-vs-average-wage</guid>
+      <category>마음관리</category>
+      <description>통상임금은 정해진 근로의 대가로 정기적·일률적으로 주는 임금입니다. 평균임금과 차이, 각각 쓰이는 곳, 2024 대법원 판결로 바뀐 기준을 정리했습니다.</description>
+      <pubDate>Tue, 10 Nov 2026 08:50:00 +0900</pubDate>
+    </item>
     <item>
       <title>주휴수당 조건 (주 15시간·개근 기준, 못 받는 경우·퇴사 주·안 줄 때)</title>
       <link>https://jobok.co.kr/blog/weekly-holiday-pay-conditions</link>
