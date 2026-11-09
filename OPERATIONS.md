@@ -863,3 +863,9 @@ cd job3-site && cat OPERATIONS.md
 - 10월: 클릭 168(8월 85의 약 2배)·노출 2.85K·첫 노출 페이지 94. 상승 TOP3: aptitude-test-question-types(+18), desired-salary-writing(+10), after-final-offer-guide(+10)
 - 자동완성 갭 반영: 인적성 '문제 예시·무료 테스트'(원작 예시 3문제+/aptitude 연결), 희망연봉 '기재·적는법'(상황별 문구표), 최종합격 후 '입사일 조정 메일·처우협의 메일·채용 취소'(채용취소=해고 취급, 근기법 23·27조 — 뉴시스·로톡 교차)
 - 참고: desired-salary·after-final-offer 원본에 </div> 1개 초과(기존 문제, 렌더 영향 없음 확인 필요)
+
+### 2026-11-09 — 유입글: 주휴수당 조건
+- scratchpad 초기화로 재클론. 빌더 재작성: scratchpad/new_post.py(템플릿 year-end-tax-preview, spec 파일 방식) + register.py. 다음 초기화 대비해 이 두 파일 내용은 jobok-ops 스킬에 넣는 걸 권장
+- 선정: pytrends 1개월 연말정산 43(기존 2편 보유) > 최저임금 27.9(기존 글·도구 보유) = 주휴수당 27.9(도구만, 조건 가이드 0편) > 연차수당 8.3. 자동완성 '조건·기준·못 받는 경우·안주는 알바·뜻'
+- 신규 `/blog/weekly-holiday-pay-conditions` — 근기법 18조3항·55조·시행령 30조, 지각≠결근, 2021 행정해석(퇴사 주), 5인 미만 적용(shoplworks·theinfohunter 교차). 처벌 수위(2년/2천 vs 3년/3천)·소멸시효는 출처 불일치/단일이라 제외
+- 도구 weekly-holiday-pay → 새 글 링크

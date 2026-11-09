@@ -6,7 +6,15 @@
     <atom:link href="https://jobok.co.kr/rss.xml" rel="self" type="application/rss+xml" />
     <description>채용 실무 관점으로 만든 취업 준비·퇴사 절차 가이드와 무료 계산 도구</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 02 Nov 2026 18:10:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 18:50:00 +0900</lastBuildDate>
+    <item>
+      <title>주휴수당 조건 (주 15시간·개근 기준, 못 받는 경우·퇴사 주·안 줄 때)</title>
+      <link>https://jobok.co.kr/blog/weekly-holiday-pay-conditions</link>
+      <guid isPermaLink="true">https://jobok.co.kr/blog/weekly-holiday-pay-conditions</guid>
+      <category>마음관리</category>
+      <description>주휴수당은 주 15시간 이상 일하고 그 주를 개근하면 받습니다. 못 받는 경우, 지각·퇴사 주 처리, 5인 미만, 안 줄 때 대응을 정리했습니다.</description>
+      <pubDate>Mon, 09 Nov 2026 18:50:00 +0900</pubDate>
+    </item>
     <item>
       <title>연말정산 미리보기 2026 (기간 10월 28일~12월 18일·조회 방법·안 될 때)</title>
       <link>https://jobok.co.kr/blog/year-end-tax-preview</link>
