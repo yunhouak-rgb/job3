@@ -6,7 +6,23 @@
     <atom:link href="https://jobok.co.kr/rss.xml" rel="self" type="application/rss+xml" />
     <description>채용 실무 관점으로 만든 취업 준비·퇴사 절차 가이드와 무료 계산 도구</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 10 Nov 2026 08:50:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 08:55:00 +0900</lastBuildDate>
+    <item>
+      <title>공무원 면접 5분 발표 (진행 순서·시간 배분·구성 틀, 9급 국가직 기준)</title>
+      <link>https://jobok.co.kr/blog/civil-servant-interview-5min-presentation</link>
+      <guid isPermaLink="true">https://jobok.co.kr/blog/civil-servant-interview-5min-presentation</guid>
+      <category>면접</category>
+      <description>국가직 9급 면접 5분 발표는 과제 검토 10분 뒤 5분 안에 발표하고 후속 질문을 받습니다. 진행 순서와 시간 배분, 발표 구성 틀을 정리했습니다.</description>
+      <pubDate>Thu, 12 Nov 2026 08:55:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>공무원 면접 평정표와 미흡 기준 (우수·보통·미흡 판정 방식, 미흡 피하는 법)</title>
+      <link>https://jobok.co.kr/blog/civil-servant-interview-rating</link>
+      <guid isPermaLink="true">https://jobok.co.kr/blog/civil-servant-interview-rating</guid>
+      <category>면접</category>
+      <description>공무원 면접은 평정요소 4개를 상·중·하로 평가해 우수·보통·미흡으로 판정합니다. 미흡이 되는 조건과 피하는 법을 정리했습니다.</description>
+      <pubDate>Thu, 12 Nov 2026 08:50:00 +0900</pubDate>
+    </item>
     <item>
       <title>통상임금 뜻과 평균임금 차이 (2024 대법원 판결로 바뀐 기준·계산법)</title>
       <link>https://jobok.co.kr/blog/ordinary-wage-vs-average-wage</link>
@@ -1008,7 +1024,7 @@
       <pubDate>Tue, 04 Aug 2026 09:00:00 +0900</pubDate>
     </item>
     <item>
-      <title>공무원 지원동기 예시 (직렬별 5종 · 지방직 작성법)</title>
+      <title>공무원 지원동기 예시 (직렬별 6종 · 지방직 작성법)</title>
       <link>https://jobok.co.kr/blog/civil-servant-motivation-examples</link>
       <guid isPermaLink="true">https://jobok.co.kr/blog/civil-servant-motivation-examples</guid>
       <category>자소서</category>
