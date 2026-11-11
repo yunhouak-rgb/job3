@@ -881,3 +881,6 @@ cd job3-site && cat OPERATIONS.md
 - 신규 2편(면접 카테고리): civil-servant-interview-rating(평정요소 4개·우수/보통/미흡 판정 — 정책브리핑 2023.5.1, 피앤피뉴스 2025.5.22, 공단기 교차), civil-servant-interview-5min-presentation(검토 10분·발표 포함 10분·경험상황 20분·총 30분 이내 — 2024·2025 보도 3곳 일치)
 - civil-servant-motivation-examples: 전기직 예시 + '지원동기 및 포부' 섹션(자동완성 반영), 제목 5종→6종
 - 빌더: new_post.py에 CAT 옵션(카테고리·허브·OG 치환), register.py는 환경변수 CATN/HUB
+- (2) 카니발 통합: 얇은 중복글 21편 → 강한 글 13편으로 301(merge.py). 옛 글 FAQ 중 중복·문장 어색·출처 없는 % 수치 제외한 30개만 이전. 내부링크·허브카드·이전/다음 제목·sitemap·rss 정리, 원본 삭제. 블로그 357→336편
+  - 통합표: pressure-interview←interview-pressure-questions/stress-question-answer/difficult-question · cover-letter-ai-experience←cover-letter-ai-detection/job-trend-2026-ai-cover-letter-rate/chatgpt-cover-letter · job-search-anxiety←anxiety-management/spec-anxiety/comparison-mindset · interview-1min-selfintro←interview-introduction-tips/1minute-pr-example/self-introduction · 그 외 1:1 9건(_redirects 참고)
+  - cover-letter-conclusion은 site_data 템플릿 원본이라 통합 제외
