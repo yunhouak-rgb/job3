@@ -905,3 +905,8 @@ cd job3-site && cat OPERATIONS.md
 - 구글 3개월: 클릭 430·노출 8,730. 노출 상위인데 CTR 낮은 글 제목 교체: document-result-notification(1,039노출·4.8%), job-trend-2026-skill-based(220·0.9%), toeic-score-for-job(148·2%), interview-notice-days(148·4.7%), daily-question(339·1.5%)
 - 네이버 검색어 그대로: 일주동물(321노출·1.6%)→ilju-calculator, 이력서 pdf(217·3.2%)→resume-builder, 이직 연봉협상(143·3.5%)→raise, 면접 경험정리방법(91)→star, 면접 순서 의미(76)·합격 시그널(54)→interview-atmosphere-signal
 - 버그: final-rejection-recovery·interview-atmosphere-signal가 9월 빌더 오류로 다른 글 본문이 앞에 붙고 '</html' 뒤에 본문이 이어 붙은 상태(문서 2~3개 중첩). 각 글 고유 본문만 남기고 목차 재생성. 전 사이트 '</html<' 패턴은 이 2건뿐
+
+## 2026-11-13 (후반) /ncs 도구 추가
+- /ncs: NCS 직업기초능력 5개 영역×8 = 40제 (의사소통·수리·문제해결·자원관리·조직이해). aptitude.html 엔진 재사용, 계산 문제는 assert로 검증, 정답 위치 분산(6/9/12/13).
+- 등록: sitemap, tools.html 카드, 홈 도구 그리드, aptitude FAQ·ncs-guide answer-box/도구칩에서 링크. tools.html의 인적성 카드 설명 "60문제"→"100문제" 정정.
+- 주의: 클론 빌드 시 apt-static(100제 정적 목록) 블록이 tool-seo 뒤에 남는 문제 → div 깊이로 통째 제거.
