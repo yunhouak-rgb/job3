@@ -898,3 +898,5 @@ cd job3-site && cat OPERATIONS.md
 - (3) 링크프라이스: 교육 카테고리 머천트는 udemy뿐(최대 14%·쿠키 30일·구매월+3월 6일 지급). YES24·교보문고 2.1%(쿠키 0~1일)는 쿠팡과 겹쳐 보류. udemy 승인 완료(사용자 동의), 어필리에이트 A100709938. 딥링크 형식 https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=<encoded> — 생성기 결과와 동일, 리다이렉트로 Udemy 도착 확인
 - cp.js 수정 시 ?v= 버전 올릴 것(assets 캐시 때문에 구버전 노출 사례 11/13). cp.js가 쿠팡·링크프라이스 둘 다 처리(src=linkprice, 문구 자동 분기, data-title로 박스 제목). Udemy 강의 박스 9편(자격증·IT/기획 자소서·포트폴리오·스킬/AI 트렌드)
 - (4) 네이버 검색어 그대로 제목 교체: job-fortune(합격 운세), job-saju(취업운 사주 무료), desired-salary-writing(신입 희망연봉 기재 방법), aptitude-test-question-types(무료 예시 문제). 사이트 전체 카드·rss 일괄 치환. 인적성 유형 글 상단에 100제 CTA(쿠팡 박스 있는 /aptitude로 유도)
+- (5) 인적성 클러스터 확장(네이버 1위 주제): 신규 aptitude-test-free-practice(무료 연습 사이트 — 사람인 무료 인성·적성검사는 사람인 공지 2018·글로벌이코노믹 2024 교차, 잡코리아는 출처 간 유무료 불일치라 구체 언급 제외), aptitude-book-guide(문제집 고르는 기준, 특정 도서 추천 없음 + 쿠팡 박스). 둘 다 기업이해 카테고리
+- (6) 도표: scratchpad/svgflow.py(가로 단계 SVG). 신규 2편 + 상위 노출 글 6편에 본문 내용 그대로의 단계도 삽입(새 사실 없음). 이미지 없는 글 328→322
