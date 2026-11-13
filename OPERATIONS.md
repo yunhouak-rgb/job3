@@ -884,3 +884,9 @@ cd job3-site && cat OPERATIONS.md
 - (2) 카니발 통합: 얇은 중복글 21편 → 강한 글 13편으로 301(merge.py). 옛 글 FAQ 중 중복·문장 어색·출처 없는 % 수치 제외한 30개만 이전. 내부링크·허브카드·이전/다음 제목·sitemap·rss 정리, 원본 삭제. 블로그 357→336편
   - 통합표: pressure-interview←interview-pressure-questions/stress-question-answer/difficult-question · cover-letter-ai-experience←cover-letter-ai-detection/job-trend-2026-ai-cover-letter-rate/chatgpt-cover-letter · job-search-anxiety←anxiety-management/spec-anxiety/comparison-mindset · interview-1min-selfintro←interview-introduction-tips/1minute-pr-example/self-introduction · 그 외 1:1 9건(_redirects 참고)
   - cover-letter-conclusion은 site_data 템플릿 원본이라 통합 제외
+
+### 2026-11-13 — 쿠팡 파트너스 자리 마련 (링크 대기)
+- 사용자 쿠팡 파트너스 미가입(브라우저 확인: 회원가입 화면). 가입·링크 생성은 사용자 몫
+- 구조: /cp-links.json(키별 label·쿠팡 검색 주소·url) + /assets/cp.js. url이 https://link.coupang.com/ 으로 시작할 때만 렌더, 비어 있으면 무표시. 대가성 문구 자동 포함, rel="sponsored nofollow", GA 이벤트 cp_click
+- 삽입 15편(FAQ 직전): 면접 복장 3·화상/AI 면접 2·인적성 4·NCS·토익·자격증 2·공무원 면접 2
+- 링크 받으면 cp-links.json의 url만 채우면 됨(글 수정 불필요)
