@@ -910,3 +910,5 @@ cd job3-site && cat OPERATIONS.md
 - /ncs: NCS 직업기초능력 5개 영역×8 = 40제 (의사소통·수리·문제해결·자원관리·조직이해). aptitude.html 엔진 재사용, 계산 문제는 assert로 검증, 정답 위치 분산(6/9/12/13).
 - 등록: sitemap, tools.html 카드, 홈 도구 그리드, aptitude FAQ·ncs-guide answer-box/도구칩에서 링크. tools.html의 인적성 카드 설명 "60문제"→"100문제" 정정.
 - 주의: 클론 빌드 시 apt-static(100제 정적 목록) 블록이 tool-seo 뒤에 남는 문제 → div 깊이로 통째 제거.
+- /personality-test: 인성검사 모의테스트 40문항(5영역×7 + "한 번도 없다" 류 5). 반대 문항 10쌍 일관성(|a-(6-b)|≥2 표시), 극단·중간 응답 비율, 과장 응답, 문항당 시간. 진단·합불 예측 아님 명시, 답변은 브라우저에서만 계산. 빌더: scratchpad build_pers.py (ncs.html 셸 재사용).
+- 키워드 근거: 구글 자동완성 "인성검사 모의테스트 무료/인성검사 무료 연습/인성검사 연습 사이트". pytrends는 429로 이번엔 미측정.
