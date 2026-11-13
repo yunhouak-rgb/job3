@@ -900,3 +900,8 @@ cd job3-site && cat OPERATIONS.md
 - (4) 네이버 검색어 그대로 제목 교체: job-fortune(합격 운세), job-saju(취업운 사주 무료), desired-salary-writing(신입 희망연봉 기재 방법), aptitude-test-question-types(무료 예시 문제). 사이트 전체 카드·rss 일괄 치환. 인적성 유형 글 상단에 100제 CTA(쿠팡 박스 있는 /aptitude로 유도)
 - (5) 인적성 클러스터 확장(네이버 1위 주제): 신규 aptitude-test-free-practice(무료 연습 사이트 — 사람인 무료 인성·적성검사는 사람인 공지 2018·글로벌이코노믹 2024 교차, 잡코리아는 출처 간 유무료 불일치라 구체 언급 제외), aptitude-book-guide(문제집 고르는 기준, 특정 도서 추천 없음 + 쿠팡 박스). 둘 다 기업이해 카테고리
 - (6) 도표: scratchpad/svgflow.py(가로 단계 SVG). 신규 2편 + 상위 노출 글 6편에 본문 내용 그대로의 단계도 삽입(새 사실 없음). 이미지 없는 글 328→322
+
+### 2026-11-13 (3) — 구글(11/13 내보내기)+네이버 TOP30 기반 CTR 개선·버그 수정
+- 구글 3개월: 클릭 430·노출 8,730. 노출 상위인데 CTR 낮은 글 제목 교체: document-result-notification(1,039노출·4.8%), job-trend-2026-skill-based(220·0.9%), toeic-score-for-job(148·2%), interview-notice-days(148·4.7%), daily-question(339·1.5%)
+- 네이버 검색어 그대로: 일주동물(321노출·1.6%)→ilju-calculator, 이력서 pdf(217·3.2%)→resume-builder, 이직 연봉협상(143·3.5%)→raise, 면접 경험정리방법(91)→star, 면접 순서 의미(76)·합격 시그널(54)→interview-atmosphere-signal
+- 버그: final-rejection-recovery·interview-atmosphere-signal가 9월 빌더 오류로 다른 글 본문이 앞에 붙고 '</html' 뒤에 본문이 이어 붙은 상태(문서 2~3개 중첩). 각 글 고유 본문만 남기고 목차 재생성. 전 사이트 '</html<' 패턴은 이 2건뿐
