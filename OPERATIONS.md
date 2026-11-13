@@ -889,4 +889,4 @@ cd job3-site && cat OPERATIONS.md
 - 사용자 쿠팡 파트너스 미가입(브라우저 확인: 회원가입 화면). 가입·링크 생성은 사용자 몫
 - 구조: /cp-links.json(키별 label·쿠팡 검색 주소·url) + /assets/cp.js. url이 https://link.coupang.com/ 으로 시작할 때만 렌더, 비어 있으면 무표시. 대가성 문구 자동 포함, rel="sponsored nofollow", GA 이벤트 cp_click
 - 삽입 15편(FAQ 직전): 면접 복장 3·화상/AI 면접 2·인적성 4·NCS·토익·자격증 2·공무원 면접 2
-- 링크 받으면 cp-links.json의 url만 채우면 됨(글 수정 불필요)
+- 2026-11-13 링크 10개 생성·적용(쿠팡 파트너스 간편 링크, 파트너스 ID AF7602026, lptag 확인)

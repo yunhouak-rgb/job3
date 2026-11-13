@@ -1,15 +1,55 @@
 {
   "_안내": "쿠팡 파트너스에서 각 search 주소로 '간편 링크 만들기'를 한 뒤, 나온 단축 링크(https://link.coupang.com/...)를 url에 붙여 넣으면 해당 글에 자동으로 표시됩니다. url이 비어 있으면 화면에 아무것도 나오지 않습니다.",
   "items": {
-    "suit-men":      {"label": "남자 면접 정장 보기",        "search": "https://www.coupang.com/np/search?q=%EB%82%A8%EC%9E%90+%EB%A9%B4%EC%A0%91+%EC%A0%95%EC%9E%A5", "url": ""},
-    "suit-women":    {"label": "여자 면접 정장 보기",        "search": "https://www.coupang.com/np/search?q=%EC%97%AC%EC%9E%90+%EB%A9%B4%EC%A0%91+%EC%A0%95%EC%9E%A5", "url": ""},
-    "shirt":         {"label": "면접 셔츠·블라우스 보기",     "search": "https://www.coupang.com/np/search?q=%EB%A9%B4%EC%A0%91+%EC%85%94%EC%B8%A0", "url": ""},
-    "webcam":        {"label": "화상 면접용 웹캠 보기",       "search": "https://www.coupang.com/np/search?q=%EC%9B%B9%EC%BA%A0", "url": ""},
-    "ring-light":    {"label": "화상 면접용 조명 보기",       "search": "https://www.coupang.com/np/search?q=%EB%A7%81%EB%9D%BC%EC%9D%B4%ED%8A%B8", "url": ""},
-    "aptitude-book": {"label": "인적성(GSAT·SKCT) 문제집 보기","search": "https://www.coupang.com/np/search?q=%EC%9D%B8%EC%A0%81%EC%84%B1+%EB%AC%B8%EC%A0%9C%EC%A7%91", "url": ""},
-    "ncs-book":      {"label": "NCS 문제집 보기",            "search": "https://www.coupang.com/np/search?q=NCS+%EB%AC%B8%EC%A0%9C%EC%A7%91", "url": ""},
-    "toeic-book":    {"label": "토익 교재 보기",             "search": "https://www.coupang.com/np/search?q=%ED%86%A0%EC%9D%B5+%EA%B5%90%EC%9E%AC", "url": ""},
-    "civil-interview-book": {"label": "공무원 면접 교재 보기", "search": "https://www.coupang.com/np/search?q=%EA%B3%B5%EB%AC%B4%EC%9B%90+%EB%A9%B4%EC%A0%91", "url": ""},
-    "cert-book":     {"label": "자격증 교재 보기",           "search": "https://www.coupang.com/np/search?q=%EC%9E%90%EA%B2%A9%EC%A6%9D+%EA%B5%90%EC%9E%AC", "url": ""}
+    "suit-men": {
+      "label": "남자 면접 정장 보기",
+      "search": "https://www.coupang.com/np/search?q=%EB%82%A8%EC%9E%90+%EB%A9%B4%EC%A0%91+%EC%A0%95%EC%9E%A5",
+      "url": "https://link.coupang.com/a/iD9tuuQuuO"
+    },
+    "suit-women": {
+      "label": "여자 면접 정장 보기",
+      "search": "https://www.coupang.com/np/search?q=%EC%97%AC%EC%9E%90+%EB%A9%B4%EC%A0%91+%EC%A0%95%EC%9E%A5",
+      "url": "https://link.coupang.com/a/iD9uD8h2Ki"
+    },
+    "shirt": {
+      "label": "면접 셔츠·블라우스 보기",
+      "search": "https://www.coupang.com/np/search?q=%EB%A9%B4%EC%A0%91+%EC%85%94%EC%B8%A0",
+      "url": "https://link.coupang.com/a/iD9uRXCuU8"
+    },
+    "webcam": {
+      "label": "화상 면접용 웹캠 보기",
+      "search": "https://www.coupang.com/np/search?q=%EC%9B%B9%EC%BA%A0",
+      "url": "https://link.coupang.com/a/iD9u55hMtw"
+    },
+    "ring-light": {
+      "label": "화상 면접용 조명 보기",
+      "search": "https://www.coupang.com/np/search?q=%EB%A7%81%EB%9D%BC%EC%9D%B4%ED%8A%B8",
+      "url": "https://link.coupang.com/a/iD9vj2yIa4"
+    },
+    "aptitude-book": {
+      "label": "인적성(GSAT·SKCT) 문제집 보기",
+      "search": "https://www.coupang.com/np/search?q=%EC%9D%B8%EC%A0%81%EC%84%B1+%EB%AC%B8%EC%A0%9C%EC%A7%91",
+      "url": "https://link.coupang.com/a/iD9wR7qjmK"
+    },
+    "ncs-book": {
+      "label": "NCS 문제집 보기",
+      "search": "https://www.coupang.com/np/search?q=NCS+%EB%AC%B8%EC%A0%9C%EC%A7%91",
+      "url": "https://link.coupang.com/a/iD9w7C7h3k"
+    },
+    "toeic-book": {
+      "label": "토익 교재 보기",
+      "search": "https://www.coupang.com/np/search?q=%ED%86%A0%EC%9D%B5+%EA%B5%90%EC%9E%AC",
+      "url": "https://link.coupang.com/a/iD9xlOQwFw"
+    },
+    "civil-interview-book": {
+      "label": "공무원 면접 교재 보기",
+      "search": "https://www.coupang.com/np/search?q=%EA%B3%B5%EB%AC%B4%EC%9B%90+%EB%A9%B4%EC%A0%91",
+      "url": "https://link.coupang.com/a/iD9xzG2v2O"
+    },
+    "cert-book": {
+      "label": "자격증 교재 보기",
+      "search": "https://www.coupang.com/np/search?q=%EC%9E%90%EA%B2%A9%EC%A6%9D+%EA%B5%90%EC%9E%AC",
+      "url": "https://link.coupang.com/a/iD9xNzbINE"
+    }
   }
 }
