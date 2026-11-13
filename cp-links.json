@@ -1,5 +1,5 @@
 {
-  "_안내": "쿠팡 파트너스에서 각 search 주소로 '간편 링크 만들기'를 한 뒤, 나온 단축 링크(https://link.coupang.com/...)를 url에 붙여 넣으면 해당 글에 자동으로 표시됩니다. url이 비어 있으면 화면에 아무것도 나오지 않습니다.",
+  "_안내": "쿠팡 파트너스에서 각 search 주소로 '간편 링크 만들기'를 한 뒤, 나온 단축 링크(https://link.coupang.com/...)를 url에 붙여 넣으면 해당 글에 자동으로 표시됩니다. url이 비어 있으면 화면에 아무것도 나오지 않습니다. src가 linkprice인 항목은 링크프라이스 딥링크(bestmore.net/click.php, 어필리에이트 A100709938)입니다.",
   "items": {
     "suit-men": {
       "label": "남자 면접 정장 보기",
@@ -50,6 +50,26 @@
       "label": "자격증 교재 보기",
       "search": "https://www.coupang.com/np/search?q=%EC%9E%90%EA%B2%A9%EC%A6%9D+%EA%B5%90%EC%9E%AC",
       "url": "https://link.coupang.com/a/iD9xNzbINE"
+    },
+    "udemy-excel": {
+      "label": "실무 엑셀 강의 보기 (Udemy)",
+      "src": "linkprice",
+      "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3D%25EC%2597%2591%25EC%2585%2580%26lang%3Dko"
+    },
+    "udemy-sql": {
+      "label": "SQL·데이터 분석 강의 보기 (Udemy)",
+      "src": "linkprice",
+      "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DSQL%26lang%3Dko"
+    },
+    "udemy-python": {
+      "label": "파이썬 강의 보기 (Udemy)",
+      "src": "linkprice",
+      "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3D%25ED%258C%258C%25EC%259D%25B4%25EC%258D%25AC%26lang%3Dko"
+    },
+    "udemy-ai": {
+      "label": "ChatGPT·생성형 AI 활용 강의 보기 (Udemy)",
+      "src": "linkprice",
+      "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DChatGPT%26lang%3Dko"
     }
   }
 }
