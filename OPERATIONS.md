@@ -916,3 +916,9 @@ cd job3-site && cat OPERATIONS.md
 - 템플릿 버그: year-end-tax-preview 템플릿 articleSection이 "자소서"로 고정 → 브레드크럼과 다른 글 122개 일괄 수정, new_post.py가 CAT로 설정하도록 수정. 템플릿에 cp.js 태그 없음 → cp-box 쓰는 새 글은 </body> 앞에 추가 필요.
 - 신규 글 year-end-tax-simplified-service (마음관리): 간소화 개통 2025·2026 모두 1.15(각 2곳 이상), 2026 의료비 신고 1.17·확정 자료 1.20(3곳), 자료 45종(2곳). 2027 개통일 미발표 → 국세청 발표 시 업데이트 필요(PENDING). 키워드: 자동완성 "연말정산 간소화 서비스 기간/자료 조회 방법".
 - new_post.py 주의: 본문에 year-end-tax-preview 링크를 넣으면 슬러그 치환·잔여물 assert에 걸림 → placeholder로 넣고 빌드 후 되돌림. 본문 인라인 링크 삽입은 JSON-LD 안의 같은 문장을 먼저 잡을 수 있음 → answer-box 이후 위치에서 치환.
+
+## 2026-11-16 고단가·쿠팡 접근
+- GSC(11/13)상 상업형 검색어 노출은 거의 0 → 노출 상위 정보글에 맥락형 cp-box 부착: document-result-notification, interview-arrival-time, final-interview-pass-rate(정장·셔츠), after-final-offer-guide(첫 출근).
+- 신규 글 first-day-at-work-checklist (자동완성 "쿠팡 첫 출근 준비물", "첫 출근 준비물 노트북"). pytrends 429로 상대검색량 미측정.
+- cp-links.json에 아직 없는 키(laptop-bag, card-wallet, tumbler)는 cp.js가 자동으로 건너뜀 → 쿠팡 로그인 후 링크 생성해 추가하면 즉시 노출.
+- 쿠팡 수수료: 기본 3%는 복수 출처, 카테고리별 비율은 출처마다 달라 미기재.
