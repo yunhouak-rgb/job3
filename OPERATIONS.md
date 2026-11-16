@@ -924,3 +924,5 @@ cd job3-site && cat OPERATIONS.md
 - 쿠팡 수수료: 기본 3%는 복수 출처, 카테고리별 비율은 출처마다 달라 미기재.
 - 신규 글 interview-checklist-items(면접) · job-congratulation-gift(기업이해). 키워드 근거: 자동완성 "면접 준비물/면접 갈때 가방/면접 준비물 이력서", "취업 선물 추천/남자·여자·친구·부모님/볼펜". cp-box 키 interview-bag, interview-shoes, pen-gift는 미생성(쿠팡 링크 추가 시 자동 노출).
 - 2026-11-16 쿠팡 링크 6개 추가(간편 링크, lptag AF7602026 리다이렉트 확인): laptop-bag(노트북 가방), card-wallet(명함지갑), tumbler, interview-bag(서류가방), interview-shoes(면접 구두), pen-gift(각인 볼펜). 면접 복장·여름 면접 복장·정장 대여 박스에 구두·가방 추가.
+- 2026-11-16 고가 전자제품: 신규 글 job-seeker-laptop-guide(취준생 노트북 추천 기준, 특정 모델·가격 없음). 키워드: 자동완성 "취준생 노트북 추천/사무용 노트북 추천 2026/개발자 노트북 추천 2026/화상면접 노트북". GSAT 온라인 PC 응시·예비소집은 연합뉴스·삼성뉴스룸 교차, 스마트폰 원격 감독은 2020 보도(한경·데일리안)로 시점 명시. 맥 응시 가능 여부는 단일 출처라 단정 안 함.
+- 쿠팡 링크 6개 추가: laptop-office, laptop-light, laptop-dev, monitor(사무용 모니터 — "모니터 24인치"는 생성 실패), laptop-stand, keyboard-mouse. 화상면접·AI면접 글 박스에 거치대·사무용 노트북 추가. 총 26개 항목.

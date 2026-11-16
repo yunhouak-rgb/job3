@@ -100,6 +100,36 @@
       "label": "각인 볼펜 보기",
       "search": "https://www.coupang.com/np/search?q=%EA%B0%81%EC%9D%B8+%EB%B3%BC%ED%8E%9C",
       "url": "https://link.coupang.com/a/iI2E6uj4Xk"
+    },
+    "laptop-office": {
+      "label": "사무용 노트북 보기",
+      "search": "https://www.coupang.com/np/search?q=%EC%82%AC%EB%AC%B4%EC%9A%A9+%EB%85%B8%ED%8A%B8%EB%B6%81",
+      "url": "https://link.coupang.com/a/iI3O1wXRNQ"
+    },
+    "laptop-light": {
+      "label": "가벼운 노트북 보기",
+      "search": "https://www.coupang.com/np/search?q=%EA%B0%80%EB%B2%BC%EC%9A%B4+%EB%85%B8%ED%8A%B8%EB%B6%81",
+      "url": "https://link.coupang.com/a/iI3PetjLbg"
+    },
+    "laptop-dev": {
+      "label": "개발자 노트북 보기",
+      "search": "https://www.coupang.com/np/search?q=%EA%B0%9C%EB%B0%9C%EC%9E%90+%EB%85%B8%ED%8A%B8%EB%B6%81",
+      "url": "https://link.coupang.com/a/iI3QW9Nj64"
+    },
+    "monitor": {
+      "label": "사무용 모니터 보기",
+      "search": "https://www.coupang.com/np/search?q=%EC%82%AC%EB%AC%B4%EC%9A%A9+%EB%AA%A8%EB%8B%88%ED%84%B0",
+      "url": "https://link.coupang.com/a/iI3SbbTY6K"
+    },
+    "laptop-stand": {
+      "label": "노트북 거치대 보기",
+      "search": "https://www.coupang.com/np/search?q=%EB%85%B8%ED%8A%B8%EB%B6%81+%EA%B1%B0%EC%B9%98%EB%8C%80",
+      "url": "https://link.coupang.com/a/iI3PPtP5xc"
+    },
+    "keyboard-mouse": {
+      "label": "무선 키보드·마우스 보기",
+      "search": "https://www.coupang.com/np/search?q=%EB%AC%B4%EC%84%A0+%ED%82%A4%EB%B3%B4%EB%93%9C+%EB%A7%88%EC%9A%B0%EC%8A%A4+%EC%84%B8%ED%8A%B8",
+      "url": "https://link.coupang.com/a/iI3P3bG6Ym"
     }
   }
 }

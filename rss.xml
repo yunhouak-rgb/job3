@@ -6,7 +6,15 @@
     <atom:link href="https://jobok.co.kr/rss.xml" rel="self" type="application/rss+xml" />
     <description>채용 실무 관점으로 만든 취업 준비·퇴사 절차 가이드와 무료 계산 도구</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 16 Nov 2026 13:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 21:00:00 +0900</lastBuildDate>
+    <item>
+      <title>취준생 노트북 추천 기준 2026 (사무용·화상면접·온라인 인적성·개발자 용도별)</title>
+      <link>https://jobok.co.kr/blog/job-seeker-laptop-guide</link>
+      <guid isPermaLink="true">https://jobok.co.kr/blog/job-seeker-laptop-guide</guid>
+      <category>기업이해</category>
+      <description>취준생 노트북은 고사양보다 용도가 기준입니다. 자소서·화상면접용 사무용 노트북, 온라인 인적성 응시 환경, 개발자·코딩테스트용 사양, 신입사원이 노트북을 사기 전에 확인할 것까지 정리했습니다.</description>
+      <pubDate>Mon, 16 Nov 2026 21:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>취업 선물 추천 기준 (남자·여자·친구·부모님 · 실패 없는 고르는 법)</title>
       <link>https://jobok.co.kr/blog/job-congratulation-gift</link>
