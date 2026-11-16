@@ -97,8 +97,11 @@
 #rbPaper .rb-item__per{font-size:.82rem;color:#888;font-weight:300;}
 #rbPaper .rb-item__d{font-size:.85rem;color:#444;font-weight:300;line-height:1.7;margin-top:4px;white-space:pre-line;}
 @media print{
-body>*{display:none !important;}
-#rbPrintWrap{display:block !important;position:absolute;left:0;top:0;width:100%;}
+body>*:not(main){display:none !important;}
+main>*:not(.container){display:none !important;}
+main .container>*:not(#rbPrintWrap){display:none !important;}
+main,main .container{padding:0 !important;margin:0 !important;max-width:none !important;}
+#rbPrintWrap{display:block !important;}
 #rbPaper{border:none;border-radius:0;padding:0;}
 @page{size:A4;margin:16mm;}
 }</style>
@@ -299,34 +302,7 @@ body>*{display:none !important;}
 </div>
   <a href="/tools/burnout" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 번아웃 자가진단</a>
 </div>
-</main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <div>
-        <div class="footer__brand">좋은 취업</div>
-        <div class="footer__tagline">취업 준비의 흐름을 잡아주는 콘텐츠 사이트</div>
-      <a href="/blog/employment-certificate-guide" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">📄 퇴직증명서 발급</a>
-</div></div>
-  </div>
-</main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <div>
-        <div class="footer__brand">좋은 취업</div>
-        <div class="footer__tagline">취업 준비의 흐름을 잡아주는 콘텐츠 사이트</div>
-      </div></div>
-  </div>
-</main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <div>
-        <div class="footer__brand">좋은 취업</div>
-        <div class="footer__tagline">취업 준비의 흐름을 잡아주는 콘텐츠 사이트</div>
-      </div></div>
-  </div>
+<div class="container" style="margin:0 auto 48px;"><div style="font-size:.85rem;font-weight:700;color:var(--text-sub);margin-bottom:8px;">함께 쓰면 좋은 도구</div><a href="/blog/employment-certificate-guide" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">📄 퇴직증명서 발급</a></div>
 </main>
 <footer class="footer">
   <div class="container">

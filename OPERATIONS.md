@@ -927,3 +927,7 @@ cd job3-site && cat OPERATIONS.md
 - 2026-11-16 고가 전자제품: 신규 글 job-seeker-laptop-guide(취준생 노트북 추천 기준, 특정 모델·가격 없음). 키워드: 자동완성 "취준생 노트북 추천/사무용 노트북 추천 2026/개발자 노트북 추천 2026/화상면접 노트북". GSAT 온라인 PC 응시·예비소집은 연합뉴스·삼성뉴스룸 교차, 스마트폰 원격 감독은 2020 보도(한경·데일리안)로 시점 명시. 맥 응시 가능 여부는 단일 출처라 단정 안 함.
 - 쿠팡 링크 6개 추가: laptop-office, laptop-light, laptop-dev, monitor(사무용 모니터 — "모니터 24인치"는 생성 실패), laptop-stand, keyboard-mouse. 화상면접·AI면접 글 박스에 거치대·사무용 노트북 추가. 총 26개 항목.
 - 2026-11-16 면접 클러스터 고단가화: 면접 허브(interview.html)에 걸린 글 56편 전부 + 면접 도구(daily-question, interview-questions, interview-question-picker, interview 허브, 고유입 면접 글)에 박스. 기본 키 suit-men,suit-women,laptop-office,interview-shoes,interview-bag(비싼 순). 기존 셔츠 위주 박스(서류 결과·최종면접·도착 시간)도 이 구성으로 교체. FAQ h2 직전에 삽입. 주의: articleSection으로 면접 글 식별 불가(2편만 매칭) → 허브 링크 목록 기준.
+
+## 2026-11-17 도구 버그 수정 (네이버 상위 도구)
+- tools/resume-builder(이력서 pdf, 네이버 상위)와 career-description: 인쇄 CSS가 body>*를 숨겨 미리보기(main 안)까지 숨김 → PDF 저장 시 빈 페이지. main/.container 경로만 남기는 방식으로 수정, Playwright PDF로 1쪽·내용 출력 확인.
+- 같은 두 파일 + minimum-wage: </main>·footer 중복(3~4회) → 관련 도구 칩을 본문으로 옮기고 footer 1개로 정리.
