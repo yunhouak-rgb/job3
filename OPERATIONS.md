@@ -922,3 +922,4 @@ cd job3-site && cat OPERATIONS.md
 - 신규 글 first-day-at-work-checklist (자동완성 "쿠팡 첫 출근 준비물", "첫 출근 준비물 노트북"). pytrends 429로 상대검색량 미측정.
 - cp-links.json에 아직 없는 키(laptop-bag, card-wallet, tumbler)는 cp.js가 자동으로 건너뜀 → 쿠팡 로그인 후 링크 생성해 추가하면 즉시 노출.
 - 쿠팡 수수료: 기본 3%는 복수 출처, 카테고리별 비율은 출처마다 달라 미기재.
+- 신규 글 interview-checklist-items(면접) · job-congratulation-gift(기업이해). 키워드 근거: 자동완성 "면접 준비물/면접 갈때 가방/면접 준비물 이력서", "취업 선물 추천/남자·여자·친구·부모님/볼펜". cp-box 키 interview-bag, interview-shoes, pen-gift는 미생성(쿠팡 링크 추가 시 자동 노출).
