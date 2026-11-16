@@ -933,3 +933,4 @@ cd job3-site && cat OPERATIONS.md
 - 같은 두 파일 + minimum-wage: </main>·footer 중복(3~4회) → 관련 도구 칩을 본문으로 옮기고 footer 1개로 정리.
 - 신규 도구 /tools/resignation-letter(사직서 양식), /tools/employment-certificate(재직·경력증명서 탭 전환). resume-builder 셸 재사용, 미리보기·PDF(1쪽 확인)·워드(.doc, HTML Blob) 저장. 빌더 build_docs.py. 근거: 근로기준법 39조(korea.legal·뉴시스·bizforms), 시행령 19조 30일·3년(bizforms·braindetox), 민법 660조(korea.legal·braindetox). 키워드: 자동완성 "사직서/경력증명서/재직증명서 양식 + 다운로드·pdf·word·hwp".
 - 주의: JS 문자열에 <head>·</html> 리터럴 있으면 audit이 구조 깨짐으로 판정 → 문자열 분리.
+- 2026-11-17 도구 추가: /tools/cover-letter-form(자기소개서 양식, 4항목·6개까지, 항목별 글자수 공백 포함/제외, PDF·워드), /tools/mbti-job(16유형 직무 추천, 참고용·상표 고지, 공식 검사 아님). career-description에 워드 저장 버튼 + 제목 "양식 무료 다운로드". 빌더: docshell.py(공통 셸, doc=False로 문서 없는 도구), build_more.py.
