@@ -931,3 +931,5 @@ cd job3-site && cat OPERATIONS.md
 ## 2026-11-17 도구 버그 수정 (네이버 상위 도구)
 - tools/resume-builder(이력서 pdf, 네이버 상위)와 career-description: 인쇄 CSS가 body>*를 숨겨 미리보기(main 안)까지 숨김 → PDF 저장 시 빈 페이지. main/.container 경로만 남기는 방식으로 수정, Playwright PDF로 1쪽·내용 출력 확인.
 - 같은 두 파일 + minimum-wage: </main>·footer 중복(3~4회) → 관련 도구 칩을 본문으로 옮기고 footer 1개로 정리.
+- 신규 도구 /tools/resignation-letter(사직서 양식), /tools/employment-certificate(재직·경력증명서 탭 전환). resume-builder 셸 재사용, 미리보기·PDF(1쪽 확인)·워드(.doc, HTML Blob) 저장. 빌더 build_docs.py. 근거: 근로기준법 39조(korea.legal·뉴시스·bizforms), 시행령 19조 30일·3년(bizforms·braindetox), 민법 660조(korea.legal·braindetox). 키워드: 자동완성 "사직서/경력증명서/재직증명서 양식 + 다운로드·pdf·word·hwp".
+- 주의: JS 문자열에 <head>·</html> 리터럴 있으면 audit이 구조 깨짐으로 판정 → 문자열 분리.

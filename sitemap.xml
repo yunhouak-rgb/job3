@@ -751,6 +751,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jobok.co.kr/tools/resignation-letter</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jobok.co.kr/tools/employment-certificate</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jobok.co.kr/ncs</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
