@@ -70,6 +70,36 @@
       "label": "ChatGPT·생성형 AI 활용 강의 보기 (Udemy)",
       "src": "linkprice",
       "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DChatGPT%26lang%3Dko"
+    },
+    "laptop-bag": {
+      "label": "노트북 가방 보기",
+      "search": "https://www.coupang.com/np/search?q=%EB%85%B8%ED%8A%B8%EB%B6%81+%EA%B0%80%EB%B0%A9",
+      "url": "https://link.coupang.com/a/iI2BDarwu4"
+    },
+    "card-wallet": {
+      "label": "명함지갑 보기",
+      "search": "https://www.coupang.com/np/search?q=%EB%AA%85%ED%95%A8%EC%A7%80%EA%B0%91",
+      "url": "https://link.coupang.com/a/iI2DkhnvcO"
+    },
+    "tumbler": {
+      "label": "텀블러 보기",
+      "search": "https://www.coupang.com/np/search?q=%ED%85%80%EB%B8%94%EB%9F%AC",
+      "url": "https://link.coupang.com/a/iI2EwugJWe"
+    },
+    "interview-bag": {
+      "label": "면접용 서류가방 보기",
+      "search": "https://www.coupang.com/np/search?q=%EC%84%9C%EB%A5%98%EA%B0%80%EB%B0%A9",
+      "url": "https://link.coupang.com/a/iI2EH57tNQ"
+    },
+    "interview-shoes": {
+      "label": "면접 구두 보기",
+      "search": "https://www.coupang.com/np/search?q=%EB%A9%B4%EC%A0%91+%EA%B5%AC%EB%91%90",
+      "url": "https://link.coupang.com/a/iI2EUdb5Yy"
+    },
+    "pen-gift": {
+      "label": "각인 볼펜 보기",
+      "search": "https://www.coupang.com/np/search?q=%EA%B0%81%EC%9D%B8+%EB%B3%BC%ED%8E%9C",
+      "url": "https://link.coupang.com/a/iI2E6uj4Xk"
     }
   }
 }
