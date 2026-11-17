@@ -940,3 +940,9 @@ cd job3-site && cat OPERATIONS.md
 - aptitude.html 결과 화면에 '약점 진단' 카드: 영역별 정답률 기록(localStorage apt-rec, 영역 풀 때마다 갱신)·가장 약한 영역(무료) + 잠금 리포트(유료).
 - 유료(AES-GCM 암호화, PBKDF2 15만 회, 코드 원문은 운영자 보관·저장소에 없음): 대기업형/NCS형 4주 계획(약점 영역 자동 반영), 영역별 오답 전략, 추가 40제(영역별 10, 계산 assert 검증·추리 참거짓 문제는 해 유일성 brute-force 확인, 정답 위치 11/10/7/12), 시험 당일 규칙. 빌더 build_aptpaid.py + apt_diag.js.
 - 판매 상태: APT_BUY_URL 비어 있음 → 사전예약 모드(4,900원 노출, GA apt_reserve_open/confirm/decline/reason, apt_complete, apt_unlock, apt_buy_click). 래피드 상품 URL 받으면 APT_BUY_URL만 넣으면 구매 버튼으로 전환. 전달 링크: /aptitude?code=코드
+
+## 2026-11-17 전자책(Ge7M-) 전면 제거 — 운영자 지시("안 팔린다, 다 빼줘")
+- 본문 CTA(inline-book-cta) 394개, 플로팅 버튼(#ebookFloat) 410개, 헤더·메뉴·푸터 /ebook 링크 1,190개, 홈 히어로 버튼(→ '무료 취업 도구 보기' /tools)·홈 전자책 섹션, 진단 결과 버튼, 도구 3종(checklist·star·keyword) 결과 안내의 전자책 문구·링크 삭제.
+- ebook.html 삭제 + _redirects `/ebook → /tools 301`, sitemap 제거. 소개·약관·개인정보·편집정책의 '전자책 유일 수익' 문구를 유료 디지털 상품·제휴 링크 기준으로 정정.
+- 변경 413파일 div 균형 동일 확인. 래피드 다른 상품(사주 j7D20, 본캐 SpcgC)은 유지.
+- 주의: 운영 지침의 BOOK_CTA 삽입 단계는 이제 쓰지 않음.

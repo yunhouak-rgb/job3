@@ -76,7 +76,6 @@
       <a href="/cover-letter">자소서</a>
       <a href="/company-analysis">기업이해</a>
       <a href="/mind-care">마음관리</a>
-      <a href="/ebook" class="nav-book">전자책</a>
       <button class="nav-menu-btn" onclick="toggleMenu()" id="menuBtn">☰ 메뉴</button>
     </nav>
   </div>
@@ -87,7 +86,6 @@
   <a href="/cover-letter">자소서</a>
   <a href="/company-analysis">기업이해</a>
   <a href="/mind-care">마음관리</a>
-  <a href="/ebook" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_page_click',{source:'footer'});">전자책 · 취업 근육 키우기</a>
 </div>
 <main>
   <div class="container">
@@ -178,12 +176,7 @@
 <h3>Q. STAR로 쓸 만한 경험이 없으면 어떻게 하나요?</h3>
 <p>아르바이트, 조별과제, 동아리, 봉사도 모두 소재가 됩니다. 사건의 크기가 아니라 그 안에서의 판단과 행동이 평가 대상입니다. 경험 하나에서 가장 어려웠던 순간을 찾는 것부터 시작하세요.</p>
 </div>
-<div class="inline-book-cta">
-  <div class="inline-book-cta__label">전자책</div>
-  <div class="inline-book-cta__title">더 체계적으로 준비하고 싶다면</div>
-  <div class="inline-book-cta__desc">채용절벽을 뚫는 취업 근육 키우기 — 전략 수립부터 자소서 재구성, 면접 답변 구조까지. 워크시트·체크리스트·채용 세미나 무료 초대 포함.</div>
-  <a href="https://www.latpeed.com/products/Ge7M-" target="_blank" rel="noopener" class="btn btn--gold btn--lg" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{source:'blog'});">전자책 자세히 보기</a>
-</div></div>
+</div>
   </div>
 </main>
 <footer class="footer">
@@ -196,7 +189,7 @@
       <nav class="footer__nav">
         <a href="/">홈</a><a href="/diagnosis">무료진단</a><a href="/interview">면접</a>
         <a href="/cover-letter">자소서</a><a href="/company-analysis">기업이해</a>
-        <a href="/mind-care">마음관리</a><a href="/ebook">전자책</a><a href="/contact">상담문의</a><a href="/editorial-policy">편집 원칙</a><a href="/privacy">개인정보처리방침</a><a href="/terms">이용약관</a>
+        <a href="/mind-care">마음관리</a><a href="/contact">상담문의</a><a href="/editorial-policy">편집 원칙</a><a href="/privacy">개인정보처리방침</a><a href="/terms">이용약관</a>
       </nav>
     </div>
     <div class="footer__copy">© 2026 좋은 취업 · yuncontest@naver.com</div>
@@ -228,8 +221,8 @@ function starNext(s,t,a,r){
        l:[['/tools/keyword','표현 점검'],['/blog/cover-letter-experience','숫자 찾는 법']]};
   } else {
     g={t:'이 경험을 문항에 맞춰 쓸 차례',
-       d:'정리된 문장이 그대로 자소서가 되지는 않습니다. <b>문항이 묻는 것에 맞춰 강조점을 바꿔야</b> 합니다. 같은 경험이라도 협업 문항과 도전 문항에서 부각할 지점이 다릅니다. 전자책에 문항별 전환 예시가 정리되어 있습니다.',
-       l:[['/tools/checklist','제출 전 점검'],['/ebook','전자책 살펴보기',1]]};
+       d:'정리된 문장이 그대로 자소서가 되지는 않습니다. <b>문항이 묻는 것에 맞춰 강조점을 바꿔야</b> 합니다. 같은 경험이라도 협업 문항과 도전 문항에서 부각할 지점이 다릅니다.',
+       l:[['/tools/checklist','제출 전 점검']]};
   }
   return nxBox('star_next_click',g);
 }
@@ -263,10 +256,6 @@ function copyResult(){
 }
 </script>
 <!-- 카카오 문의 플로팅 버튼 -->
-<a href="https://www.latpeed.com/products/Ge7M-" target="_blank" rel="noopener" id="ebookFloat" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{'location':'float'});" aria-label="전자책 보기">
-  <span class="ef-icon">📘</span>
-  <span class="ef-text">전자책 자세히 보기</span>
-</a>
 <a href="https://open.kakao.com/o/sTpjuoQh" target="_blank" rel="noopener" id="kakaoFloat" onclick="gtag&&gtag('event','contact_kakao_click',{'location':'float'});" aria-label="카카오톡 문의">
   <span class="kf-icon">💬</span>
   <span class="kf-text">자소서·취업 상담</span>

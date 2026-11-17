@@ -79,7 +79,6 @@
       <a href="/cover-letter">자소서</a>
       <a href="/company-analysis">기업이해</a>
       <a href="/mind-care">마음관리</a>
-      <a href="/ebook" class="nav-book">전자책</a>
       <button class="nav-menu-btn" onclick="toggleMenu()" id="menuBtn">☰ 메뉴</button>
     </nav>
   </div>
@@ -90,7 +89,6 @@
   <a href="/cover-letter">자소서</a>
   <a href="/company-analysis">기업이해</a>
   <a href="/mind-care">마음관리</a>
-  <a href="/ebook" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_page_click',{source:'footer'});">전자책 · 취업 근육 키우기</a>
 </div>
 <main>
   <div class="container" style="max-width:680px;">
@@ -262,7 +260,7 @@
       <nav class="footer__nav">
         <a href="/">홈</a><a href="/diagnosis">무료진단</a><a href="/interview">면접</a>
         <a href="/cover-letter">자소서</a><a href="/company-analysis">기업이해</a>
-        <a href="/mind-care">마음관리</a><a href="/ebook">전자책</a><a href="/contact">상담문의</a><a href="/editorial-policy">편집 원칙</a><a href="/privacy">개인정보처리방침</a><a href="/terms">이용약관</a>
+        <a href="/mind-care">마음관리</a><a href="/contact">상담문의</a><a href="/editorial-policy">편집 원칙</a><a href="/privacy">개인정보처리방침</a><a href="/terms">이용약관</a>
       </nav>
     </div>
     <div class="footer__copy">© 2026 좋은 취업 · yuncontest@naver.com</div>
@@ -316,10 +314,6 @@ function dqStartTimer(){
 function dqResetTimer(){ clearInterval(dqInterval); dqInterval=null; dqRemaining=60; document.getElementById('dqTimer').textContent='1:00'; document.getElementById('dqTimer').style.color='var(--gold)'; document.getElementById('dqStart').textContent='연습 시작'; }
 </script>
 <!-- 카카오 문의 플로팅 버튼 -->
-<a href="https://www.latpeed.com/products/Ge7M-" target="_blank" rel="noopener" id="ebookFloat" onclick="if(typeof gtag!=='undefined')gtag('event','ebook_buy_click',{'location':'float'});" aria-label="전자책 보기">
-  <span class="ef-icon">📘</span>
-  <span class="ef-text">전자책 자세히 보기</span>
-</a>
 <a href="https://open.kakao.com/o/sTpjuoQh" target="_blank" rel="noopener" id="kakaoFloat" onclick="gtag&&gtag('event','contact_kakao_click',{'location':'float'});" aria-label="카카오톡 문의">
   <span class="kf-icon">💬</span>
   <span class="kf-text">자소서·취업 상담</span>
