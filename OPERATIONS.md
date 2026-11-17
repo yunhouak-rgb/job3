@@ -935,3 +935,8 @@ cd job3-site && cat OPERATIONS.md
 - 주의: JS 문자열에 <head>·</html> 리터럴 있으면 audit이 구조 깨짐으로 판정 → 문자열 분리.
 - 2026-11-17 도구 추가: /tools/cover-letter-form(자기소개서 양식, 4항목·6개까지, 항목별 글자수 공백 포함/제외, PDF·워드), /tools/mbti-job(16유형 직무 추천, 참고용·상표 고지, 공식 검사 아님). career-description에 워드 저장 버튼 + 제목 "양식 무료 다운로드". 빌더: docshell.py(공통 셸, doc=False로 문서 없는 도구), build_more.py.
 - 2026-11-17 신규 도구 /tools/career-interest-test "나에게 맞는 직업 찾기 테스트": 홀랜드 RIASEC 6유형×6활동=36문항(5점), 흥미 코드 2자리·육각형 SVG·유형별 직업·이웃/반대 해석·동점/평평 안내. 간이 진단·공인검사 아님 명시, 커리어넷 안내(career.go.kr). 키워드: 자동완성 "나에게 맞는 직업 테스트(무료)", "직업 적성검사 무료", "홀랜드 검사 무료/유형", "직업흥미검사". 빌더 build_riasec.py. 직무 추천 테스트(job-test, 회사 내 8직무)와 역할 분리.
+
+## 2026-11-17 인적성 유료 상품: 약점 진단 리포트
+- aptitude.html 결과 화면에 '약점 진단' 카드: 영역별 정답률 기록(localStorage apt-rec, 영역 풀 때마다 갱신)·가장 약한 영역(무료) + 잠금 리포트(유료).
+- 유료(AES-GCM 암호화, PBKDF2 15만 회, 코드 원문은 운영자 보관·저장소에 없음): 대기업형/NCS형 4주 계획(약점 영역 자동 반영), 영역별 오답 전략, 추가 40제(영역별 10, 계산 assert 검증·추리 참거짓 문제는 해 유일성 brute-force 확인, 정답 위치 11/10/7/12), 시험 당일 규칙. 빌더 build_aptpaid.py + apt_diag.js.
+- 판매 상태: APT_BUY_URL 비어 있음 → 사전예약 모드(4,900원 노출, GA apt_reserve_open/confirm/decline/reason, apt_complete, apt_unlock, apt_buy_click). 래피드 상품 URL 받으면 APT_BUY_URL만 넣으면 구매 버튼으로 전환. 전달 링크: /aptitude?code=코드
