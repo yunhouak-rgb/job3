@@ -946,3 +946,4 @@ cd job3-site && cat OPERATIONS.md
 - ebook.html 삭제 + _redirects `/ebook → /tools 301`, sitemap 제거. 소개·약관·개인정보·편집정책의 '전자책 유일 수익' 문구를 유료 디지털 상품·제휴 링크 기준으로 정정.
 - 변경 413파일 div 균형 동일 확인. 래피드 다른 상품(사주 j7D20, 본캐 SpcgC)은 유지.
 - 주의: 운영 지침의 BOOK_CTA 삽입 단계는 이제 쓰지 않음.
+- 2026-11-17 직장인 서류 양식 도구 4종(네이버 '양식' 수요 공략): /tools/labor-contract(근로계약서, 정규직·기간제 탭, 최저임금 10,320원 미달 경고), /tools/incident-report(시말서·경위서 탭), /tools/handover(인수인계서, 업무 표 12행), /tools/leave-request(휴가신청서, 주말 제외 일수·결재란). 근거: 근로기준법 17조·19조·114조(korea.legal·bizforms·bznav·shiftee), 기간제법 17조·24조(korea.legal·bznav·bizforms). 키워드: 자동완성 각 '양식 + 다운로드/hwp/word/pdf/엑셀'. 빌더 build_forms.py.
