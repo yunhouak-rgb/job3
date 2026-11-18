@@ -948,3 +948,11 @@ cd job3-site && cat OPERATIONS.md
 - 주의: 운영 지침의 BOOK_CTA 삽입 단계는 이제 쓰지 않음.
 - 2026-11-17 직장인 서류 양식 도구 4종(네이버 '양식' 수요 공략): /tools/labor-contract(근로계약서, 정규직·기간제 탭, 최저임금 10,320원 미달 경고), /tools/incident-report(시말서·경위서 탭), /tools/handover(인수인계서, 업무 표 12행), /tools/leave-request(휴가신청서, 주말 제외 일수·결재란). 근거: 근로기준법 17조·19조·114조(korea.legal·bizforms·bznav·shiftee), 기간제법 17조·24조(korea.legal·bznav·bizforms). 키워드: 자동완성 각 '양식 + 다운로드/hwp/word/pdf/엑셀'. 빌더 build_forms.py.
 - 2026-11-18 서류 양식 4종 추가: /tools/payslip(급여·임금명세서, 시행령 27조의2 기재사항, 합계 자동 — 근거 고용노동부 공지·korea.legal·bizforms·shiftee·노컷), /tools/work-log(업무일지·주간업무보고 탭), /tools/meeting-minutes(회의록), /tools/trip-report(출장보고서, 경비 합계). 서류 양식 13종 전부에 '다른 서류 양식' 상호 링크 블록(.form-hub) 삽입. 빌더 build_forms2.py.
+
+## 2026-11-18 기존 콘텐츠 정비 (정확도·최신성·제목)
+- 수치 일관성 스캔: 최저임금(10,320/10,700)·4대보험 요율(4.75/3.595/13.14/0.9)·실업급여 2026 상한 68,100·하한 66,048 — 전 글 일치, 옛 값은 '변화' 비교 맥락만.
+- 시즌 지난 페이지 5개 제목·설명 갱신 + 상단 '2026-11-18 업데이트' 박스(2026 상·하반기 삼성 실제 일정 표, 2027 상반기 미발표 명시): company/samsung("삼성전자 채용" 202노출·순위12·클릭0), gsat-2026-h2-roadmap, job-trend-2026-hiring-schedule, job-trend-2026-second-half, schedule-2026-h2. 근거: 삼성 뉴스룸 3.9·4.26·9.7·10.25, 뉴시스 3.9, 경향 4.26 (상반기 3/10~17 접수·4/25~26 GSAT·5월 면접 / 하반기 9/8~15·10/24~25·11월).
+- GSC 쿼리 기반 제목: daily-question("면접 예상 질문 100개 답변 모음…"), reapply-after-rejection(자소서 다시 쓰는 법). 옛 제목 참조 11파일 동기화.
+- 정확도: company-analysis-framework 4P 정의 불일치(Progress vs Problem) 통일, interview-last-words-examples '예시 10개'인데 9개 → 1개 추가·h2 번호 오류 제거.
+- meta description 95자 초과 17건 단축, sitemap lastmod↔dateModified 불일치 17건 동기화.
+- 다음: 2027 연도 전환(12월 말~1월 초) — 제목에 '2026' 들어간 상시 글 일괄 점검 필요.
