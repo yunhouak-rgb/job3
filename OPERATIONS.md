@@ -956,3 +956,13 @@ cd job3-site && cat OPERATIONS.md
 - 정확도: company-analysis-framework 4P 정의 불일치(Progress vs Problem) 통일, interview-last-words-examples '예시 10개'인데 9개 → 1개 추가·h2 번호 오류 제거.
 - meta description 95자 초과 17건 단축, sitemap lastmod↔dateModified 불일치 17건 동기화.
 - 다음: 2027 연도 전환(12월 말~1월 초) — 제목에 '2026' 들어간 상시 글 일괄 점검 필요.
+
+### 2026-11-18 (3) — SEO 고도화 (마케팅 스킬 seo-audit·ai-seo 기준)
+- 읽은 스킬: marketingskills seo-audit(기술·온페이지 점검 항목), ai-seo(질문형 소제목·첫 문단 직접 답·최신성 표시·정의 블록). 외부 스크립트 미실행.
+- 기술 점검(자체 스캔 418페이지): canonical·H1·og:image·사이트맵 누락/404·깨진 링크·title/desc 중복 모두 0. robots.txt AI 봇 허용, WebSite·Organization 스키마·llms.txt 기존 확인.
+- FAQ 질문 자동생성 오류 147개 수정(119파일, 본문 h3+FAQPage 스키마 동시): "~다는 무엇인가요?", "~이란은", "~할까는", "유형별은 어떻게 하나요?" 등 → 자연 질문형. 재발 방지: FAQ를 H2 제목+"는 무엇인가요?"로 만들지 말 것.
+- 화면 '업데이트' 날짜 없던 45편에 기존 dateModified 표시(날짜 새로 올리지 않음).
+- 질문형 H2: 클릭 발생 상위 16편 55개 소제목을 검색 질문형으로 교체(목차 동기화). 질문형 비율 19→21%.
+- 내부링크 3곳 미만 6편에 관련 글 링크 각 3개 추가. 숫자 약속 12편 직접 세어 .audit-verified.json 등록.
+- '채용 jd'(GSC 11/13 노출 143·순위 36) → job-analysis에 정의 블록 "채용 JD란? (직무기술서 뜻)" 추가.
+- 감사 결과 치명·경고 0. 남은 것: 본문 도표 없는 글 322편, 38자 초과 제목 47개(변형어 포함 의도라 보류). 재측정: 12/2 GSC 내보내기로 FAQ·H2 교체 페이지 CTR 비교.
