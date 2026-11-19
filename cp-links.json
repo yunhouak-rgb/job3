@@ -1,135 +1,187 @@
 {
-  "_안내": "쿠팡 파트너스에서 각 search 주소로 '간편 링크 만들기'를 한 뒤, 나온 단축 링크(https://link.coupang.com/...)를 url에 붙여 넣으면 해당 글에 자동으로 표시됩니다. url이 비어 있으면 화면에 아무것도 나오지 않습니다. src가 linkprice인 항목은 링크프라이스 딥링크(bestmore.net/click.php, 어필리에이트 A100709938)입니다.",
-  "items": {
-    "suit-men": {
-      "label": "남자 면접 정장 보기",
-      "search": "https://www.coupang.com/np/search?q=%EB%82%A8%EC%9E%90+%EB%A9%B4%EC%A0%91+%EC%A0%95%EC%9E%A5",
-      "url": "https://link.coupang.com/a/iD9tuuQuuO"
-    },
-    "suit-women": {
-      "label": "여자 면접 정장 보기",
-      "search": "https://www.coupang.com/np/search?q=%EC%97%AC%EC%9E%90+%EB%A9%B4%EC%A0%91+%EC%A0%95%EC%9E%A5",
-      "url": "https://link.coupang.com/a/iD9uD8h2Ki"
-    },
-    "shirt": {
-      "label": "면접 셔츠·블라우스 보기",
-      "search": "https://www.coupang.com/np/search?q=%EB%A9%B4%EC%A0%91+%EC%85%94%EC%B8%A0",
-      "url": "https://link.coupang.com/a/iD9uRXCuU8"
-    },
-    "webcam": {
-      "label": "화상 면접용 웹캠 보기",
-      "search": "https://www.coupang.com/np/search?q=%EC%9B%B9%EC%BA%A0",
-      "url": "https://link.coupang.com/a/iD9u55hMtw"
-    },
-    "ring-light": {
-      "label": "화상 면접용 조명 보기",
-      "search": "https://www.coupang.com/np/search?q=%EB%A7%81%EB%9D%BC%EC%9D%B4%ED%8A%B8",
-      "url": "https://link.coupang.com/a/iD9vj2yIa4"
-    },
-    "aptitude-book": {
-      "label": "인적성(GSAT·SKCT) 문제집 보기",
-      "search": "https://www.coupang.com/np/search?q=%EC%9D%B8%EC%A0%81%EC%84%B1+%EB%AC%B8%EC%A0%9C%EC%A7%91",
-      "url": "https://link.coupang.com/a/iD9wR7qjmK"
-    },
-    "ncs-book": {
-      "label": "NCS 문제집 보기",
-      "search": "https://www.coupang.com/np/search?q=NCS+%EB%AC%B8%EC%A0%9C%EC%A7%91",
-      "url": "https://link.coupang.com/a/iD9w7C7h3k"
-    },
-    "toeic-book": {
-      "label": "토익 교재 보기",
-      "search": "https://www.coupang.com/np/search?q=%ED%86%A0%EC%9D%B5+%EA%B5%90%EC%9E%AC",
-      "url": "https://link.coupang.com/a/iD9xlOQwFw"
-    },
-    "civil-interview-book": {
-      "label": "공무원 면접 교재 보기",
-      "search": "https://www.coupang.com/np/search?q=%EA%B3%B5%EB%AC%B4%EC%9B%90+%EB%A9%B4%EC%A0%91",
-      "url": "https://link.coupang.com/a/iD9xzG2v2O"
-    },
-    "cert-book": {
-      "label": "자격증 교재 보기",
-      "search": "https://www.coupang.com/np/search?q=%EC%9E%90%EA%B2%A9%EC%A6%9D+%EA%B5%90%EC%9E%AC",
-      "url": "https://link.coupang.com/a/iD9xNzbINE"
-    },
-    "udemy-excel": {
-      "label": "실무 엑셀 강의 보기 (Udemy)",
-      "src": "linkprice",
-      "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3D%25EC%2597%2591%25EC%2585%2580%26lang%3Dko"
-    },
-    "udemy-sql": {
-      "label": "SQL·데이터 분석 강의 보기 (Udemy)",
-      "src": "linkprice",
-      "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DSQL%26lang%3Dko"
-    },
-    "udemy-python": {
-      "label": "파이썬 강의 보기 (Udemy)",
-      "src": "linkprice",
-      "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3D%25ED%258C%258C%25EC%259D%25B4%25EC%258D%25AC%26lang%3Dko"
-    },
-    "udemy-ai": {
-      "label": "ChatGPT·생성형 AI 활용 강의 보기 (Udemy)",
-      "src": "linkprice",
-      "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DChatGPT%26lang%3Dko"
-    },
-    "laptop-bag": {
-      "label": "노트북 가방 보기",
-      "search": "https://www.coupang.com/np/search?q=%EB%85%B8%ED%8A%B8%EB%B6%81+%EA%B0%80%EB%B0%A9",
-      "url": "https://link.coupang.com/a/iI2BDarwu4"
-    },
-    "card-wallet": {
-      "label": "명함지갑 보기",
-      "search": "https://www.coupang.com/np/search?q=%EB%AA%85%ED%95%A8%EC%A7%80%EA%B0%91",
-      "url": "https://link.coupang.com/a/iI2DkhnvcO"
-    },
-    "tumbler": {
-      "label": "텀블러 보기",
-      "search": "https://www.coupang.com/np/search?q=%ED%85%80%EB%B8%94%EB%9F%AC",
-      "url": "https://link.coupang.com/a/iI2EwugJWe"
-    },
-    "interview-bag": {
-      "label": "면접용 서류가방 보기",
-      "search": "https://www.coupang.com/np/search?q=%EC%84%9C%EB%A5%98%EA%B0%80%EB%B0%A9",
-      "url": "https://link.coupang.com/a/iI2EH57tNQ"
-    },
-    "interview-shoes": {
-      "label": "면접 구두 보기",
-      "search": "https://www.coupang.com/np/search?q=%EB%A9%B4%EC%A0%91+%EA%B5%AC%EB%91%90",
-      "url": "https://link.coupang.com/a/iI2EUdb5Yy"
-    },
-    "pen-gift": {
-      "label": "각인 볼펜 보기",
-      "search": "https://www.coupang.com/np/search?q=%EA%B0%81%EC%9D%B8+%EB%B3%BC%ED%8E%9C",
-      "url": "https://link.coupang.com/a/iI2E6uj4Xk"
-    },
-    "laptop-office": {
-      "label": "사무용 노트북 보기",
-      "search": "https://www.coupang.com/np/search?q=%EC%82%AC%EB%AC%B4%EC%9A%A9+%EB%85%B8%ED%8A%B8%EB%B6%81",
-      "url": "https://link.coupang.com/a/iI3O1wXRNQ"
-    },
-    "laptop-light": {
-      "label": "가벼운 노트북 보기",
-      "search": "https://www.coupang.com/np/search?q=%EA%B0%80%EB%B2%BC%EC%9A%B4+%EB%85%B8%ED%8A%B8%EB%B6%81",
-      "url": "https://link.coupang.com/a/iI3PetjLbg"
-    },
-    "laptop-dev": {
-      "label": "개발자 노트북 보기",
-      "search": "https://www.coupang.com/np/search?q=%EA%B0%9C%EB%B0%9C%EC%9E%90+%EB%85%B8%ED%8A%B8%EB%B6%81",
-      "url": "https://link.coupang.com/a/iI3QW9Nj64"
-    },
-    "monitor": {
-      "label": "사무용 모니터 보기",
-      "search": "https://www.coupang.com/np/search?q=%EC%82%AC%EB%AC%B4%EC%9A%A9+%EB%AA%A8%EB%8B%88%ED%84%B0",
-      "url": "https://link.coupang.com/a/iI3SbbTY6K"
-    },
-    "laptop-stand": {
-      "label": "노트북 거치대 보기",
-      "search": "https://www.coupang.com/np/search?q=%EB%85%B8%ED%8A%B8%EB%B6%81+%EA%B1%B0%EC%B9%98%EB%8C%80",
-      "url": "https://link.coupang.com/a/iI3PPtP5xc"
-    },
-    "keyboard-mouse": {
-      "label": "무선 키보드·마우스 보기",
-      "search": "https://www.coupang.com/np/search?q=%EB%AC%B4%EC%84%A0+%ED%82%A4%EB%B3%B4%EB%93%9C+%EB%A7%88%EC%9A%B0%EC%8A%A4+%EC%84%B8%ED%8A%B8",
-      "url": "https://link.coupang.com/a/iI3P3bG6Ym"
-    }
+ "_안내": "쿠팡 파트너스에서 각 search 주소로 '간편 링크 만들기'를 한 뒤, 나온 단축 링크(https://link.coupang.com/...)를 url에 붙여 넣으면 해당 글에 자동으로 표시됩니다. url이 비어 있으면 화면에 아무것도 나오지 않습니다. src가 linkprice인 항목은 링크프라이스 딥링크(bestmore.net/click.php, 어필리에이트 A100709938)입니다.",
+ "items": {
+  "suit-men": {
+   "label": "남자 면접 정장 보기",
+   "search": "https://www.coupang.com/np/search?q=%EB%82%A8%EC%9E%90+%EB%A9%B4%EC%A0%91+%EC%A0%95%EC%9E%A5",
+   "url": "https://link.coupang.com/a/iD9tuuQuuO",
+   "icon": "👔",
+   "note": "첫 면접은 검정·네이비 무지가 무난합니다"
+  },
+  "suit-women": {
+   "label": "여자 면접 정장 보기",
+   "search": "https://www.coupang.com/np/search?q=%EC%97%AC%EC%9E%90+%EB%A9%B4%EC%A0%91+%EC%A0%95%EC%9E%A5",
+   "url": "https://link.coupang.com/a/iD9uD8h2Ki",
+   "icon": "🧥",
+   "note": "바지·스커트 정장 모두 괜찮습니다"
+  },
+  "shirt": {
+   "label": "면접 셔츠·블라우스 보기",
+   "search": "https://www.coupang.com/np/search?q=%EB%A9%B4%EC%A0%91+%EC%85%94%EC%B8%A0",
+   "url": "https://link.coupang.com/a/iD9uRXCuU8",
+   "icon": "👕",
+   "note": "흰색·하늘색 기본 셔츠가 무난합니다"
+  },
+  "webcam": {
+   "label": "화상 면접용 웹캠 보기",
+   "search": "https://www.coupang.com/np/search?q=%EC%9B%B9%EC%BA%A0",
+   "url": "https://link.coupang.com/a/iD9u55hMtw",
+   "icon": "📷",
+   "note": "노트북 내장 카메라가 흐릴 때"
+  },
+  "ring-light": {
+   "label": "화상 면접용 조명 보기",
+   "search": "https://www.coupang.com/np/search?q=%EB%A7%81%EB%9D%BC%EC%9D%B4%ED%8A%B8",
+   "url": "https://link.coupang.com/a/iD9vj2yIa4",
+   "icon": "💡",
+   "note": "얼굴이 어둡게 나올 때 정면 조명"
+  },
+  "aptitude-book": {
+   "label": "인적성(GSAT·SKCT) 문제집 보기",
+   "search": "https://www.coupang.com/np/search?q=%EC%9D%B8%EC%A0%81%EC%84%B1+%EB%AC%B8%EC%A0%9C%EC%A7%91",
+   "url": "https://link.coupang.com/a/iD9wR7qjmK",
+   "icon": "📘",
+   "note": "GSAT·SKCT 등 기업별 기출 유형 확인"
+  },
+  "ncs-book": {
+   "label": "NCS 문제집 보기",
+   "search": "https://www.coupang.com/np/search?q=NCS+%EB%AC%B8%EC%A0%9C%EC%A7%91",
+   "url": "https://link.coupang.com/a/iD9w7C7h3k",
+   "icon": "📗",
+   "note": "공기업 직업기초능력 대비"
+  },
+  "toeic-book": {
+   "label": "토익 교재 보기",
+   "search": "https://www.coupang.com/np/search?q=%ED%86%A0%EC%9D%B5+%EA%B5%90%EC%9E%AC",
+   "url": "https://link.coupang.com/a/iD9xlOQwFw",
+   "icon": "📙",
+   "note": "목표 점수대에 맞춰 고르기"
+  },
+  "civil-interview-book": {
+   "label": "공무원 면접 교재 보기",
+   "search": "https://www.coupang.com/np/search?q=%EA%B3%B5%EB%AC%B4%EC%9B%90+%EB%A9%B4%EC%A0%91",
+   "url": "https://link.coupang.com/a/iD9xzG2v2O",
+   "icon": "📕",
+   "note": "공무원 면접 기출·5분 발표 대비"
+  },
+  "cert-book": {
+   "label": "자격증 교재 보기",
+   "search": "https://www.coupang.com/np/search?q=%EC%9E%90%EA%B2%A9%EC%A6%9D+%EA%B5%90%EC%9E%AC",
+   "url": "https://link.coupang.com/a/iD9xNzbINE",
+   "icon": "📚",
+   "note": "시험 일정과 개정판 여부 확인"
+  },
+  "udemy-excel": {
+   "label": "실무 엑셀 강의 보기 (Udemy)",
+   "src": "linkprice",
+   "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3D%25EC%2597%2591%25EC%2585%2580%26lang%3Dko",
+   "icon": "🎓",
+   "note": "무료 미리보기로 수준이 맞는지 먼저 확인"
+  },
+  "udemy-sql": {
+   "label": "SQL·데이터 분석 강의 보기 (Udemy)",
+   "src": "linkprice",
+   "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DSQL%26lang%3Dko",
+   "icon": "🎓",
+   "note": "무료 미리보기로 수준이 맞는지 먼저 확인"
+  },
+  "udemy-python": {
+   "label": "파이썬 강의 보기 (Udemy)",
+   "src": "linkprice",
+   "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3D%25ED%258C%258C%25EC%259D%25B4%25EC%258D%25AC%26lang%3Dko",
+   "icon": "🎓",
+   "note": "무료 미리보기로 수준이 맞는지 먼저 확인"
+  },
+  "udemy-ai": {
+   "label": "ChatGPT·생성형 AI 활용 강의 보기 (Udemy)",
+   "src": "linkprice",
+   "url": "https://bestmore.net/click.php?m=udemy&a=A100709938&l=9999&l_cd1=3&l_cd2=0&tu=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DChatGPT%26lang%3Dko",
+   "icon": "🎓",
+   "note": "무료 미리보기로 수준이 맞는지 먼저 확인"
+  },
+  "laptop-bag": {
+   "label": "노트북 가방 보기",
+   "search": "https://www.coupang.com/np/search?q=%EB%85%B8%ED%8A%B8%EB%B6%81+%EA%B0%80%EB%B0%A9",
+   "url": "https://link.coupang.com/a/iI2BDarwu4",
+   "icon": "💼",
+   "note": "출근용 노트북 수납"
+  },
+  "card-wallet": {
+   "label": "명함지갑 보기",
+   "search": "https://www.coupang.com/np/search?q=%EB%AA%85%ED%95%A8%EC%A7%80%EA%B0%91",
+   "url": "https://link.coupang.com/a/iI2DkhnvcO",
+   "icon": "🪪",
+   "note": "입사하면 명함을 받습니다"
+  },
+  "tumbler": {
+   "label": "텀블러 보기",
+   "search": "https://www.coupang.com/np/search?q=%ED%85%80%EB%B8%94%EB%9F%AC",
+   "url": "https://link.coupang.com/a/iI2EwugJWe",
+   "icon": "🥤",
+   "note": "사무실에서 매일 쓰는 물건"
+  },
+  "interview-bag": {
+   "label": "면접용 서류가방 보기",
+   "search": "https://www.coupang.com/np/search?q=%EC%84%9C%EB%A5%98%EA%B0%80%EB%B0%A9",
+   "url": "https://link.coupang.com/a/iI2EH57tNQ",
+   "icon": "👜",
+   "note": "A4 서류가 구겨지지 않는 크기"
+  },
+  "interview-shoes": {
+   "label": "면접 구두 보기",
+   "search": "https://www.coupang.com/np/search?q=%EB%A9%B4%EC%A0%91+%EA%B5%AC%EB%91%90",
+   "url": "https://link.coupang.com/a/iI2EUdb5Yy",
+   "icon": "👞",
+   "note": "새 구두는 미리 신어 길들이기"
+  },
+  "pen-gift": {
+   "label": "각인 볼펜 보기",
+   "search": "https://www.coupang.com/np/search?q=%EA%B0%81%EC%9D%B8+%EB%B3%BC%ED%8E%9C",
+   "url": "https://link.coupang.com/a/iI2E6uj4Xk",
+   "icon": "🖊️",
+   "note": "이름 각인으로 취업 선물"
+  },
+  "laptop-office": {
+   "label": "사무용 노트북 보기",
+   "search": "https://www.coupang.com/np/search?q=%EC%82%AC%EB%AC%B4%EC%9A%A9+%EB%85%B8%ED%8A%B8%EB%B6%81",
+   "url": "https://link.coupang.com/a/iI3O1wXRNQ",
+   "icon": "💻",
+   "note": "문서·화상회의용 기본 사양"
+  },
+  "laptop-light": {
+   "label": "가벼운 노트북 보기",
+   "search": "https://www.coupang.com/np/search?q=%EA%B0%80%EB%B2%BC%EC%9A%B4+%EB%85%B8%ED%8A%B8%EB%B6%81",
+   "url": "https://link.coupang.com/a/iI3PetjLbg",
+   "icon": "🪶",
+   "note": "들고 다닐 일이 많을 때"
+  },
+  "laptop-dev": {
+   "label": "개발자 노트북 보기",
+   "search": "https://www.coupang.com/np/search?q=%EA%B0%9C%EB%B0%9C%EC%9E%90+%EB%85%B8%ED%8A%B8%EB%B6%81",
+   "url": "https://link.coupang.com/a/iI3QW9Nj64",
+   "icon": "🖥️",
+   "note": "메모리 16GB 이상부터 보기"
+  },
+  "monitor": {
+   "label": "사무용 모니터 보기",
+   "search": "https://www.coupang.com/np/search?q=%EC%82%AC%EB%AC%B4%EC%9A%A9+%EB%AA%A8%EB%8B%88%ED%84%B0",
+   "url": "https://link.coupang.com/a/iI3SbbTY6K",
+   "icon": "🖥️",
+   "note": "듀얼 모니터로 작업 공간 넓히기"
+  },
+  "laptop-stand": {
+   "label": "노트북 거치대 보기",
+   "search": "https://www.coupang.com/np/search?q=%EB%85%B8%ED%8A%B8%EB%B6%81+%EA%B1%B0%EC%B9%98%EB%8C%80",
+   "url": "https://link.coupang.com/a/iI3PPtP5xc",
+   "icon": "📐",
+   "note": "화상 면접 때 카메라 눈높이 맞추기"
+  },
+  "keyboard-mouse": {
+   "label": "무선 키보드·마우스 보기",
+   "search": "https://www.coupang.com/np/search?q=%EB%AC%B4%EC%84%A0+%ED%82%A4%EB%B3%B4%EB%93%9C+%EB%A7%88%EC%9A%B0%EC%8A%A4+%EC%84%B8%ED%8A%B8",
+   "url": "https://link.coupang.com/a/iI3P3bG6Ym",
+   "icon": "⌨️",
+   "note": "노트북 작업이 길 때"
   }
+ }
 }
