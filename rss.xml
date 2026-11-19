@@ -6,7 +6,15 @@
     <atom:link href="https://jobok.co.kr/rss.xml" rel="self" type="application/rss+xml" />
     <description>채용 실무 관점으로 만든 취업 준비·퇴사 절차 가이드와 무료 계산 도구</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 16 Nov 2026 21:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 11:30:00 +0900</lastBuildDate>
+    <item>
+      <title>2027 실업급여 개편 (주 6일 지급·월 176만원·상한액 103%·확정 안 된 것)</title>
+      <link>https://jobok.co.kr/blog/unemployment-benefit-2027-changes</link>
+      <guid isPermaLink="true">https://jobok.co.kr/blog/unemployment-benefit-2027-changes</guid>
+      <category>마음관리</category>
+      <description>2027 실업급여는 주 6일 지급으로 바뀌어 월 하한액 198만원이 176만원으로 줄고 받는 기간은 늘어납니다. 확정된 것과 남은 것을 정리했습니다.</description>
+      <pubDate>Thu, 19 Nov 2026 11:30:00 +0900</pubDate>
+    </item>
     <item>
       <title>취준생 노트북 추천 기준 2026 (사무용·화상면접·온라인 인적성·개발자 용도별)</title>
       <link>https://jobok.co.kr/blog/job-seeker-laptop-guide</link>
