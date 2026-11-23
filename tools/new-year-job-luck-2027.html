@@ -243,8 +243,8 @@ document.addEventListener('click',function(e){const m=document.getElementById('m
 
 
 function d(i){return document.getElementById(i);}
-var BUY_URL=''; // 래피드 2027 신년 직장운 상품 URL (비어 있으면 사전 예약 모드)
-var CODE_HASHES=['b671dbabaaa17e08d1670a2f09bda015fe2b6a5386b771dab1eb10a4a98c95e0'];
+var BUY_URL='https://www.latpeed.com/products/j7D20'; // 2027 취업·직장운 리포트 (취업 사주와 공용)
+var CODE_HASHES=['b671dbabaaa17e08d1670a2f09bda015fe2b6a5386b771dab1eb10a4a98c95e0','a8c7d3ad2ec310c9ceda1b7da1b85254da4d20d86909d60821c5f9bec801f8c6','a408ce330af1badd61989bc40440ac865231517a49169633e4eee7ce947cbcab'];
 var PRICE=4900, LAST=null;
 var RS=['gap','eul','byeong','jeong','mu','gi','gyeong','sin','im','gye'], RB=['ja','chuk','in','myo','jin','sa','o','mi','sin','yu','sul','hae'];
 var S='갑을병정무기경신임계', B='자축인묘진사오미신유술해', HS='甲乙丙丁戊己庚辛壬癸', HB='子丑寅卯辰巳午未申酉戌亥';
@@ -287,10 +287,10 @@ function ten(ds,ms){var de=elOf(ds),me=elOf(ms),same=(ds%2)===(ms%2);
   return same?'pyeonin':'jeongin';}
 function stars(n){return '★★★★★'.slice(0,n)+'☆☆☆☆☆'.slice(0,5-n);}
 function ev(n,p){if(typeof gtag!=='undefined')gtag('event',n,p||{});}
-function isUnlocked(){try{return CODE_HASHES.indexOf(localStorage.getItem('ny27-unlock'))>=0;}catch(e){return false;}}
+function isUnlocked(){try{return CODE_HASHES.indexOf(localStorage.getItem('ny27-unlock'))>=0||CODE_HASHES.indexOf(localStorage.getItem('jf-unlock'))>=0;}catch(e){return false;}}
 async function hash(s){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0');}).join('');}
 async function applyCode(v){var c=(v||(d('sjCode')&&d('sjCode').value)||'').trim().toUpperCase();if(!c)return;var h=await hash(c);
-  if(CODE_HASHES.indexOf(h)>=0){try{localStorage.setItem('ny27-unlock',h);}catch(e){} calc(); ev('ny27_unlock');}
+  if(CODE_HASHES.indexOf(h)>=0){try{localStorage.setItem('ny27-unlock',h);localStorage.setItem('jf-unlock',h);}catch(e){} calc(); ev('ny27_unlock');}
   else{var m=d('sjMsg'); if(m) m.textContent='코드를 다시 확인해 주세요.';}}
 function mname(r){return '2027년 '+r[0]+'월';}
 function gz(r){return S[r[1]]+B[r[2]]+'('+HS[r[1]]+HB[r[2]]+')';}
@@ -299,12 +299,14 @@ function fullRow(r,t,tag){var g=TG[t];return '<div style="border:1px solid var(-
 function lockRow(r,t){return '<div style="display:flex;justify-content:space-between;gap:10px;border:1px dashed var(--gray-200);border-radius:12px;padding:12px 16px;margin:8px 0;background:var(--gray-50);font-size:.9rem;"><span>'+mname(r)+' · '+S[r[1]]+B[r[2]]+' · <b>'+TG[t][0]+'</b></span><span style="color:var(--text-sub);">🔒 잠김</span></div>';}
 function pick(rows,ax,min){return rows.filter(function(x){return TG[x[1]][1][ax]>=min;}).sort(function(a,b){return TG[b[1]][1][ax]-TG[a[1]][1][ax];}).slice(0,3).map(function(x){return x[0][0]+'월('+TG[x[1]][0]+')';});}
 function calc(){
-  var v=d('sjBirth').value, out=d('sjOut'); if(!v){out.innerHTML='';return;}
-  var p=v.split('-').map(Number), late=d('sjLate').checked, idx=dayIdx(p[0],p[1],p[2],late);
-  var st=idx%10, br=idx%12; LAST=st;
+  var v=d('sjBirth').value, out=d('sjOut'), qi=new URLSearchParams(location.search).get('ilju'), st, br, from='birth';
+  if(v){var p=v.split('-').map(Number), idx=dayIdx(p[0],p[1],p[2],d('sjLate').checked); st=idx%10; br=idx%12;}
+  else if(qi){var a=qi.split('-'); st=RS.indexOf(a[0]); br=RB.indexOf(a[1]); from='ilju'; if(st<0||br<0||st%2!==br%2){out.innerHTML='';return;}}
+  else {out.innerHTML='';return;}
+  LAST=st;
   var yt=ten(st,3), rows=MONTHS.map(function(r){return [r,ten(st,r[1])];});
   var gzName=S[st]+B[br]+'일주';
-  var html='<div class="sj-big"><small>나의 일주</small><b>'+gzName+' · '+HS[st]+HB[br]+'</b><p>일간 <b>'+DMN[st]+'</b></p><p style="margin-top:6px;"><a href="/blog/ilju-'+RS[st]+'-'+RB[br]+'" style="color:#f3d9a6;font-weight:700;text-decoration:none;" onclick="ev(\'ny27_to_ilju\')">'+gzName+' 특징·직업 자세히 보기 →</a></p></div>'
+  var html=(from==='ilju'?'<div class="sj-card" style="background:#fffdf7;font-size:.9rem;line-height:1.7;"><b>'+gzName+' 기준 결과입니다.</b> 내 일주가 맞는지 위에 생년월일을 넣어 확인해 보세요.</div>':'')+'<div class="sj-big"><small>나의 일주</small><b>'+gzName+' · '+HS[st]+HB[br]+'</b><p>일간 <b>'+DMN[st]+'</b></p><p style="margin-top:6px;"><a href="/blog/ilju-'+RS[st]+'-'+RB[br]+'" style="color:#f3d9a6;font-weight:700;text-decoration:none;" onclick="ev(\'ny27_to_ilju\')">'+gzName+' 특징·직업 자세히 보기 →</a></p></div>'
    +'<div class="sj-card"><h3 style="margin:0 0 8px;">2027 정미년 — '+TG[yt][0]+'의 해</h3><p style="margin:0;line-height:1.8;">'+YEAR[yt]+'</p><p style="margin:8px 0 0;font-size:.88rem;"><a href="/blog/'+SLUGS[yt]+'" style="color:var(--gold);font-weight:700;">'+TG[yt][0]+'이란? 직업 성향 보기 →</a></p></div>';
   var shared=(function(){try{return localStorage.getItem('ny27-shared')==='1';}catch(e){return false;}})();
   if(isUnlocked()){
@@ -330,7 +332,7 @@ function calc(){
     var btn=BUY_URL?'<a class="sj-btn" href="'+BUY_URL+'" target="_blank" rel="noopener" onclick="ev(\'ny27_buy_click\')">12개월 전체 달력 열기</a>':((function(){try{return localStorage.getItem('ny27-reserved');}catch(e){return null;}})()?'<span class="sj-btn" aria-disabled="true">사전 예약 완료</span>':'<button type="button" class="sj-btn" onclick="reserveOpen()">12개월 전체 달력 사전 예약하기</button>')+'<div id="sjReserve"></div>';
     html+='<div class="sj-buy"><p style="margin:0 0 6px;line-height:1.75;"><b>지금 무료로 본 것</b> — 일주, 2027년 흐름, '+(shared?'1~6월':'1~3월')+' 직장운</p>'
      +'<p style="margin:0 0 6px;line-height:1.75;"><b>12개월 전체 달력</b> — 달마다 이직·승진·연봉·관계 별점과 할 일, 이직·승진·연봉 협상에 좋은 달, 큰 결정을 조심할 달, 가장 힘이 실리는 분기</p>'
-     +'<p class="sj-note" style="margin:0 0 12px;">사주를 믿지 않아도 쓸모 있게, 달마다 무엇을 할지 정하는 한 해 계획표로 만들었습니다. 가입 없이 결제하면 전용 링크로 바로 열립니다.</p>'
+     +'<p style="margin:0 0 6px;line-height:1.75;"><b>보너스</b> — 같은 코드로 취업 사주 13개월 합격 달력과 오늘의 취업운 상세도 열립니다</p>'+'<p class="sj-note" style="margin:0 0 12px;">사주를 믿지 않아도 쓸모 있게, 달마다 무엇을 할지 정하는 한 해 계획표로 만들었습니다. 가입 없이 결제하면 전용 링크로 바로 열립니다.</p>'
      +btn
      +'<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:.85rem;color:var(--text-sub);">이미 구매했어요 (이용 코드 입력)</summary><div class="sj-code"><input class="tool-input" id="sjCode" placeholder="이용 코드 입력" /><button class="sj-btn" type="button" onclick="applyCode()">열기</button></div><div id="sjMsg" class="sj-note"></div></details>'
      +'<p class="sj-note">디지털 콘텐츠 특성상 이용 코드를 확인한 뒤에는 청약철회가 제한될 수 있습니다.</p></div>';
