@@ -163,25 +163,95 @@
    "note": "메모리 16GB 이상부터 보기"
   },
   "monitor": {
-   "label": "사무용 모니터 보기",
-   "search": "https://www.coupang.com/np/search?q=%EC%82%AC%EB%AC%B4%EC%9A%A9+%EB%AA%A8%EB%8B%88%ED%84%B0",
-   "url": "https://link.coupang.com/a/iI3SbbTY6K",
+   "label": "주연테크 27인치 FHD 100Hz 모니터 V27FX",
+   "search": "https://www.coupang.com/vp/products/7410323525",
+   "url": "https://link.coupang.com/a/i2uBmEKQU0",
    "icon": "🖥️",
-   "note": "듀얼 모니터로 작업 공간 넓히기"
+   "note": "사무용 27인치, 리뷰 많은 기본형"
   },
   "laptop-stand": {
-   "label": "노트북 거치대 보기",
-   "search": "https://www.coupang.com/np/search?q=%EB%85%B8%ED%8A%B8%EB%B6%81+%EA%B1%B0%EC%B9%98%EB%8C%80",
-   "url": "https://link.coupang.com/a/iI3PPtP5xc",
+   "label": "홈플래닛 와이드 메탈 노트북 거치대",
+   "search": "https://www.coupang.com/vp/products/4674285118",
+   "url": "https://link.coupang.com/a/i2uAYHg7Pg",
    "icon": "📐",
    "note": "화상 면접 때 카메라 눈높이 맞추기"
   },
   "keyboard-mouse": {
-   "label": "무선 키보드·마우스 보기",
-   "search": "https://www.coupang.com/np/search?q=%EB%AC%B4%EC%84%A0+%ED%82%A4%EB%B3%B4%EB%93%9C+%EB%A7%88%EC%9A%B0%EC%8A%A4+%EC%84%B8%ED%8A%B8",
-   "url": "https://link.coupang.com/a/iI3P3bG6Ym",
+   "label": "로지텍 무소음 무선 키보드·마우스 MK295",
+   "search": "https://www.coupang.com/vp/products/4829338756",
+   "url": "https://link.coupang.com/a/i2uBJBlzqe",
    "icon": "⌨️",
    "note": "노트북 작업이 길 때"
+  },
+  "monitor-arm": {
+   "label": "카멜 싱글 모니터암 CA1",
+   "search": "https://www.coupang.com/vp/products/8586588219",
+   "url": "https://link.coupang.com/a/i2uwS7wotU",
+   "icon": "🦾",
+   "note": "모니터 높이를 눈높이에 맞출 때"
+  },
+  "monitor-arm-dual": {
+   "label": "카멜 듀얼 모니터암 CA-1D",
+   "search": "https://www.coupang.com/vp/products/4896992301",
+   "url": "https://link.coupang.com/a/i2ux95cYgK",
+   "icon": "🦾",
+   "note": "모니터 2대를 나란히 띄울 때"
+  },
+  "hdmi": {
+   "label": "벨킨 HDMI 2.1 케이블 2m",
+   "search": "https://www.coupang.com/vp/products/6241080920",
+   "url": "https://link.coupang.com/a/i2uylqFkaW",
+   "icon": "🔌",
+   "note": "노트북 포트와 모니터 단자를 먼저 확인"
+  },
+  "vertical-mouse": {
+   "label": "로지텍 리프트 버티컬 마우스",
+   "search": "https://www.coupang.com/vp/products/7295558262",
+   "url": "https://link.coupang.com/a/i2uyxh3EBM",
+   "icon": "🖱️",
+   "note": "손목을 세운 자세로 쥐는 마우스"
+  },
+  "wrist-rest": {
+   "label": "레이저 키보드 손목 받침대",
+   "search": "https://www.coupang.com/vp/products/1232274995",
+   "url": "https://link.coupang.com/a/i2uyIG5G8a",
+   "icon": "✋",
+   "note": "키보드 앞 손목 높이 맞추기"
+  },
+  "office-chair": {
+   "label": "체어클럽 M2 헤더형 메쉬의자",
+   "search": "https://www.coupang.com/vp/products/2420328",
+   "url": "https://link.coupang.com/a/i2uABAHHhs",
+   "icon": "🪑",
+   "note": "등판 메쉬·헤드레스트형"
+  },
+  "lumbar-chair": {
+   "label": "에이블루 커블체어 와이더",
+   "search": "https://www.coupang.com/vp/products/5617771260",
+   "url": "https://link.coupang.com/a/i2uANzE2KW",
+   "icon": "🪑",
+   "note": "의자 위에 올려 쓰는 자세 보조 의자"
+  },
+  "excel-pad": {
+   "label": "엑셀 단축키·함수 장패드",
+   "search": "https://www.coupang.com/vp/products/8871703947",
+   "url": "https://link.coupang.com/a/i2uBaNiaTQ",
+   "icon": "⌨️",
+   "note": "책상에 깔아 두고 바로 보는 단축키표"
+  },
+  "cooling-pad": {
+   "label": "노벨뷰 노트북 쿨러 거치대",
+   "search": "https://www.coupang.com/vp/products/115777942",
+   "url": "https://link.coupang.com/a/i2uBx42n2i",
+   "icon": "🌀",
+   "note": "노트북 바닥 열을 빼 주는 받침"
+  },
+  "monitor-stand": {
+   "label": "스톤힐 MS-01 메탈 모니터 받침대",
+   "search": "https://www.coupang.com/vp/products/8565578311",
+   "url": "https://link.coupang.com/a/i2uBU3687M",
+   "icon": "🖥️",
+   "note": "모니터암 없이 높이 올리기"
   }
  }
 }
