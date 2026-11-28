@@ -1031,3 +1031,9 @@ cd job3-site && cat OPERATIONS.md
 - 근거: 구글 자동완성 실검색어(모니터 2대 연결, 노트북 느려짐, 엑셀 단축키, 사무실 의자 자세). 출처 MS 공식 문서·ASUS FAQ·고용노동부 VDT 지침·KOSHA GUIDE E-G-3-2025
 - 쿠팡: 검색결과 링크 → 리뷰 많은 개별 상품 딥링크 13종(cp-links.json), 버튼 "가격·리뷰 보기"(cp.js v4, 47파일), 본문 해결 단계 안 인라인 링크(GA cp_click pos=inline)
 - 재측정: 2026-12-12 GA cp_click(inline vs box) / 쿠팡 파트너스 주문 수
+
+## 2026-11-28 (2) 업무해결 클러스터 2차 4편
+- 신규: excel-vlookup, excel-duplicates, printer-offline-fix, windows-screen-capture (기업이해)
+- 근거: 구글 자동완성 — 'vlookup 사용법/안될때/n/a', '중복값 찾기/제거/하나만', '프린터 오프라인 해결/해제', '윈도우 캡처 단축키/안됨'. 사이트 내 동일 주제 0건 확인
+- 출처: Microsoft 지원(VLOOKUP·중복 제거·오프라인 프린터·캡처 도구), 캐논 매뉴얼, 삼성전자서비스, DataCamp·Coddy
+- 엑셀 2편에 excel-pad 인라인 링크. 재측정 2026-12-26 GSC 노출

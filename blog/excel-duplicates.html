@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" /><meta name="naver-site-verification" content="9e0215ae1a26338579b67c5418e1dff9900bee22" /><meta name="DaumWebMasterTool" content="8427b4610df99965053903bc9a181f21c91b4f4d0fc4f8114dc1c1bf98fad22a:lz95XezL/vZ7uH8/mt6pWg==" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590540653325105" crossorigin="anonymous"></script>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>엑셀 중복값 찾기·제거 방법 (표시·하나만 남기기·COUNTIF) | 좋은 취업</title>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="description" content="엑셀 중복값을 찾고, 색으로 표시하고, 하나만 남기고 지우는 방법. 조건부 서식, 중복된 항목 제거, 고급 필터, COUNTIF·UNIQUE 함수까지 상황별 정리." />
+  <meta name="keywords" content="엑셀 중복값 찾기, 엑셀 중복 제거, 엑셀 중복값 표시, 엑셀 중복값 하나만 남기고 제거, 엑셀 중복값 제거 함수, countif 중복, unique 함수" />
+  <link rel="canonical" href="https://jobok.co.kr/blog/excel-duplicates" />
+  <meta property="og:title" content="엑셀 중복값 찾기·제거 방법 (표시·하나만 남기기·COUNTIF) | 좋은 취업" />
+  <meta property="og:description" content="엑셀 중복값을 찾고, 색으로 표시하고, 하나만 남기고 지우는 방법. 조건부 서식, 중복된 항목 제거, 고급 필터, COUNTIF·UNIQUE 함수까지 상황별 정리." />
+  <meta property="og:url" content="https://jobok.co.kr/blog/excel-duplicates" />
+  <meta property="og:image" content="https://jobok.co.kr/og-company-analysis.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="article" />
+  <meta property="article:section" content="자소서" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://jobok.co.kr/og-company-analysis.png" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "엑셀 중복값 찾기·제거 방법 (표시·하나만 남기기·COUNTIF)", "description": "엑셀 중복값을 찾고, 색으로 표시하고, 하나만 남기고 지우는 방법. 조건부 서식, 중복된 항목 제거, 고급 필터, COUNTIF·UNIQUE 함수까지 상황별 정리.", "datePublished": "2026-11-28", "dateModified": "2026-11-28", "author": {"@type": "Organization", "name": "좋은 취업", "url": "https://jobok.co.kr/about"}, "publisher": {"@type": "Organization", "name": "좋은 취업", "url": "https://jobok.co.kr/", "logo": {"@type": "ImageObject", "url": "https://jobok.co.kr/logo.png", "width": 512, "height": 512}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://jobok.co.kr/blog/excel-duplicates"}, "articleSection": "기업이해", "image": ["https://jobok.co.kr/og-company-analysis.png"], "inLanguage": "ko-KR"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "중복된 항목 제거를 실수로 했어요. 되돌릴 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "바로 Ctrl+Z(실행 취소)를 누르면 되돌릴 수 있습니다. 중복 제거는 데이터를 영구 삭제하므로 원본 시트를 복사해 두고 작업하는 것이 안전합니다."}}, {"@type": "Question", "name": "중복 값 표시를 했는데 같은 값인데 표시가 안 돼요.", "acceptedAnswer": {"@type": "Answer", "text": "앞뒤 공백, 숫자와 텍스트 형식 차이가 있으면 다른 값으로 봅니다. 날짜도 표시 형식이 다르면 다르게 판단될 수 있습니다. TRIM으로 공백을 정리한 뒤 다시 확인하세요."}}, {"@type": "Question", "name": "두 번째 중복부터만 표시할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "조건부 서식의 수식 규칙에 =COUNTIF($A$2:A2,A2)>1처럼 범위 시작만 고정하면, 처음 나온 값은 빼고 두 번째부터 표시됩니다."}}, {"@type": "Question", "name": "행 전체가 같은 것만 지우고 싶어요.", "acceptedAnswer": {"@type": "Answer", "text": "중복된 항목 제거 창에서 모든 열을 체크하면 모든 열 값이 같은 행만 지웁니다. 특정 열만 체크하면 그 열 기준으로 지웁니다."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "기업이해", "item": "https://jobok.co.kr/company-analysis"}, {"@type": "ListItem", "position": 3, "name": "엑셀 중복값 찾기·제거 방법 (표시·하나만 남기기·COUNTIF)", "item": "https://jobok.co.kr/blog/excel-duplicates"}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HK51X34WHJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HK51X34WHJ');</script>
+  <link rel="stylesheet" href="/assets/blog.bbf5ec26.css" />
+<style id="post-meta-wrap">.post-header__meta{flex-wrap:wrap;row-gap:4px}.post-updated{color:var(--text-sub)}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-logo">좋은 취업</a>
+    <nav class="site-nav">
+      <a href="/diagnosis">무료진단</a>
+      <a href="/company-analysis">기업이해</a>
+      <a href="/company-analysis">기업이해</a>
+      <a href="/company-analysis">기업이해</a>
+      <a href="/company-analysis">기업이해</a>
+      <button class="nav-menu-btn" onclick="toggleMenu()" id="menuBtn">☰ 메뉴</button>
+    </nav>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/diagnosis">무료진단</a>
+  <a href="/company-analysis">기업이해</a>
+  <a href="/company-analysis">기업이해</a>
+  <a href="/company-analysis">기업이해</a>
+  <a href="/company-analysis">기업이해</a>
+</div>
+
+
+
+
+<main>
+  <nav class="breadcrumb"><div class="container"><a href="/">홈</a><span>›</span><a href="/company-analysis">기업이해</a><span>›</span>엑셀 중복값 찾기·제거 방법 (표시·하나만 남기기·COUNTIF)</div></nav>
+  <div class="post-header"><div class="container">
+    <div class="post-header__label"><a href="/company-analysis" style="color:var(--text-muted);text-decoration:none;">기업이해</a></div>
+    <h1 class="post-header__title">엑셀 중복값 찾기·제거 방법 (표시·하나만 남기기·COUNTIF)</h1>
+    <div class="post-header__meta"><span><a href="/about" style="color:inherit;text-decoration:none;">좋은 취업 · 15년차 인사담당자</a></span><span>2026-11-28</span></div>
+  </div></div>
+  <div class="container"><div class="post-body"><p style="font-size:.78rem;color:var(--text-muted,#999);margin:0 0 14px;">이 글에는 쿠팡 파트너스 링크가 있으며, 이를 통해 구매하면 일정액의 수수료를 받습니다.</p>
+<div class="answer-box"><b>핵심 답변</b>엑셀 중복값은 <strong>표시는 홈 &gt; 조건부 서식 &gt; 셀 강조 규칙 &gt; 중복 값</strong>, <strong>삭제는 데이터 &gt; 중복된 항목 제거</strong>로 합니다. 중복 제거는 하나만 남기고 나머지를 영구 삭제하므로, <strong>먼저 표시로 확인하고 원본을 복사해 둔 뒤</strong> 지우는 것이 안전합니다.</div>
+<p>명단·거래처 목록·설문 응답을 합치면 꼭 중복이 생깁니다. 목적에 따라 찾기, 표시, 삭제, 개수 세기 방법이 다르니 상황별로 정리했습니다.</p>
+<div style="background:var(--gray-50);border-radius:var(--radius);padding:20px 24px;margin:28px 0;">
+  <div style="font-size:.85rem;font-weight:700;color:var(--text-sub);margin-bottom:12px;">📑 목차</div>
+  <ol style="margin:0;padding-left:20px;font-size:.9rem;line-height:1.9;color:var(--text-sub);">
+    <li>중복값 색으로 표시하기</li>
+    <li>하나만 남기고 제거하기</li>
+    <li>원본은 두고 고유 목록만 뽑기</li>
+    <li>COUNTIF로 중복 개수 세기</li>
+    <li>중복인데 안 잡힐 때</li>
+  </ol>
+</div>
+<figure id="auto-fig" style="margin:24px 0;"><svg viewBox="0 0 400 472" width="100%" role="img" aria-label="목적별 중복 처리 방법" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;height:auto;font-family:inherit;display:block;"><text x="0" y="22" font-size="18" font-weight="800" fill="#1a1a1a">목적별 중복 처리 방법</text><rect x="0" y="38" width="400" height="90" rx="10" fill="#fff8e7" stroke="#e8d9a8"/><circle cx="24" cy="83" r="13" fill="#c9a227"/><text x="24" y="88" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">1</text><text x="48" y="68" font-size="17" font-weight="800" fill="#1a1a1a">눈으로 확인</text><text x="48" y="91" font-size="14.5" fill="#555">홈 &gt; 조건부 서식 &gt; 셀 강조 규칙 &gt;</text><text x="48" y="111" font-size="14.5" fill="#555">중복 값</text><rect x="0" y="138" width="400" height="70" rx="10" fill="#fff8e7" stroke="#e8d9a8"/><circle cx="24" cy="173" r="13" fill="#c9a227"/><text x="24" y="178" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">2</text><text x="48" y="168" font-size="17" font-weight="800" fill="#1a1a1a">바로 삭제</text><text x="48" y="191" font-size="14.5" fill="#555">데이터 &gt; 중복된 항목 제거</text><rect x="0" y="218" width="400" height="70" rx="10" fill="#fff8e7" stroke="#e8d9a8"/><circle cx="24" cy="253" r="13" fill="#c9a227"/><text x="24" y="258" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">3</text><text x="48" y="248" font-size="17" font-weight="800" fill="#1a1a1a">원본 두고 목록만</text><text x="48" y="271" font-size="14.5" fill="#555">데이터 &gt; 고급 &gt; 동일한 레코드는 하나만</text><rect x="0" y="298" width="400" height="70" rx="10" fill="#fff8e7" stroke="#e8d9a8"/><circle cx="24" cy="333" r="13" fill="#c9a227"/><text x="24" y="338" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">4</text><text x="48" y="328" font-size="17" font-weight="800" fill="#1a1a1a">개수 세기</text><text x="48" y="351" font-size="14.5" fill="#555">=COUNTIF(범위, 값)</text><rect x="0" y="378" width="400" height="90" rx="10" fill="#fff8e7" stroke="#e8d9a8"/><circle cx="24" cy="423" r="13" fill="#c9a227"/><text x="24" y="428" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">5</text><text x="48" y="408" font-size="17" font-weight="800" fill="#1a1a1a">고유 목록 자동</text><text x="48" y="431" font-size="14.5" fill="#555">=UNIQUE(범위) · 365·2021</text><text x="48" y="451" font-size="14.5" fill="#555">이상</text></svg><figcaption style="font-size:.8rem;color:var(--text-sub);margin-top:6px;">삭제 전에 조건부 서식으로 먼저 확인하는 것을 Microsoft도 권합니다.</figcaption></figure>
+<h2>1. 중복값을 색으로 표시하려면?</h2>
+<ol>
+<li>확인할 범위를 선택합니다(머리글 제외).</li>
+<li><strong>홈 &gt; 조건부 서식 &gt; 셀 강조 규칙 &gt; 중복 값</strong>을 누릅니다.</li>
+<li>서식(기본: 연한 빨강 채우기)을 고르고 확인합니다. '고유'로 바꾸면 한 번만 나온 값을 표시합니다.</li>
+</ol>
+<p>이 방법은 셀 하나씩 비교하므로 처음 나온 값까지 모두 칠해집니다. 두 번째부터만 칠하려면 아래 COUNTIF 수식 규칙을 씁니다.</p>
+
+<h2>2. 하나만 남기고 제거하려면?</h2>
+<ol>
+<li>원본 시트를 복사해 둡니다(시트 탭 우클릭 &gt; 이동/복사 &gt; 복사본 만들기).</li>
+<li>표 안 아무 셀을 선택하고 <strong>데이터 &gt; 데이터 도구 &gt; 중복된 항목 제거</strong>를 누릅니다.</li>
+<li>기준이 될 열만 체크합니다. 예: 이메일 열만 체크하면 이메일이 같은 행을 하나만 남깁니다.</li>
+<li>확인을 누르면 지운 개수와 남은 개수가 표시됩니다.</li>
+</ol>
+<p>잘못 지웠다면 바로 <strong>Ctrl+Z</strong>로 되돌립니다. 자주 쓰는 단축키는 <a href="/blog/excel-shortcuts" style="color:var(--gold);font-weight:600;">엑셀 단축키 정리표</a>에 모아 두었고, 책상에 붙여 두고 보려면 <a href="https://link.coupang.com/a/i2uBaNiaTQ" target="_blank" rel="sponsored nofollow noopener" data-cpk="excel-pad" onclick="if(typeof gtag!=='undefined')gtag('event','cp_click',{item:'excel-pad',page:location.pathname,pos:'inline'});" style="color:#e52528;font-weight:700;">엑셀 단축키 마우스패드</a>도 쓸 만합니다.</p>
+
+<h2>3. 원본은 두고 고유 목록만 뽑으려면?</h2>
+<ul>
+<li><strong>고급 필터</strong>: 데이터 &gt; 정렬 및 필터 &gt; 고급 &gt; '다른 장소에 복사' 선택 &gt; 복사 위치 지정 &gt; <strong>동일한 레코드는 하나만</strong> 체크. 모든 버전에서 됩니다.</li>
+<li><strong>UNIQUE 함수</strong>: <code>=UNIQUE(A2:A500)</code>을 입력하면 고유 목록이 자동으로 펼쳐지고 원본이 바뀌면 같이 바뀝니다. Microsoft 365·Excel 2021 이상에서만 됩니다.</li>
+</ul>
+
+<h2>4. COUNTIF로 중복 개수 세기</h2>
+<div style="overflow-x:auto;margin:16px 0;"><table style="border-collapse:collapse;font-size:.88rem;min-width:460px;">
+<tr><th style="text-align:left;padding:8px 10px 8px 0;border-bottom:2px solid var(--black);">하고 싶은 것</th><th style="text-align:left;padding:8px 10px 8px 0;border-bottom:2px solid var(--black);">수식(A2:A500 기준)</th></tr>
+<tr><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">이 값이 몇 번 나오나</td><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">=COUNTIF($A$2:$A$500,A2)</td></tr>
+<tr><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">중복이면 "중복" 표시</td><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">=IF(COUNTIF($A$2:$A$500,A2)&gt;1,"중복","")</td></tr>
+<tr><td style="padding:8px 10px 8px 0;vertical-align:top;">두 번째부터만 표시</td><td style="padding:8px 10px 8px 0;vertical-align:top;">=IF(COUNTIF($A$2:A2,A2)&gt;1,"중복","")</td></tr>
+</table></div>
+<p>옆 열에 이 수식을 넣고 필터로 "중복"만 골라 보면 어떤 행이 겹치는지 한 번에 보입니다. 두 표를 대조해 한쪽에만 있는 값을 찾을 때는 <a href="/blog/excel-vlookup" style="color:var(--gold);font-weight:600;">VLOOKUP</a>으로 #N/A가 나는 행을 찾는 방법도 많이 씁니다.</p>
+
+<h2>5. 같은 값인데 중복으로 안 잡힐 때</h2>
+<ul>
+<li><strong>앞뒤 공백</strong>: "홍길동"과 "홍길동 "은 다른 값입니다. =TRIM()으로 정리한 열을 기준으로 다시 합니다.</li>
+<li><strong>숫자/텍스트 형식</strong>: 숫자 1001과 텍스트 "1001"은 다르게 볼 수 있습니다.</li>
+<li><strong>표시 형식</strong>: Microsoft 안내상 중복 비교는 셀에 <strong>표시되는 값</strong> 기준이라, 같은 날짜라도 표시 형식이 다르면 다른 값으로 판단될 수 있습니다.</li>
+</ul>
+<div class="src-box" style="margin:30px 0;padding:18px 20px;border:1.5px solid var(--gray-200);border-radius:12px;"><div style="font-size:.95rem;font-weight:900;color:var(--black);margin-bottom:6px;">출처</div><ul style="margin:0;padding-left:18px;font-size:.88rem;line-height:1.7;color:var(--text-sub);"><li style="margin:6px 0;"><a href="https://support.microsoft.com/ko-KR/Excel/get-started/filter-for-unique-values-or-remove-duplicate-values" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;text-decoration:none;">Microsoft 지원 「고유 값 필터링 또는 중복 값 제거」</a> — 중복 제거는 영구 삭제, 고급 필터, 조건부 서식, 표시 값 기준 비교</li><li style="margin:6px 0;"><a href="https://coddy.tech/docs/ko/excel/highlight-duplicates" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;text-decoration:none;">Coddy(엑셀 중복 강조)</a> — 셀 강조 규칙, COUNTIF 수식 규칙</li><li style="margin:6px 0;"><a href="https://coddy.tech/docs/ko/excel/remove-duplicates" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;text-decoration:none;">Coddy(엑셀 중복 제거)</a> — UNIQUE 지원 버전, 고급 필터 동일한 레코드는 하나만</li></ul></div>
+<div class="inline-tool-box" style="background:var(--gray-50);border-radius:var(--radius);padding:20px 22px;margin:28px 0;">
+  <div style="font-size:.8rem;font-weight:700;color:var(--text-sub);margin-bottom:10px;">✦ 이 글과 함께 쓰면 좋은 무료 도구</div>
+<a href="/tools/work-log" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 업무일지 양식</a>
+<a href="/tools/meeting-minutes" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 회의록 양식</a>
+<a href="/tools/salary" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 연봉 실수령액 계산기</a>
+</div>
+<div class="hub-banner"><div><div class="hub-banner__label">채용공고 & 기업분석</div><div class="hub-banner__title">주요 기업 채용 분석 + 원티드 공고</div><a href="/tools/minimum-wage" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 최저임금·시급 계산기</a>
+</div>
+<div class="related-posts">관련 글 → <a href="/blog/excel-vlookup" style="color:var(--gold);font-weight:600;">엑셀 VLOOKUP 사용법</a> · <a href="/blog/excel-shortcuts" style="color:var(--gold);font-weight:600;">엑셀 단축키 정리표</a> · <a href="/blog/printer-offline-fix" style="color:var(--gold);font-weight:600;">프린터 오프라인 해결</a></div>
+<div class="related-posts"><div class="container"><h3 style="font-size:1rem;font-weight:900;margin-bottom:14px;">함께 읽으면 좋은 글</h3><ul style="list-style:none;padding:0;margin:0;"><li style="padding:8px 0;border-bottom:1px solid var(--gray-100);"><a href="/blog/excel-vlookup" style="color:var(--text);text-decoration:none;font-size:.92rem;font-weight:400;">엑셀 VLOOKUP 사용법 (#N/A 오류 해결)</a></li><li style="padding:8px 0;border-bottom:1px solid var(--gray-100);"><a href="/blog/excel-shortcuts" style="color:var(--text);text-decoration:none;font-size:.92rem;font-weight:400;">엑셀 단축키 정리표 (실무에서 매일 쓰는 40개)</a></li><li style="padding:8px 0;border-bottom:1px solid var(--gray-100);"><a href="/blog/windows-screen-capture" style="color:var(--text);text-decoration:none;font-size:.92rem;font-weight:400;">윈도우 캡처 단축키 정리</a></li><li style="padding:8px 0;border-bottom:1px solid var(--gray-100);"><a href="/blog/laptop-slow-fix" style="color:var(--text);text-decoration:none;font-size:.92rem;font-weight:400;">노트북 느려짐 해결</a></li></ul></div></div>
+    <div style="margin:40px 0 72px;">  </div></div>
+  </div></div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">좋은 취업</div>
+        <div class="footer__tagline">취업 준비의 흐름을 잡아주는 콘텐츠 사이트</div>
+      </div>
+      <nav class="footer__nav">
+        <a href="/">홈</a><a href="/diagnosis">무료진단</a><a href="/company-analysis">기업이해</a>
+        <a href="/company-analysis">기업이해</a><a href="/company-analysis">기업이해</a>
+        <a href="/company-analysis">기업이해</a><a href="/contact">상담문의</a><a href="/editorial-policy">편집 원칙</a><a href="/privacy">개인정보처리방침</a><a href="/terms">이용약관</a>
+      </nav>
+    </div>
+    <div class="footer__copy">© 2026 좋은 취업 · yuncontest@naver.com</div>
+  </div>
+</footer>
+
+
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu');
+  const b=document.getElementById('menuBtn');
+  m.classList.toggle('open');
+  b.textContent=m.classList.contains('open')?'✕ 닫기':'☰ 메뉴';
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('mobileMenu');
+  if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!document.getElementById('menuBtn').contains(e.target)){
+    m.classList.remove('open');
+    document.getElementById('menuBtn').textContent='☰ 메뉴';
+  }
+});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+<!-- 카카오 문의 플로팅 버튼 -->
+<a href="https://open.kakao.com/o/sTpjuoQh" target="_blank" rel="noopener" id="kakaoFloat" onclick="gtag&&gtag('event','contact_kakao_click',{'location':'float'});" aria-label="카카오톡 문의">
+  <span class="kf-icon">💬</span>
+  <span class="kf-text">자소서·취업 상담</span>
+</a>
+
+
+
+
+<script src="/assets/cp.js?v=4" defer></script>
+</body>
+</html>

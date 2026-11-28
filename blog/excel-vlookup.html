@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" /><meta name="naver-site-verification" content="9e0215ae1a26338579b67c5418e1dff9900bee22" /><meta name="DaumWebMasterTool" content="8427b4610df99965053903bc9a181f21c91b4f4d0fc4f8114dc1c1bf98fad22a:lz95XezL/vZ7uH8/mt6pWg==" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590540653325105" crossorigin="anonymous"></script>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>엑셀 VLOOKUP 사용법 (#N/A 오류 해결·다른 시트·안될 때 체크리스트) | 좋은 취업</title>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="description" content="엑셀 VLOOKUP 함수 사용법을 예제로 정리했습니다. 인수 4개의 뜻, FALSE를 꼭 넣는 이유, 다른 시트 참조, #N/A·#REF! 오류가 날 때 확인할 것까지." />
+  <meta name="keywords" content="엑셀 vlookup, 엑셀 vlookup 사용법, vlookup 함수, vlookup n/a 오류, vlookup 안될때, vlookup 다른 시트, xlookup, 엑셀 함수" />
+  <link rel="canonical" href="https://jobok.co.kr/blog/excel-vlookup" />
+  <meta property="og:title" content="엑셀 VLOOKUP 사용법 (#N/A 오류 해결·다른 시트·안될 때 체크리스트) | 좋은 취업" />
+  <meta property="og:description" content="엑셀 VLOOKUP 함수 사용법을 예제로 정리했습니다. 인수 4개의 뜻, FALSE를 꼭 넣는 이유, 다른 시트 참조, #N/A·#REF! 오류가 날 때 확인할 것까지." />
+  <meta property="og:url" content="https://jobok.co.kr/blog/excel-vlookup" />
+  <meta property="og:image" content="https://jobok.co.kr/og-company-analysis.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="article" />
+  <meta property="article:section" content="자소서" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://jobok.co.kr/og-company-analysis.png" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "엑셀 VLOOKUP 사용법 (#N/A 오류 해결·다른 시트·안될 때 체크리스트)", "description": "엑셀 VLOOKUP 함수 사용법을 예제로 정리했습니다. 인수 4개의 뜻, FALSE를 꼭 넣는 이유, 다른 시트 참조, #N/A·#REF! 오류가 날 때 확인할 것까지.", "datePublished": "2026-11-28", "dateModified": "2026-11-28", "author": {"@type": "Organization", "name": "좋은 취업", "url": "https://jobok.co.kr/about"}, "publisher": {"@type": "Organization", "name": "좋은 취업", "url": "https://jobok.co.kr/", "logo": {"@type": "ImageObject", "url": "https://jobok.co.kr/logo.png", "width": 512, "height": 512}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://jobok.co.kr/blog/excel-vlookup"}, "articleSection": "기업이해", "image": ["https://jobok.co.kr/og-company-analysis.png"], "inLanguage": "ko-KR"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "VLOOKUP 마지막 인수를 비워 두면 어떻게 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "Microsoft 안내상 비워 두면 기본값 TRUE(근사 일치)로 동작합니다. 사번·코드처럼 정확히 같은 값을 찾을 때는 반드시 FALSE(또는 0)를 넣어야 엉뚱한 값을 가져오지 않습니다."}}, {"@type": "Question", "name": "VLOOKUP으로 왼쪽 열 값을 가져올 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "없습니다. VLOOKUP은 범위의 첫 번째 열에서만 찾고 그 오른쪽 열 값을 돌려줍니다. 왼쪽 값을 가져오려면 열 순서를 바꾸거나 INDEX·MATCH, XLOOKUP을 씁니다."}}, {"@type": "Question", "name": "#N/A를 IFERROR로 빈칸 처리해도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "보기에는 깔끔하지만 찾지 못한 데이터가 정상처럼 숨겨집니다. 먼저 공백·형식 차이 같은 원인을 확인하고, 정말 없는 값만 IFERROR로 처리하는 편이 안전합니다."}}, {"@type": "Question", "name": "XLOOKUP과 무엇이 다른가요?", "acceptedAnswer": {"@type": "Answer", "text": "XLOOKUP은 Microsoft 365·Excel 2021 이상에서 쓸 수 있고, 기본이 정확히 일치이며 왼쪽 방향 검색도 됩니다. 회사 엑셀 버전이 낮으면 VLOOKUP을 쓰는 것이 호환에 안전합니다."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://jobok.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "기업이해", "item": "https://jobok.co.kr/company-analysis"}, {"@type": "ListItem", "position": 3, "name": "엑셀 VLOOKUP 사용법 (#N/A 오류 해결·다른 시트·안될 때 체크리스트)", "item": "https://jobok.co.kr/blog/excel-vlookup"}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HK51X34WHJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HK51X34WHJ');</script>
+  <link rel="stylesheet" href="/assets/blog.bbf5ec26.css" />
+<style id="post-meta-wrap">.post-header__meta{flex-wrap:wrap;row-gap:4px}.post-updated{color:var(--text-sub)}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-logo">좋은 취업</a>
+    <nav class="site-nav">
+      <a href="/diagnosis">무료진단</a>
+      <a href="/company-analysis">기업이해</a>
+      <a href="/company-analysis">기업이해</a>
+      <a href="/company-analysis">기업이해</a>
+      <a href="/company-analysis">기업이해</a>
+      <button class="nav-menu-btn" onclick="toggleMenu()" id="menuBtn">☰ 메뉴</button>
+    </nav>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/diagnosis">무료진단</a>
+  <a href="/company-analysis">기업이해</a>
+  <a href="/company-analysis">기업이해</a>
+  <a href="/company-analysis">기업이해</a>
+  <a href="/company-analysis">기업이해</a>
+</div>
+
+
+
+
+<main>
+  <nav class="breadcrumb"><div class="container"><a href="/">홈</a><span>›</span><a href="/company-analysis">기업이해</a><span>›</span>엑셀 VLOOKUP 사용법 (#N/A 오류 해결·다른 시트·안될 때 체크리스트)</div></nav>
+  <div class="post-header"><div class="container">
+    <div class="post-header__label"><a href="/company-analysis" style="color:var(--text-muted);text-decoration:none;">기업이해</a></div>
+    <h1 class="post-header__title">엑셀 VLOOKUP 사용법 (#N/A 오류 해결·다른 시트·안될 때 체크리스트)</h1>
+    <div class="post-header__meta"><span><a href="/about" style="color:inherit;text-decoration:none;">좋은 취업 · 15년차 인사담당자</a></span><span>2026-11-28</span></div>
+  </div></div>
+  <div class="container"><div class="post-body"><p style="font-size:.78rem;color:var(--text-muted,#999);margin:0 0 14px;">이 글에는 쿠팡 파트너스 링크가 있으며, 이를 통해 구매하면 일정액의 수수료를 받습니다.</p>
+<div class="answer-box"><b>핵심 답변</b>VLOOKUP은 <strong>=VLOOKUP(찾을 값, 범위, 열 번호, FALSE)</strong>로 씁니다. 범위의 <strong>맨 왼쪽 열</strong>에서 찾을 값을 찾고, 같은 행의 지정한 열 값을 가져옵니다. 마지막 인수는 거의 항상 <strong>FALSE(정확히 일치)</strong>를 넣어야 하고, 안 될 때는 <strong>공백·숫자/텍스트 형식·범위 고정($)</strong>부터 확인합니다.</div>
+<p>사번으로 이름 찾기, 상품코드로 단가 붙이기처럼 두 표를 합칠 때 가장 많이 쓰는 함수입니다. 예제와 함께 오류가 나는 이유까지 정리했습니다.</p>
+<div style="background:var(--gray-50);border-radius:var(--radius);padding:20px 24px;margin:28px 0;">
+  <div style="font-size:.85rem;font-weight:700;color:var(--text-sub);margin-bottom:12px;">📑 목차</div>
+  <ol style="margin:0;padding-left:20px;font-size:.9rem;line-height:1.9;color:var(--text-sub);">
+    <li>VLOOKUP 기본 형식</li>
+    <li>예제: 사번으로 부서 가져오기</li>
+    <li>다른 시트에서 가져오기</li>
+    <li>#N/A가 날 때 체크리스트</li>
+    <li>#REF!·엉뚱한 값이 나올 때</li>
+    <li>XLOOKUP을 써도 될까</li>
+  </ol>
+</div>
+<figure id="auto-fig" style="margin:24px 0;"><svg viewBox="0 0 400 372" width="100%" role="img" aria-label="VLOOKUP 인수 4개" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;height:auto;font-family:inherit;display:block;"><text x="0" y="22" font-size="18" font-weight="800" fill="#1a1a1a">VLOOKUP 인수 4개</text><rect x="0" y="38" width="400" height="70" rx="10" fill="#fff8e7" stroke="#e8d9a8"/><circle cx="24" cy="73" r="13" fill="#c9a227"/><text x="24" y="78" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">1</text><text x="48" y="68" font-size="17" font-weight="800" fill="#1a1a1a">① 찾을 값</text><text x="48" y="91" font-size="14.5" fill="#555">예: A2 (사번)</text><rect x="0" y="118" width="400" height="70" rx="10" fill="#fff8e7" stroke="#e8d9a8"/><circle cx="24" cy="153" r="13" fill="#c9a227"/><text x="24" y="158" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">2</text><text x="48" y="148" font-size="17" font-weight="800" fill="#1a1a1a">② 범위</text><text x="48" y="171" font-size="14.5" fill="#555">찾을 값이 들어 있는 열이 맨 왼쪽</text><rect x="0" y="198" width="400" height="70" rx="10" fill="#fff8e7" stroke="#e8d9a8"/><circle cx="24" cy="233" r="13" fill="#c9a227"/><text x="24" y="238" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">3</text><text x="48" y="228" font-size="17" font-weight="800" fill="#1a1a1a">③ 열 번호</text><text x="48" y="251" font-size="14.5" fill="#555">범위 안에서 몇 번째 열을 가져올지</text><rect x="0" y="278" width="400" height="90" rx="10" fill="#fff8e7" stroke="#e8d9a8"/><circle cx="24" cy="323" r="13" fill="#c9a227"/><text x="24" y="328" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">4</text><text x="48" y="308" font-size="17" font-weight="800" fill="#1a1a1a">④ 일치 방식</text><text x="48" y="331" font-size="14.5" fill="#555">FALSE = 정확히 일치 (거의 항상</text><text x="48" y="351" font-size="14.5" fill="#555">이것)</text></svg><figcaption style="font-size:.8rem;color:var(--text-sub);margin-top:6px;">=VLOOKUP(A2, 직원!$A$2:$D$200, 3, FALSE)</figcaption></figure>
+<h2>1. VLOOKUP 기본 형식은?</h2>
+<div style="overflow-x:auto;margin:16px 0;"><table style="border-collapse:collapse;font-size:.88rem;min-width:460px;">
+<tr><th style="text-align:left;padding:8px 10px 8px 0;border-bottom:2px solid var(--black);">인수</th><th style="text-align:left;padding:8px 10px 8px 0;border-bottom:2px solid var(--black);">뜻</th><th style="text-align:left;padding:8px 10px 8px 0;border-bottom:2px solid var(--black);">주의</th></tr>
+<tr><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">찾을 값</td><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">기준이 되는 값(사번, 코드)</td><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">셀 참조로 쓰기</td></tr>
+<tr><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">범위</td><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">찾을 값이 있는 표 전체</td><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">찾는 열이 맨 왼쪽이어야 함</td></tr>
+<tr><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">열 번호</td><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">범위 안에서 몇 번째 열을 가져올지</td><td style="padding:8px 10px 8px 0;border-bottom:1px solid var(--gray-100);vertical-align:top;">범위 열 수보다 크면 #REF!</td></tr>
+<tr><td style="padding:8px 10px 8px 0;vertical-align:top;">일치 방식</td><td style="padding:8px 10px 8px 0;vertical-align:top;">FALSE=정확히, TRUE=근사</td><td style="padding:8px 10px 8px 0;vertical-align:top;">비우면 TRUE로 동작</td></tr>
+</table></div>
+
+<h2>2. 예제: 사번으로 부서 가져오기</h2>
+<p>'직원' 시트 A열에 사번, B열에 이름, C열에 부서가 있다고 하겠습니다. 다른 표의 A2에 있는 사번으로 부서를 가져오려면:</p>
+<p><code>=VLOOKUP(A2, 직원!$A$2:$C$200, 3, FALSE)</code></p>
+<ol>
+<li>A2의 사번을 직원 시트 A열(범위의 첫 열)에서 찾습니다.</li>
+<li>찾은 행에서 범위의 3번째 열(C열, 부서)을 가져옵니다.</li>
+<li>FALSE라서 사번이 정확히 같을 때만 가져오고, 없으면 #N/A를 냅니다.</li>
+</ol>
+<p>범위에 <strong>$를 붙여 고정</strong>해야 수식을 아래로 채워도 범위가 밀리지 않습니다. 범위를 선택한 뒤 F4를 누르면 $가 붙습니다. 자주 쓰는 함수·단축키를 책상에 두고 보고 싶다면 <a href="https://link.coupang.com/a/i2uBaNiaTQ" target="_blank" rel="sponsored nofollow noopener" data-cpk="excel-pad" onclick="if(typeof gtag!=='undefined')gtag('event','cp_click',{item:'excel-pad',page:location.pathname,pos:'inline'});" style="color:#e52528;font-weight:700;">엑셀 단축키 마우스패드</a>도 있습니다.</p>
+
+<h2>3. 다른 시트에서 가져오려면?</h2>
+<p>수식을 입력하다가 범위 차례에서 <strong>다른 시트 탭을 눌러 범위를 드래그</strong>하면 <code>시트이름!범위</code>가 자동으로 들어갑니다. 시트 이름에 띄어쓰기가 있으면 <code>'1월 매출'!$A$2:$D$100</code>처럼 작은따옴표로 감쌉니다. 다른 파일을 참조하면 그 파일을 옮기거나 이름을 바꿀 때 연결이 끊길 수 있으니, 가능하면 같은 파일 안 시트로 복사해 두고 쓰는 편이 안전합니다.</p>
+
+<h2>4. #N/A가 날 때 체크리스트</h2>
+<p><strong>#N/A는 '찾을 값을 범위 첫 열에서 못 찾았다'는 뜻</strong>입니다. 눈으로는 같아 보여도 아래 이유로 다른 값인 경우가 대부분입니다.</p>
+<ul>
+<li><strong>앞뒤 공백</strong>: "A001 "처럼 끝에 공백이 붙어 있으면 다른 값입니다. TRIM 함수로 정리합니다.</li>
+<li><strong>숫자와 텍스트 형식 차이</strong>: 한쪽은 숫자 1001, 한쪽은 텍스트 "1001"이면 못 찾습니다. 셀 왼쪽 위 초록 삼각형(텍스트로 저장된 숫자)을 확인합니다.</li>
+<li><strong>찾는 열이 범위 첫 열이 아님</strong>: B:D를 범위로 잡았는데 사번이 A열에 있으면 못 찾습니다.</li>
+<li><strong>범위 고정 누락</strong>: $ 없이 채우기 하면 아래로 갈수록 범위가 밀려 뒤쪽 값을 놓칩니다.</li>
+<li><strong>정말 없는 값</strong>: 위를 다 확인했는데도 #N/A면 그 값이 원본에 없는 것입니다. 이때만 <code>=IFERROR(VLOOKUP(...),"없음")</code>으로 표시를 바꿉니다.</li>
+</ul>
+
+<h2>5. #REF!·엉뚱한 값이 나올 때</h2>
+<ul>
+<li><strong>#REF!</strong>: 열 번호가 범위의 열 수보다 큽니다. A:C(3개 열)에서 4를 쓰면 납니다.</li>
+<li><strong>값은 나오는데 틀림</strong>: 마지막 인수를 비웠거나 TRUE로 둔 경우입니다. 정확히 같은 값이 없으면 비슷한 값을 가져옵니다. FALSE로 바꿉니다.</li>
+<li><strong>열을 추가했더니 다른 값</strong>: 원본 표 중간에 열을 넣으면 열 번호가 그대로라 한 칸 밀린 값을 가져옵니다. 열 번호를 다시 맞춥니다.</li>
+</ul>
+
+<h2>6. XLOOKUP을 써도 될까?</h2>
+<p><strong>Microsoft 365나 Excel 2021 이상이면 XLOOKUP이 더 편합니다.</strong> 기본이 정확히 일치이고, 찾는 열이 왼쪽에 있지 않아도 됩니다. 다만 파일을 받는 사람이 낮은 버전 엑셀을 쓰면 수식이 깨지므로, 여러 부서와 주고받는 파일은 VLOOKUP이 호환에 안전합니다.</p>
+<div class="src-box" style="margin:30px 0;padding:18px 20px;border:1.5px solid var(--gray-200);border-radius:12px;"><div style="font-size:.95rem;font-weight:900;color:var(--black);margin-bottom:6px;">출처</div><ul style="margin:0;padding-left:18px;font-size:.88rem;line-height:1.7;color:var(--text-sub);"><li style="margin:6px 0;"><a href="https://support.microsoft.com/ko-kr/office/vlookup-%ED%95%A8%EC%88%98-0bbc8083-26fe-4963-8ab8-93a18ad188a1" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;text-decoration:none;">Microsoft 지원 「VLOOKUP 함수」</a> — 인수 4개, FALSE/TRUE, 생략 시 기본값 TRUE, 첫 열에서만 검색</li><li style="margin:6px 0;"><a href="https://www.datacamp.com/ko/tutorial/vlookup-in-google-sheets" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;text-decoration:none;">DataCamp(VLOOKUP 오류 정리)</a> — 열 번호가 범위를 넘으면 #REF!, 공백 제거, 첫 열 조건</li><li style="margin:6px 0;"><a href="https://www.guru99.com/ko/excel-vlookup-tutorial.html" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;text-decoration:none;">Guru99(VLOOKUP 자습서)</a> — 정확·근사 일치 구분, XLOOKUP 지원 버전</li></ul></div>
+<div class="inline-tool-box" style="background:var(--gray-50);border-radius:var(--radius);padding:20px 22px;margin:28px 0;">
+  <div style="font-size:.8rem;font-weight:700;color:var(--text-sub);margin-bottom:10px;">✦ 이 글과 함께 쓰면 좋은 무료 도구</div>
+<a href="/tools/work-log" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 업무일지 양식</a>
+<a href="/tools/meeting-minutes" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 회의록 양식</a>
+<a href="/tools/salary" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 연봉 실수령액 계산기</a>
+</div>
+<div class="hub-banner"><div><div class="hub-banner__label">채용공고 & 기업분석</div><div class="hub-banner__title">주요 기업 채용 분석 + 원티드 공고</div><a href="/tools/minimum-wage" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;background:var(--white);border:1.5px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.85rem;font-weight:700;text-decoration:none;">🔧 최저임금·시급 계산기</a>
+</div>
+<div class="related-posts">관련 글 → <a href="/blog/excel-duplicates" style="color:var(--gold);font-weight:600;">엑셀 중복값 찾기·제거</a> · <a href="/blog/excel-shortcuts" style="color:var(--gold);font-weight:600;">엑셀 단축키 정리표</a> · <a href="/blog/windows-screen-capture" style="color:var(--gold);font-weight:600;">윈도우 캡처 단축키</a></div>
+<div class="related-posts"><div class="container"><h3 style="font-size:1rem;font-weight:900;margin-bottom:14px;">함께 읽으면 좋은 글</h3><ul style="list-style:none;padding:0;margin:0;"><li style="padding:8px 0;border-bottom:1px solid var(--gray-100);"><a href="/blog/excel-duplicates" style="color:var(--text);text-decoration:none;font-size:.92rem;font-weight:400;">엑셀 중복값 찾기·제거 방법</a></li><li style="padding:8px 0;border-bottom:1px solid var(--gray-100);"><a href="/blog/excel-shortcuts" style="color:var(--text);text-decoration:none;font-size:.92rem;font-weight:400;">엑셀 단축키 정리표 (실무에서 매일 쓰는 40개)</a></li><li style="padding:8px 0;border-bottom:1px solid var(--gray-100);"><a href="/blog/printer-offline-fix" style="color:var(--text);text-decoration:none;font-size:.92rem;font-weight:400;">프린터 오프라인 해결</a></li><li style="padding:8px 0;border-bottom:1px solid var(--gray-100);"><a href="/blog/windows-screen-capture" style="color:var(--text);text-decoration:none;font-size:.92rem;font-weight:400;">윈도우 캡처 단축키 정리</a></li></ul></div></div>
+    <div style="margin:40px 0 72px;">  </div></div>
+  </div></div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">좋은 취업</div>
+        <div class="footer__tagline">취업 준비의 흐름을 잡아주는 콘텐츠 사이트</div>
+      </div>
+      <nav class="footer__nav">
+        <a href="/">홈</a><a href="/diagnosis">무료진단</a><a href="/company-analysis">기업이해</a>
+        <a href="/company-analysis">기업이해</a><a href="/company-analysis">기업이해</a>
+        <a href="/company-analysis">기업이해</a><a href="/contact">상담문의</a><a href="/editorial-policy">편집 원칙</a><a href="/privacy">개인정보처리방침</a><a href="/terms">이용약관</a>
+      </nav>
+    </div>
+    <div class="footer__copy">© 2026 좋은 취업 · yuncontest@naver.com</div>
+  </div>
+</footer>
+
+
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu');
+  const b=document.getElementById('menuBtn');
+  m.classList.toggle('open');
+  b.textContent=m.classList.contains('open')?'✕ 닫기':'☰ 메뉴';
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('mobileMenu');
+  if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!document.getElementById('menuBtn').contains(e.target)){
+    m.classList.remove('open');
+    document.getElementById('menuBtn').textContent='☰ 메뉴';
+  }
+});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+<!-- 카카오 문의 플로팅 버튼 -->
+<a href="https://open.kakao.com/o/sTpjuoQh" target="_blank" rel="noopener" id="kakaoFloat" onclick="gtag&&gtag('event','contact_kakao_click',{'location':'float'});" aria-label="카카오톡 문의">
+  <span class="kf-icon">💬</span>
+  <span class="kf-text">자소서·취업 상담</span>
+</a>
+
+
+
+
+<script src="/assets/cp.js?v=4" defer></script>
+</body>
+</html>
